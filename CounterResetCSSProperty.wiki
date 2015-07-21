@@ -1,0 +1,24 @@
+#summary The counter-reset property accepts one or more names of counters and sets them to a specified amount.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *counter-reset*
+
+== Usage ==
+
+== Values ==
+
+  * `[ <identifier> <integer>? ]+`
+  * `none`
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/generate.html#propdef-counter-reset The counter-reset property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:counter-reset The counter-reset property on Mozilla Developer Center]
+  * [http://www.blooberry.com/indexdot/css/properties/generate/counterreset.htm The history of the counter-reset property on blooberry.com]
+  * [http://reference.sitepoint.com/css/counter-reset The counter-reset property on the SitePoint CSS Reference]
+

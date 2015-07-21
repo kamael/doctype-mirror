@@ -1,0 +1,35 @@
+#summary The a charset attribute specifies the character encoding for the target resource of a hyperlink.
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AElement <a> element] > *charset attribute*
+
+== Usage ==
+
+This attribute is purely advisory and does not override the character encoding defined by the target resource.
+
+== Values ==
+
+Should be [http://www.iana.org/assignments/character-sets a registered character encoding].
+
+== Elements ==
+
+You can use the `charset` attribute on the following elements:
+
+  * [AElement <a>]
+  * [LinkElement <link>]
+  * [MetaElement <meta>]
+  * [ScriptElement <script>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/a-charset-reflection-test.html a.charset reflects <a charset="utf-8">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/links.html#adef-charset The charset attribute in HTML 4]
+  * [http://www.iana.org/assignments/character-sets List of registered character encodings]
+  * [http://msdn2.microsoft.com/en-us/library/aa752010.aspx List of character encodings supported by Microsoft Internet Explorer]
+

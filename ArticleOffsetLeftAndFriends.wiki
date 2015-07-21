@@ -1,0 +1,145 @@
+#summary offsetLeft and friends in various browsers
+#labels about-html,is-dom-property
+
+= Introduction =
+
+The offsetLeft element property and related properties  (offsetTop, offsetWidth, offsetHeight, offsetParent, as well as clientWidth and clientHeight) were originally introduced by IE and then adopted by all other browsers, despite the lack of a precise specification. They are meant to provide a handy way to determine the position and size of elements, allowing scripts to position and size other elements correspondingly.
+
+When writing such code, one tends to make some natural assumptions about the behavior of these properties:
+
+  * The left edge of the left margin of a position:absolute left:0 element coincides with the left edge of the left padding of the element's offsetParent. In other words, it lies to the right of the offsetParent's left margin and border (and left scrollbar, if any).
+  * Similarly for top:0, right:0, and bottom:0.
+  * Any two elements with the same parent have the same offsetParent.
+  * The difference between the offsetLeft values of any two elements sharing the same offsetParent corresponds to the difference between their actual horizontal locations.
+  * Same for offsetTop and vertical locations.
+  * The offsetLeft of any position:absolute left:0 element's is 0.
+  * Similarly for offsetTop with top:0.
+  * It follows that the sum of the offsetLeft and offsetWidth of any position:absolute right:0 element equals its offsetParent's clientWidth.
+  * Similarly for clientHeight with offsetTop, offsetHeight, and bottom:0.
+
+Unfortunately, not one of these holds true consistently across browsers and element properties. The deviations can be divided into two categories:
+
+  * "Features" that have become accepted by all or most browsers.
+  * Bugs that crop up in a minority of browsers or browser versions.
+
+Below is a list of such deviations. Although they are phrased in horizontal terms (offsetLeft, etc.), they also apply vertically (offsetTop, etc.) unless noted otherwise. All comparisons between browsers were done in "standards mode" - using <!DOCTYPE html>.
+
+_Disclaimer: the list was collected by experimentation. It is not exhaustive, and it is possible that the circumstances under which some of the deviations occur have not been correctly or fully analyzed._
+
+
+= 1. The "Features" =
+
+==1.1 The offsetParent of a top-level element is either the body or the html element - even though its positioning only works that way in IE6.==
+
+As one would expect, in all browsers, if the body element has non-static position, e.g. position:relative, it is the offsetParent of its children, which we call the top-level elements. Furthermore, the left edge of the left margin of a position:absolute left:0 top-level element coincides with the left edge of the left padding of the body element, i.e. lies to the right of the body element's (and thus the html element's) left margin and border. Thus, the assignment of the body element as its offsetParent makes sense. However, very few pages make the body element position anything other than the default static. It turns out that the situation in this usual, default case, which we consider for the rest of this section, is far less sensible.
+
+In IE6, the offsetParent of all top-level elements (children of the body) is the html element (unless the top-level element's position is static, in which case it is the body element - see 2.1 below). And in IE6, the left edge of the left margin of a position:absolute left:0 top-level element coincides with the left edge of the left padding of the html element. Thus, the assignment of the html element as the offsetParent of a top-level element makes sense in IE6.
+
+In FF2 and FF3, top-level elements are positioned the same way as in IE6, but their offsetParent is the body element instead of the html element. As a result, their offsetParent and their positioning do not agree: the body's margin and border lie underneath and to the right of a position:absolute left:0 top-level element, not to the left as an offsetParent's should.
+
+In all other browsers, including IE7 and IE8, the left edge of the left margin of a position:absolute left:0 top-level element coincides with the left edge of the screen, i.e. lies underneath or to the left of both the html element's and the body element's margin and border. Thus, neither the body element nor the html element makes sense as a top-level element's offsetParent. Only a fictional element serving as html's parent would fit the bill. However, no browsers does that. IE7 sets the offsetParent the same way as IE6, and IE8 joins the non-IE browsers in always setting it to the body element. Consensus is a good thing - but it would be even better if it were reached on something that makes sense...
+
+The unexpected result is that only the much-maligned IE6 gives top-level elements the offsetParent according to which they actually behave. The other browsers' mistaken choice of offsetParent results in two more "features":
+
+===1.1.1 The clientWidth of the body element does not include its margins or borders - but as a result does not equal the sum of the offsetLeft and offsetWidth of a right:0 child.===
+
+In all browsers, the body element's clientWidth property follows the clientWidth specification and does not include the width of its own margins or borders. However, its margins and borders (and in most browsers, also the html element's margins and borders) fall inside the left:0 to right:0 range of its position:absolute children (not outside, as one would expect from an offsetParent). Thus, the body element's clientWidth does not equal the sum of the offsetLeft and offsetWidth of a position:absolute right:0 child. This once again shows that it is unsuitable to be the top-level elements' offsetParent - which it nevertheless is in all browsers except IE6 and IE7.
+
+===1.1.2 The clientWidth of the html element equals the sum of the offsetLeft and offsetWidth of a right:0 child - but in order to do so, includes its own margins and borders (except in IE6).===
+
+In IE6, the html element's clientWidth property follows the clientWidth specification and does not include the width of its margins or borders. With its margins and borders falling outside of the left:0 to right:0 range of top-level elements, it works nicely as their offsetParent.
+
+In all other browsers, the html element's clientWidth deviates from the specification and does include its own margin and border.
+
+In IE7, where the html element usually serves as the offsetParent of top-level elements, this deviation is somewhat beneficial: at least the sum of the offsetLeft and offsetWidth of any position:absolute right:0 top-level element equals its offsetParent's clientWidth.
+
+In IE8 and non-IE browsers, however, this deviation just adds to the confusion, since the offsetParent of top-level elements there is the body element, not html... However, I hope that it stays that way, since it can still be used to easily get what the top level element's offsetParent's clientWidth is supposed to be.
+
+
+==1.2 The offsetParent of the body element is null.==
+
+This is the case in all browsers. You can still get to the html element as document.documentElement.
+
+
+==1.3 The offsetLeft of any element includes its own left margin.==
+
+This is the case in all browsers. As a result, the offsetLeft of a position:absolute left:0 element is only 0 when it does not have a left margin.
+
+
+
+=2. The Bugs=
+
+
+==2.1 In IE6 and IE7, the offsetParent of a position:static element all of whose ancestors are also position:static is the body element. Its offsetLeft fits its offsetParent, but differs drastically from the offsetLeft of non-static siblings in the same actual horizontal location whose offsetParent is the html element.==
+
+This means that in these browsers, to base the left value of a position:absolute element on the offsetLeft of a static sibling whose offsetParent is the static body element, you must add to it the widths of the html element's left margin, border, and padding and the width of the body element's left margin and border.
+
+This has been fixed in IE8.
+
+
+==2.2 In IE6 and IE7, the offsetLeft of a position:relative element lacking "layout" whose offsetParent is the html element does not include the body element's left border width. With an offsetParent which is also a position:relative element lacking "layout", it includes the offsetParent's border width. ==
+
+This means that in these browsers, to base the left value of a position:absolute element on the offsetLeft of a relative sibling whose currentStyle.hasLayout is false, you must add to its offsetLeft the width of the body's left border if its offsetParent is the html element. If the offsetParent is not the html element, but is a position:relative element lacking layout, you must subtract the offsetParent's left border width.
+
+This has been fixed in IE8.
+
+
+==2.3 In IE6 and IE7, the offsetLeft of an element whose offsetParent is a position:relative element lacking "layout" ignores its offsetParent - except when it itself is a position:relative element  lacking "layout".==
+
+This means that in these browsers, to base the left value of a position:absolute element on the offsetLeft of a sibling whose offsetParent has position:relative with currentStyle.hasLayout false, but which itself is not position:relative with currentStyle.hasLayout false, you must subtract from its offsetLeft the offsetParent's offsetLeft and left border width. If the offsetParent's offsetParent also has position:relative with currentStyle.hasLayout false, you must also subtract that offsetLeft, and so on up the DOM.
+
+This has been fixed in IE8.
+
+==2.4 In IE8, a span's offsetLeft appears to include its own left border and padding (besides its own left margin like all other elements)==
+
+No other browser appears to do this. I have not investigated this sufficiently - I am not sure what properties the span must have or not have for this to happen, or if this happens for any other elements. It does not happen for a div.
+
+
+==2.5 In FF2 and FF3, the offsetLeft of an element with non-absolute position whose offsetParent is the static body element includes the html element's left border width instead of the body element's left border width.==
+
+This means that in these browsers, to base the left value of a position:absolute element on the offsetLeft of a non-absolute sibling whose offsetParent is the static body element, you must add to its offsetLeft the width of the body's left border and subtract the width of the html element's left border.
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=255754
+
+
+==2.6 In FF2 and FF3, the offsetLeft of a position:absolute element whose offsetParent is not the body element and has non-default overflow is too low by the width of its offsetParent's left border.==
+
+For example, if the element's left is 0 and overflow is hidden and the offsetParent's left border width is 10px, the element's offsetLeft will be -10 instead of 0, even though it is correctly positioned to right of the offsetParent's margin and border. There does not have to be any actual overflow or scrollbars for the bug to occur - only the overflow property must have a value other than the default "visible".
+
+This means that in these browsers, to base the left value of a position:absolute element on the offsetLeft of a position:absolute sibling whose offsetParent is not the body element and whose overflow is not "visible", you must add to its offsetLeft the width of the offsetParent's left border.
+
+https://bugzilla.mozilla.org/show_bug.cgi?id=492551
+
+
+==2.7 In FF2, the offsetLeft of an element with non-absolute position whose offsetParent is not the body element is too low by twice the width of its offsetParent's left padding.==
+
+For example, if the element is positioned immediately to the right of its offsetParent's 10px left padding, and the offsetParent has no left margin or border, the element's offsetLeft will be -10 instead of 10.
+
+This means that in FF2, to base the left value of a position:absolute element on the offsetLeft of a non-absolute sibling whose offsetParent is not the body element, you must add to its offsetLeft twice the width of the offsetParent's left padding.
+
+This has been fixed in FF3.
+
+
+==2.8 In Chrome 1 & 2 and in Safari 3, the offsetLeft of an element with non-absolute position whose offsetParent is the static body element does not include the html element's left margin.==
+
+For example, if the element is positioned immediately to the right of the html element's 10px left margin, with no other margin, border or padding for either the body or the html element, the element's offsetLeft will be 0 instead of 10.
+
+This means that in these browsers, to base the left value of a position:absolute element on the offsetLeft of a sibling with non-absolute position whose offsetParent is the position:static body element, you must add to its offsetLeft the width of the html element's left margin.
+
+https://bugs.webkit.org/show_bug.cgi?id=26020
+
+
+==2.9 In Chrome 1 and Safari 3, the offsetLeft of an element whose offsetParent is the static body element is too low by the body's left border width (regardless of the element's position type).==
+
+For example, the offsetLeft of a position:absolute left:0 element in a position:static body with a 10px left border is -10 instead of 0.
+
+This means that in these browsers, to base the left value of a position:absolute element on the offsetLeft of a sibling whose offsetParent is the position:static body element, you must add to its offsetLeft the width of the body element's left border.
+
+This has been fixed in Chrome 2.
+
+
+==2.10 In Opera 9, the offsetLeft of an element whose offsetParent is not the body element includes its offsetParent's left border.==
+
+For example, if the element is position:absolute left:0 and the offsetParent's left border width is 10px, the element's offsetLeft will be 10 instead of 0, even though it is correctly positioned to right of the offsetParent's margin and border.
+
+This means that in this browser, to base the left value of a position:absolute element on the offsetLeft of a sibling whose offsetParent is not the body element, you must subtract from its offsetLeft the width of the offsetParent's left border.

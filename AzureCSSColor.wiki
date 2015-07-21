@@ -1,0 +1,23 @@
+#summary azure is a color keyword defined in CSS and usable wherever a color value is required.
+#labels about-css
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSColors Colors] > *azure*
+
+== Value ==
+
+The `azure` color keyword is equivalent to `#f0ffff`.
+
+[CSSColors List of CSS color constants]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/colors/azure-f0ffff-test.html azure == #f0ffff] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/css3-color/#svg-color Color keywords in CSS 3]
+
+

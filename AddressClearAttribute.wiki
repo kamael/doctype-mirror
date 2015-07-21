@@ -1,0 +1,52 @@
+#summary The address clear attribute is a deprecated method of clearing certain styles.
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AddressElement <address> element] > *clear attribute*
+
+== Usage ==
+
+The `clear` attribute negates the effect of the [FloatCSSProperty float] style.  This attribute is deprecated, in favor of using the [ClearCSSProperty clear] CSS property, but browsers still support it.
+
+{{{
+<p style="float:left">This text is floated left.</p>
+<address clear=left>Copyright &copy; 2007 John Doe</address>
+}}}
+
+`none`, `left`, `right`, or `both`.  The default value is `none`.
+
+== Elements ==
+
+You can use the `clear` attribute on the following elements:
+
+  * [AddressElement <address>]
+  * [BlockquoteElement <blockquote>]
+  * [BrElement <br>]
+  * [DdElement <dd>]
+  * [DirElement <dir>]
+  * [DivElement <div>]
+  * [DlElement <dl>]
+  * [DtElement <dt>]
+  * [HrElement <hr>]
+  * [LiElement <li>]
+  * [MenuElement <menu>]
+  * [OlElement <ol>]
+  * [PElement <p>]
+  * [PreElement <pre>]
+  * [TableElement <table>]
+  * [UlElement <ul>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/address-clear-all-reflection-test.html address.clear reflects <address clear="all">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/address-clear-both-reflection-test.html address.clear reflects <address clear="both">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/address-clear-left-reflection-test.html address.clear reflects <address clear="left">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/address-clear-none-reflection-test.html address.clear reflects <address clear="none">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/address-clear-right-reflection-test.html address.clear reflects <address clear="right">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.blooberry.com/indexdot/html/tagpages/a/address.htm The history of the clear attribute on blooberry.com]
+

@@ -1,0 +1,29 @@
+#summary The marquee direction attribute
+#labels about-html,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [MarqueeElement <marquee> element] > *direction attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `direction` attribute on the following elements:
+
+  * [MarqueeElement <marquee>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/marquee-direction-down-reflection-test.html marquee.direction reflects <marquee direction="down">] || Y || Y || Y || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/marquee-direction-left-reflection-test.html marquee.direction reflects <marquee direction="left">] || Y || Y || Y || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/marquee-direction-right-reflection-test.html marquee.direction reflects <marquee direction="right">] || Y || Y || Y || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/marquee-direction-up-reflection-test.html marquee.direction reflects <marquee direction="up">] || Y || Y || Y || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms533729.aspx The direction attribute on MSDN]
+

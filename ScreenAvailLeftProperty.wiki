@@ -1,0 +1,25 @@
+#summary The screen.availLeft property
+#labels about-dom,is-dom-property,from-mozilla
+
+== Values ==
+
+The `screen.availLeft` property returns an integer.
+
+[BrowserFamilyFirefox Firefox] returns the X value of the absolute screen coordinate that the browser window would occupy if it were maximized.  If the browser extends all the way to the left edge of the screen, then `screen.availLeft` is `0`.  If you had an "always on top" taskbar or system panel along the left edge of your screen that was 200 pixels wide, then `screen.availLeft` would be `200`.  This property is independent of the actual size and position of the browser window; it only reflects how far left the browser window could go, not where it actually is.
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/screen/screen-availLeft-typeof-test.html typeOf(screen.availLeft) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/screen/screen-left-typeof-test.html typeOf(screen.left) != 'undefined'] || Y || Y || Y || ? || Y || Y || ? || ? ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.screen.availLeft The screen.availLeft property on Mozilla Developer Center]
+

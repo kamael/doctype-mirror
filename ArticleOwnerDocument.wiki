@@ -1,0 +1,30 @@
+#summary HOWTO find the owner document of a DOM node (goog.dom.getOwnerDocument)
+#labels is-article,about-dom
+#sidebar TOCArticlesDom
+
+For a variety of reasons, you may need to get the owner document of a node.  Some functions that operate on nodes are defined on the `document` object, and if you have a complex page with frames or i-frames, you will have multiple `document` objects (one for each frame).  If you try to pass a node to a method on the wrong `document` object, your code will raise an exception.
+
+== The code ==
+
+The code is fairly straightforward.  The only tricky part is that [BrowserMSIE5 Microsoft Internet Explorer 5] uses `node.document` instead of `node.ownerDocument`.  And of course, the "owner" of a document is the document itself.
+
+{{{
+/**
+ * Returns the owner document for a node
+ * @param {Node} node The node to get the document for
+ * @return {Document} The document owning the node
+ */
+goog.dom.getOwnerDocument = function(node) {
+  // IE5 uses document instead of ownerDocument
+  return node.nodeType == goog.dom.NodeType.DOCUMENT ? node :
+      node.ownerDocument || node.document;
+};
+}}}
+
+== Further reading ==
+
+  * [DocumentObject document object]
+  * [NodeOwnerDocumentProperty node.ownerDocument property]
+  * [NodeDocumentProperty node.document property]
+
+

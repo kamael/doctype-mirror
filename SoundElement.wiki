@@ -1,0 +1,26 @@
+#summary The sound element represents an obsolete method of embedding a background sound in a document.
+#labels about-html,is-html-element
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *sound element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [SoundDelayAttribute delay]
+  * [SoundLoopAttribute loop]
+  * [SoundSrcAttribute src]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/sound-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/sound-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.blooberry.com/indexdot/html/tagpages/s/sound.htm The history of the sound element on blooberry.com]
+

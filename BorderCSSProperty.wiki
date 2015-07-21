@@ -1,0 +1,73 @@
+#summary The border property is a shorthand property for setting 'border-width', 'border-style', and 'border-color'.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *border*
+
+== Usage ==
+
+== Values ==
+
+  * `[ <border-width> || <border-style> || 'border-color' ]`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border--hs-808080-equals-rgb-lp-128-cm--128-cm--128-rp--reflection-test.html style.borderColor reflects <div style='border: #808080'>] || N || N || N || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-0-equals-0pt-0pt-0pt-0pt-reflection-test.html style.borderWidth reflects <div style='border: 0'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1cm-equals-1cm-1cm-1cm-1cm-reflection-test.html style.borderWidth reflects <div style='border: 1cm'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1cm-sc--border-style-cl--solid-equals-1cm-reflection-test.html style.borderWidth reflects <div style='border: 1cm; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1cm-solid-equals-1cm-1cm-1cm-1cm-reflection-test.html style.borderWidth reflects <div style='border: 1cm solid'>] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1em-equals-1em-1em-1em-1em-reflection-test.html style.borderWidth reflects <div style='border: 1em'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1em-sc--border-style-cl--solid-equals-1em-reflection-test.html style.borderWidth reflects <div style='border: 1em; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1em-solid-equals-1em-1em-1em-1em-reflection-test.html style.borderWidth reflects <div style='border: 1em solid'>] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1ex-equals-1ex-1ex-1ex-1ex-reflection-test.html style.borderWidth reflects <div style='border: 1ex'>] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1ex-sc--border-style-cl--solid-equals-1ex-reflection-test.html style.borderWidth reflects <div style='border: 1ex; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1ex-solid-equals-1ex-1ex-1ex-1ex-reflection-test.html style.borderWidth reflects <div style='border: 1ex solid'>] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1in-equals-1in-1in-1in-1in-reflection-test.html style.borderWidth reflects <div style='border: 1in'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1in-sc--border-style-cl--solid-equals-1in-reflection-test.html style.borderWidth reflects <div style='border: 1in; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1in-solid-equals-1in-1in-1in-1in-reflection-test.html style.borderWidth reflects <div style='border: 1in solid'>] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1mm-equals-1mm-1mm-1mm-1mm-reflection-test.html style.borderWidth reflects <div style='border: 1mm'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1mm-sc--border-style-cl--solid-equals-1mm-reflection-test.html style.borderWidth reflects <div style='border: 1mm; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1mm-solid-equals-1mm-1mm-1mm-1mm-reflection-test.html style.borderWidth reflects <div style='border: 1mm solid'>] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1pc-equals-1pc-1pc-1pc-1pc-reflection-test.html style.borderWidth reflects <div style='border: 1pc'>] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1pc-sc--border-style-cl--solid-equals-1pc-reflection-test.html style.borderWidth reflects <div style='border: 1pc; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1pc-solid-equals-1pc-1pc-1pc-1pc-reflection-test.html style.borderWidth reflects <div style='border: 1pc solid'>] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1pt-equals-1pt-1pt-1pt-1pt-reflection-test.html style.borderWidth reflects <div style='border: 1pt'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1pt-sc--border-style-cl--solid-equals-1pt-reflection-test.html style.borderWidth reflects <div style='border: 1pt; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1pt-solid-equals-1pt-1pt-1pt-1pt-reflection-test.html style.borderWidth reflects <div style='border: 1pt solid'>] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1px-equals-1px-1px-1px-1px-reflection-test.html style.borderWidth reflects <div style='border: 1px'>] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1px-sc--border-style-cl--solid-equals-1px-reflection-test.html style.borderWidth reflects <div style='border: 1px; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-1px-solid-equals-1px-1px-1px-1px-reflection-test.html style.borderWidth reflects <div style='border: 1px solid'>] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-black-equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.borderColor reflects <div style='border: black'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bogus-equals--reflection-test.html style.borderStyle reflects <div style='border: bogus'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-dashed-equals-dashed-reflection-test.html style.borderStyle reflects <div style='border: dashed'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-dotted-equals-dotted-reflection-test.html style.borderStyle reflects <div style='border: dotted'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-double-equals-double-reflection-test.html style.borderStyle reflects <div style='border: double'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-groove-equals-groove-reflection-test.html style.borderStyle reflects <div style='border: groove'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-hidden-equals-hidden-reflection-test.html style.borderStyle reflects <div style='border: hidden'>] || Y || N || N || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-inset-equals-inset-reflection-test.html style.borderStyle reflects <div style='border: inset'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-none-equals-none-reflection-test.html style.borderStyle reflects <div style='border: none'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-outset-equals-outset-reflection-test.html style.borderStyle reflects <div style='border: outset'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-rgb-lp-0-cm--0-cm--0-rp--equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.borderColor reflects <div style='border: rgb(0, 0, 0)'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-ridge-equals-ridge-reflection-test.html style.borderStyle reflects <div style='border: ridge'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-solid-equals-solid-reflection-test.html style.borderStyle reflects <div style='border: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-thick-equals-5px-reflection-test.html style.borderWidth reflects <div style='border: thick'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-thick-sc--border-style-cl--solid-equals-5px-reflection-test.html style.borderWidth reflects <div style='border: thick; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-thick-solid-equals-thick-thick-thick-thick-reflection-test.html style.borderWidth reflects <div style='border: thick solid'>] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-thin-equals-thin-reflection-test.html style.borderWidth reflects <div style='border: thin'>] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-thin-sc--border-style-cl--solid-equals-thin-reflection-test.html style.borderWidth reflects <div style='border: thin; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-thin-solid-equals-thin-thin-thin-thin-reflection-test.html style.borderWidth reflects <div style='border: thin solid'>] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-transparent-equals-transparent-reflection-test.html style.borderColor reflects <div style='border: transparent'>] || Y || Y || N || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-window-inset-equals-window-inset-reflection-test.html style.borderStyle reflects <div style='border: window-inset'>] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/box.html#propdef-border The border property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:border The border property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530744.aspx The border property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/border/border.htm The history of the border property on blooberry.com]
+  * [http://reference.sitepoint.com/css/border The border property on the SitePoint CSS Reference]
+

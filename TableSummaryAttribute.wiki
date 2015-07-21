@@ -1,0 +1,27 @@
+#summary The table summary attribute
+#labels about-html,about-tables,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [TableElement <table> element] > *summary attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `summary` attribute on the following elements:
+
+  * [TableElement <table>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/table-summary-reflection-test.html table.summary reflects <table summary="foo">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/tables.html#adef-summary The summary attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534652.aspx The summary attribute on MSDN]
+

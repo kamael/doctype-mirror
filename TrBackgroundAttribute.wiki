@@ -1,0 +1,31 @@
+#summary The tr background attribute
+#labels about-html,about-tables,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [TrElement <tr> element] > *background attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `background` attribute on the following elements:
+
+  * [BodyElement <body>]
+  * [IlayerElement <ilayer>]
+  * [LayerElement <layer>]
+  * [TableElement <table>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TrElement <tr>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/tr-background-reflection-test.html tr.background reflects <tr background="http://www.example.com/">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+

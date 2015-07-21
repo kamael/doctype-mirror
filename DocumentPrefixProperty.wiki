@@ -1,0 +1,24 @@
+#summary The document.prefix property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `document.prefix` property returns the namespace prefix of a node.
+
+== Usage ==
+  * only works in documents that have an XML mime type
+  * implements Node.prefix, introduced in Dom Level 2
+  * requires a namespace aware parser
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-prefix-typeof-test.html typeOf(document.prefix) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+http://developer.mozilla.org/en/docs/DOM:element.prefix
+
+http://www.w3.org/TR/2000/REC-DOM-Level-2-Core-20001113/core.html#ID-NodeNSPrefix
+

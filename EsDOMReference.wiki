@@ -1,0 +1,15 @@
+[DOMReference Español]
+
+
+== Referencia de Modelo en Objetos para la representación de Documentos (DOM) ==
+
+  * [EsDocumentObject objeto document]
+  * [EsWindowObject objeto window]
+  * [EsHistoryObject objeto history]
+  * [EsLocationObject objeto location]
+  * [EsNavigatorObject objeto navigator]
+  * [EsScreenObject objeto screen]
+  * [EsClipboardDataObject objeto clipboardData]
+  * [EsCryptoObject objeto crypto]
+  * [EsExternalObject objeto external]
+

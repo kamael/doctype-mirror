@@ -1,0 +1,34 @@
+Google Doctypeへようこそ。 Web開発者により書かれた、Web開発者のための技術文章です。
+現在翻訳作業中ですので未整備の項目が多くあります。また語訳等が多いかと思いますので、適宜修正願います。
+
+== 何を学びたいですか？ ==
+
+[JaArticles HOWTO記事]
+
+  * [JaArticlesXSS Webセキュリティ]
+  * [JaArticlesDom DOM操作]
+  * [JaArticlesStyle CSSとスタイルシート]
+  * [JaArticlesTips Tipsと小技]
+
+[JaDOMReference DOMオブジェクト]について知りましょう
+
+  * [JaDocumentObject document]
+  * [JaWindowObject window]
+  * [JaHistoryObject history]
+  * [JaLocationObject location]
+  * [JaNavigatorObject navigator]
+  * [JaScreenObject screen]
+  * その他
+
+[JaCSSReference CSS]によるページ装飾
+
+  * [JaCSSProperties CSSプロパティ]
+  * [JaCSSPseudoClasses 疑似クラス] and [JaCSSPseudoElements 疑似要素]
+  * [JaCSSAtRules CSS適用ルール]
+  * [JaCSSColors 色]
+  * その他
+
+[JaHTMLElements HTML要素]についてお調べですか?  [JaAElement <a>] から [JaXmpElement <xmp>]までのHTMLリファレンスがあります
+
+[Welcome English] [EsWelcome Español] [FrWelcome Français]
+

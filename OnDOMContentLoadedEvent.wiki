@@ -1,0 +1,19 @@
+#summary The ondomcontentloaded event fires when the DOM is available, but before images and external resources are loaded.
+#labels about-dom,is-dom-event,from-mozilla
+
+== Usage ==
+
+== Event targets ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://dean.edwards.name/weblog/2005/09/busted/]
+  * [http://dean.edwards.name/weblog/2006/06/again/]
+  * [http://www.robertnyman.com/2006/10/03/elo-encapsulated-load-object-the-ultimate-way-to-handle-window-load-events/]
+  * [http://webreflection.blogspot.com/2006/11/my-domcontentloaded-final-solution.html]
+
+

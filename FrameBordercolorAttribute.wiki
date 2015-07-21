@@ -1,0 +1,31 @@
+#summary The frame bordercolor attribute
+#labels about-html,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [FrameElement <frame> element] > *bordercolor attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `bordercolor` attribute on the following elements:
+
+  * [FrameElement <frame>]
+  * [FramesetElement <frameset>]
+  * [TableElement <table>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TrElement <tr>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/frame-bordercolor-reflection-test.html frame.borderColor reflects <frame bordercolor="#ffffff">] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms533517.aspx The bordercolor attribute on MSDN]
+

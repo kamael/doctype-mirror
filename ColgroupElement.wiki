@@ -1,0 +1,34 @@
+#summary The colgroup element represents a group of columns in a table.
+#labels about-html,about-tables,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *colgroup element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [ColgroupAlignAttribute align]
+  * [ColgroupBgcolorAttribute bgcolor]
+  * [ColgroupCharAttribute char]
+  * [ColgroupCharoffAttribute charoff]
+  * [ColgroupSpanAttribute span]
+  * [ColgroupValignAttribute valign]
+  * [ColgroupWidthAttribute width]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/colgroup-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/colgroup-element-as-child-of-table-appears-in-dom-test.html appears in DOM as child of table] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/colgroup-element-applies-style-test.html applies style] || N || Y || Y || N || N || Y || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/colgroup-element-as-child-of-table-applies-style-test.html applies style as child of table] || Y || Y || Y || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-colgroup The colgroup element in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/tables.html#h-11.2.4 The colgroup element in HTML 4]
+  * [http://www.blooberry.com/indexdot/html/tagpages/c/colgroup.htm The history of the colgroup element on blooberry.com]
+

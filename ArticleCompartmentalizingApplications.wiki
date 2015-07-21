@@ -1,0 +1,39 @@
+#summary Compartmentalizing applications within the same domain
+#labels about-security,is-article
+#sidebar TOCArticlesXSS
+
+||[EsArticleCompartmentalizingApplications Español]||[JaArticleCompartmentalizingApplications 日本語]||[FrArticleCompartmentalizingApplications Français]||
+||[Welcome Home]||[ArticlesXSS Web Security]||  
+
+
+XSS is not just a problem across domains.  Some domains, including `google.com`, host multiple applications.  An XSS vulnerability in one application can be used to launch attacks on another, entirely separate application.  There are several ways you can mitigate this risk.
+
+== Use a Separate Sub-domain ==
+
+The [http://www.mozilla.org/projects/security/components/same-origin.html Same Origin Policy] ensures that script on a page loaded from domain A cannot access any properties of a page loaded from domain B. If you host your application on `myapp.google.com`, cross-site scripting on e.g. `labs.google.com` cannot access your applications security context.
+
+There are a number of caveats:
+
+  # Make sure your pages don't set `document.location="google.com";` (or whatever your base domain may be).  If you did this, you'd effectively open up your application to the entire `google.com` domain. XSS on `someotherapp.google.com` could still be used to access your app's domain; the attacker would simply have to inject script that sets the vulnerable page's domain to `google.com` as well.
+  # Don't set your cookies with `domain=.google.com`.  Obviously, this would allow them to be stolen via XSS anywhere in the `google.com` domain.
+  # Don't rely on path restrictions to protect your cookies.  You may be setting your cookies with a path attribute such as `path=/important`.  However, this does _not_ prevent XSS in a page on some other path (such as `/other/vulnerable`) but in the same domain from accessing your `/important` cookie: An attacker could inject code into `/other/vulnerable` that opens a window or frame sourced from `/important/something`. This document would then "see" your `/important` cookie; since `/other/vulnerable` is in the same domain, the malicious script injected into that page could obtain your `/important` from the frame's `document.cookie`.
+
+== Use the `secure` Cookie Attribute ==
+
+For cookies that are intended to be only set and read by URLs served over https, it is highly recommended to set the cookie with the `secure` attribute. This is desirable mainly because it will prevent the browser from sending the cookie with non-https requests to the same server.
+
+From an XSS perspective, it also has the added benefit that this cookie is not accessible to script in non-https pages; i.e., a XSS vulnerability in a page that is not served over https cannot be used to steal a `secure` cookie.  Note though that it is possible that a page that is normally intended to be served over http only may still be accessible via https, which would make `secure` cookies accessible after all.
+
+== Use the `HttpOnly` Cookie Attribute ==
+
+The [http://msdn.microsoft.com/en-us/library/ms533046.aspx `HttpOnly` attribute] was introduced by Microsoft in IE 6 SP1, and will be supported by Mozilla Firefox 3.0.  It instructs the browser to not make a cookie visible to script (i.e., the cookie won't be included in the `document.cookie` property, which makes it more difficult or impossible to steal such a cookie via XSS).  This attribute should be used where possible.  However, it does not fully mitigate the impact of XSS, and has a number of limitations:
+
+  * It does not prevent XSS payloads that manipulate the application directly in the context of the user's session (see the section on [ArticleIntroductionToXSS#XSS_Exploits_and_Payloads payloads] above).
+  * If the server can be caused to reflect the cookie in response to a HTTP request (such as `TRACE`), malicious script will be able to obtain the value of the cookie after all.
+  * This attribute is so far only supported by recent versions of IE and Firefox.
+
+== Further reading ==
+
+  * [ArticleXSS Everything you ever wanted to know about cross-site scripting (XSS) attacks]
+  * [http://www.mozilla.org/projects/security/components/same-origin.html Same Origin Policy]
+  * [http://msdn.microsoft.com/en-us/library/ms533046.aspx `HttpOnly` attribute]

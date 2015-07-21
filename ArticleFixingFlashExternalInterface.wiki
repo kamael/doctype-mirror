@@ -1,0 +1,407 @@
+#summary HOWTO fix issues in Flash's ExternalInterface API.
+
+= Introduction =
+
+This article details how to work around issues that might come up when using Flash's [ArticleFlashExternalInterface ExternalInterface API] for creating cross-browser !JavaScript shims.
+
+
+= Details =
+
+== History ==
+
+[ArticleFlashExternalInterface ExternalInterface] first appeared in Flash 8. Unfortunately, it was marred by [http://codinginparadise.org/weblog/2006/02/how-to-speed-up-flash-8s.html very serious performance and encoding issues]. Flash 9 fixed the performance issues and the majority of the encoding issues, though some encoding issues still exist. This article will not document the Flash 8 workarounds, since Flash 8 has mostly been eclipsed by Flash 9+. Details on the Flash 8 workarounds [http://codinginparadise.org/weblog/2006/02/how-to-speed-up-flash-8s.html can be found in this blog post].
+
+== Encoding Issues ==
+
+[ArticleFlashExternalInterface ExternalInterface] has some subtle encoding issues that can come up when you pass certain characters over the boundry. This actually comes from the way !ExternalInterface works internally (documented below in the section Internal Methods). 
+
+The following issues can come up when talking from !JavaScript to Flash:
+
+   * Backslashing certain characters will cause an 'Illegal Character' error. For example, if you try to pass the following string over to Flash:
+
+{{{
+var badString = '"\"\""';
+}}}
+
+then you will get this exception. The workaround is to double-encode back slashes (code is provided below to do this).
+
+   * Flash will corrupt any ampersands in your strings, such as &quot;. The workaround for this is to temporarily tokenize ampersands into a different string, and then change them back on the Flash side (code is provided below to do this).
+
+Here is a function you can use on the !JavaScript side to handle these workarounds:
+
+{{{
+// JavaScript
+function encodeFlashData(str) {
+  str = str.toString().replace(/\\/g, '\\\\');
+  str = str.replace(/&/g, '__FLASH__AMPERSAND');
+  return str;
+}
+
+// call encodeFlashData before sending things to Flash
+var myString = 'This & would normally break things, as well as this funky quote: "\"\""';
+flashObj.myFlashMethod(encodeFlashData(myString));
+}}}
+
+{{{
+// ActionScript 3
+protected function decodeFlashData(str:String):String {
+   // Flash will automatically un-double encode our backslashes, so nothing to do there
+
+   // turn our __FLASH__AMPERSAND token back into an & character
+   return str.replace(/__FLASH__AMPERSAND/g, '&');
+}
+
+protected function myFlashMethod(str:String):void {
+   // decode the Flash data before using it
+   str = decodeFlashData(str);
+}
+}}}
+
+== Writing the Flash Into the Page ==
+
+Many times your !JavaScript shim wants to hide the fact that Flash is being used. In order to do this you must write your Flash object into the page as the page is being loaded (such as after [ArticleOverridingOnload DOMContentLoaded] is ready). The way in which you do this can unfortunately affect whether the !ExternalInterface API even works; if you do it improperly calls to !ExternalInterface will just fail silently. The code below is a battle-tested way to do this; doing it other ways (such as building up the Flash dynamically through the DOM) can sometimes break in browsers in unusual ways, especially when working with the other black magic that shims can sometimes use. The open source SWFObject library can do some of this for you, but many times when you are creating !JavaScript shims you don't want to pull in another (large) library to keep things self-contained:
+
+{{{
+// JavaScript
+
+/** Gets a string suitable for inserting into our document in order to setup our Flash object.
+
+    @param width The width of the Flash object, such as "600".
+    @param height The height of the Flash object, such as "300".
+    @param id The ID that will be added to the Flash object.
+    @param backgroundColor An optional color that will be used for the background, such 
+     as 'red'. If you want the Flash to be transparent, set this to null and set 
+     backgroundTransparent to true. If you provide a backgroundColor the background will _not_
+     be transparent.
+    @param backgroundTransparent Whether you want the background of the Flash object to
+     show through. Set to true if you want this and make sure backgroundColor is null.
+    @param style An optional style string to copy into the Flash object.
+    @param className An optional className to copy into the Flash object.
+    @param libraryPath A path to the SWF file; useful so you can grab your SWF file if 
+    it is relative to where your library is installed. For example, this could be
+    '../../'. Make sure that this relative path ends in a slash. 
+    @param swfFileName The name of your swf file, such as 'svg.swf'.
+
+    @returns HTML string suitable for inserting somewhere into the page. */
+function getFlashString(width, height, id, backgroundColor, backgroundTransparent, style, className, libraryPath, swfFileName) {
+    var src = libraryPath + swfFileName;
+    var protocol = window.location.protocol;
+    if (protocol.charAt(protocol.length - 1) == ':') {
+      protocol = protocol.substring(0, protocol.length - 1);
+    }
+
+    // some example FlashVars, showing how to properly encode them
+    // FIXME: delete this or add in your own in order to pass flags into your Flash object
+    var flashVars = 
+          'uniqueId=' + encodeURIComponent(id)
+        + '&sourceType=string'
+        + '&scaleMode=showAll'
+        + '&debug=true'
+        + '&svgId=' + encodeURIComponent(id);
+
+    var flash =
+          '<object\n '
+            + 'classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"\n '
+            + 'codebase="'
+            + protocol
+            + '://fpdownload.macromedia.com/pub/shockwave/cabs/flash/'
+            + 'swflash.cab#version=9,0,0,0"\n '
+            + 'width="' + width + '"\n '
+            + 'height="' + height + '"\n '
+            + 'id="' + id + '"\n '
+            + 'name="' + id + '"\n '
+            + 'style="' + style + '"\n '
+            + 'class="' + className + '"\n '
+            + '>\n '
+            + '<param name="allowScriptAccess" value="always"></param>\n '
+            + '<param name="movie" value="' + src + '"></param>\n '
+            + '<param name="quality" value="high"></param>\n '
+            + '<param name="FlashVars" value="' + flashVars + '"></param>\n '
+            + (backgroundColor ? '<param name="bgcolor" value="' 
+                                    + backgroundColor + '"></param>\n ' : '')
+            + (backgroundTransparent ? 
+                                    '<param name="wmode" value="transparent">'
+                                    + '</param>\n ' : '')
+            + '<embed '
+              + 'src="' + src + '" '
+              + 'quality="high" '
+              + (backgroundColor ? 'bgcolor="' + backgroundColor 
+                                     + '" \n' : '')
+              + (backgroundTransparent ? 'wmode="transparent" \n' : '')
+              + 'width="' + width + '" '
+              + 'height="' + height + '" '
+              + 'id="' + id + '" '
+              + 'name="' + id + '" '
+              + 'swLiveConnect="true" '
+              + 'allowScriptAccess="always" '
+              + 'type="application/x-shockwave-flash" '
+              + 'FlashVars="' + flashVars + '" '
+              + 'pluginspage="'
+              + protocol
+              + '://www.macromedia.com/go/getflashplayer" '
+              + 'style="' + style + '"\n '
+              + 'class="' + className + '"\n '
+              + ' />'
+          + '</object>';
+
+    return flash;
+}
+
+/** Inserts a Flash object into the page.
+
+    @param flash Flash HTML string.
+    @param replaceMe Some DOM node already in the document to replace with the Flash object, such as a DIV.
+      
+    @returns The Flash DOM object. */
+function insertFlash(flashStr, replaceMe) {
+   var flashObj;
+   if (document.all && !navigator.userAgent.indexOf('Opera') >= 0)) { // IE
+      // Note: as _soon_ as we make this call the Flash will load, even
+      // before the rest of this method has finished. The Flash can
+      // therefore finish loading before anything after the next statement
+      // has run, so be careful of timing bugs.
+      replaceMe.outerHTML = flashStr;
+   } else { // other browsers
+      // do a trick to turn the Flash HTML string into an actual DOM object
+      // unfortunately this doesn't work on IE; on IE the Flash is immediately
+      // loaded when we do div.innerHTML even though we aren't attached
+      // to the document!
+      var div = document.createElement('div');
+      div.innerHTML = flashStr;
+      flashObj = div.childNodes[0];
+      div.removeChild(flashObj);
+    
+      // at this point we have the OBJECT tag; ExternalInterface communication
+      // won't work on Firefox unless we get the EMBED tag itself
+      for (var i = 0; i < flashObj.childNodes.length; i++) {
+         var check = flashObj.childNodes[i];
+         if (check.nodeName.toUpperCase() == 'EMBED') {
+            flashObj = check;
+            break;
+         }
+      }
+    
+      // now insert the EMBED tag into the document
+      replaceMe.parentNode.replaceChild(flashObj, replaceMe);
+   }
+    
+   return flashObj;
+}
+}}}
+
+You would generally call these two functions while the page is loading (perhaps after [ArticleOverridingOnload DOMContentLoaded] has fired). An example:
+
+{{{
+// JavaScript
+
+function onDOMContentLoaded() {
+  var flashStr = getFlashString(300, 300, 'myFlash', null, true, 'border: 2px solid red;', 'myFlashClass', '../../', 'mySWF.swf');
+  var replaceMe = document.getElementById('pleaseReplaceMe');
+  var flashObj = insertFlash(flashStr, replaceMe);
+  
+  // it is recommended that you store the flashObj reference for later when you want
+  // to start making ExternalInterface calls
+}
+}}}
+
+== Hiding the Flash ==
+
+Sometimes you want your Flash object to be visible on the page (for example if you are using Flash to extend the browsers visual capabilities such as for an SVG shim). Other times however you want this Flash object to be invisible (such as if you are using Flash to achieve client-side storage). You would think you could simply set the Flash object to have 'display: none', but that can cause issues since some browsers won't 'see' the Flash object anymore. Instead, use the following trick to position the Flash object off screen:
+
+{{{
+// JavaScript
+
+flashObj.style.position = 'absolute';
+flashObj.style.top = '-1000px';
+flashObj.style.left = '-1000px';
+}}}
+
+This method doesn't work with Chrome/Mac 8.0.552.231 or Safari/Mac 5.0.2 (6533.18.5). My guess is that it won't work with any webkit-based browser. However, I've found that it will work if the swf is positioned such that even a 1px sliver of the swf is showing on the page. So make sure the rightmost one pixel of your k-pixel-wide swf is transparent, then use wmode transparent and then position with left: (k-1)px.
+
+== Performance ==
+
+Flash 9's !ExternalInterface is vastly faster than Flash 8's. In general you should not need to mess around with it. However, there is a trick that will work on Internet Explorer only which can potentially speed things up; in general you should avoid doing this unless you know exactly what you are doing. 
+
+When you add a callback using !ExternalInterface, that method actually internally uses eval() in order to turn strings into objects. However, if you know that you are only passing strings around, you can override this and avoid the performance impact of an eval (which might be useful, for example, if you are pushing a string over the boundry that might be a megabyte in size). All of the Flash functions are actually !JavaScript that are secretly in the page (see the Internal Methods section below). Here is the default implementation of {{{__flash__addCallback}}} (note that this code is not under a BSD license and is provided for reference and interoperation):
+
+{{{
+function __flash__addCallback(instance, name) {
+  instance[name] = function () { 
+    return eval(instance.CallFunction("<invoke name=\""+name+"\" returntype=\"javascript\">" + __flash__argumentsToXML(arguments,0) + "</invoke>"));
+  }
+}
+}}}
+
+You can get around this by bypassing the addCallback magic and directly calling another internal function that lives on the Flash object itself, named !CallFunction. This code removes the eval and directly passes in the internal XML payload that Flash uses for !ExternalInterface. Since we are calling the lower-level function, we will lose the ability to 'see' methods on the plugin. This can be fixed with a special function that will keep the methods around:
+
+{{{
+/** Exposes the given methodName on the given flashObj to make it callable, without
+    using an eval() to speed things up. Note that only strings therefore can be passed
+    _back_ from Flash, though complex types can be passed from JavaScript to Flash. */
+function makeCallable: function(flashObj, methodName) {
+   flashObj[methodName] = 
+      (function(methodName) {
+         return function() {
+            this.CallFunction(
+               '<invoke name="' + methodName + '" returntype="javascript">'
+                  + __flash__argumentsToXML(arguments, 0)
+               + '</invoke>');
+         }; // dangling semi-colon for IE 6
+      })(methodName); // force re-closure to prevent IE memory leaks
+}
+
+// ...
+
+makeCallable(flashObj, 'helloWorld');
+makeCallable(flashObj, 'foobar');
+}}}
+
+Another workaround is to abandon !ExternalInterface and drop down to using fscommands, which showed up in Flash 3+. These are much faster, but will make your code very complicated and asynchronous; they also don't work on all browsers. It is recommended that you avoid this unless you have very good reasons. A good intro to the subject is located [http://www.moock.org/webdesign/flash/fscommand/ here].
+
+== Timing Issues ==
+
+Once you have written your Flash into the page, you can't just start making calls on it through !ExternalInterface. On some browsers, such as Internet Explorer for example, there can be different kinds of delays and orderings based on whether the SWF is in your browser cache or not. To make things robust, you should instead have your SWF file tell the !JavaScript when things are setup and ready to go. Here is some example code you can use:
+
+{{{
+// JavaScript
+
+var flashObj;
+
+function onDOMContentLoaded() {
+   // insert your Flash into the page as described above
+   var flashStr = getFlashString(300, 300, 'myFlash', null, true, 'border: 2px solid red;', 'myFlashClass', '../../', 'mySWF.swf');
+   var replaceMe = document.getElementById('pleaseReplaceMe');
+   flashObj = insertFlash(flashStr, replaceMe); // store for later
+
+   // now wait for Flash to tell us it is ready to be used
+}
+
+function onRenderingFinished() {
+  // called by Flash when things are setup and ready to go; now we can make
+  // ExternalInterface calls
+  flashObj.doSomethingNow('some important piece of data');
+}}}
+
+{{{
+// ActionScript
+import flash.external.ExternalInterface;
+
+public class Example {
+  public function Example() {
+     // register our callbacks
+     ExternalInterface.addCallback("doSomethingNow", this, doSomethingNow);
+
+     // now tell JavaScript we are good to go
+     ExternalInterface.call('onRenderingFinished');
+  }
+
+  public function doSomethingNow():String {
+     // do something important here
+  }
+}
+}}}
+
+== Internal Methods ==
+
+When the Flash player loads, it actually injects a number of hidden !JavaScript methods into your page after a bit of a delay. Internally, these !JavaScript methods serialize your method calls into an internal XML payload format, which they then send over to the Flash plugin by calling the method !CallFunction located on each Flash object. You can now see why Flash has encoding issues; because it is using an internal XML format, they forgot to properly encode ampersands, for example. The backslashing issue is probably due to something with the C++ Flash code beyond the !CallFunction method.
+
+These methods can be instrumental to know about in specialized scenarios, but they can be very hard to grab the source code of even though they are located in plain text on your page. You can use various debuggers to grab them, but for simplicity the source of this file is shown below. Note that this code is not under a BSD license and is provided for educational and interoperation purposes only:
+
+{{{
+function __flash__arrayToXML(obj) {
+	var s = "<array>";
+	for (var i=0; i<obj.length; i++) {
+		s += "<property id=\"" + i + "\">" + __flash__toXML(obj[i]) + "</property>";
+	}
+	return s+"</array>";
+}
+function __flash__argumentsToXML(obj,index) {
+	var s = "<arguments>";
+	for (var i=index; i<obj.length; i++) {
+		s += __flash__toXML(obj[i]);
+	}
+	return s+"</arguments>";
+}
+function __flash__objectToXML(obj) {
+	var s = "<object>";
+	for (var prop in obj) {
+		s += "<property id=\"" + prop + "\">" + __flash__toXML(obj[prop]) + "</property>";
+	}
+	return s+"</object>";
+}
+function __flash__escapeXML(s) {
+	return s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&apos;");
+}
+function __flash__toXML(value) {
+   var type = typeof(value);
+	if (type == "string") {
+		return "<string>" + __flash__escapeXML(value) + "</string>";
+	} else if (type == "undefined") {
+        return "<undefined/>";
+	} else if (type == "number") {
+        return "<number>" + value + "</number>";
+	} else if (value == null) {
+        return "<null/>";
+	} else if (type == "boolean") {
+        return value ? "<true/>" : "<false/>";
+	} else if (value instanceof Date) {
+        return "<date>" + value.getTime() + "</date>";
+   } else if (value instanceof Array) {
+       return __flash__arrayToXML(value);
+   } else if (type == "object") {
+       return __flash__objectToXML(value);
+   } else {
+	    return "<null/>"; //???
+	}
+}
+function __flash__addCallback(instance, name) {
+  instance[name] = function () { 
+    return eval(instance.CallFunction("<invoke name=\""+name+"\" returntype=\"javascript\">" + __flash__argumentsToXML(arguments,0) + "</invoke>"));
+  }
+}
+function __flash__removeCallback(instance, name) {
+  instance[name] = null;
+}
+}}}
+
+== Internet Explorer Page Unload Bug ==
+
+If you override the {{{__flash__addCallback}}} method (or are using Flash in an untraditional scenario like inside of a [ArticleIEBehaviors Microsoft Behavior]), you can sometimes get exceptions when the page unloads on Internet Explorer. The source of this is the {{{__flash__removeCallback}}} method getting a null exception, which gets called as a page is unloaded. You can fix this by overriding this method and adding a better null check:
+
+{{{
+window.__flash__removeCallback = 
+   (function() {
+      return function(instance, name) {
+         if (instance) instance[name] = null;
+      }; // IE 6 dangling semicolon needed
+   )(); // force another closure to prevent IE memory leaks
+}}}
+
+Note that you should define this function _after_ the Flash plugin has loaded, perhaps in a onDOMContentLoaded function. Otherwise Flash will overwrite your workaround with the original, faulty function.
+
+== Using Inside a Microsoft Behavior ==
+
+If you are using a [ArticleIEBehaviors Microsoft Behavior] in order to extend Internet Explorer's layout engine with JavaScript, perhaps having the Flash object be 'hidden' from the external DOM using the !ViewLink trick so developers don't see it but rather your new, custom tag instead (such as an SVG root element tag), !ExternalInterface won't work correctly initially and your calls won't work. 
+
+The way to fix this is to get a reference to your Flash object first ('hiding' elements inside a Microsoft Behavior is detailed [ArticleIEBehaviors here]); then simply have a variation of the method defined above in the Performance section to make your Flash methods callable; the only difference is we leave the eval() function in:
+
+{{{
+function makeCallable: function(flashObj, methodName) {
+   // if we use the Behavior ViewLink trick to 'hide' the Flash object
+   // from the external page's DOM (see FlashInserter._insertFlashIE for
+   // the SCRIPT embedType), then Flash's ExternalInterface
+   // doesn't work correctly.
+   flashObj[methodName] = 
+      (function(methodName) {
+         return function() {
+            eval(this.CallFunction(
+               '<invoke name="' + methodName + '" returntype="javascript">'
+                  + __flash__argumentsToXML(arguments, 0)
+               + '</invoke>'));
+         }; // dangling semi-colon for IE 6
+      })(methodName); // force re-closure to prevent IE memory leaks
+}
+
+}}}
+
+If you do this, you will most certainly want to follow the instructions in "Internet Explorer Page Unload Bug" above as well.

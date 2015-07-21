@@ -1,0 +1,99 @@
+#summary List of HTML character entities
+#labels about-html,from-w3c
+
+You are here: [Welcome Home] > [HtmlReference HTML Reference] > [CharacterEntities Character entities] > *beginning with I*
+
+|| *Name* || *Value* || *Test* ||
+|| [IecyCharacterEntity &IEcy;] || [http://www.fileformat.info/info/unicode/char/0415/index.htm U+00415] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iecy-00415-entity-test.html test] ||
+|| [IjligCharacterEntity &IJlig;] || [http://www.fileformat.info/info/unicode/char/0132/index.htm U+00132] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/ijlig-00132-entity-test.html test] ||
+|| [IocyCharacterEntity &IOcy;] || [http://www.fileformat.info/info/unicode/char/0401/index.htm U+00401] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iocy-00401-entity-test.html test] ||
+|| [IacuteCharacterEntity &Iacute;] || [http://www.fileformat.info/info/unicode/char/00cd/index.htm U+000CD] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iacute-capital-000cd-entity-test.html test] ||
+|| [IacuteCharacterEntity &Iacute] || [http://www.fileformat.info/info/unicode/char/00cd/index.htm U+000CD] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iacute-capital-no-semicolon-000cd-entity-test.html test] ||
+|| [IcircCharacterEntity &Icirc;] || [http://www.fileformat.info/info/unicode/char/00ce/index.htm U+000CE] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/icirc-capital-000ce-entity-test.html test] ||
+|| [IcircCharacterEntity &Icirc] || [http://www.fileformat.info/info/unicode/char/00ce/index.htm U+000CE] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/icirc-capital-no-semicolon-000ce-entity-test.html test] ||
+|| [IcyCharacterEntity &Icy;] || [http://www.fileformat.info/info/unicode/char/0418/index.htm U+00418] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/icy-capital-00418-entity-test.html test] ||
+|| [IdotCharacterEntity &Idot;] || [http://www.fileformat.info/info/unicode/char/0130/index.htm U+00130] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/idot-capital-00130-entity-test.html test] ||
+|| [IfrCharacterEntity &Ifr;] || [http://www.fileformat.info/info/unicode/char/2111/index.htm U+02111] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/ifr-capital-02111-entity-test.html test] ||
+|| [IgraveCharacterEntity &Igrave;] || [http://www.fileformat.info/info/unicode/char/00cc/index.htm U+000CC] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/igrave-capital-000cc-entity-test.html test] ||
+|| [IgraveCharacterEntity &Igrave] || [http://www.fileformat.info/info/unicode/char/00cc/index.htm U+000CC] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/igrave-capital-no-semicolon-000cc-entity-test.html test] ||
+|| [ImCharacterEntity &Im;] || [http://www.fileformat.info/info/unicode/char/2111/index.htm U+02111] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/im-capital-02111-entity-test.html test] ||
+|| [ImacrCharacterEntity &Imacr;] || [http://www.fileformat.info/info/unicode/char/012a/index.htm U+0012A] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/imacr-capital-0012a-entity-test.html test] ||
+|| [ImaginaryiCharacterEntity &ImaginaryI;] || [http://www.fileformat.info/info/unicode/char/2148/index.htm U+02148] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/imaginaryi-02148-entity-test.html test] ||
+|| [ImpliesCharacterEntity &Implies;] || [http://www.fileformat.info/info/unicode/char/21d2/index.htm U+021D2] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/implies-capital-021d2-entity-test.html test] ||
+|| [IntCharacterEntity &Int;] || [http://www.fileformat.info/info/unicode/char/222c/index.htm U+0222C] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/int-capital-0222c-entity-test.html test] ||
+|| [IntegralCharacterEntity &Integral;] || [http://www.fileformat.info/info/unicode/char/222b/index.htm U+0222B] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/integral-capital-0222b-entity-test.html test] ||
+|| [IntersectionCharacterEntity &Intersection;] || [http://www.fileformat.info/info/unicode/char/22c2/index.htm U+022C2] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/intersection-capital-022c2-entity-test.html test] ||
+|| [InvisiblecommaCharacterEntity &InvisibleComma;] || [http://www.fileformat.info/info/unicode/char/2063/index.htm U+02063] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/invisiblecomma-02063-entity-test.html test] ||
+|| [InvisibletimesCharacterEntity &InvisibleTimes;] || [http://www.fileformat.info/info/unicode/char/2062/index.htm U+02062] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/invisibletimes-02062-entity-test.html test] ||
+|| [IogonCharacterEntity &Iogon;] || [http://www.fileformat.info/info/unicode/char/012e/index.htm U+0012E] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iogon-capital-0012e-entity-test.html test] ||
+|| [IopfCharacterEntity &Iopf;] || U+1D540 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iopf-capital-1d540-entity-test.html test] ||
+|| [IotaCharacterEntity &Iota;] || [http://www.fileformat.info/info/unicode/char/0399/index.htm U+00399] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iota-capital-00399-entity-test.html test] ||
+|| [IscrCharacterEntity &Iscr;] || [http://www.fileformat.info/info/unicode/char/2110/index.htm U+02110] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iscr-capital-02110-entity-test.html test] ||
+|| [ItildeCharacterEntity &Itilde;] || [http://www.fileformat.info/info/unicode/char/0128/index.htm U+00128] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/itilde-capital-00128-entity-test.html test] ||
+|| [IukcyCharacterEntity &Iukcy;] || [http://www.fileformat.info/info/unicode/char/0406/index.htm U+00406] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iukcy-capital-00406-entity-test.html test] ||
+|| [IumlCharacterEntity &Iuml;] || [http://www.fileformat.info/info/unicode/char/00cf/index.htm U+000CF] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iuml-capital-000cf-entity-test.html test] ||
+|| [IumlCharacterEntity &Iuml] || [http://www.fileformat.info/info/unicode/char/00cf/index.htm U+000CF] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iuml-capital-no-semicolon-000cf-entity-test.html test] ||
+|| [IacuteCharacterEntity &iacute;] || [http://www.fileformat.info/info/unicode/char/00ed/index.htm U+000ED] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iacute-000ed-entity-test.html test] ||
+|| [IacuteCharacterEntity &iacute] || [http://www.fileformat.info/info/unicode/char/00ed/index.htm U+000ED] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iacute-no-semicolon-000ed-entity-test.html test] ||
+|| [IcCharacterEntity &ic;] || [http://www.fileformat.info/info/unicode/char/2063/index.htm U+02063] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/ic-02063-entity-test.html test] ||
+|| [IcircCharacterEntity &icirc;] || [http://www.fileformat.info/info/unicode/char/00ee/index.htm U+000EE] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/icirc-000ee-entity-test.html test] ||
+|| [IcircCharacterEntity &icirc] || [http://www.fileformat.info/info/unicode/char/00ee/index.htm U+000EE] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/icirc-no-semicolon-000ee-entity-test.html test] ||
+|| [IcyCharacterEntity &icy;] || [http://www.fileformat.info/info/unicode/char/0438/index.htm U+00438] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/icy-00438-entity-test.html test] ||
+|| [IecyCharacterEntity &iecy;] || [http://www.fileformat.info/info/unicode/char/0435/index.htm U+00435] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iecy-00435-entity-test.html test] ||
+|| [IexclCharacterEntity &iexcl;] || [http://www.fileformat.info/info/unicode/char/00a1/index.htm U+000A1] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iexcl-000a1-entity-test.html test] ||
+|| [IexclCharacterEntity &iexcl] || [http://www.fileformat.info/info/unicode/char/00a1/index.htm U+000A1] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iexcl-no-semicolon-000a1-entity-test.html test] ||
+|| [IffCharacterEntity &iff;] || [http://www.fileformat.info/info/unicode/char/21d4/index.htm U+021D4] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iff-021d4-entity-test.html test] ||
+|| [IfrCharacterEntity &ifr;] || U+1D526 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/ifr-1d526-entity-test.html test] ||
+|| [IgraveCharacterEntity &igrave;] || [http://www.fileformat.info/info/unicode/char/00ec/index.htm U+000EC] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/igrave-000ec-entity-test.html test] ||
+|| [IgraveCharacterEntity &igrave] || [http://www.fileformat.info/info/unicode/char/00ec/index.htm U+000EC] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/igrave-no-semicolon-000ec-entity-test.html test] ||
+|| [IiCharacterEntity &ii;] || [http://www.fileformat.info/info/unicode/char/2148/index.htm U+02148] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/ii-02148-entity-test.html test] ||
+|| [IiiintCharacterEntity &iiiint;] || [http://www.fileformat.info/info/unicode/char/2a0c/index.htm U+02A0C] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iiiint-02a0c-entity-test.html test] ||
+|| [IiintCharacterEntity &iiint;] || [http://www.fileformat.info/info/unicode/char/222d/index.htm U+0222D] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iiint-0222d-entity-test.html test] ||
+|| [IinfinCharacterEntity &iinfin;] || [http://www.fileformat.info/info/unicode/char/29dc/index.htm U+029DC] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iinfin-029dc-entity-test.html test] ||
+|| [IiotaCharacterEntity &iiota;] || [http://www.fileformat.info/info/unicode/char/2129/index.htm U+02129] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iiota-02129-entity-test.html test] ||
+|| [IjligCharacterEntity &ijlig;] || [http://www.fileformat.info/info/unicode/char/0133/index.htm U+00133] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/ijlig-00133-entity-test.html test] ||
+|| [ImacrCharacterEntity &imacr;] || [http://www.fileformat.info/info/unicode/char/012b/index.htm U+0012B] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/imacr-0012b-entity-test.html test] ||
+|| [ImageCharacterEntity &image;] || [http://www.fileformat.info/info/unicode/char/2111/index.htm U+02111] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/image-02111-entity-test.html test] ||
+|| [ImaglineCharacterEntity &imagline;] || [http://www.fileformat.info/info/unicode/char/2110/index.htm U+02110] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/imagline-02110-entity-test.html test] ||
+|| [ImagpartCharacterEntity &imagpart;] || [http://www.fileformat.info/info/unicode/char/2111/index.htm U+02111] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/imagpart-02111-entity-test.html test] ||
+|| [ImathCharacterEntity &imath;] || [http://www.fileformat.info/info/unicode/char/0131/index.htm U+00131] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/imath-00131-entity-test.html test] ||
+|| [ImofCharacterEntity &imof;] || [http://www.fileformat.info/info/unicode/char/22b7/index.htm U+022B7] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/imof-022b7-entity-test.html test] ||
+|| [ImpedCharacterEntity &imped;] || [http://www.fileformat.info/info/unicode/char/01b5/index.htm U+001B5] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/imped-001b5-entity-test.html test] ||
+|| [InCharacterEntity &in;] || [http://www.fileformat.info/info/unicode/char/2208/index.htm U+02208] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/in-02208-entity-test.html test] ||
+|| [IncareCharacterEntity &incare;] || [http://www.fileformat.info/info/unicode/char/2105/index.htm U+02105] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/incare-02105-entity-test.html test] ||
+|| [InfinCharacterEntity &infin;] || [http://www.fileformat.info/info/unicode/char/221e/index.htm U+0221E] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/infin-0221e-entity-test.html test] ||
+|| [InfintieCharacterEntity &infintie;] || [http://www.fileformat.info/info/unicode/char/29dd/index.htm U+029DD] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/infintie-029dd-entity-test.html test] ||
+|| [InodotCharacterEntity &inodot;] || [http://www.fileformat.info/info/unicode/char/0131/index.htm U+00131] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/inodot-00131-entity-test.html test] ||
+|| [IntCharacterEntity &int;] || [http://www.fileformat.info/info/unicode/char/222b/index.htm U+0222B] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/int-0222b-entity-test.html test] ||
+|| [IntcalCharacterEntity &intcal;] || [http://www.fileformat.info/info/unicode/char/22ba/index.htm U+022BA] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/intcal-022ba-entity-test.html test] ||
+|| [IntegersCharacterEntity &integers;] || [http://www.fileformat.info/info/unicode/char/2124/index.htm U+02124] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/integers-02124-entity-test.html test] ||
+|| [IntercalCharacterEntity &intercal;] || [http://www.fileformat.info/info/unicode/char/22ba/index.htm U+022BA] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/intercal-022ba-entity-test.html test] ||
+|| [IntlarhkCharacterEntity &intlarhk;] || [http://www.fileformat.info/info/unicode/char/2a17/index.htm U+02A17] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/intlarhk-02a17-entity-test.html test] ||
+|| [IntprodCharacterEntity &intprod;] || [http://www.fileformat.info/info/unicode/char/2a3c/index.htm U+02A3C] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/intprod-02a3c-entity-test.html test] ||
+|| [IocyCharacterEntity &iocy;] || [http://www.fileformat.info/info/unicode/char/0451/index.htm U+00451] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iocy-00451-entity-test.html test] ||
+|| [IogonCharacterEntity &iogon;] || [http://www.fileformat.info/info/unicode/char/012f/index.htm U+0012F] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iogon-0012f-entity-test.html test] ||
+|| [IopfCharacterEntity &iopf;] || U+1D55A || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iopf-1d55a-entity-test.html test] ||
+|| [IotaCharacterEntity &iota;] || [http://www.fileformat.info/info/unicode/char/03b9/index.htm U+003B9] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iota-003b9-entity-test.html test] ||
+|| [IprodCharacterEntity &iprod;] || [http://www.fileformat.info/info/unicode/char/2a3c/index.htm U+02A3C] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iprod-02a3c-entity-test.html test] ||
+|| [IquestCharacterEntity &iquest;] || [http://www.fileformat.info/info/unicode/char/00bf/index.htm U+000BF] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iquest-000bf-entity-test.html test] ||
+|| [IquestCharacterEntity &iquest] || [http://www.fileformat.info/info/unicode/char/00bf/index.htm U+000BF] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iquest-no-semicolon-000bf-entity-test.html test] ||
+|| [IscrCharacterEntity &iscr;] || U+1D4BE || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iscr-1d4be-entity-test.html test] ||
+|| [IsinCharacterEntity &isin;] || [http://www.fileformat.info/info/unicode/char/2208/index.htm U+02208] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/isin-02208-entity-test.html test] ||
+|| [IsineCharacterEntity &isinE;] || [http://www.fileformat.info/info/unicode/char/22f9/index.htm U+022F9] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/isine-022f9-entity-test.html test] ||
+|| [IsindotCharacterEntity &isindot;] || [http://www.fileformat.info/info/unicode/char/22f5/index.htm U+022F5] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/isindot-022f5-entity-test.html test] ||
+|| [IsinsCharacterEntity &isins;] || [http://www.fileformat.info/info/unicode/char/22f4/index.htm U+022F4] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/isins-022f4-entity-test.html test] ||
+|| [IsinsvCharacterEntity &isinsv;] || [http://www.fileformat.info/info/unicode/char/22f3/index.htm U+022F3] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/isinsv-022f3-entity-test.html test] ||
+|| [IsinvCharacterEntity &isinv;] || [http://www.fileformat.info/info/unicode/char/2208/index.htm U+02208] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/isinv-02208-entity-test.html test] ||
+|| [ItCharacterEntity &it;] || [http://www.fileformat.info/info/unicode/char/2062/index.htm U+02062] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/it-02062-entity-test.html test] ||
+|| [ItildeCharacterEntity &itilde;] || [http://www.fileformat.info/info/unicode/char/0129/index.htm U+00129] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/itilde-00129-entity-test.html test] ||
+|| [IukcyCharacterEntity &iukcy;] || [http://www.fileformat.info/info/unicode/char/0456/index.htm U+00456] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iukcy-00456-entity-test.html test] ||
+|| [IumlCharacterEntity &iuml;] || [http://www.fileformat.info/info/unicode/char/00ef/index.htm U+000EF] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iuml-000ef-entity-test.html test] ||
+|| [IumlCharacterEntity &iuml] || [http://www.fileformat.info/info/unicode/char/00ef/index.htm U+000EF] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/iuml-no-semicolon-000ef-entity-test.html test] ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/named.html Named character references in HTML 5]
+  * [http://www.w3.org/TR/html4/sgml/entities.html Character entity references in HTML 4]
+  * [http://www.evolt.org/article/ala/17/21234/ Chart of common character entities]
+
+

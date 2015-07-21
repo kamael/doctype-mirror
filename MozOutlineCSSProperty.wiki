@@ -1,0 +1,16 @@
+#summary The -moz-outline CSS property sets the outline of an element.
+
+== Usage ==
+
+This is a Mozilla-specific synonym of [OutlineCSSProperty outline], which is more widely supported.
+
+== Values ==
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-outline The -moz-outline property on Mozilla Developer Center]
+
+
+

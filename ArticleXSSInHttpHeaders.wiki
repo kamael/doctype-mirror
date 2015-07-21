@@ -1,0 +1,71 @@
+#summary HOWTO filter user input in HTTP headers
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+||[EsArticleXSSInHttpHeaders Español]|||[JaArticleXSSInHttpHeaders 日本語]||[FrArticleXSSInHttpHeaders Français]||
+||[Welcome Home]||||[ArticlesXSS Web Security]||    
+
+Security problems can arise if user-derived input is not properly validated/filtered and then inserted into HTTP response headers.
+
+== Example ==
+
+Consider a servlet that returns a HTTP redirect to a URL based on a parameter:
+
+{{{
+HTTP/1.1 302 Moved
+Content-Type: text/html; charset=ISO-8859-1
+Location: %(redir_url)s
+
+<html><head><title>Moved</title></head><body>
+Moved <a href='%(redir_url)s'>here</a>
+}}}
+
+Suppose an attacker is able to set the redirect url to the string
+
+{{{
+blah:foo\r\nSet-Cookie: PREF=bogus; domain=google.com\r\n\r\n
+     <script>evil()</script>
+}}}
+
+`\r` and `\n` denote newline and carriage return characters, and the string has been wrapped to fit the page.  The attacker could also submit the newline characters in URI encoded form, i.e. `'blah:foo%0d%0aSet-Cookie...'`.
+
+The resulting HTTP response would be
+
+{{{
+HTTP/1.1 302 Moved
+Content-Type: text/html; charset=ISO-8859-1
+Location: blah:foo
+Set-Cookie: PREF=bogus; domain=google.com
+
+<script>evil()</script><html><head><title>Moved</title></head><body>
+Moved <a href='blah:foo
+Set-Cookie: PREF=bogus; domain=google.com
+
+&lt;script&gt;evil()&lt;/script&gt;'>here</a>
+}}}
+
+This will cause the cookie of the attacker's choosing to be set in the user's browser, and may also execute the malicious script.  For example, Firefox would determine that the `Location:` header of this HTTP response is not valid, and it would then just render the HTML in the response's body, thus executing the script.
+
+A similar scenario could occur for servlets that emit `Set-Cookie` headers and derive the cookie's name or value from user input.  (This can also be dangerous for other reasons -- the attacker could cause cookies to be set in a way that the application doesn't expect.)
+
+== How to Avoid ==
+
+When setting `Location:` headers, ensure that the URL supplied is indeed a well-formed `http` or `https` URL.  Furthermore, it must consist only of characters that are legal in a URL as specified in RFC 2396.
+
+When setting cookies, ensure that the cookie's name and value contain only characters allowed by RFC 2109.
+
+When setting other headers (e.g. `X-Mycustomheader:`), ensure that the header's value contains only characters allowed by RFC 2068.
+
+== Rationale ==
+
+Restricting character sets to the characters allowed by the various RFCs ensures that the HTTP response will be parsed by the browser correctly and as intended.
+
+Validating the URL ensures that only redirects to legal HTTP URLs.  Older browsers may execute script directly from the `Location:` header if it contains a `javascript:` pseudo-URL.
+
+== Further reading ==
+
+  * [ArticleXSS Everything you ever wanted to know about cross-site scripting (XSS) attacks]
+  * [http://www.ietf.org/rfc/rfc2396 RFC 2396]
+  * [http://www.ietf.org/rfc/rfc2109 RFC 2109]
+  * [http://www.ietf.org/rfc/rfc2068 RFC 2068]
+

@@ -1,0 +1,17 @@
+#summary The -moz-box-sizing CSS property controls how widths and heights are calculated for an element.
+
+== Usage ==
+
+== Values ==
+
+  * `content-box`
+  * `border-box`
+  * `padding-box`
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-box-sizing The -moz-box-sizing property on Mozilla Developer Center]
+  * [http://reference.sitepoint.com/css/moz-box-sizing The -moz-box-sizing property on the SitePoint CSS Reference]
+

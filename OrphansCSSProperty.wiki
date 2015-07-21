@@ -1,0 +1,28 @@
+#summary The orphans property specifies the minimum number of lines of a paragraph that must be left at the bottom of a page.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *orphans*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSIntegerType <integer>]
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/orphans-0-equals-0-reflection-test.html style.orphans reflects <div style='orphans: 0'>] || N || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/orphans-1-equals-1-reflection-test.html style.orphans reflects <div style='orphans: 1'>] || N || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/orphans-2-equals-2-reflection-test.html style.orphans reflects <div style='orphans: 2'>] || N || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/orphans-bogus-equals--reflection-test.html style.orphans reflects <div style='orphans: bogus'>] || N || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/page.html#propdef-orphans The orphans property in CSS 2.1]
+  * [http://www.blooberry.com/indexdot/css/properties/print/orphans.htm The history of the orphans property on blooberry.com]
+  * [http://reference.sitepoint.com/css/orphans The orphans property on the SitePoint CSS Reference]
+

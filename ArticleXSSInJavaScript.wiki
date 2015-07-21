@@ -1,0 +1,113 @@
+#summary HOWTO filter user input in JavaScript context
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+||[EsArticleXSSInJavaScript Español]||[JaArticleXSSInJavaScript 日本語]||[FrArticleXSSInJavaScript Français]||
+||[Welcome Home]||[ArticlesXSS Web Security]||   
+
+For obvious reasons, you need to be very careful about embedding dynamic content in `<script>` tags or other contexts that explicitly contain script.  If an attacker can cause arbitrary strings to be injected, they can very likely cause malicious script to execute.  HTML-escaping the data is not sufficient, since the attacker does not need to inject any HTML tags.
+
+Dynamic content within `<script>` tags should generally be avoided as much as possible.  There really shouldn't be any legitimate reason to use this, with one exception: It is sometimes useful to populate javascript string literals with dynamically derived data.  GMail makes extensive use of this technique.  However, this can easily lead to a script injection vulnerability.
+
+== Example ==
+
+For example, consider the following template fragment:
+
+{{{
+<script>
+   var msg_text = '%(msg_text)s';
+   // ...
+   // do something with msg_text
+</script>
+}}}
+
+If the attacker can cause msg_text to contain
+
+{{{
+blah'; evil_script(); //
+}}}
+
+after substitution the HTML evaluated by the browser would be
+
+{{{
+<script>
+   var msg_text = 'blah'; evil_script(); //';
+   // ...
+   // do something with msg_text
+</script>
+}}}
+
+which would cause `evil_script()` to execute.
+
+== How to Avoid ==
+
+Do not insert user-controllable strings in a HTML template within `<script>` tags, except to populate string literals.  In the case of populating string literals, it is necessary to enclose the string in the template with single (javascript) quotes, and then ensure that the string itself is javascript string escaped.
+
+The following characters need to be encoded as a minimum.  We use the "`U+<hex-digits>`" convention to refer to non-printable Unicode code points.
+
+|| Character || Escape || Comment ||
+|| `U+0009` || `\t` || Tab ||
+|| `U+000a` || `\n` || Line Feed ||
+|| `U+000d` || `\r` || Carriage Return ||
+|| `U+0085` || `\u0085` || Next Line ||
+|| `U+2028` || `\u2028` || Line Separator ||
+|| `U+2029` || `\u2029` || Paragraph Separator ||
+|| `'` || `\x27` or `\u0027` || Single Quote ||
+|| `"` || `\x22` or `\u0022` || Double Quote ||
+|| `\` || `\\` || Backslash Quote ||
+|| `&` || `\x26` or `\u0026` || Ampersand ||
+|| `<` || `\x3c` or `\u003c` || Less-Than ||
+|| `>` || `\x3e` or `\u003e` || Greater-Than ||
+|| `=` || `\x3d` or `\u003d` || Equal ||
+
+Ensure that the string literal is not later used in a context where it itself could be interpreted as script (such as a javascript `eval()` statement).
+
+Non-string literals (such as integers, floats, etc) need to be formatted appropriately to ensure that the resulting string representation cannot result in malicious javascript.
+
+== Rationale ==
+
+Embedding javascript statements that are dynamically derived from user input into `<script>` tags is extremely risky.  In the general case, it is impossible to correctly distinguish "harmless" snippets of code from dangerous ones.
+
+Enclosing in quotes, and backslash-escaping of the inserted string ensures that the JavaScript parser interprets the string as a single string literal as intended.  We must escape quotes and line feed characters, because they could be interpreted as the end of the string literal and permit an "escape from the quote" attack.  We also must escape the backslash, otherwise the attacker could provide a single backslash which would escape our quote that was intended to end the string literal.  After that, the sense of "inside" and "outside" string literals is reversed, and the attacker may be able to cause script execution if he controls another string that is inserted later in the same script block.
+
+The escaping of the angle bracket characters is necessary because otherwise an attacker could cause arbitrary script execution by injecting (into the `msg_text` variable in the above example),
+
+{{{
+foo</script><script>evil-script;</script><script>
+}}}
+
+After substitution, the HTML evaluated by the browser would be (the extra newlines were inserted for formatting reasons):
+
+{{{
+  <script>
+    var msg_text = 'foo</script>
+    <script>evil-script;</script>
+    <script>'
+    // ...
+    // do something with msg_text
+  </script>
+}}}
+
+Somewhat surprisingly, this HTML document does in fact result in the execution of `evil-script;`. The reason is that the browser first parses the document as HTML, and only later passes text enclosed in `<script>` tags to the JavaScript interpreter.  In other words, the HTML parser does not respect or care about the delimiters of JavaScript string constants.  Thus, the HTML fragment above will be parsed into three separate `<script>` tags.  The first script tag contains invalid JavaScript and would result in a syntax error.  However, most browsers will evaluate separate `<script>` tags separately and execute the second (syntactically correct) tag containing the malicious script.  The third tag will again result in an error, but by then it is too late.
+
+Finally, we escape the "equal-sign" character as a defense-in-depth, preventing that attacker-provided strings are interpreted as tag attributes.
+
+Numeric literals are generally safe if their string representation was obtained by the appropriate conversion from a native numeric datatype.  Note that in weakly typed languages such as Perl, Python, or PHP, it is important to enforce type conversion to the appropriate numeric type to ensure that it is not possible to "sneak in" an arbitrary string after all.
+
+== Reuse of script variables ==
+
+Be aware that client-side script can itself be vulnerable to script injection if it further evaluates dynamic data derived from untrusted sources.  For example, the template snippet
+
+{{{
+<script>
+   var msg_text  = '%(messageText)s';
+   // ...
+   document.write(msg_text);
+</script>
+}}}
+
+is likely vulnerable to XSS even if JS-escaping was applied to the variable `msg_text`, since the JS variable `msg_text` is not HTML escaped at the time it's inserted into the document by the `document.write` call.
+
+== Further reading ==
+
+  * [ArticleXSS Everything you ever wanted to know about cross-site scripting (XSS) attacks]

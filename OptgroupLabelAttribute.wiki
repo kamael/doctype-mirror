@@ -1,0 +1,30 @@
+#summary The optgroup label attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [OptgroupElement <optgroup> element] > *label attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `label` attribute on the following elements:
+
+  * [CommandElement <command>]
+  * [MenuElement <menu>]
+  * [OptgroupElement <optgroup>]
+  * [OptionElement <option>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/optgroup-label-reflection-test.html optgroup.label reflects <select><optgroup label="foo">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/interact/forms.html#adef-name-SELECT The label attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms533929.aspx The label attribute on MSDN]
+

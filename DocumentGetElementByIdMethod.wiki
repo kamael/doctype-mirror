@@ -1,0 +1,24 @@
+#summary The document.getElementById method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+_string_ - The ID of an element as a string to retrieve.
+
+== Usage ==
+{{{
+var objElement = document.getElementById("element_id");
+/* The variable objElement now contains the element object associated with the given ID. */
+}}}
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-getElementById-typeof-test.html typeof(document.getElementById) != 'undefined'] || Y || Y || Y || Y || Y || Y || ? || ? ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-getelementbyid-typeof-test.html typeOf(document.getElementById) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [https://developer.mozilla.org/en/DOM/document.getElementById The document.getElementById method on Mozilla Developer Center]
+  * [http://msdn.microsoft.com/en-us/library/ms536437.aspx The document.getElementById method on MSDN]

@@ -1,0 +1,71 @@
+#summary The outline property is a shorthand property for setting 'outline-style', 'outline-width', and 'outline-color'.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *outline*
+
+== Usage ==
+
+== Values ==
+
+  * `[ 'outline-color' || 'outline-style' || 'outline-width' ]`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline--hs-808080-equals-rgb-lp-128-cm--128-cm--128-rp--reflection-test.html style.outlineColor reflects <div style='outline: #808080'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-0-equals-0pt-0pt-0pt-0pt-reflection-test.html style.outlineWidth reflects <div style='outline: 0'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1cm-equals-1cm-1cm-1cm-1cm-reflection-test.html style.outlineWidth reflects <div style='outline: 1cm'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1cm-sc--outline-style-cl--solid-equals-1cm-reflection-test.html style.outlineWidth reflects <div style='outline: 1cm; outline-style: solid'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1cm-solid-equals-1cm-1cm-1cm-1cm-reflection-test.html style.outlineWidth reflects <div style='outline: 1cm solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1em-equals-1em-1em-1em-1em-reflection-test.html style.outlineWidth reflects <div style='outline: 1em'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1em-sc--outline-style-cl--solid-equals-1em-reflection-test.html style.outlineWidth reflects <div style='outline: 1em; outline-style: solid'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1em-solid-equals-1em-1em-1em-1em-reflection-test.html style.outlineWidth reflects <div style='outline: 1em solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1ex-equals-1ex-1ex-1ex-1ex-reflection-test.html style.outlineWidth reflects <div style='outline: 1ex'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1ex-sc--outline-style-cl--solid-equals-1ex-reflection-test.html style.outlineWidth reflects <div style='outline: 1ex; outline-style: solid'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1ex-solid-equals-1ex-1ex-1ex-1ex-reflection-test.html style.outlineWidth reflects <div style='outline: 1ex solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1in-equals-1in-1in-1in-1in-reflection-test.html style.outlineWidth reflects <div style='outline: 1in'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1in-sc--outline-style-cl--solid-equals-1in-reflection-test.html style.outlineWidth reflects <div style='outline: 1in; outline-style: solid'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1in-solid-equals-1in-1in-1in-1in-reflection-test.html style.outlineWidth reflects <div style='outline: 1in solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1mm-equals-1mm-1mm-1mm-1mm-reflection-test.html style.outlineWidth reflects <div style='outline: 1mm'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1mm-sc--outline-style-cl--solid-equals-1mm-reflection-test.html style.outlineWidth reflects <div style='outline: 1mm; outline-style: solid'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1mm-solid-equals-1mm-1mm-1mm-1mm-reflection-test.html style.outlineWidth reflects <div style='outline: 1mm solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1pc-equals-1pc-1pc-1pc-1pc-reflection-test.html style.outlineWidth reflects <div style='outline: 1pc'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1pc-sc--outline-style-cl--solid-equals-1pc-reflection-test.html style.outlineWidth reflects <div style='outline: 1pc; outline-style: solid'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1pc-solid-equals-1pc-1pc-1pc-1pc-reflection-test.html style.outlineWidth reflects <div style='outline: 1pc solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1pt-equals-1pt-1pt-1pt-1pt-reflection-test.html style.outlineWidth reflects <div style='outline: 1pt'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1pt-sc--outline-style-cl--solid-equals-1pt-reflection-test.html style.outlineWidth reflects <div style='outline: 1pt; outline-style: solid'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1pt-solid-equals-1pt-1pt-1pt-1pt-reflection-test.html style.outlineWidth reflects <div style='outline: 1pt solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1px-equals-1px-1px-1px-1px-reflection-test.html style.outlineWidth reflects <div style='outline: 1px'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1px-sc--outline-style-cl--solid-equals-1px-reflection-test.html style.outlineWidth reflects <div style='outline: 1px; outline-style: solid'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-1px-solid-equals-1px-1px-1px-1px-reflection-test.html style.outlineWidth reflects <div style='outline: 1px solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-black-equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.outlineColor reflects <div style='outline: black'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-bogus-equals-none-reflection-test.html style.outlineStyle reflects <div style='outline: bogus'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-dashed-equals-dashed-reflection-test.html style.outlineStyle reflects <div style='outline: dashed'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-dotted-equals-dotted-reflection-test.html style.outlineStyle reflects <div style='outline: dotted'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-double-equals-double-reflection-test.html style.outlineStyle reflects <div style='outline: double'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-groove-equals-groove-reflection-test.html style.outlineStyle reflects <div style='outline: groove'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-hidden-equals-hidden-reflection-test.html style.outlineStyle reflects <div style='outline: hidden'>] || N || N || N || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-inset-equals-inset-reflection-test.html style.outlineStyle reflects <div style='outline: inset'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-none-equals-none-reflection-test.html style.outlineStyle reflects <div style='outline: none'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-outset-equals-outset-reflection-test.html style.outlineStyle reflects <div style='outline: outset'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-rgb-lp-0-cm--0-cm--0-rp--equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.outlineColor reflects <div style='outline: rgb(0, 0, 0)'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-ridge-equals-ridge-reflection-test.html style.outlineStyle reflects <div style='outline: ridge'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-solid-equals-solid-reflection-test.html style.outlineStyle reflects <div style='outline: solid'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-thick-equals-5px-reflection-test.html style.outlineWidth reflects <div style='outline: thick'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-thick-sc--outline-style-cl--solid-equals-5px-reflection-test.html style.outlineWidth reflects <div style='outline: thick; outline-style: solid'>] || N || N || N || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-thick-solid-equals-thick-thick-thick-thick-reflection-test.html style.outlineWidth reflects <div style='outline: thick solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-thin-equals-thin-reflection-test.html style.outlineWidth reflects <div style='outline: thin'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-thin-sc--outline-style-cl--solid-equals-thin-reflection-test.html style.outlineWidth reflects <div style='outline: thin; outline-style: solid'>] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-thin-solid-equals-thin-thin-thin-thin-reflection-test.html style.outlineWidth reflects <div style='outline: thin solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-transparent-equals-transparent-reflection-test.html style.outlineColor reflects <div style='outline: transparent'>] || Y || N || N || Y || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-window-inset-equals-window-inset-reflection-test.html style.outlineStyle reflects <div style='outline: window-inset'>] || Y || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/ui.html#propdef-outline The outline property in CSS 2.1]
+  * [http://www.blooberry.com/indexdot/css/properties/outline/outline.htm The history of the outline property on blooberry.com]
+  * [http://reference.sitepoint.com/css/outline The outline property on the SitePoint CSS Reference]
+

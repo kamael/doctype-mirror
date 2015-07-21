@@ -1,0 +1,31 @@
+#summary The name attribute represents a placeholder for bookmarking.
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AElement <a> element] > *name attribute*
+
+== Usage ==
+
+In [AElement the <a> element], the `name` attribute defines a placeholder that can be used for bookmarking a section of a document.
+
+[SpecificationHTML4 HTML 4] states that the `name` attribute "[http://www.w3.org/TR/html401/struct/links.html#adef-name-A shares the same namespace] as the [AIDAttribute id attribute]."  This means that you can't have an element `<a name="foo">` and have a separate element `<a id="foo">` in the same document.  It's OK for a single element to have both attributes, as long as they have the same value: `<a name="foo" id="foo">`.
+
+[SpecificationXHTML1 XHTML 1.0] deprecates the `name` attribute in favor of the [AIDAttribute id attribute].
+
+[SpecificationHTML5 HTML 5] and [SpecificationXHTML11 XHTML 1.1] do not include the `name` attribute at all.
+
+[NameAttribute Other elements have a `name` attribute], but it means something else.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/a-name-reflection-test.html a.name reflects <a name="foo">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/links.html#adef-name-A The name attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534184.aspx The name attribute on MSDN]
+  * [IdAttribute The id attribute in Google Doctype]
+  * [ArticleIdVsName Using the id attribute for page-internal anchors]
+

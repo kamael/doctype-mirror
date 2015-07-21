@@ -1,0 +1,279 @@
+#summary HOWTO determine the browser name and version number
+#labels is-article,about-dom
+#sidebar TOCArticlesTips
+
+The most common question among novice web developers is "how can I tell what browser the end user is running?"  The short answer is "you shouldn't need to know."  Of course there are differences between browsers, but in general you should handle these differences by [ArticleObjectDetection checking for capabilities], not specific browser names or versions.
+
+The medium answer is "you can't really know, because browsers will lie."  Since there is so much bad code out there already that _does_ check for specific browser names, some browsers have options to give out false information about who they are.
+
+The long answer is that there are some corner cases where object detection is insufficient.  For example, older versions of Camino [https://bugzilla.mozilla.org/show_bug.cgi?id=350018 return an invalid y-coordinate] for the viewport element from calls to document.getBoxObjectFor.  To get consistent results across all versions of Camino, you simply must check the browser name and version.
+
+== The code ==
+
+This code relies on functions explained elsewhere:
+
+  * [ArticleStringEssentials goog.string.compareVersions]
+
+{{{
+/**
+ * Reference to the global context.  In most cases this will be 'window'.
+ */
+goog.global = this;
+
+(function() {
+  var isOpera = false;
+  var isIe = false;
+  var isSafari = false;
+  var isGecko = false;
+  var isCamino = false;
+  var isKonqueror = false;
+  var isKhtml = false;
+  var isMac = false;
+  var isWindows = false;
+  var isLinux = false;
+  var platform = '';
+
+  if (goog.global['navigator']) {
+    var ua = navigator.userAgent;
+
+    // Browser
+    isOpera = typeof opera != 'undefined';
+    isIe = !isOpera && ua.indexOf('MSIE') != -1;
+    isSafari = !isOpera && ua.indexOf('WebKit') != -1;
+    // Safari also gives navigator.product string equal to 'Gecko'.
+    isGecko = !isOpera && navigator.product == 'Gecko' && !isSafari;
+    isCamino = isGecko && navigator.vendor == 'Camino';
+    isKonqueror = !isOpera && ua.indexOf('Konqueror') != -1;
+    isKhtml = isKonqueror || isSafari;
+
+    // Version
+    // All browser have different ways to detect the version and they all have
+    // different naming schemes
+    // version is a string because it may contain 'b', 'a' and so on
+    var version, re;
+    if (isOpera) {
+      version = opera.version();
+    } else {
+      if (isGecko) {
+        re = /rv\:([^\);]+)(\)|;)/;
+      } else if (isIe) {
+        re = /MSIE\s+([^\);]+)(\)|;)/;
+      } else if (isSafari) {
+        // WebKit/125.4
+        re = /WebKit\/(\S+)/;
+      } else if (isKonqueror) {
+        // Konqueror/3.1;
+        re = /Konqueror\/([^\);]+)(\)|;)/;
+      }
+      if (re) {
+        re.test(ua);
+        version = RegExp.$1;
+      }
+    }
+
+    // Platform
+    platform = navigator.platform;
+    isMac = platform.indexOf('Mac') != -1;
+    isWindows = platform.indexOf('Win') != -1;
+    isLinux = platform.indexOf('Linux') != -1;
+  }
+
+
+  /**
+   * Whether the user agent is Opera.
+   * @public
+   * @type {Boolean}
+   */
+  goog.userAgent.OPERA = isOpera;
+
+
+  /**
+   * Whether the user agent is Internet Explorer. This includes other browsers
+   * using Trident as its rendering engine. For example AOL and Netscape 8
+   * @public
+   * @type {Boolean}
+   */
+  goog.userAgent.IE = isIe;
+
+
+  /**
+   * Whether the user agent is Gecko. Gecko is the rendering engine used by
+   * Mozilla, Mozilla Firefox, Camino and many more.
+   * @public
+   * @type {Boolean}
+   */
+  goog.userAgent.GECKO = isGecko;
+
+
+  /**
+   * Whether the user agent is Camino.
+   * @public
+   * @type {Boolean}
+   */
+  goog.userAgent.CAMINO = isCamino;
+
+
+  /**
+   * Whether the user agent is Konqueror. If this is true then KHTML is also
+   * true. KHTML is the rendering engine that Konqueror and Safari uses.
+   * @public
+   * @type {Boolean}
+   */
+  goog.userAgent.KONQUEROR = isKonqueror;
+
+
+  /**
+   * Whether the user agent is Safari. If this is true then KHTML is also
+   * true. KHTML is the rendering engine that Konqueror and Safari uses.
+   * @public
+   * @type {Boolean}
+   */
+  goog.userAgent.SAFARI = isSafari;
+
+
+  /**
+   * Whether the user agent is using KHTML as its rendering engine.
+   * @public
+   * @type {Boolean}
+   */
+  goog.userAgent.KHTML = isKhtml;
+
+
+  /**
+   * The version of the user agent. This is a string because it might contain
+   * 'b' (as in beta) as well as multiple dots.
+   * @public
+   * @type {String}
+   */
+  goog.userAgent.VERSION = version;
+
+
+  /**
+   * The platform (operating system) the user agent is running on.
+   * @public
+   * @type {String}
+   */
+  goog.userAgent.PLATFORM = platform;
+
+
+  /**
+   * Whether the user agent is running on a Macintosh operating system.
+   * @public
+   * @type {Boolean}
+   */
+  goog.userAgent.MAC = isMac;
+
+
+  /**
+   * Whether the user agent is running on a Windows operating system.
+   * @public
+   * @type {Boolean}
+   */
+  goog.userAgent.WINDOWS = isWindows;
+
+
+  /**
+   * Whether the user agent is running on a Linux operating system.
+   * @public
+   * @type {Boolean}
+   */
+  goog.userAgent.LINUX = isLinux;
+
+})();
+
+
+/**
+ * Compares two version numbers
+ *
+ * @param {String} v1 Version of first item
+ * @param {String} v2 Version of second item
+ *
+ * @returns {Number}  1 if first argument is higher
+ *                    0 if arguments are equal
+ *                   -1 if second argument is higher
+ */
+goog.userAgent.compare = function(v1, v2) {
+  return goog.string.compareVersions(v1, v2);
+};
+
+
+/**
+ * Whether the user agent version is higher or the same as the given version.
+ * @param {String} version The version to check
+ * @return {Boolean}
+ */
+goog.userAgent.isVersion = function(version) {
+  return goog.userAgent.compare(goog.userAgent.VERSION, version) >= 0;
+};
+}}}
+
+== The code walkthrough ==
+
+First we need a sanity check to ensure that the browser exposes the information we need.  All major browsers do this, but other environments (such as a Google Gears !WorkerPool) do not.
+
+{{{
+  if (goog.global['navigator']) {
+}}}
+
+Now we can start checking for browser names, based on the `navigator.userAgent` string and other properties.  For example, Opera defines `window.opera`, so we test for that first.  Then we test for Internet Explorer based on the user-agent string, then Safari, then Firefox.  (Are you beginning to see why this is such a bad idea?  This logic is almost guaranteed to break when a new browser comes out.  You might think "oh, new browsers never come out."  That's what I thought too, right before Apple introduced Safari.)
+
+{{{
+    var ua = navigator.userAgent;
+
+    // Browser
+    isOpera = typeof opera != 'undefined';
+    isIe = !isOpera && ua.indexOf('MSIE') != -1;
+    isSafari = !isOpera && ua.indexOf('WebKit') != -1;
+    // Safari also gives navigator.product string equal to 'Gecko'.
+    isGecko = !isOpera && navigator.product == 'Gecko' && !isSafari;
+    isCamino = isGecko && navigator.vendor == 'Camino';
+    isKonqueror = !isOpera && ua.indexOf('Konqueror') != -1;
+    isKhtml = isKonqueror || isSafari;
+}}}
+
+Determining the version number is even trickier.  All browsers have different ways to detect the version and they all have different naming schemes.  The version needs to be a string, because it may contain letters 'a', 'b', and so on.
+
+{{{
+    var version, re;
+    if (isOpera) {
+      version = opera.version();
+    } else {
+      if (isGecko) {
+        re = /rv\:([^\);]+)(\)|;)/;
+      } else if (isIe) {
+        re = /MSIE\s+([^\);]+)(\)|;)/;
+      } else if (isSafari) {
+        // WebKit/125.4
+        re = /WebKit\/(\S+)/;
+      } else if (isKonqueror) {
+        // Konqueror/3.1;
+        re = /Konqueror\/([^\);]+)(\)|;)/;
+      }
+      if (re) {
+        re.test(ua);
+        version = RegExp.$1;
+      }
+    }
+}}}
+
+Finally, we need some checks for what operating system the user is running, using the `navigator.platform` property.  We only check for Windows, Mac, or Linux-based platforms.  This won't catch uncommon desktop operating systems like Solaris or BSD.
+
+{{{
+    platform = navigator.platform;
+    isMac = platform.indexOf('Mac') != -1;
+    isWindows = platform.indexOf('Win') != -1;
+    isLinux = platform.indexOf('Linux') != -1;
+}}}
+
+Most of the rest of the code just takes the logic we've performed so far and maps it to friendly variable names that we can re-use elsewhere in our code.  The final function, `goog.userAgent.compare` is really just a wrapper for [ArticleStringEssentials goog.string.compareVersions].
+
+== Further reading ==
+
+  * [ArticleObjectDetection Detect capabilities, not browsers]
+  * [ArticleStringEssentials Essential string functions]
+  * [NavigatorPlatformProperty navigator.platform property]
+  * [NavigatorUserAgentProperty navigator.userAgent property]
+  * [WindowOperaProperty window.opera property]
+  * [https://bugzilla.mozilla.org/show_bug.cgi?id=350018 Mozilla bug 350018: nsIFrame code returns coordinates with (0, 0) in bottom-left on mac]
+
+

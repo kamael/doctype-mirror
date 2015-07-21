@@ -1,0 +1,14 @@
+#summary The :empty CSS pseudo-class matches any element that has no children.
+#labels about-css
+
+== Usage ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* || *Opera9.5* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/selector.html#pseudo-elements Pseudo-classes in the CSS 2.1 specification]
+  * [http://developer.mozilla.org/en/docs/CSS::empty The :empty pseudo-class on Mozilla Developer Center]
+

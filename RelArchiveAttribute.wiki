@@ -1,0 +1,6 @@
+#summary The rel="archive" attribute is a synonym for rel="archives".
+#labels about-html,is-html-attribute,from-whatwg
+
+See [RelArchivesAttribute rel="archives"].
+
+

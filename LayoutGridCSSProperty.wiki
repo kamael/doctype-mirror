@@ -1,0 +1,20 @@
+#summary The layout-grid property is a shorthand property for setting 'layout-grid-char', 'layout-grid-line', 'layout-grid-mode', and 'layout-grid-type'.
+#labels about-css,is-css-property,from-microsoft
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *layout-grid*
+
+== Usage ==
+
+== Values ==
+
+  * `[ layout-grid-mode || layout-grid-type || layout-grid-line || layout-grid-char]`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms530771.aspx The layout-grid property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/intl/lgrid.htm The history of the layout-grid property on blooberry.com]
+

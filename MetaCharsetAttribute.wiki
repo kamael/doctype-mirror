@@ -1,0 +1,70 @@
+#summary The meta charset attribute specifies the character encoding of the current document.
+#labels about-html,is-html-attribute,from-whatwg
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [MetaElement <meta> element] > *charset attribute*
+
+== Usage ==
+
+The `<meta charset>` attribute sets the character encoding of an HTML document.  It is _extremely important_ that you explicitly declare the encoding of every HTML document; failing to do so will cause browsers to guess the encoding, which can [ArticleUtf7 lead to cross-site scripting attacks] if they guess incorrectly.
+
+Setting the character encoding should be done in the `Content-Type` http header, but can also be set with the `<meta charset>` attribute. The charset specified in the meta element and http header must match.
+
+In order for all browsers to recognize a `<meta charset>` declaration, it must be
+
+  * Within the [HeadElement <head> element],
+  * Before any elements that contain text, such as the [TitleElement <title> element], AND
+  * Within the first 512 bytes of your document, including DOCTYPE and whitespace
+
+Example:
+
+{{{
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>My home page</title>
+</head>
+<body>
+...
+</body>
+</html>
+}}}
+
+This is equivalent to the the `http-equiv` attribute with a value of `"Content-Type"`, like this:
+
+{{{
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+}}}
+
+You may use either; there is no need to use both.  Both forms are supported by all major browsers.
+
+Unfortunately, there is no cross-browser way to retrieve what character encoding the browser ended up choosing (i.e. whether the `<meta charset>` declaration worked).  In non-IE browsers, you can use `document.characterSet`.  In IE, you might think you could `document.getElementsByTagName('meta')[0].charset`, but this only returns the character encoding you specified, not the encoding that IE is actually using.
+
+== Values ==
+
+In theory, any HTML document can specify [http://www.iana.org/assignments/character-sets any character encoding].  In practice, browsers ship with a limited set of encodings that they support (see links below).
+
+HTML 5 states: "Authors should not use JIS_X0212-1990, x-JIS0208, and encodings based on [http://en.wikipedia.org/wiki/EBCDIC EBCDIC]. Authors should not use [http://en.wikipedia.org/wiki/UTF-32 UTF-32]. Authors must not use the [http://en.wikipedia.org/wiki/CESU-8 CESU-8], [http://en.wikipedia.org/wiki/UTF-7 UTF-7], [http://en.wikipedia.org/wiki/Binary_Ordered_Compression_for_Unicode BOCU-1] and [http://en.wikipedia.org/wiki/Standard_Compression_Scheme_for_Unicode SCSU] encodings. ... _Authors are encouraged to use UTF-8_."
+
+== Elements ==
+
+You can use the `charset` attribute on the following elements:
+
+  * [AElement <a>]
+  * [LinkElement <link>]
+  * [MetaElement <meta>]
+  * [ScriptElement <script>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/meta-charset-reflection-test.html meta.charset reflects <meta charset="utf-8">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/meta-charset-reflected-in-document-characterset-test.html document.characterSet reflects <meta charset="utf-8">] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset Specifying a document's character encoding]
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#attr-meta-charset The charset attribute in HTML 5]
+  * [http://msdn.microsoft.com/en-us/library/aa752010(VS.85).aspx Character set recognition in Microsoft Internet Explorer]

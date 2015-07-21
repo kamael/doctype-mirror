@@ -1,0 +1,6 @@
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *filter*
+
+* [http://msdn2.microsoft.com/en-us/library/ms530752.aspx The filter property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/dynamic/filter.htm` The history of the filter property on blooberry.com]
+  * [http://reference.sitepoint.com/css/filter The filter property on the SitePoint CSS Reference]
+

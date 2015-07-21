@@ -1,0 +1,28 @@
+#summary &chi; character entity
+#labels about-html,from-w3c
+#sidebar TOCCharacterEntitiesC
+
+You are here: [Welcome Home] > [HtmlReference HTML Reference] > [CharacterEntities Character entities] > [CharacterEntitiesC C] > &chi;
+
+== Value ==
+
+There are 2 variations of this entity:
+
+  * `&Chi;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/03a7/index.htm U+003A7].
+  * `&chi;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/03c7/index.htm U+003C7].
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/chi-003c7-entity-test.html &chi; character entity treated as U+003C7] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/chi-capital-003a7-entity-test.html &Chi; character entity treated as U+003A7] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/named.html Named character references in HTML 5]
+  * [http://www.w3.org/TR/html4/sgml/entities.html Character entity references in HTML 4]
+  * [http://blooberry.com/indexdot/html/tagpages/text.htm Text in HTML (blooberry.com)]
+
+

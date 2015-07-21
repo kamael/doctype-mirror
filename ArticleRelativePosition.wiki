@@ -1,0 +1,32 @@
+#summary HOWTO calculate the distance between two elements (goog.style.getRelativePosition)
+#labels is-article,about-dom
+#sidebar TOCArticlesStyle
+
+TODO intro
+
+== The code ==
+
+{{{
+/**
+ * Returns the position of an element relative to another element in the
+ * document.  A relative to B
+ * @param {Element|Event} a Element or mouse event who's position we're
+ *     calculating
+ * @param {Element|Event} b Element or mouse event position is relative to
+ * @return {goog.math.Coordinate}
+ */
+goog.style.getRelativePosition = function(a, b) {
+  var ap = goog.style.getClientPosition(a);
+  var bp = goog.style.getClientPosition(b);
+  return new goog.math.Coordinate(ap.x - bp.x, ap.y - bp.y);
+};
+}}}
+
+== The code walkthrough ==
+
+TODO walkthrough
+
+== Further reading ==
+
+TODO further reading
+

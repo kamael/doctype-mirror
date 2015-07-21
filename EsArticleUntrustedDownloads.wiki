@@ -1,0 +1,33 @@
+= COMO servir archivos poco confiables como descargas =
+
+||[ArticleUntrustedDownloads English]||[JaArticleUntrustedDownloads 日本語]||[FrArticleUntrustedDownloads Français]||[ZhArticleUntrustedDownloads 汉语]||
+||[EsWelcome Inicio]||[EsArticlesXSS Seguridad Web]||  
+
+Muchas de las aplicaciones Google sirven archivos desde fuentes poco confiables hacia los usuarios finales, para descargar a sus discos duros locales.  Como ejemplos citamos en enlace "Download" para adjuntos de GMail, adjuntos de mensaje en Google Groups, archivos adjuntos en elementos de Google Base, o descargas de recursos de desarrollador en Google Project Hosting.
+
+Esta característica es implementada usando la cabecera HTTP Content-Disposition, por ejemplo:
+
+{{{
+  Content-Disposition: attachment; filename="evil.html"
+}}}
+
+Estas características ciertamente representan una oportunidad para servir archivos potencialmente maliciosos para descargarse a los sistemas de los usuarios. Es muy recomendable revisar virus en cada archivo desde el lado del servidor.  Una discusión más amplia sobre virus está más allá de los objetivos de este documento, pero quisiera resaltar algunos puntos en una inusual combinación de bugs y características que pueden llevar a un ataque inesperado.
+
+Deberias asumir que servir archivos para descarga no representa un riesgo XSS.  Después de todo, el archivo es descargado al disco duro local en el sistema del usuario. Si subsecuentemente se abre, este debería ser tratado como contenido local al igual que otros documentos en su disco local (por lo tanto este no debería estar asociado con el sitio web de donde fue descargado originalmente).
+
+Desafortunadamente, IE viola esta suposición.  cuando IE sirvió un documento con adjunto `Content-Disposition:`, este presenta al usuario un cuadro de diálogo que permite al usuario elegir entre "Guardar" el documento en disco, o "Abrir" el documento.  Si el usuario selecciona "Abrir" e IE [EsArticleXSSInImages decide que el archivo contiene HTML], IE abrirá el documento en una nueva ventana del navegador y asociará esta con la dominio de la URL desde donde el documento fue cargado.  Esto significa que los javascript incluidos en el documento se ejecutarán en el contexto del dominio de tu aplicación web remota, con acceso total a cookies específicas de dominio y otros recursos.
+
+(Firefox no comparte este comportamiento.  también permite al usuario abrir archivos descargados  directamente en una ventana del navegador, pero los carga desde la URL file:/// en donde fueron descargados.  el contexto de dominio JS será el disco duro local, no tu aplicación web remota. y así mismo no será capaz de montar ataques XSS.)
+
+== Como Evitarlo ==
+
+Una recomendación para este comportamiento es servir archivos de descarga para navegaores IE empaquetando el contenido en un archivo ZIP.  Debido a que no conocemos que tipos de contenidos son potencialmente peligrosos en la forma mencionada, es más seguro hacerlo para todos los documentos.
+
+Si resulta muy inconveniente para tus usuarios, podrías establecer un nombre de dominio separado para servir descargas de ficheros, por ejemplo NOMBREDOMINIOEmail.com sirviendo descargas para mail.NOMBREDOMINIO.com. El dominio de servicio de ficheros no debería usar ninguna cookie, tomando solo un identificador de archivo y una llave de autorización de descarga como parámetros de URL.
+
+
+== Para leer más ==
+
+  * [EsArticleContentSniffing COMO protegerse contra imágenes maliciosas y otro contenido no-HTMLt (el olfateador de contenido de IE)]
+  * [EsArticleXSS Todo lo que siempre quisiste saber sobre ataques cross-site scripting (XSS)]
+

@@ -1,0 +1,20 @@
+#summary The window.sidebar property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `window.sidebar` property returns a [SidebarObject Sidebar object].
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-sidebar-typeof-test.html typeOf(window.sidebar) != 'undefined'] || N || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.sidebar The window.sidebar property on Mozilla Developer Center]
+

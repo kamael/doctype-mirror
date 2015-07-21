@@ -1,0 +1,25 @@
+#summary The nextid n attribute
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [NextidElement <nextid> element] > *n attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `n` attribute on the following elements:
+
+  * [NextidElement <nextid>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/nextid-n-reflection-test.html nextid.n reflects <nextid n="foo">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+

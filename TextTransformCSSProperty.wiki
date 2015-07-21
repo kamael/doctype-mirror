@@ -1,0 +1,26 @@
+#summary The text-transform property controls capitalization effects of an element's text.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *text-transform*
+
+== Usage ==
+
+== Values ==
+
+  * `capitalize`
+  * `uppercase`
+  * `lowercase`
+  * `none`
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/text.html#propdef-text-transform The text-transform property in CSS 2.1]
+  * [http://msdn2.microsoft.com/en-us/library/ms531175.aspx The text-transform property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/text/texttrans.htm The history of the text-transform property on blooberry.com]
+  * [http://reference.sitepoint.com/css/text-transform The text-transform property on the SitePoint CSS Reference]
+

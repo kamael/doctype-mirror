@@ -1,0 +1,28 @@
+#summary The label for attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [LabelElement <label> element] > *for attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `for` attribute on the following elements:
+
+  * [LabelElement <label>]
+  * [ScriptElement <script>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/label-for-reflection-test.html label.htmlFor reflects <label for="foo">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/interact/forms.html#adef-for The for attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms533872.aspx The for attribute on MSDN]
+

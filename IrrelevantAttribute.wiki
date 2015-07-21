@@ -1,0 +1,28 @@
+#summary The irrelevant attribute specifies that an element is no longer (or not yet) relevant.
+#labels about-html,is-html-attribute,from-whatwg
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [DivElement <div> element] > *irrelevant attribute*
+
+== Usage ==
+
+== Values ==
+
+  * `true`
+  * `false`
+
+== Elements ==
+
+You can use the `irrelevant` attribute on any element.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/div-irrelevant-absent-reflection-test.html div.irrelevant reflects <div>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/div-irrelevant-reflection-test.html div.irrelevant reflects <div irrelevant>] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-irrelevant The irrelevant attribute in HTML 5]
+

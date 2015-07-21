@@ -1,0 +1,19 @@
+#summary Creating libraries that extend web browsers.
+
+= Introduction =
+
+Shims are cross-browser !JavaScript libraries that help extend web browsers with new functionality or help bring standards to existing web browsers that don't natively support them. Example shims might include libraries to help bring [SVGElements SVG] (Scalable Vector Graphics) to Internet Explorer using Flash and Microsoft Behaviors; bringing the Canvas API to IE using VML under the covers; or providing a client-side storage API for !JavaScript using Flash's !LocalStorage API. Many times these libraries will internally use proprietary technologies such as Flash, VML, Microsoft Behaviors, or Silverlight in order to do their work. Creating these libraries has been a bit of a black art with little documentation; this page is meant to provide HOWTOs on creating these, including tricks of the trade when bridging into various proprietary technologies.
+
+= Shim Articles =
+  
+  * [ArticleShimEnvironment HOWTO setup a working environment for creating JavaScript shims]
+  * [ArticleFlashExternalInterface HOWTO use Flash's ExternalInterface API to bridge JavaScript and Flash]
+  * [ArticleFixingFlashExternalInterface HOWTO fix issues in Flash's ExternalInterface API]
+  * [ArticleIEBehaviors Introduction to Microsoft Behaviors]
+  * [ArticleFixingIEBehaviors HOWTO fix various issues when using Microsoft Behaviors]
+  * [ArticleIntroductionVML Introduction to Microsoft's Vector Markup Language (VML) technology]
+  * [ArticleFixingVML HOWTO fix issues when using VML]
+  * [ArticleOverridingOnload HOWTO intercept any developer's onload listeners to do shim magic]
+  * [ArticleOverridingBrowserPrototypes HOWTO shim in your own implementations of things like getElementById]
+  * [ArticleFlashLocalStorage HOWTO use Flash's LocalStorage API]
+  * [ArticleFixingFlashLocalStorage HOWTO fix issues in Flash's LocalStorage API]

@@ -1,0 +1,35 @@
+#summary The dt element represents a term in a definition list.
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *dt element*
+
+== Usage ==
+
+Within a [DlElement definition list], `dt` represents a term to be defined.
+
+Within a [DialogElement dialog], `dt` represents a speaker in a conversation.
+
+== Attributes ==
+
+  * [DtAlignAttribute align]
+  * [DtClearAttribute clear]
+  * [DtHeightAttribute height]
+  * [DtNowrapAttribute nowrap]
+  * [DtWidthAttribute width]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/dt-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/dt-element-applies-style-test.html applies style] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-dt The dt element in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/lists.html#edef-DT The dt element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535243.aspx The dt element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/d/dtdd.htm The history of the dt element on blooberry.com]
+

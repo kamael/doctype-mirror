@@ -1,0 +1,28 @@
+#summary The spacer element is an obsolete method of inserting whitespace into a document.
+#labels about-html,is-html-element,from-mozilla
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *spacer element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [SpacerAlignAttribute align]
+  * [SpacerHeightAttribute height]
+  * [SpacerSizeAttribute size]
+  * [SpacerTypeAttribute type]
+  * [SpacerWidthAttribute width]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/spacer-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/spacer-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.blooberry.com/indexdot/html/tagpages/s/spacer.htm The history of the spacer element on blooberry.com]
+

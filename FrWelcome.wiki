@@ -1,0 +1,33 @@
+Bienvenue sur Google Doctype.  Écrit par les développeurs web, pour les développeurs web.
+
+== Que souhaitez-vous apprendre aujourd'hui ? ==
+
+Lire des [Articles articles _HOWTO_] concernant :
+
+  * [FrArticlesXSS les problèmes de sécurité des sites web]
+  * [FrArticlesDom la manipulation du DOM]
+  * [FrArticlesStyle CSS et les styles]
+  * [FrArticlesTips les trucs et astuces]
+
+Plongez dans [DOMReference les objets DOM], dont :
+
+  * [FrDocumentObject document]
+  * [FrWindowObject window]
+  * [FrHistoryObject history]
+  * [FrLocationObject location]
+  * [FrNavigatorObject navigator]
+  * [FrScreenObject screen]
+  * ainsi que d'autres curiosités historiques.
+
+Stylez vos pages avec [CSSReference CSS] :
+
+  * [FrCSSProperties les propriétés CSS]
+  * [FrCSSPseudoClasses les pseudo-classes] et [CSSPseudoElements les pseudo-éléments]
+  * [FrCSSAtRules les règles-at]
+  * [FrCSSColors les couleurs]
+  * et plus à venir...
+
+Avez-vous besoin d'aide concernant une [HTMLElements balise HTML] en particulier ?  Nous avons une référence des balises HTML de [AElement <a>] à [XmpElement <xmp>].
+
+||[Welcome English]||||[EsWelcome Español]||||[JaWelcome 日本語]||
+

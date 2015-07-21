@@ -1,0 +1,29 @@
+#summary The th bordercolorlight attribute
+#labels about-html,about-tables,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [ThElement <th> element] > *bordercolorlight attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `bordercolorlight` attribute on the following elements:
+
+  * [TableElement <table>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TrElement <tr>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/th-bordercolorlight-reflection-test.html th.borderColorLight reflects <th bordercolorlight="#ffffff">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms533515.aspx The bordercolorlight attribute on MSDN]
+

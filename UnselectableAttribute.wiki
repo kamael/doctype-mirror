@@ -1,0 +1,26 @@
+#summary The unselectable attribute prevents the user from selecting the contents of an element.
+#labels about-html,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [DivElement <div> element] > *unselectable attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `unselectable` attribute on any element.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/div-unselectable-absent-reflection-test.html div.unselectable reflects <div>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/div-unselectable-reflection-test.html div.unselectable reflects <div unselectable>] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms537840.aspx The unselectable attribute on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/attributes/editing.htm The history of the unselectable attribute on blooberry.com]
+

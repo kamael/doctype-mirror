@@ -1,0 +1,17 @@
+#summary The window.sizeToContent method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-sizeToContent-typeof-test.html typeOf(window.sizeToContent) != 'undefined'] || N || N || N || Y || Y || N || N || N ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.sizeToContent The window.sizeToContent method on Mozilla Developer Center]

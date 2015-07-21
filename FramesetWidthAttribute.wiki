@@ -1,0 +1,65 @@
+#summary The frameset width attribute specifies the width of the element's bounding box.
+#labels about-html,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [FramesetElement <frameset> element] > *width attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `width` attribute on the following elements:
+
+  * [AddressElement <address>]
+  * [AppletElement <applet>]
+  * [BlockquoteElement <blockquote>]
+  * [CaptionElement <caption>]
+  * [CanvasElement <canvas>]
+  * [CenterElement <center>]
+  * [ColElement <col>]
+  * [ColgroupElement <colgroup>]
+  * [DdElement <dd>]
+  * [DirElement <dir>]
+  * [DivElement <div>]
+  * [DlElement <dl>]
+  * [DtElement <dt>]
+  * [EmbedElement <embed>]
+  * [FieldsetElement <fieldset>]
+  * [FormElement <form>]
+  * [FrameElement <frame>]
+  * [FramesetElement <frameset>]
+  * [HrElement <hr>]
+  * [IframeElement <iframe>]
+  * [IlayerElement <ilayer>]
+  * [ImgElement <img>]
+  * [IsindexElement <isindex>]
+  * [LayerElement <layer>]
+  * [LiElement <li>]
+  * [ListingElement <listing>]
+  * [MarqueeElement <marquee>]
+  * [MenuElement <menu>]
+  * [MulticolElement <multicol>]
+  * [ObjectElement <object>]
+  * [OlElement <ol>]
+  * [PElement <p>]
+  * [PreElement <pre>]
+  * [SelectElement <select>]
+  * [SpacerElement <spacer>]
+  * [TableElement <table>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TextareaElement <textarea>]
+  * [UlElement <ul>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/frameset-width-reflection-test.html frameset.width reflects <frameset width="7">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms535147.aspx The width attribute on MSDN]
+

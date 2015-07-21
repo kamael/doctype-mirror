@@ -1,0 +1,18 @@
+#summary The document.firstChild property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `document.firstChild` property returns a [NodeObject Node object].
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-firstChild-typeof-test.html typeOf(document.firstChild) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+

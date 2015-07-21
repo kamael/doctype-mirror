@@ -1,0 +1,13 @@
+#summary The -moz-border-bottom-colors CSS property sets only the border color for the bottom edge of an element with borders.
+
+== Usage ==
+
+== Values ==
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-border-bottom-colors The -moz-border-bottom-colors property on Mozilla Developer Center]
+
+

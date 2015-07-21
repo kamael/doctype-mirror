@@ -1,0 +1,25 @@
+#summary The table leftpadding attribute
+#labels about-html,about-tables,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [TableElement <table> element] > *leftpadding attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `leftpadding` attribute on the following elements:
+
+  * [TableElement <table>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/table-leftpadding-reflection-test.html table.leftPadding reflects <table leftpadding="42">] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+

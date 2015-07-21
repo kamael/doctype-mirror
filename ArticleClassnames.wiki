@@ -1,0 +1,316 @@
+#summary HOWTO add, edit, remove, and toggle class names (goog.dom.classes)
+#labels is-article,about-dom
+#sidebar TOCArticlesDom
+
+Many complex web applications will find themselves using CSS extensively and dynamically.  This can be done "the hard way" by setting individual styles via script, or it can be done "the easy way" (ha!) by toggling classnames.  Why the "ha?"  Because classnames are stored as space-separated strings within a single attribute, an element's `class` attribute.  An element can have multiple classnames simultaneously, but managing them becomes an exercise in string splitting and concatenation.  Let's look at how to wrangle the `class` attribute.
+
+== The code ==
+
+This function relies on code explained elsewhere:
+
+  * [ArticleArrayContains HOWTO determine if an array contains a specific value (goog.array.contains)]
+  * [ArticleArraySlice HOWTO get function arguments as an Array (goog.array.slice)]
+  * [ArticleArraySplice HOWTO splice an array that's not really an Array (goog.array.splice)]
+
+{{{
+/**
+ * Sets the entire classname of an element
+ * @param {Element} element DOM node to set class of.
+ * @param {string} className Class name(s).
+ */
+goog.dom.classes.set = function(element, className) {
+  element.className = className;
+};
+
+
+/**
+ * Gets an array of classnames on an element
+ * @param {Element} element DOM node to get class of.
+ * @return {Array} Classnames.
+ */
+goog.dom.classes.get = function(element) {
+  var className = element.className;
+  // Some types of elements don't have a className in IE (e.g. iframes).
+  // Furthermore, in Firefox, className is not a string when the element is
+  // an SVG element.
+  return className && typeof className.split == 'function' ?
+      className.split(' ') : [];
+};
+
+
+/**
+ * Adds a class or classes to an element
+ * @param {Element} element DOM node to add class to.
+ * @param {string} var_args Class names.
+ * @return {boolean} Whether class was added (or all classes were added).
+ */
+goog.dom.classes.add = function(element, var_args) {
+  var classes = goog.dom.classes.get(element);
+  var args = goog.array.slice(arguments, 1);
+
+  var rv = 1;
+
+  for (var i = 0; i < args.length; i++) {
+    if (!goog.array.contains(classes, args[i])) {
+      classes.push(args[i]);
+      rv &= 1;
+    } else {
+      rv &= 0;
+    }
+  }
+
+  element.className = classes.join(' ');
+  return Boolean(rv);
+};
+
+
+/**
+ * Removes a class or classes from an element
+ * @param {Element} element DOM node to remove class from.
+ * @param {string} var_args Class name.
+ * @return {boolean} Whether class was removed.
+ */
+goog.dom.classes.remove = function(element, var_args) {
+  var classes = goog.dom.classes.get(element);
+  var args = goog.array.slice(arguments, 1);
+
+  var rv = 0;
+  for (var i = 0; i < classes.length; i++) {
+    if (goog.array.contains(args, classes[i])) {
+      goog.array.splice(classes, i--, 1);
+      rv++;
+    }
+  }
+  element.className = classes.join(' ');
+
+  return rv == args.length;
+};
+
+
+/**
+ * Switches a class on an element from one to another without disturbing other
+ * classes. If the fromClass isn't removed, the toClass won't be added.
+ * @param {Element} element DOM node to swap classes on.
+ * @param {string} fromClass Class to remove.
+ * @param {string} toClass Class to add.
+ * @return {boolean} Whether classes were switched.
+ */
+goog.dom.classes.swap = function(element, fromClass, toClass) {
+  var classes = goog.dom.classes.get(element);
+
+  var removed = false;
+  for (var i = 0; i < classes.length; i++) {
+    if (classes[i] == fromClass) {
+      goog.array.splice(classes, i--, 1);
+      removed = true;
+    }
+  }
+
+  if (removed) {
+    classes.push(toClass);
+    element.className = classes.join(' ');
+  }
+
+  return removed;
+};
+
+
+/**
+ * Returns true if an element has a class
+ * @param {Element} element DOM node to test.
+ * @param {string} className Classname to test for.
+ * @return {boolean} If element has the class.
+ */
+goog.dom.classes.has = function(element, className) {
+  return goog.array.contains(goog.dom.classes.get(element), className);
+};
+
+
+/**
+ * Adds or removes a class depending on the enabled argument.
+ * @param {Element} element DOM node to add or remove the class on.
+ * @param {string} className Class name to add or remove.
+ * @param {boolean} enabled Whether to add or remove the class (true adds,
+ *     false removes).
+ */
+goog.dom.classes.enable = function(element, className, enabled) {
+  if (enabled) {
+    goog.dom.classes.add(element, className);
+  } else {
+    goog.dom.classes.remove(element, className);
+  }
+};
+
+
+/**
+ * If an element has a class it will remove it, if it doesn't have it it will
+ * add it.  Won't affect other classes on the node.
+ * @param {Element} element DOM node to toggle class on.
+ * @param {string} className Class to toggle.
+ * @return {boolean} True if class was added, false if it was removed
+ *     (basically whether element has the class after this function has been
+ *     called).
+ */
+goog.dom.classes.toggle = function(element, className) {
+  var add = !goog.dom.classes.has(element, className);
+  goog.dom.classes.enable(element, className, add);
+  return add;
+};
+}}}
+
+== The code walkthrough ==
+
+The first function is really just for completeness; it sets the entire `class` attribute to the specified string (which can contain multiple space-separated classnames).
+
+{{{
+goog.dom.classes.set = function(element, className) {
+  element.className = className;
+};
+}}}
+
+The next function gets the classnames of an element as a JavaScript Array.  Browsers normalize the whitespace within the `class` attribute, so all we need to do is split the raw `className` property on spaces.  Except:
+
+  # In Internet Explorer, [IframeElement iframe elements] do not have a `className` property
+  # In Firefox, SVG elements have a `className` property but it is a function, not a string
+
+{{{
+goog.dom.classes.get = function(element) {
+  var className = element.className;
+  return className && typeof className.split == 'function' ?
+      className.split(' ') : [];
+};
+}}}
+
+Now it gets a bit tricky.  We want an efficient way to add an arbitrary number of classes, but without duplicating existing classes.  There are a number of ways to accomplish this, but here we've chosen sending each new classname as a separate argument to the function.  For example, to add three new classes, you would call
+
+{{{
+goog.dom.classes.add(element, 'foo', 'bar', 'baz');
+}}}
+
+To make this work with a variable number of arguments, we use our `goog.dom.classes.get` function (see above) to get the existing classes as an Array, and our [ArticleArraySlice goog.array.slice] function to get the arguments as an Array, then iterate through the new classnames checking if it already exists.
+
+{{{
+goog.dom.classes.add = function(element, var_args) {
+  var classes = goog.dom.classes.get(element);
+  var args = goog.array.slice(arguments, 1);
+
+  var rv = 1;
+
+  for (var i = 0; i < args.length; i++) {
+    if (!goog.array.contains(classes, args[i])) {
+      classes.push(args[i]);
+      rv &= 1;
+    } else {
+      rv &= 0;
+    }
+  }
+
+  element.className = classes.join(' ');
+  return Boolean(rv);
+};
+}}}
+
+The reverse of `add`, of course, is `remove`, and this function will remove an arbitrary number of classnames from an element.  Again we use the trick of defining a function with a variable number of arguments and then converting those arguments into an array, which lets us call the function like this:
+
+{{{
+goog.dom.classes.remove(element, 'foo', 'bar', 'baz');
+}}}
+
+The actual removal of an array of classes-to-be-removed from an array of classes-that-exist-now is somewhat tricky.  For each existing class, we check whether it is in the list of classes to be removed.  If so, we use [ArticleArraySplice goog.array.splice] to remove the class from the array of existing classes, and decrement our loop counter to compensate for the newly removed item.  (Without decrementing, we would end up skipping the class immediately following a class that we removed.)  At the end of the loop, we are left with a `classes` Array which we can reconstitute into a space-separated string and store into the original element's `className` property.
+
+For bonus points, we track how many removals we did (in the `rv` variable) and return `True` if we successfully removed all the classnames that were passed to the function, or `False` otherwise.
+
+{{{
+goog.dom.classes.remove = function(element, var_args) {
+  var classes = goog.dom.classes.get(element);
+  var args = goog.array.slice(arguments, 1);
+
+  var rv = 0;
+  for (var i = 0; i < classes.length; i++) {
+    if (goog.array.contains(args, classes[i])) {
+      goog.array.splice(classes, i--, 1);
+      rv++;
+    }
+  }
+  element.className = classes.join(' ');
+
+  return rv == args.length;
+};
+}}}
+
+The next function may seem a bit esoteric, but it is actually quite useful.  The `goog.dom.classes.swap` function will add a classname (`toClass`) to an element if and only if it can successfully remove another classname (`fromClass`) from the element first.  For example, if you have two styles, `selected` and `unselected`, controlled by classnames of the same name, this `swap` function will allow you to change from one to the other in one shot.
+
+{{{
+// Make the element unselected if it's currently selected
+goog.dom.classes.swap(element, 'selected', 'unselected');
+
+// Make the element selected if it's currently unselected
+goog.dom.classes.swap(element, 'unselected', 'selected');
+}}}
+
+For efficiency's sake, we will assume that the element can only have one or the other of `fromClass` or `toClass`, but not both.  The removal is done much like `goog.dom.classes.remove` (see above), but we have only one classname to worry about, so the logic is a bit simpler.  If `fromClass` was successfully removed, then we add `toClass` and reconstitute the `className` property as a space-separated string.
+
+{{{
+goog.dom.classes.swap = function(element, fromClass, toClass) {
+  var classes = goog.dom.classes.get(element);
+
+  var removed = false;
+  for (var i = 0; i < classes.length; i++) {
+    if (classes[i] == fromClass) {
+      goog.array.splice(classes, i--, 1);
+      removed = true;
+    }
+  }
+
+  if (removed) {
+    classes.push(toClass);
+    element.className = classes.join(' ');
+  }
+
+  return removed;
+};
+}}}
+
+This next function is simple: it checks if an element has a particular classname already.  To do this, we use the functions we've already defined to break the classnames into an array, and see if the given classname is an item in the array.
+
+{{{
+/**
+ * Returns true if an element has a class
+ * @param {Element} element DOM node to test
+ * @param {String} className Classname to test for
+ * @return {Boolean} If element has the class
+ */
+goog.dom.classes.has = function(element, className) {
+  return goog.array.contains(goog.dom.classes.get(element), className);
+};
+}}}
+
+Now we have some higher-level utility functions.  This `enabled` function is a wrapper around the `add` and `remove` functions we defined earlier.  That is, it will try to add `className` if the `enabled` parameter is `True`, or try to remove it if `enabled` is `False`.
+
+{{{
+goog.dom.classes.enable = function(element, className, enabled) {
+  if (enabled) {
+    goog.dom.classes.add(element, className);
+  } else {
+    goog.dom.classes.remove(element, className);
+  }
+};
+}}}
+
+This `toggle` function is a wrapper around `enable` -- if the element has the given `className`, this function will remove it; if not, this function will add it.  No other classes in the element will be affected.
+
+{{{
+goog.dom.classes.toggle = function(element, className) {
+  var add = !goog.dom.classes.has(element, className);
+  goog.dom.classes.enable(element, className, add);
+  return add;
+};
+}}}
+
+== Further reading ==
+
+  * [ArticleArrayContains HOWTO determine if an array contains a specific value (goog.array.contains)]
+  * [ArticleArraySlice HOWTO get function arguments as an Array (goog.array.slice)]
+  * [ArticleArraySplice HOWTO splice an array that's not really an Array (goog.array.splice)]
+
+

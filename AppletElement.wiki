@@ -1,0 +1,47 @@
+#summary The applet element allows you to embed a Java applet in an HTML document.
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *applet element*
+
+== Usage ==
+
+{{{
+<applet code="bubbles-followed-us-everywhere.class"
+        width="500"
+        height="500">
+</applet>
+}}}
+
+The `<applet>` element is deprecated in [SpecificationHTML4 HTML 4] (in favor of [ObjectElement <object>]), but browsers still support it.
+
+== Attributes ==
+
+  * [AppletAlignAttribute align]
+  * [AppletAltAttribute alt]
+  * [AppletArchiveAttribute archive]
+  * [AppletBorderAttribute border]
+  * [AppletCodeAttribute code]
+  * [AppletCodebaseAttribute codebase]
+  * [AppletHeightAttribute height]
+  * [AppletHspaceAttribute hspace]
+  * [AppletMayscriptAttribute mayscript]
+  * [AppletNameAttribute name]
+  * [AppletObjectAttribute object]
+  * [AppletSrcAttribute src]
+  * [AppletVspaceAttribute vspace]
+  * [AppletWidthAttribute width]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/applet-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/applet-element-applies-style-test.html applies style] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/objects.html#h-13.4 The applet element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535183.aspx The applet element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/a/applet.htm The history of the applet element on blooberry.com]
+

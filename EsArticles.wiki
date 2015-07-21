@@ -1,0 +1,80 @@
+#sidebar EsTOCArticles
+||[Articles English]|||[JaArticles 日本語]||[FrArticles Français]||
+||[EsWelcome Inicio]||
+
+== Seguridad Web  ==
+
+  * [EsArticleIntroductionToXSS Introducción a Vulnerabilidades Cross-Site Scripting.]
+  * [EsArticleXSS Aquello que siempre quisiste saber sobre ataques cross-site scripting (XSS)]
+  * [EsArticleXSSInAttributes COMO filtrar entradas de usuario en atributos de etiquetas]
+  * [EsArticleXSSInBodyText COMO filtrar entradas de usuario en texto de cuerpo regular]
+  * [EsArticleXSSInEventHandlers COMO filtrar entradas de usuario en manejadores de evento JavaScript]
+  * [EsArticleXSSInHttpHeaders COMO filtrar entradas de usuario en cabeceras HTTP]
+  * [EsArticleXSSInJavaScript COMO filtrar entradas de usuario en contexto JavaScript]
+  * [EsArticleXSSInStyle COMO filtrar entradas de usuario en elementos de estilo y atributos]
+  * [EsArticleXSSInUrlAttributes COMO filtrar entradas de usuario en atributos de URL]
+  * [EsArticleScriptInclusion COMO protegerse contra ataques de divulgación de datos cross-domain]
+  * [EsArticleE4XSecurity COMO protegerse contra ataques de inyección E4X]
+  * [EsArticleCompartmentalizingApplications Compartimentar aplicaciones a través del mismo dominio]
+  * [EsArticleUtf7 UTF-7: el caso del charset perdido]
+  * [EsArticleMalformedUtf8 UTF-8 malformado: quien dice "hello%EE" no puede ser peligroso]
+  * [EsArticleContentSniffing COMO protegerse contra imágenes maliciosas y otros contenidos no-HTML]
+  * [EsArticleUntrustedDownloads COMO servir archivos no confiables como descargas]
+  * [EsArticleFlashSecurity Introducción a la Seguridad en Flash]
+  * [EsArticleFlashSecurityCrossDomain Flash cross-domain policy files]
+  * [EsArticleFlashSecurityPolicyAttack Flash cross-domain policy attacks]
+  * [EsArticleFlashSecurityGetURL Flash getURL XSS attacks]
+  * [EsArticleFlashSecurityClickTAG Flash clickTAG XSS attacks]
+  * [EsArticleFlashSecurityTextField Flash TextField XSS attacks]
+  * [EsArticleFlashSecurityLoadMovie Flash loadMovie XSS attacks]
+  * [EsArticleFlashSecurityAsFunction Flash asFunction XSS attacks]
+  * [EsArticleFlashSecurityURL Flash URL parameter attacks]
+  * [EsArticleFlashSecuritySolutions HOWTO secure your Flash applications]
+
+== Manipulación DOM ==
+
+  * [EsArticleDomHelper Introduciendose a DOMHelper]
+  * [EsArticleNodeEssentials COMO tratar con nodos DOM (goog.dom.NodeType, goog.dom.getNextElementNode, goog.dom.isNodeLike)]
+  * [EsArticleCoordinates COMO tratar con coordenadas de páginas (goog.math.Coordinates)]
+  * [EsArticleClassnames COMO añadir, editar, remover e intercambiar nombres de clases (goog.dom.classes)]
+  * [EsArticleCreateDom COMO crear rápidamente múltiples nodos DOM (goog.dom.createDom)]
+  * [EsArticleFindNodes COMO encontrar nodos DOM que coincidan con un filtro (goog.dom.findNodes)]
+  * [EsArticleFontSizeMonitor COMO detectar cuando el usuario cambia el tamaño del texto (goog.dom.FontSizeMonitor)]
+  * [EsArticleFrameContentDocument COMO obtener el elemento de document de un frame o un iframe (goog.dom.getFrameContentDocument)]
+  * [EsArticleNearestElement COMO encontrar el elemento más cercano a un nodo (goog.dom.getNextElementNode)]
+  * [EsArticleNodeCompareDocumentOrder COMO determinar si un nodo esta antes o después de otro nodo]
+  * [EsArticleNodeContains COMO determinar si un nodo contiene a otro (goog.dom.contains)]
+  * [EsArticleOwnerDocument COMO encontrar el documento propietario de un nodo DOM (goog.dom.getOwnerDocument)]
+  * [EsArticlePageScroll COMO calcular que tan rápido la página es recorrida(scrolled) (goog.dom.getPageScroll)]
+  * [EsArticleParentWindow COMO encontrar la ventana padre de un documento (goog.dom.getWindow)]
+  * [EsArticleSetProperties COMO establecer múltiples propiedades en un elemento (goog.dom.setProperties)]
+  * [EsArticleSetTextContent COMO establecer el contenido de texto de un elemento (goog.dom.setTextContent)]
+  * [EsArticleViewportSize COMO encontrar el tamaño del punto de vista (goog.dom.getViewportSize)]
+  * [EsArticleViewportSizeMonitor COMO detectar cuando el usuario redimensiona la ventana del navegador (goog.dom.ViewportSizeMonitor)]
+
+== Estilo y CSS ==
+
+  * [EsArticleCompatMode COMO determinar el modo de compatibilidad del documento]
+  * [EsArticleAboveTheFold COMO detectar si un elemento esta localizado a través del punto de vista visible]
+  * [EsArticleClientViewportElement COMO encontrar el punto de vista (goog.style.getClientViewportElement)]
+  * [EsArticleComputedStyle COMO calcular el estilo actual de un elemento (goog.style.getStyle_)]
+  * [EsArticleComputedStyleVsCascadedStyle Estilo Computado vs. Estilo en Cascada]
+  * [EsArticleElementBounds COMO calcular el rectángulo de anclamiento de un elemento (goog.style.getBounds)]
+  * [EsArticleElementSize COMO calcular el tamaño de un elemento (goog.style.getSize)]
+  * [EsArticleInlineBlock COMO establecer dinámicamente 'display: inline-block' para un elemento (goog.style.setInlineBlock)]
+  * [EsArticleInstallStyles COMO agregar dinámicamente estilos CSS a una página (goog.style.installStyles)]
+  * [EsArticleOpacity COMO establecer la opacidad de un elemento (goog.style.setOpacity)]
+  * [EsArticlePageOffset COMO calcular la posición de un elemento en la página (goog.style.getPageOffset)]
+  * [EsArticlePreWrap COMO establecer un elemento para recapitulación de texto preformateado (goog.style.setPreWrap)]
+  * [EsArticleRelativePosition COMO calcular la distancia entre dos elementos (goog.style.getRelativePosition)]
+  * [EsArticleTransparentBackgroundImage COMO establecer el fondo de un elemento como imagen transparente (goog.style.setTransparentBackgroundImage)]
+  * [EsArticleHasLayout El misterio de hasLayout en Microsoft Internet Explorer]
+
+== Miscelanea: trucos y consejos ==
+
+  * [EsArticleUserAgent COMO determinar el nombre del navegador y el número de versión]
+  * [EsArticleDetectFlash COMO detectar si el usuario tiene flash instalado (goog.userAgent.flash)]
+  * [EsArticleGetElementsByTagNameAndClass COMO filtrar elementos por etiqueta y nombre de clase]
+  * [EsArticleUndefined COMO determinar si una variable JavaScript no está definida]
+  * [EsArticleArraySlice COMO rebanar un array que no es realmente un array (goog.array.slice)]
+  * [EsArticleArraySplice COMO empalmar un array que no es realmente un array (goog.array.splice)]

@@ -1,0 +1,20 @@
+#summary The window.sessionStorage property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `window.sessionStorage` property returns a [StorageObject Storage object].
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-sessionStorage-typeof-test.html typeOf(window.sessionStorage) != 'undefined'] || Y || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:Storage#sessionStorage The window.sessionStorage property on Mozilla Developer Center]
+  * [http://www.whatwg.org/specs/web-apps/current-work/#sessionstorage The window.sessionStorage property in HTML 5]

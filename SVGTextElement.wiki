@@ -1,0 +1,31 @@
+#summary The SVG <text> element represents a fragment of text.
+
+You are here: [Welcome Home] > [SVGElements SVG Elements] > *text element*
+
+= Introduction =
+
+The text element is used to include scalable text into an SVG image.  The text can be scaled, rotated, skewed, stroked with paint, filled with a gradient, selectable, searchable.
+
+= Details =
+== Usage ==
+
+{{{
+<text fill="blue" font-size="30" x="10" y="100">Some SVG Text</text>
+}}}
+
+== Attributes ==
+
+Common attributes:
+
+  * [http://www.w3.org/TR/SVG11/text.html#TextElementXAttribute x] - The x coordinate of the current text position.
+  * [http://www.w3.org/TR/SVG11/text.html#TextElementYAttribute y] - The y coordinate of the current text position.
+
+== Caveats ==
+
+  * The text element does not wrap text, see the tspan elements or the textarea element in SVGT 1.2
+  * Mozilla does not support selecting SVG text yet
+  * No browsers support finding SVG text on the page yet
+
+= Reference =
+
+  * [http://www.w3.org/TR/SVG11/text.html#TextElement The <text> element in SVG 1.1]

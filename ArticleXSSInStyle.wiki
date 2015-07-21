@@ -1,0 +1,45 @@
+#summary HOWTO filter user input in style elements and attributes
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+||[EsArticleXSSInStyle Español]||[JaArticleXSSInStyle 日本語]||[FrArticleXSSInStyle Français]||
+||[Welcome Home]||[ArticlesXSS Web Security]||   
+
+Style attributes can be dangerous if an attacker can control the value of the attribute, since CSS styles can cause script to execute in various ways.
+
+For example, consider the following template fragment:
+
+{{{
+<div style="background: %(color)s;">
+    blah
+</div>
+}}}
+
+If the attacker can cause color to contain
+
+{{{
+green; background-image: url(javascript:evil_script())
+}}}
+
+after substitution the HTML evaluated by the browser would be
+
+{{{
+<div style="background: green; background-image: url(javascript:evil_script());">
+    blah
+</div>
+}}}
+
+This will result in `evil_script()` being executed, at least in [BrowserFamilyMSIE IE].  (Firefox apparently does not dereference `javascript:` URLs in this context.)
+
+== How to Avoid ==
+
+CSS is a fairly complicated language and there are quite a few ways that a style could execute script.  It would be very difficult to reliably filter out everything that could be malicious.  It is very important to validate the value that is supposed to be inserted into the style attribute, using a whitelist approach. It is best to match the value against a tightly specified pattern.  Don't forget to anchor the pattern at the beginning and end of the string! For example, a value that is used in the context of a color in a style should be matched against `/^([a-z]+)|(#[0-9a-f]+)$/i` (note the `^` to match the beginning of the string, `$` to match the end, and `/i` to match case-insensitively).
+
+An even safer alternative would be to not derive the value directly from user-controlled input, but expose a different parameter that is mapped to a fixed set of values.  For example, externally expose an integer `color_id`, then look up the corresponding color string in a table and output the result.  Don't forget to bounds-check the index before the lookup!
+
+As with all attributes, it is important to ensure that the value of the `style` attribute does not contain any quote characters, and that the entire value is enclosed in double quotes in your template.
+
+== Further reading ==
+
+  * [ArticleXSS Everything you ever wanted to know about cross-site scripting (XSS) attacks]
+

@@ -1,0 +1,15 @@
+#summary The external.bubbleEvent method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+== Usage ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/aa342525.aspx The external.bubbleEvent method on MSDN]
+

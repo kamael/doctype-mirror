@@ -1,0 +1,77 @@
+#summary HOWTO find the viewport (goog.style.getClientViewportElement)
+#labels is-article,about-dom
+#sidebar TOCArticlesStyle
+
+Ah, the viewport: a mysterious "special" variable that defines the canvas on which the browser paints.  (Not to be confused with the [CanvasElement canvas element], which is the canvas on which the web developer paints.)  Getting a reference to the viewport is essential for calculating [ArticlePageOffset where an element is on the page] and determining [ArticleAboveTheFold whether it is visible on screen].  This function will find the viewport object.
+
+== The code ==
+
+This code relies on functions explained elsewhere:
+
+  * [ArticleNodeEssentials HOWTO deal with DOM nodes (goog.dom.NodeType)]
+  * [ArticleOwnerDocument HOWTO get the owner document of a DOM node (goog.dom.getOwnerDocument)]
+  * [ArticleUserAgent HOWTO get the browser name and version number (goog.userAgent)]
+
+{{{
+/**
+ * Returns the viewport element for a particular document
+ * @param {Node} opt_node DOM node (Document is OK) to get the viewport element
+ *     of.
+ * @return {Element} document.documentElement or document.body.
+ */
+goog.style.getClientViewportElement = function(opt_node) {
+  var doc;
+  if (opt_node) {
+    if (opt_node.nodeType == goog.dom.NodeType.DOCUMENT) {
+      doc = opt_node;
+    } else {
+      doc = goog.dom.getOwnerDocument(opt_node);
+    }
+  } else {
+    doc = goog.dom.getDocument();
+  }
+
+  // In old IE versions the document.body represented the viewport
+  if (goog.userAgent.IE && doc.compatMode != 'CSS1Compat') {
+    return doc.body;
+  }
+  return doc.documentElement;
+};
+}}}
+
+== The code walkthrough ==
+
+The viewport element is usually `document.documentElement`, except in [BrowserFamilyMSIE Microsoft Internet Explorer].  But that begs the question, which `document`?  To answer that, we need to find [ArticleOwnerDocument the node's owner document].  Of course, if we weren't given a specific node in the first place, we just use `document` and hope for the best.
+
+{{{
+  var doc;
+  if (opt_node) {
+    if (opt_node.nodeType == goog.dom.NodeType.DOCUMENT) {
+      doc = opt_node;
+    } else {
+      doc = goog.dom.getOwnerDocument(opt_node);
+    }
+  } else {
+    doc = document;
+  }
+}}}
+
+In Internet Explorer, the viewport is either `document.body` or `document.documentElement`, depending on the [ArticleCompatMode document's compatibility mode].
+
+{{{
+  if (goog.userAgent.IE && doc.compatMode != 'CSS1Compat') {
+    return doc.body;
+  }
+  return doc.documentElement;
+};
+}}}
+
+== Further reading ==
+
+  * [DocumentCompatModeProperty document.compatMode property]
+  * [ArticleCompatMode HOWTO determine the document's compatibility mode]
+  * [ArticleNodeEssentials HOWTO deal with DOM nodes (goog.dom.NodeType)]
+  * [ArticleOwnerDocument HOWTO get the owner document of a DOM node (goog.dom.getOwnerDocument)]
+  * [ArticleUserAgent HOWTO get the browser name and version number (goog.userAgent)]
+
+

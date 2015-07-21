@@ -1,0 +1,28 @@
+#summary The border-collapse property selects a table's border model.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *border-collapse*
+
+== Usage ==
+
+== Values ==
+
+  * `collapse`
+  * `separate`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-collapse-collapse-equals-collapse-reflection-test.html style.borderCollapse reflects <div style='border-collapse: collapse'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-collapse-separate-equals-separate-reflection-test.html style.borderCollapse reflects <div style='border-collapse: separate'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/tables.html#propdef-border-collapse The border-collapse property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:border-collapse The border-collapse property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530728.aspx The border-collapse property on MSDN]
+  * [http://reference.sitepoint.com/css/border-collapse The border-collapse property on the SitePoint CSS Reference]
+

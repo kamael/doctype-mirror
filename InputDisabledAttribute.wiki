@@ -1,0 +1,46 @@
+#summary The input disabled attribute is way of declaring that a form field is disabled.
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [InputElement <input> element] > *disabled attribute*
+
+== Usage ==
+
+{{{
+<input disabled>
+<input disabled=disabled>
+}}}
+
+Users cannot interact with disabled inputs, and these inputs will not be included during form submission.
+
+== Values ==
+
+This attribute is stand-alone; it can be present with no value, or it can have its own name as its value.
+
+== Elements ==
+
+You can use the `disabled` attribute on the following elements:
+
+  * [AElement <a>]
+  * [AreaElement <area>]
+  * [ButtonElement <button>]
+  * [CommandElement <command>]
+  * [DatagridElement <datagrid>]
+  * [EmbedElement <embed>]
+  * [InputElement <input>]
+  * [LinkElement <link>]
+  * [OptgroupElement <optgroup>]
+  * [OptionElement <option>]
+  * [SelectElement <select>]
+  * [StyleElement <style>]
+  * [TextareaElement <textarea>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/input-disabled-absent-reflection-test.html input.disabled reflects <input>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/input-disabled-reflection-test.html input.disabled reflects <input disabled>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+

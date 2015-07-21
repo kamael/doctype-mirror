@@ -1,0 +1,14 @@
+#summary The :default CSS pseudo-class matches any element that is the default among its kind (such as a form button).
+#labels about-css
+
+== Usage ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS::default The :default pseudo-class on Mozilla Developer Center]
+
+

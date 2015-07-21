@@ -1,0 +1,59 @@
+#summary HOWTO set multiple properties on an element (goog.dom.setProperties)
+#labels is-article,about-dom
+#sidebar TOCArticlesDom
+
+TODO intro
+
+== The code ==
+
+{{{
+/**
+ * Map of attributes that should be set using
+ * element.setAttribute(key, val) instead of element[key] = val.  Used
+ * by goog.dom.setProperties
+ *
+ * @type Object
+ * @private
+ */
+goog.dom.DIRECT_ATTRIBUTE_MAP_ = {
+  cellpadding: 'cellPadding',
+  cellspacing: 'cellSpacing',
+  colspan: 'colSpan',
+  rowspan: 'rowSpan',
+  valign: 'vAlign',
+  height: 'height',
+  width: 'width',
+  frameborder: 'frameBorder'
+};
+
+/**
+ * Sets a number of properties on a node
+ * @param {Element} element DOM node to set properties on
+ * @param {Object} properties Hash of property:value pairs
+ */
+goog.dom.setProperties = function(element, properties) {
+  goog.object.forEach(properties, function(val, key) {
+    if (key == 'style') {
+      element.style.cssText = val;
+    } else if (key == 'class') {
+      element.className = val;
+    } else if (key == 'for') {
+      element.htmlFor = val;
+    } else if (key in goog.dom.DIRECT_ATTRIBUTE_MAP_) {
+      element.setAttribute(goog.dom.DIRECT_ATTRIBUTE_MAP_[key], val);
+    } else {
+      element[key] = val;
+    }
+  });
+};
+}}}
+
+== The code walkthrough ==
+
+TODO walkthrough
+
+== Further reading ==
+
+TODO further reading
+
+

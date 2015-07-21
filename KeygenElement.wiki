@@ -1,0 +1,30 @@
+#summary The keygen element is an obsolete method of managing web-based security certificates.
+#labels about-html,is-html-element,from-mozilla
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *keygen element*
+
+== Usage ==
+
+Do not use `<keygen>`.  [BrowserNetscape4 Netscape 4] is the only browser that understands this element.
+
+== Attributes ==
+
+  * [KeygenChallengeAttribute challenge]
+  * [KeygenKeytypeAttribute keytype]
+  * [KeygenNameAttribute name]
+  * [KeygenPqgAttribute pqg]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/keygen-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/keygen-element-applies-style-test.html applies style] || N || Y || Y || N || N || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://wp.netscape.com/eng/security/ca-interface.html Netscape Extensions for User Key Generation]
+  * [http://www.blooberry.com/indexdot/html/tagpages/k/keygen.htm The history of the keygen element on blooberry.com]
+

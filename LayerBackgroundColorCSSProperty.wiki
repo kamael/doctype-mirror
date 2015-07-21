@@ -1,0 +1,24 @@
+#summary The layer-background-color CSS property
+#labels about-css,is-css-property
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *layer-background-color*
+
+== Usage ==
+
+== Values ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layer-background-color--hs-808080-equals-rgb-lp-128-cm--128-cm--128-rp--reflection-test.html style.layerBackgroundColor reflects <div style='layer-background-color: #808080'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layer-background-color-black-equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.layerBackgroundColor reflects <div style='layer-background-color: black'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layer-background-color-rgb-lp-0-cm--0-cm--0-rp--equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.layerBackgroundColor reflects <div style='layer-background-color: rgb(0, 0, 0)'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layer-background-color-transparent-equals-transparent-reflection-test.html style.layerBackgroundColor reflects <div style='layer-background-color: transparent'>] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.blooberry.com/indexdot/css/properties/colorbg/lbgcolor.htm The history of the layer-background-color property on blooberry.com]
+
+

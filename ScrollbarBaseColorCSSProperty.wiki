@@ -1,0 +1,26 @@
+#summary 
+#labels about-css,is-css-property,from-microsoft
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *scrollbar-base-color*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSColorType <color>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/scrollbar-base-color--hs-808080-equals-rgb-lp-128-cm--128-cm--128-rp--reflection-test.html style.scrollbarBaseColor reflects <div style='scrollbar-base-color: #808080'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/scrollbar-base-color-black-equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.scrollbarBaseColor reflects <div style='scrollbar-base-color: black'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/scrollbar-base-color-rgb-lp-0-cm--0-cm--0-rp--equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.scrollbarBaseColor reflects <div style='scrollbar-base-color: rgb(0, 0, 0)'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/scrollbar-base-color-transparent-equals-transparent-reflection-test.html style.scrollbarBaseColor reflects <div style='scrollbar-base-color: transparent'>] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms531155.aspx The scrollbar-base-color property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/scrollbar/scrollbarbc.htm The history of the scrollbar-base-color property on blooberry.com]
+

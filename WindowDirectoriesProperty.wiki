@@ -1,0 +1,21 @@
+#summary The window.directories property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `window.directories` property returns a [BarPropObject BarProp object].
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-directories-typeof-test.html typeOf(window.directories) != 'undefined'] || N || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.directories The window.directories property on Mozilla Developer Center]
+  * [http://www.xulplanet.com/references/objref/BarProp.html The window.directories property on XUL Planet]
+

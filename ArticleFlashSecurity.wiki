@@ -1,0 +1,46 @@
+#summary Introduction to Flash security
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+Flash is a broadly-deployed technology, but its security controls are still in their infancy.  Unfortunately, both web applications using Flash and web applications not using Flash are affected by insecure design of Adobe's Flash Player.
+
+This section discusses some important pitfalls to watch out for when developing Flash applications, when hosting user-submitted `.swf` files, and when interacting with Flash applications hosted on other sites.
+
+== A brief look at the Flash security model ==
+
+By default the security model for Flash is similar to the Same Origin Policy.  Flash can only read responses from requests from the same domain where the Flash application originated.  Flash also places some security around making HTTP requests, but one can usually make cross domain GET requests via Flash's `getURL()` function.  Also, Flash does not allow Flash applications that are loaded over HTTP to read HTTPS responses.
+
+Flash does allow [ArticleFlashSecurityCrossDomain cross-domain communication], if a security policy on the other domain permits communication with the domain where the Flash application resides.  The security policy is an XML file, usually named `crossdomain.xml` and located in the root directory of the other domain.  The worst policy file from a security perspective looks something like this:
+
+{{{
+<cross-domain-policy> 
+    <allow-access-from domain="*" /> 
+</cross-domain-policy>
+}}}
+
+The above policy allows any Flash application to communicate (cross-domain) with the server hosting this `crossdomain.xml` file.
+
+Despite the naming convention, the policy file can reside at any URL, with any name, in any directory.  A Flash application can load an arbitrary security policy file with one line of ActionScript:
+
+{{{
+System.security.loadPolicyFile(“http://www.google.com/crossdomain.xml”);
+}}}
+
+If it is not in the server's root directory, then the policy only applies to the directory that the policy file is in and all its subdirectories.  For instance, say policy file was located in `http://www.example.com/sub/crossdomain.xml`. Then the policy would apply to requests like `http://www.example.com/sub/stuff.html` and `http://www.example.com/sub/more/stuff.html`, but not to pages like `http://www.example.com/` or `http://www.example.com/admin/`.
+
+== XSS via Flash applications ==
+
+The most common cause of XSS is that a vulnerable server does not validate user input, so an attacker can inject HTML that includes malicious JavaScript.  However, XSS can also occur through client-side Flash applications, if user input within the Flash application is not properly validated.  Finding XSS in Flash applications is arguably easier than on web applications because attackers can decompile Flash applications and find security issues in the source code, rather than blindly testing server side web applications.
+
+== Further reading ==
+
+  * [ArticleFlashSecurityCrossDomain Flash cross-domain policy files]
+  * [ArticleFlashSecurityPolicyAttack Flash cross-domain policy attacks]
+  * [ArticleFlashSecurityGetURL Flash getURL XSS attacks]
+  * [ArticleFlashSecurityClickTAG Flash clickTAG XSS attacks]
+  * [ArticleFlashSecurityTextField Flash TextField XSS attacks]
+  * [ArticleFlashSecurityLoadMovie Flash loadMovie XSS attacks]
+  * [ArticleFlashSecurityAsFunction Flash asFunction XSS attacks]
+  * [ArticleFlashSecurityURL Flash URL parameter XSS attacks]
+  * [ArticleFlashSecuritySolutions HOWTO secure your Flash applications]
+  * [http://www.ivizsecurity.com/blog/web-application-security/testing-flash-applications-pen-tester-guide/ Lazy Pen Tester's Guide to Testing Flash Applications]

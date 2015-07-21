@@ -1,0 +1,25 @@
+#summary The hidefocus attribute specifies whether the element displays a dotted focus rectangle when it receives focus.
+#labels about-html,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [DivElement <div> element] > *hidefocus attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `hidefocus` attribute on any element.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/div-hidefocus-reflection-test.html div.hideFocus reflects <div hidefocus="true">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms533783.aspx The hidefocus attribute on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/attributes/editing.htm The history of the hidefocus attribute on blooberry.com]
+

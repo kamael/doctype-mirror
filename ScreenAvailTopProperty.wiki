@@ -1,0 +1,25 @@
+#summary The screen.availTop property
+#labels about-dom,is-dom-property,from-mozilla
+
+== Values ==
+
+The `screen.availTop` property returns an integer.
+
+[BrowserFamilyFirefox Firefox] returns the Y value of the absolute screen coordinate that the browser window would occupy if it were maximized.  If the browser extends all the way to the top edge of the screen, then `screen.availTop` is `0`.  If you had an "always on top" taskbar, system panel, or menubar along the top edge of your screen that was 34 pixels high, then `screen.availLeft` would be `34`.  This property is independent of the actual size and position of the browser window; it only reflects where the browser window could go, not where it actually is.
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/screen/screen-availTop-typeof-test.html typeOf(screen.availTop) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/screen/screen-top-typeof-test.html typeOf(screen.top) != 'undefined'] || Y || Y || Y || ? || Y || Y || ? || ? ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.screen.availTop The screen.availTop property on Mozilla Developer Center]
+

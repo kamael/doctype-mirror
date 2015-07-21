@@ -1,0 +1,18 @@
+#summary The document.baseURI property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `document.baseURI` property returns a string.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-baseURI-typeof-test.html typeOf(document.baseURI) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+

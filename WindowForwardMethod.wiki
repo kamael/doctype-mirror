@@ -1,0 +1,18 @@
+#summary The window.forward method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-forward-typeof-test.html typeOf(window.forward) != 'undefined'] || N || N || N || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.forward The window.forward method on Mozilla Developer Center]
+

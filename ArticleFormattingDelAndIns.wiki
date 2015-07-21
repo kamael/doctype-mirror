@@ -1,0 +1,49 @@
+#summary HOWTO format the <del> and <ins> tags
+#labels about-html,is-article
+
+= Introduction =
+
+`<del>` and `<ins>` can be used to show multiple revisions of the same text, such as when a ~~speling~~ *spelling* mistake has been corrected. But how should these be formatted to be properly semantic and readable at the same time? Here are some suggestions.
+
+= Options =
+
+== A. Use a space character between the tags ==
+Example:
+{{{
+<p><del>Speling</del> <ins>Spelling</ins> is hard.</p>
+}}}
+
+Advantages: Simple.
+
+Disadvantages: This is not semantically correct, since the space between the elements is not part of the text.
+
+== B. Insert a space character using CSS ==
+Example:
+{{{
+del + ins:before {content: ' ';}
+...
+<p><del>Speling</del><ins>Spelling</ins> is hard.</p>
+}}}
+
+Advantage: Semantic.
+
+Disadvantages: The inserted space character is displayed with the formatting of the `<ins>` element, so it looks like it's part of it. This conveys the wrong semantics (at least visually).
+
+== C. Insert a margin between the elements ==
+Example:
+{{{
+del + ins {margin-left: 0.3em;}
+...
+<p><del>Speling</del><ins>Spelling</ins> is hard.</p>
+}}}
+
+Advantage: Semantic.
+
+Disadvantages: The width of the space character can depend on the browser implementation and the font, so make sure you check the results.
+
+= Recommendation =
+If you have control over both the markup and the style sheet of the page, C should give a semantic solution that looks good. Otherwise you might have to go with A.
+
+= Further reading =
+[http://l0b0.net/blog/?p=107 Source]
+

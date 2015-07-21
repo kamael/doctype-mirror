@@ -1,0 +1,28 @@
+#summary The text-justify property sets the method used to justify text.
+#labels about-css,is-css-property,from-microsoft
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *text-justify*
+
+== Usage ==
+
+== Values ==
+
+  * `auto`
+  * `distribute`
+  * `distribute-all-lines`
+  * `distribute-center-last`
+  * `inter-cluster`
+  * `inter-ideograph`
+  * `inter-word`
+  * `kashida`
+  * `newspaper`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms531172.aspx The text-justify property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/intl/textjustify.htm The history of the text-justify property on blooberry.com]
+

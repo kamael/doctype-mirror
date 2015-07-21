@@ -1,0 +1,28 @@
+#summary The :last-child CSS pseudo-class matches any element that is the last child node of its parent.
+#labels about-css
+
+== Usage ==
+
+{{{
+<!-- HTML -->
+<div>
+    <p>Not the last child</p>
+    <p>Not the last child</p>
+    <p>This is the last child, and will have a green background</p>
+</div>
+
+/* CSS */
+p:last-child {
+    background: green;
+}
+}}}
+
+== Browser compatibility ==
+
+|| *Test* || *FF3* || *FF2* || *Saf3* || *Opera9.5* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/selector.html#pseudo-elements Pseudo-classes in the CSS 2.1 specification]
+  * [http://www.w3.org/TR/css3-selectors/#structural-pseudos The :last-child pseudo-class in the CSS 3 specification]
+  * [http://developer.mozilla.org/en/docs/CSS::last-child The :last-child pseudo-class on Mozilla Developer Center]

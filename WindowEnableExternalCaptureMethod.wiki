@@ -1,0 +1,18 @@
+#summary The window.enableExternalCapture method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-enableExternalCapture-typeof-test.html typeOf(window.enableExternalCapture) != 'undefined'] || N || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://docs.sun.com/source/816-6408-10/window.htm#1202163]
+

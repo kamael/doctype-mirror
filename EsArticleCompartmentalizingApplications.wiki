@@ -1,0 +1,38 @@
+= Compartimentando aplicaciones a través del mismo dominio =
+
+||[ArticleCompartmentalizingApplications English]||[JaArticleCompartmentalizingApplications 日本語]||[FrArticleCompartmentalizingApplications Français]||
+||[EsWelcome Inicio]||[EsArticlesXSS Seguridad Web]||  
+
+
+XSS no es solo un problema entre distintos dominios.  Algunos dominios, incluyendo `google.com`, almacenan múltiples aplicaciones.  Una vulnerabilidad XSS en una aplicación puede ser usada para lanzar ataques sobre otra aplicación completamente separada.  Hay varias maneras en que puedes mitigar este riesgo.
+
+== Usar un Sub-dominio separado ==
+
+La [http://www.mozilla.org/projects/security/components/same-origin.html Política del Mismo Origen] asegura que el script en una página cargada desde un dominio A no puede accesar a ninguna propiedad dentro de una página cargada desde el dominio B. SI almacenas tu aplicación en `myapp.google.com`, el scripting entre sitios en, por ejemplo `labs.google.com` no puede accesar el contexto de seguridad de tus aplicaciones.
+
+Tenemos un número de salvedades:
+
+  # Asegurate de que tus páginas no establecen `document.location="google.com";` (o en su caso tu dominio base tal ves).  Si lo haces, estas abriendo completamente ti aplicación a todo el dominio `google.com`. XSS sobre `someotherapp.google.com` podrían ser usados para accesar tus aplicaciones de dominio; el atacante simplemente tendría que inyectar un script que establezca el dominio de la página vulnerable a `google.com`.
+  # No establezcas tus cookies con `domain=.google.com`.  Obviamente, esto permitiría que fuesen robadas via XSS por cualquiera dentro del dominio `google.com`.
+  # No confíes en restricciones de ruta para proteger tus cookies.  Podrías estar estableciendo tus cookies con un atributo de ruta como `path=/important`.  Sin embargo, esto _no_ previene XSS dentro de una página en alguna otra ruta (como sería `/other/vulnerable`) pero, en el  mismo dominio desde donde accesar tu cookie `/important` cookie: Un atacante podría inyectar codigo dentro de `/other/vulnerable` que abriría una ventana o recuadro obtenido desde `/important/something`. Este documento podría entonces "ver" tu cookie `/important`; mientras `/other/vulnerable` se encuentre en el mismo dominio, el script malicioso inyectado dentro de esa página podría obtener tu `/important` desde el `document.cookie` del recuadro.
+
+== Usar el Atributo `secure` Cookie ==
+
+Pasa cookies que se pretende sean juego único y leídas por URLs servidas sobre https, es altamente recomendable establecer la cookie con el atributo `secure`. Esto es deseable principalmente porque prevendría al navegador enviar la cookie en una petoción no-https para el mismo servidor.
+
+Desde una perspectiva XSS, esto ambién agrega el beneficio de que esta cookie no es accesible para scripts en páginas no-https; p.e., una vulnerabilidad XSS en una página que no es servida sobre https no puede ser usada para robar una cookie `secure`.  Nota que a través de esto posible que una página que normalmente se pretende sea servida sobre http solo pueda estar accesible vía https, que puede hacer a las cookies `secure` accesibles despues de todo.
+
+== Usar el Atributo `HttpOnly` Cookie ==
+
+El [http://msdn.microsoft.com/en-us/library/ms533046.aspx atributo `HttpOnly`] fue introducido por Microsoft en IE 6 SP1, y será soportado por Mozilla Firefox 3.0.  <Este instruye al navegador de que no puede hacer una cookie visible para scripts (p.e., la cookie no será incluida en la propiedad `document.cookie`, lo que hace que sea más difícil o imposible de robar como una cookie vía XSS).  Este atributo debería ser usado cuando sea posible. Sin embargo, esto no mitiga por completo el impacto de XSS, y tiene algunas limitaciones:
+
+  * Esto no previene cargas XSS que manipulen directamente la aplicación en el contexto de la sesión del usuario.
+ * Si el servidor puede ser causante de reflejar la cookie en respuesta a una petición HTTP (como un `TRACE`), un script malicioso pudiera ser capaz de obtener el valor de la cookie después de todo.
+  * Este atributo solo es soportado por versiones recientes de IE y Firefox.
+
+== Para Leer Más ==
+
+  * [EsArticleXSS Todo lo que siempre quisiste saber sobre ataques cross-site scripting (XSS)]
+  * [http://www.mozilla.org/projects/security/components/same-origin.html Política del Mismo Origen]
+  * [http://msdn.microsoft.com/en-us/library/ms533046.aspx Atrubuto `HttpOnly`]
+

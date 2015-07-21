@@ -1,0 +1,29 @@
+#summary If a background image has been specified, the background-position-x property specifies its initial horizontal position.
+#labels about-css,is-css-property,from-microsoft
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *background-position-x*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSLengthType <length>]
+  * [CSSPercentageType <percentage>]
+  * `left`
+  * `right`
+  * `center`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-position-x-bottom-equals-bottom-reflection-test.html style.backgroundPositionX reflects <div style='background-position-x: bottom'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-position-x-center-equals-center-reflection-test.html style.backgroundPositionX reflects <div style='background-position-x: center'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-position-x-top-equals-top-reflection-test.html style.backgroundPositionX reflects <div style='background-position-x: top'>] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms530719.aspx The background-position-x property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/colorbg/bgpositx.htm The history of the background-position-x property on blooberry.com]
+

@@ -1,0 +1,27 @@
+#summary The white-space property declares how whitespace inside the element is handled.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *white-space*
+
+== Usage ==
+
+== Values ==
+
+  * `normal`
+  * `pre`
+  * `nowrap`
+  * `pre-wrap`
+  * `pre-line`
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/text.html#propdef-white-space The white-space property in CSS 2.1]
+  * [http://msdn2.microsoft.com/en-us/library/ms531182.aspx The white-space property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/text/whitespace.htm The history of the white-space property on blooberry.com]
+  * [http://reference.sitepoint.com/css/white-space The white-space property on the SitePoint CSS Reference]
+

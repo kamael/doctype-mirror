@@ -1,0 +1,35 @@
+#summary The font element changes the size and color of text.
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *font element*
+
+== Usage ==
+
+The `font` element is deprecated in [SpecificationHTML4 HTML 4].
+
+[SpecificationHTML5 HTML 5] says, "The font element doesn't represent anything. It must not be used except by WYSIWYG editors, which may use it to achieve presentational affects. Even WYSIWYG editors, however, should make every effort to use appropriate semantic markup and avoid the use of media-specific presentational markup."
+
+== Attributes ==
+
+  * [FontColorAttribute color]
+  * [FontFaceAttribute face]
+  * [FontFontWeightAttribute font-weight]
+  * [FontPointSizeAttribute point-size]
+  * [FontSizeAttribute size]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/font-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/font-element-applies-style-test.html applies style] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-font The font element in HTML 5]
+  * [http://www.w3.org/TR/html401/present/graphics.html#edef-FONT The font element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535248.aspx The font element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/f/font.htm The history of the font element on blooberry.com]
+

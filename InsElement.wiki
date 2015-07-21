@@ -1,0 +1,28 @@
+#summary The ins element represents text intentionally inserted into the document.
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *ins element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [InsCiteAttribute cite]
+  * [InsDatetimeAtribute datetime]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/ins-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/ins-element-applies-style-test.html applies style] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-ins The ins element in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/text.html#edef-ins The ins element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535842.aspx The ins element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/i/ins.htm The history of the ins element on blooberry.com]
+

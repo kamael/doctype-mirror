@@ -1,0 +1,30 @@
+#summary The applet alt attribute specifies alternate text that describes the element in case it can not be displayed or the browser does not support it.
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AppletElement <applet> element] > *alt attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `alt` attribute on the following elements:
+
+  * [AppletElement <applet>]
+  * [AreaElement <area>]
+  * [ImgElement <img>]
+  * [ObjectElement <object>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/applet-alt-reflection-test.html applet.alt reflects <applet alt="foo">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/objects.html#adef-alt The alt attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms533073.aspx The alt attribute on MSDN]
+

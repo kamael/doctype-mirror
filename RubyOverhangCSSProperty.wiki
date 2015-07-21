@@ -1,0 +1,22 @@
+#summary 
+#labels about-css,is-css-property,from-microsoft
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *ruby-overhang*
+
+== Usage ==
+
+== Values ==
+
+  * `auto`
+  * `whitespace`
+  * `none`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms531151.aspx The ruby-overhang property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/intl/roverhang.htm The history of the ruby-overhang property on blooberry.com]
+

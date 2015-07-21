@@ -1,0 +1,6 @@
+#summary The rel="previous" attribute is a synonym for rel="prev".
+#labels about-html,is-html-attribute,from-w3c
+
+See [RelPrevAttribute rel="prev"].
+
+

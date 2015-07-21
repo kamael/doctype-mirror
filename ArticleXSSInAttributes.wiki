@@ -1,0 +1,86 @@
+#summary HOWTO filter user input in tag attributes
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+||[EsArticleXSSInAttributes Español]||[JaArticleXSSInAttributes 日本語]||[FrArticleXSSInAttributes Français]||[ZhArticleXSSInAttributes 中文]||
+||[Welcome Home]||||[ArticlesXSS Web Security]||
+
+In this article, we discuss concerns that apply to all attributes. The examples consider a form field that is pre-filled with data. However, the considerations in this article apply to other attributes as well (such as style, color, href, etc).
+
+== Example ==
+
+Suppose you have a template or HTML fragment of the form
+
+{{{
+<form ...
+  <input name=q value="%(query)s">
+</form>
+}}}
+
+If someone is able to cause the variable query to e.g. contain
+
+{{{
+blah"><script>evil_script()</script>
+}}}
+
+then, after substitution this will result in the HTML
+
+{{{
+<form ...
+  <input name=q value="blah"><script>evil_script()</script>">
+</form>
+}}}
+
+That is, the attacker is able to "close the quote" and insert a script tag that will be executed by the browser.
+
+== Solution ==
+
+Any string that is inserted into a page must have the following characters replaced with the corresponding HTML/SGML entities:
+
+  * Convert `<` into `&lt;`
+  * Convert `>` into `&gt;`
+  * Convert `&` into `&amp;`
+  * Convert `"` into `&quot;`
+  * Convert `'` into `&#39;`
+
+Furthermore, ensure that the attribute value is surrounded by double quotes.
+
+== Rationale ==
+
+In this context, it is necessary to escape the quote character that is used to delimit the attribute's value to prevent the "closing the quote" attack. The "other" quote should be escaped as well, just in case someone changes the quote in the template and forgets to change the escaping. However, we should always use double quotes because many of the standard HTML escape functions (e.g., Python's cgi.escape) do not escape single quotes.
+
+Secondly, it is necessary to escape the ampersand character: Older Netscape browsers support so-called [http://devedge-temp.mozilla.org/library/manuals/2000/javascript/1.3/guide/embed.html#1013293 JavaScript Entities]. This allows a string of the form `&{javascript_expression};` to be used within attributes.  The expression is evaluated and the entire entity expression is replaced with the result of this evaluation. An attacker who is able to inject ampersand and curly brace characters into an attribute could likely be able to execute malicious script.
+
+Purists will point out, correctly, that angle brackets don't need to be escaped in this context.  However, escaping them does not introduce any other vulnerabilities, and it allows you to reuse the same basic escaping function.
+
+== And one more thing: Attribute Injection Attacks ==
+
+The attribute's value must be quoted, because otherwise an attribute insertion attack may be possible.  Suppose you have a template or HTML fragment of the form
+
+{{{
+<form ...
+  <input name=q value=%(query)s>
+</form>
+}}}
+
+If someone is able to cause the variable query to e.g. contain
+
+{{{
+blah onmouseover=evil_script()
+}}}
+
+After substitution, this will result in the HTML
+
+{{{
+<form ...
+  <input name=q value=blah onmouseover=evil_script()>
+</form>
+}}}
+
+If the victim moves their cursor over this input field, the script would execute (due to the `onmouseover` attribute).  Other handlers such as `onerror` and `onload` may permit malicious script execution without any user interaction, depending on the context.  Note that HTML escaping alone does not prevent this attack since it relies only on injection of characters that are not escaped by most HTML escaping functions.
+
+== Further reading ==
+
+  * [ArticleXSS Everything you ever wanted to know about cross-site scripting (XSS) attacks]
+  * [http://devedge-temp.mozilla.org/library/manuals/2000/javascript/1.3/guide/embed.html#1013293 Using JavaScript Expressions as HTML Attribute Values]
+

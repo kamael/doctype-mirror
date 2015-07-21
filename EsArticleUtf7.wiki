@@ -1,0 +1,36 @@
+= UTF-7: El caso del charset perdido =
+
+||[ArticleUtf7 English]||[JaArticleUtf7 日本語]||[FrArticleUtf7 Français]||
+||[EsWelcome Inicio]||[EsArticlesXSS Seguridad Web]||  
+
+UTF-7 es una codificación diseñada originalmente para puertas de enlace SMTP que no pudieran trabajar con caracteres 8-bit/binario. Este usaba una codificación Base64 modificada para representar carácteres de 8-bit y caracteres ASCII no-imprimibles usando 7-bit ASCII.  La cadena {{{<script>alert(1)</script>}}} puede ser codificada en UTF-7 como {{{+ADw-script+AD4-alert(1)+ADw-/script+AD4-}}}
+
+Cuando el servidor web no incluye una codificación de carácteres explícita en su respuesta HTTP -- ya sea en la cabecera HTTP Content-Type o la etiqueta META dentro del HTML mismo -- Internet Explorer intentará adivinar la codificación.  Si ciertas cadenas de la entrada del usuario -- dicen, {{{+ADw-script+AD4-alert(1)+ADw-/script+AD4-}}} -- se hizo eco con antelación en la página HTML, Internet Explorer puede pensar incorrectamente que la página está codificada en UTF-7.   De pronto, la aparentemente inofensiva entrada del usuario se convierte en HTML activo y se ejecuta.
+
+== Solución ==
+
+  * Para extender lo más posible, validar todas las entradas de usuario. Si tu aplicación te permite confinar ciertas entradas a caracteres alfanuméricos {{{[0-9a-z]}}} compatibles con ASCII, su cadena UTF-7 jamás pasará por tus filtros.
+  * Establece siempre una una codificación de carateres, cualquiera dentro del HTML mismo o en la cabecera HTTP `Content-Type`. Por supuesto, debes asegurarte de que este corresponda con la codificación actual que estás usando.  Declarar un juego incorrecto es mejor que no colocar ninguno.
+  * Siempre que tu página haga simplemente una redirección 302, asegurate de que este tiene un charset.
+
+Para establecer la codificación en las cabeceras HTTP, usa el parámetro `charset` de la cabecera `Content-Type`:
+
+{{{
+Content-Type: text/html; charset=UTF-8
+}}}
+          
+Para establecer la codificación con el documento HTML, usa una etiqueta `<meta>`:
+
+{{{
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+}}}
+
+Importante: La etiqueta `<meta>` solo debe aparecer en el documento antes de cualquier contenido que pudiera ser controlado por un atacante, como una etiqueta `<title>` conteniendo un título generado dinámicamente por el documento. 
+
+== Para Leer Más ==
+
+  * [EsArticleXSS Todo lo que siempre quisiste saber sobre ataques cross-site scripting (XSS)]
+  * [http://en.wikipedia.org/wiki/UTF-7 UTF-7 en Wikipedia]
+  * [http://www.ietf.org/rfc/rfc2152.txt UTF-7 RFC]
+  * [http://www.motobit.com/util/charset-codepage-conversion.asp Herramienta Online para convertir entre diferentes codificaciones]
+

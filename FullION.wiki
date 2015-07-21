@@ -1,0 +1,16 @@
+#Change NVIDIA ION LE to NVIDIA ION
+
+# Download and unzip [ION ION] file.
+# Run HPUSBFW.EXE to make USB/SD bootable disk with HP USB Disk no larger than 2gb. 
+# Device: Select your USB flash drive or SD card. File system: FAT or FAT32. Volume label: Chose a name or leave as default.
+# In the Format options Select "Quick Format" and "Create a DOS startup disk" pointing to where the ION folder is. 
+# Click Start.
+# click Yes.
+# Click OK to the second windows when it pops up.
+# Click Close in remaining windows. 
+# Copy HPBQ189.exe and HPBC228.exe to USB disk
+# Boot with your USB/SD bootable disk and run HPBQ189.exe or HPBC228.exe (depends for models, with wrong model program doesn't start)
+# Press [G] for HPBQ189 or [O] for HPBC228
+# If the previous step doesn't work, type the name of the file  HPBQ189.EXE or HBPC228.EXE and press Enter 
+# Select Vista OS installed or not, and exit.
+# Reboot - Now you have NVIDIA ION with Device ID:0876h

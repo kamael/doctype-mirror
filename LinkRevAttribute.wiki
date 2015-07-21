@@ -1,0 +1,28 @@
+#summary The link rev attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [LinkElement <link> element] > *rev attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `rev` attribute on the following elements:
+
+  * [AElement <a>]
+  * [LinkElement <link>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/link-rev-reflection-test.html link.rev reflects <link rev="foo">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/links.html#adef-rev The rev attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534373.aspx The rev attribute on MSDN]
+

@@ -1,0 +1,39 @@
+#summary Day 9: Providing additional navigation aids
+#labels about-accessibility,is-article
+
+You are here: [Welcome Home] > [Articles Articles] > [ArticlesAccessibility Accessibility] > [ArticleAccessibility 30 days to a more accessible web site] > *Day 9: Providing additional navigation aids*
+
+You may be familiar with the `<link>` tag in relation to external stylesheets.  But did you know you can also use a similar syntax to point to your home page, and to previous and next pages in a series?  For instance, on daily archive pages, you could point to the previous day's posts, and the next day's (if any).  If you have individual pages for each entry, you could point to the previous and next entry.
+
+{{{
+<link rel="home" title="Home" href="http://url/of/home/page" />
+<link rel="prev" title="Title of previous page" href="http://url/of/previous/page" />
+<link rel="next" title="Title of next page" href="http://url/of/next/page" />
+}}}
+
+These links, normally invisible to visual browsers like Internet Explorer, can be displayed in alternate browsers and help users navigate through your web site.  You probably already provide several ways to navigate: weekly or monthly archives, links to recent posts, a monthly calendar of daily posts.  You may even already have visible links on your archive pages pointing to previous and next days or entries.  Those are all great; keep them, and add these too.
+
+=== Who benefits? ===
+
+  * [ArticleAccessibility05 Marcus] benefits.  His text-only browser [http://www.fdisk.com/doslynx/lynxport.htm Lynx] displays the additional navigation aids at the top of the page, using the title that we specified in the `title` attribute.  Reading an article with these `<link>` elements, this is what Marcus sees:
+{{{
+#Home
+#Title of previous article
+#Title of next article
+}}}
+(The # character lets Marcus know that this is metadata, not page content.  Lynx does the same thing on the line with your [ArticleAccessibility08 meaningful page title].)
+
+  * [ArticleAccessibility02 Michael] benefits.  His text-only browser [http://links.sourceforge.net/ Links] (not to be confused with Marcus's browser, [http://www.fdisk.com/doslynx/lynxport.htm Lynx]) also displays these additional navigation aids at the top of the page, like this:
+{{{
+Link: home
+Link: prev
+Link: next
+}}}
+
+  * [ArticleAccessibility03 Bill] benefits.  Thanks to the [https://addons.mozilla.org/en-US/firefox/addon/2933 Link Widgets extension] he installed, Firefox displays the additional navigation links in a toolbar.  The toolbar and its buttons are always in the same absolute position on the screen; they are not dependent on the layout of individual sites.
+
+----
+
+Next: [ArticleAccessibility10 Day 10: Presenting your main content first]
+Back: [ArticleAccessibility08 Day 8: Constructing meaningful page titles]
+

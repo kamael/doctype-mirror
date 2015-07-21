@@ -1,0 +1,4 @@
+#summary How to get the raw source code and content of Google Doctype.
+
+Google Doctype -- both the code and the articles -- is stored in a Subversion repository.  You can [http://code.google.com/p/doctype/source/browse browse the Subversion repository online] or [http://code.google.com/doctype/downloading.html download it to your own computer].
+

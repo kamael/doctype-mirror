@@ -1,0 +1,44 @@
+#summary The menu clear attribute is a deprecated method of clearing certain styles.
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [MenuElement <menu> element] > *clear attribute*
+
+== Usage ==
+
+See [AddressClearAttribute <address clear>] for usage information and examples.
+
+== Elements ==
+
+You can use the `clear` attribute on the following elements:
+
+  * [AddressElement <address>]
+  * [BlockquoteElement <blockquote>]
+  * [BrElement <br>]
+  * [DdElement <dd>]
+  * [DirElement <dir>]
+  * [DivElement <div>]
+  * [DlElement <dl>]
+  * [DtElement <dt>]
+  * [HrElement <hr>]
+  * [LiElement <li>]
+  * [MenuElement <menu>]
+  * [OlElement <ol>]
+  * [PElement <p>]
+  * [PreElement <pre>]
+  * [TableElement <table>]
+  * [UlElement <ul>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/menu-clear-all-reflection-test.html menu.clear reflects <menu clear="all">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/menu-clear-both-reflection-test.html menu.clear reflects <menu clear="both">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/menu-clear-left-reflection-test.html menu.clear reflects <menu clear="left">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/menu-clear-none-reflection-test.html menu.clear reflects <menu clear="none">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/menu-clear-right-reflection-test.html menu.clear reflects <menu clear="right">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+

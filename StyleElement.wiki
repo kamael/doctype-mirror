@@ -1,0 +1,33 @@
+#summary The style element lets you define CSS styles in a document.
+#labels about-html,is-html-element,from-w3c,about-css
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *style element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [StyleDisabledAttribute disabled]
+  * [StyleLanguageAttribute language]
+  * [StyleMediaAttribute media]
+  * [StyleScopedAttribute scoped]
+  * [StyleTitleAttribute title]
+  * [StyleTypeAttribute type]
+  * [StyleXmlSpaceAttribute xml:space]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/style-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/style-element-applies-style-test.html applies style] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-style The style element in HTML 5]
+  * [http://www.w3.org/TR/html401/present/styles.html#edef-STYLE The style element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535898.aspx The style element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/s/style.htm The history of the style element on blooberry.com]
+

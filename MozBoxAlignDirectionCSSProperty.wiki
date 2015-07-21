@@ -1,0 +1,16 @@
+#summary The -moz-box-align-direction CSS property controls how an element lays out its contents.
+
+== Usage ==
+
+== Values ==
+
+  * `normal`
+  * `reverse`
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-box-direction The -moz-box-direction property on Mozilla Developer Center]
+
+

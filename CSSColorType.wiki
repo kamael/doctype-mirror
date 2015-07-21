@@ -1,0 +1,18 @@
+#summary The <color> of color or background-color and border-color and more.
+#labels about-css,is-css-property
+
+= Introduction =
+
+color is either a keyword or a numerical RGB specification.
+
+= Details =
+
+|| *Value* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* || *Desc* ||
+|| [CSSColors <color name>] || - || - || - || - || - || - || - || - || - ||
+|| #RGB || - || - || - || - || - || - || - || - || R/G/B @ (0, F) ||
+|| #RRGGBB || - || - || - || - || - || - || - || - || R/G/B @ (0, F) ||
+|| rgb(r, g, b) || - || - || - || - || - || - || - || - || r/g/b @ (0, 255) ||
+|| rgb(r%, g%, b%) || - || - || - || - || - || - || - || - || r/g/b @ (0, 100) ||
+|| rgba(r%, g%, b%, a) || - || - || - || - || - || Y || - || - || r/g/b @ (0, 100), a @ (0, 1) ||
+|| hsl(r%, g%, b%) || - || - || - || Y || N || - || - || - || r/g/b @ (0, 100) ||
+|| hsla(r%, g%, b%, a) || - || - || - || Y || N || - || - || - || r/g/b @ (0, 100), a @ (0, 1) ||

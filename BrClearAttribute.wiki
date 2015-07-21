@@ -1,0 +1,45 @@
+#summary The br clear attribute
+#labels about-html,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [BrElement <br> element] > *clear attribute*
+
+== Usage ==
+
+See [AddressClearAttribute <address clear>] for usage information and examples.
+
+== Elements ==
+
+You can use the `clear` attribute on the following elements:
+
+  * [AddressElement <address>]
+  * [BlockquoteElement <blockquote>]
+  * [BrElement <br>]
+  * [DdElement <dd>]
+  * [DirElement <dir>]
+  * [DivElement <div>]
+  * [DlElement <dl>]
+  * [DtElement <dt>]
+  * [HrElement <hr>]
+  * [LiElement <li>]
+  * [MenuElement <menu>]
+  * [OlElement <ol>]
+  * [PElement <p>]
+  * [PreElement <pre>]
+  * [TableElement <table>]
+  * [UlElement <ul>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/br-clear-all-reflection-test.html br.clear reflects <br clear="all">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/br-clear-both-reflection-test.html br.clear reflects <br clear="both">] || Y || Y || Y || Y || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/br-clear-left-reflection-test.html br.clear reflects <br clear="left">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/br-clear-none-reflection-test.html br.clear reflects <br clear="none">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/br-clear-right-reflection-test.html br.clear reflects <br clear="right">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms533562.aspx The clear attribute on MSDN]
+

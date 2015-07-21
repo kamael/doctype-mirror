@@ -1,0 +1,32 @@
+#summary The ul start attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [UlElement <ul> element] > *start attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `start` attribute on the following elements:
+
+  * [AudioElement <audio>]
+  * [DirElement <dir>]
+  * [ImgElement <img>]
+  * [MenuElement <menu>]
+  * [OlElement <ol>]
+  * [UlElement <ul>]
+  * [VideoElement <video>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/ul-start-reflection-test.html ul.start reflects <ul start="42">] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/lists.html#edef-UL The start attribute in HTML 4]
+

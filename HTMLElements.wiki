@@ -1,0 +1,138 @@
+#summary Alphabetical list of HTML elements
+#labels about-html
+[EsHTMLElements  Espanol]
+
+|| Element || HTML Version || Deprecated || Obsolete || Browser ||
+|| [AElement <a>] || [http://rfc.net/rfc1866.html#s5.7.3. 2.0] || || || ||
+|| [AbbrElement <abbr>] || [http://www.w3.org/TR/REC-html40/struct/text.html#edef-ABBR 4.01] || || || ||
+|| [AcronymElement <acronym>] || [http://www.w3.org/TR/REC-html40/struct/text.html#edef-ACRONYM 4.01] || [http://www.w3.org/TR/2008/WD-html5-diff-20080610/#absent-elements 5.0] || || ||
+|| [AddressElement <address>] || [http://rfc.net/rfc1866.html#s5.5.3. 2.0] || || || ||
+|| [AppletElement <applet>] || [http://www.w3.org/TR/REC-html32#applet 3.2] || [http://www.w3.org/TR/REC-html40/struct/objects.html#edef-APPLET 4.01] || 5.0 || ||
+|| [AreaElement <area>] || [http://www.w3.org/TR/REC-html32#map 3.2] || || || ||
+|| [ArticleElement <article>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-article 5.0] || || || ||
+|| [AsideElement <aside>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-aside 5.0] || || || ||
+|| [AudioElement <audio>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-audio 5.0] || || || ||
+|| [BElement <b>] || [http://rfc.net/rfc1866.html#s5.7.2.1. 2.0] || || || ||
+|| [BaseElement <base>] || [http://rfc.net/rfc1866.html#s5.2.2. 2.0] || || || ||
+|| [BasefontElement <basefont>] || [http://www.w3.org/TR/REC-html32#basefont 3.2] || [http://www.w3.org/TR/REC-html40/present/graphics.html#edef-BASEFONT 4.01] || || ||
+|| [BdoElement <bdo>] || [http://www.w3.org/TR/REC-html40/struct/dirlang.html#edef-BDO 4.01] || || || ||
+|| [BgsoundElement <bgsound>] || || || || [http://en.wikipedia.org/wiki/Non-standard_HTML_tags#Proprietary_HTML_tags IE] ||
+|| [BigElement <big>] || [http://www.w3.org/TR/REC-html32#font-style 3.2] || [http://www.w3.org/TR/2008/WD-html5-diff-20080610/#absent-elements 5.0] || || ||
+|| [BlinkElement <blink>] || || || || [http://en.wikipedia.org/wiki/Blink_element NS] ||
+|| [BlockquoteElement <blockquote>] || [http://rfc.net/rfc1866.html#s5.5.4. 2.0] || || || ||
+|| [BodyElement <body>] || [http://rfc.net/rfc1866.html#s5.3. 2.0] || || || ||
+|| [BrElement <br>] || [http://rfc.net/rfc1866.html#s5.8. 2.0] || || || ||
+|| [ButtonElement <button>] || [http://www.w3.org/TR/REC-html40/interact/forms.html#edef-BUTTON 4.01] || || || ||
+|| [CanvasElement <canvas>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-canvas 5.0] || || || ||
+|| [CaptionElement <caption>] || [http://www.w3.org/TR/REC-html32#table 3.2] || || || ||
+|| [CenterElement <center>] || [http://www.w3.org/TR/REC-html32#center 3.2] || [http://www.w3.org/TR/REC-html40/present/graphics.html#edef-CENTER 4.01] || || ||
+|| [CiteElement <cite>] || [http://rfc.net/rfc1866.html#s5.7.1.1. 2.0] || || || ||
+|| [CodeElement <code>] || [http://rfc.net/rfc1866.html#s5.7.1.2. 2.0] || || || ||
+|| [ColElement <col>] || [http://www.w3.org/TR/REC-html40/struct/tables.html#edef-COL 4.01] || || || ||
+|| [ColgroupElement <colgroup>] || [http://www.w3.org/TR/REC-html40/struct/tables.html#edef-COLGROUP 4.01] || || || ||
+|| [CommandElement <command>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-command 5.0] || || || ||
+|| [CommentElement <comment>] || || || || [http://en.wikipedia.org/wiki/Non-standard_HTML_tags#Proprietary_HTML_tags IE] ||
+|| [DatagridElement <datagrid>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-datagrid 5.0] || || || ||
+|| [DdElement <dd>] || [http://rfc.net/rfc1866.html#s5.6.5. 2.0] || || || ||
+|| [DelElement <del>] || [http://www.w3.org/TR/REC-html40/struct/text.html#edef-del 4.01] || || || ||
+|| [DetailsElement <details>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-details 5.0] || || || ||
+|| [DfnElement <dfn>] || [http://www.w3.org/TR/REC-html32#phrase 3.2] || || || ||
+|| [DialogElement <dialog>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-dialog 5.0] || || || ||
+|| [DirElement <dir>] || [http://rfc.net/rfc1866.html#s5.6.3. 2.0] || [http://www.w3.org/TR/REC-html40/struct/lists.html#edef-DIR 4.01] || || ||
+|| [DivElement <div>] || [http://www.w3.org/TR/REC-html32#div 3.2] || || || ||
+|| [DlElement <dl>] || [http://rfc.net/rfc1866.html#s5.6.5. 2.0] || || || ||
+|| [DtElement <dt>] || [http://rfc.net/rfc1866.html#s5.6.5. 2.0] || || || ||
+|| [EmElement <em>] || [http://rfc.net/rfc1866.html#s5.7.1.3. 2.0] || || || ||
+|| [EmbedElement <embed>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-embed 5.0] || || || ||
+|| [EventSourceElement <event-source>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-event-source 5.0] || || || ||
+|| [FieldsetElement <fieldset>] || [http://www.w3.org/TR/REC-html40/interact/forms.html#edef-FIELDSET 4.01] || || || ||
+|| [FigureElement <figure>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-figure 5.0] || || || ||
+|| [FontElement <font>] || [http://www.w3.org/TR/REC-html32#font 3.2] || [http://www.w3.org/TR/REC-html40/present/graphics.html#edef-FONT 4.01] || || ||
+|| [FooterElement <footer>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-footer 5.0] || || || ||
+|| [FormElement <form>] || [http://rfc.net/rfc1866.html#s8.1.1. 2.0] || || || ||
+|| [FrameElement <frame>] || [http://www.w3.org/TR/REC-html40/present/frames.html#edef-FRAME 4.01] || [http://www.w3.org/TR/2008/WD-html5-diff-20080610/#absent-elements 5.0] || || ||
+|| [FramesetElement <frameset>] || [http://www.w3.org/TR/REC-html40/present/frames.html#edef-FRAMESET 4.01] || [http://www.w3.org/TR/2008/WD-html5-diff-20080610/#absent-elements 5.0] || || ||
+|| [H1H2H3H4H5H6Element <h1-h6>] || [http://rfc.net/rfc1866.html#s5.4. 2.0] || || || ||
+|| [HeadElement <head>] || [http://rfc.net/rfc1866.html#s5.2. 2.0] || || || ||
+|| [HeaderElement <header>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-header 5.0] || || || ||
+|| [HrElement <hr>] || [http://rfc.net/rfc1866.html#s5.9. 2.0] || || || ||
+|| [HtmlElement <html>] || [http://rfc.net/rfc1866.html#p12 2.0] || || || ||
+|| [IElement <i>] || [http://rfc.net/rfc1866.html#s5.7.2.2. 2.0] || || || ||
+|| [IframeElement <iframe>] || [http://www.w3.org/TR/REC-html40/present/frames.html#edef-IFRAME 4.01] || || || ||
+|| [IlayerElement <ilayer>] || || || || [http://en.wikipedia.org/wiki/Non-standard_HTML_tags#Proprietary_HTML_tags NS] ||
+|| [ImageElement <image>] || || || || [http://en.wikipedia.org/wiki/Non-standard_HTML_tags#Proprietary_HTML_tags N/A] ||
+|| [ImgElement <img>] || [http://rfc.net/rfc1866.html#s5.10. 2.0] || || || ||
+|| [InputElement <input>] || [http://rfc.net/rfc1866.html#s8.1.2. 2.0] || || || ||
+|| [InputTypeCheckboxElement <input type=checkbox>] || [http://rfc.net/rfc1866.html#s8.1.2.3. 2.0] || || || ||
+|| [InputTypeHiddenElement <input type=hidden>] || [http://rfc.net/rfc1866.html#s8.1.2.6. 2.0] || || || ||
+|| [InputTypeImageElement <input type=image>] || [http://rfc.net/rfc1866.html#s8.1.2.5. 2.0] || || || ||
+|| [InputTypePasswordElement <input type=password>] || [http://rfc.net/rfc1866.html#s8.1.2.2. 2.0] || || || ||
+|| [InputTypeRadioElement <input type=radio>] || [http://rfc.net/rfc1866.html#s8.1.2.4. 2.0] || || || ||
+|| [InputTypeResetElement <input type=reset>] || [http://rfc.net/rfc1866.html#s8.1.2.8. 2.0] || || || ||
+|| [InputTypeSubmitElement <input type=submit>] || [http://rfc.net/rfc1866.html#s8.1.2.7. 2.0] || || || ||
+|| [InputTypeTextElement <input type=text>] || [http://rfc.net/rfc1866.html#s8.1.2.1. 2.0] || || || ||
+|| [InsElement <ins>] || [http://www.w3.org/TR/REC-html40/struct/text.html#edef-ins 4.01] || || || ||
+|| [IsindexElement <isindex>] || [http://rfc.net/rfc1866.html#s5.2.3. 2.0] || [http://www.w3.org/TR/REC-html40/interact/forms.html#edef-ISINDEX 4.01] || || ||
+|| [KbdElement <kbd>] || [http://rfc.net/rfc1866.html#s5.7.1.4. 2.0] || || || ||
+|| [KeygenElement <keygen>] || || || || [http://en.wikipedia.org/wiki/Non-standard_HTML_tags#Proprietary_HTML_tags NS, Opera] ||
+|| [LabelElement <label>] || [http://www.w3.org/TR/REC-html40/interact/forms.html#edef-LABEL 4.01] || || || ||
+|| [LayerElement <layer>] || || || || [http://en.wikipedia.org/wiki/Layer_%28HTML_tag%29 NS] ||
+|| [LegendElement <legend>] || [http://www.w3.org/TR/REC-html40/interact/forms.html#edef-LEGEND 4.01] || || || ||
+|| [LiElement <li>] || [http://rfc.net/rfc1866.html#s5.6.1. 2.0] || || || ||
+|| [LinkElement <link>] || [http://rfc.net/rfc1866.html#s5.2.4. 2.0] || || || ||
+|| [ListingElement <listing>] || [http://rfc.net/rfc1866.html#s5.5.2.1. 2.0] || || [http://www.w3.org/TR/REC-html32#listing 3.2] || ||
+|| [MapElement <map>] || [http://www.w3.org/TR/REC-html32#map 3.2] || || || ||
+|| [MElement <mark>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-mark 5.0] || || || ||
+|| [MarqueeElement <marquee>] || || || || [http://en.wikipedia.org/wiki/Marquee_tag IE] ||
+|| [MenuElement <menu>] || [http://rfc.net/rfc1866.html#s5.6.4. 2.0] || [http://www.w3.org/TR/REC-html40/struct/lists.html#edef-MENU 4.01] || || ||
+|| [MetaElement <meta>] || [http://rfc.net/rfc1866.html#s5.2.5. 2.0] || || || ||
+|| [MeterElement <meter>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-meter 5.0] || || || ||
+|| [MulticolElement <multicol>] || || || || [http://en.wikipedia.org/wiki/Non-standard_HTML_tags#Proprietary_HTML_tags NS] ||
+|| [NavElement <nav>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-nav 5.0] || || || ||
+|| [NextidElement <nextid>] || [http://rfc.net/rfc1866.html#s5.2.6. 2.0] || || || ||
+|| [NobrElement <nobr>] || || || || [http://en.wikipedia.org/wiki/Non-standard_HTML_tags#Proprietary_HTML_tags N/A] ||
+|| [NoembedElement <noembed>] || || || || [http://en.wikipedia.org/wiki/Non-standard_HTML_tags#Proprietary_HTML_tags NS] ||
+|| [NoframesElement <noframes>] || [http://www.w3.org/TR/REC-html40/present/frames.html#edef-NOFRAMES 4.01] || [http://www.w3.org/TR/2008/WD-html5-diff-20080610/#absent-elements 5.0] || || ||
+|| [NolayerElement <nolayer>] || || || || [http://en.wikipedia.org/wiki/Non-standard_HTML_tags#Proprietary_HTML_tags NS] ||
+|| [NoscriptElement <noscript>] || [http://www.w3.org/TR/REC-html40/interact/scripts.html#edef-NOSCRIPT 4.01] || || || ||
+|| [ObjectElement <object>] || [http://www.w3.org/TR/REC-html40/struct/objects.html#edef-OBJECT 4.01] || || || ||
+|| [OlElement <ol>] || [http://rfc.net/rfc1866.html#s5.6.2. 2.0] || || || ||
+|| [OptgroupElement <optgroup>] || [http://www.w3.org/TR/REC-html40/interact/forms.html#edef-OPTGROUP 4.01] || || || ||
+|| [OptionElement <option>] || [http://rfc.net/rfc1866.html#s8.1.3.1. 2.0] || || || ||
+|| [PElement <p>] || [http://rfc.net/rfc1866.html#s5.5.1. 2.0] || || || ||
+|| [ParamElement <param>] || [http://www.w3.org/TR/REC-html40/struct/objects.html#edef-PARAM 4.01] || || || ||
+|| [PlaintextElement <plaintext>] || [http://rfc.net/rfc1866.html#s5.5.2.1. 2.0] || || [http://www.w3.org/TR/REC-html32#plaintext 3.2] || ||
+|| [PreElement <pre>] || [http://rfc.net/rfc1866.html#s5.5.2. 2.0] || || || ||
+|| [QElement <q>] || [http://www.w3.org/TR/REC-html40/struct/text.html#edef-Q 4.01] || || || ||
+|| `<rt>` || || || || [http://en.wikipedia.org/wiki/Non-standard_HTML_tags#Proprietary_HTML_tags IE] ||
+|| `<ruby>` || || || || [http://en.wikipedia.org/wiki/Non-standard_HTML_tags#Proprietary_HTML_tags IE] ||
+|| [SElement <s>] || [http://www.w3.org/TR/REC-html32#font-style 3.2] || [http://www.w3.org/TR/REC-html40/present/graphics.html#edef-STRIKE 4.01] || || ||
+|| [SampElement <samp>] || [http://rfc.net/rfc1866.html#s5.7.1.5. 2.0] || || || ||
+|| [ScriptElement <script>] || [http://www.w3.org/TR/REC-html32#script 3.2] || || || ||
+|| [SectionElement <section>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-section 5.0] || || || ||
+|| [SelectElement <select>] || [http://rfc.net/rfc1866.html#s8.1.3. 2.0] || || || ||
+|| [SmallElement <small>] || [http://www.w3.org/TR/REC-html32#font-style 3.2] || || || ||
+|| `<spacer>` || || || || [http://en.wikipedia.org/wiki/Non-standard_HTML_tags#Proprietary_HTML_tags NS] ||
+|| [SpanElement <span>] || [http://www.w3.org/TR/REC-html40/struct/global.html#edef-SPAN 4.01] || || || ||
+|| [StrikeElement <strike>] || [http://rfc.net/rfc1866.html#s5.7.2. 2.0] || [http://www.w3.org/TR/REC-html40/present/graphics.html#edef-STRIKE 4.01] || || ||
+|| [StrongElement <strong>] || [http://rfc.net/rfc1866.html#s5.7.1.6. 2.0] || || || ||
+|| [StyleElement <style>] || [http://www.w3.org/TR/REC-html32#style 3.2] || || || ||
+|| [SubElement <sub>] || [http://www.w3.org/TR/REC-html32#font-style 3.2] || || || ||
+|| [SupElement <sup>] || [http://www.w3.org/TR/REC-html32#font-style 3.2] || || || ||
+|| [TableElement <table>] || [http://www.w3.org/TR/REC-html32#table 3.2] || || || ||
+|| [TbodyElement <tbody>] || [http://www.w3.org/TR/REC-html40/struct/tables.html#edef-TBODY 4.01] || || || ||
+|| [TdElement <td>] || [http://www.w3.org/TR/REC-html32#table 3.2] || || || ||
+|| [TextareaElement <textarea>] || [http://rfc.net/rfc1866.html#s8.1.4. 2.0] || || || ||
+|| [TfootElement <tfoot>] || [http://www.w3.org/TR/REC-html40/struct/tables.html#edef-TFOOT 4.01] || || || ||
+|| [ThElement <th>] || [http://www.w3.org/TR/REC-html32#table 3.2] || || || ||
+|| [TheadElement <thead>] || [http://www.w3.org/TR/REC-html40/struct/tables.html#edef-THEAD 4.01] || || || ||
+|| [TitleElement <title>] || [http://rfc.net/rfc1866.html#s5.2.1. 2.0] || || || ||
+|| [TrElement <tr>] || [http://www.w3.org/TR/REC-html32#table 3.2] || || || ||
+|| [TtElement <tt>] || [http://rfc.net/rfc1866.html#s5.7.2.3. 2.0] || [http://www.w3.org/TR/2008/WD-html5-diff-20080610/#absent-elements 5.0] || || ||
+|| [UElement <u>] || [http://www.w3.org/TR/REC-html32#font-style 3.2] || [http://www.w3.org/TR/REC-html40/present/graphics.html#edef-U 4.01] || || ||
+|| [UlElement <ul>] || [http://rfc.net/rfc1866.html#s5.6.1. 2.0] || || || ||
+|| [VarElement <var>] || [http://rfc.net/rfc1866.html#s5.7.1.7. 2.0] || || || ||
+|| [VideoElement <video>] || [http://www.whatwg.org/specs/web-apps/current-work/#video 5.0] || || || ||
+|| [WbrElement <wbr>] || [http://www.whatwg.org/specs/web-apps/current-work/#the-wbr-element 5.0]|| || || [http://en.wikipedia.org/wiki/Non-standard_HTML_tags#Proprietary_HTML_tags N/A] ||
+|| `<xml>` || || || || [http://en.wikipedia.org/wiki/Non-standard_HTML_tags#Proprietary_HTML_tags IE] ||
+|| [XmpElement <xmp>] || [http://rfc.net/rfc1866.html#s5.5.2.1. 2.0] || || [http://www.w3.org/TR/REC-html32-19970114#xmp 3.2] || ||

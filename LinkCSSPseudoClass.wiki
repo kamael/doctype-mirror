@@ -1,0 +1,26 @@
+#summary The :link CSS pseudo-class matches any unvisited hyperlink.
+#labels about-css
+
+== Usage ==
+{{{
+a:link {
+   color: red;
+}
+/* This turns any unvisited link in your page red. */
+
+/* Note that this is redundant code, as simply referencing a{} without the :link pseudo-class will also change its :link property by default, as such: */
+
+a { color: red; }
+
+/* This code has the same effect as the code above. */
+}}}
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* || *Opera9.5* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/selector.html#pseudo-elements Pseudo-classes in the CSS 2.1 specification]
+  * [http://www.w3.org/TR/css3-selectors/#link The :link pseudo-class in the CSS 3 specification]
+  * [http://msdn2.microsoft.com/en-us/library/ms530787.aspx The :link pseudo-class on MSDN]
+

@@ -1,0 +1,22 @@
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *page-break-inside*
+
+== Usage ==
+
+== Values ==
+
+  * `avoid`
+  * `auto`
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/page.html#propdef-page-break-inside The page-break-inside property in CSS 2.1]
+  * [http://www.blooberry.com/indexdot/css/properties/print/pbinside.htm The history of the page-break-inside property on blooberry.com]
+  * [http://reference.sitepoint.com/css/page-break-inside The page-break-inside property on the SitePoint CSS Reference]
+

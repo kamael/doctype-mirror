@@ -1,0 +1,283 @@
+#summary HOWTO calculate the position of an element on the page (goog.style.getPageOffset)
+#labels is-article,about-dom
+#sidebar TOCArticlesStyle
+
+Here be dragons.
+
+== The code ==
+
+This code depends on several functions explained elsewhere:
+
+  * [ArticleCoordinates HOWTO deal with page coordinates (goog.math.Coordinate)]
+  * [ArticleUserAgent HOWTO determine the browser and version number (goog.userAgent)]
+  * [ArticleOwnerDocument HOWTO find the owner document of a node (goog.dom.getOwnerDocument)]
+  * [ArticleComputedStyle HOWTO calculate the current style of an element (goog.style.getStyle_)]
+  * [ArticleClientViewportElement HOWTO find the viewport (goog.style.getClientViewportElement)]
+
+{{{
+/**
+ * Returns a Coordinate object relative to the top-left of the HTML document.
+ * Implemented as a single function to save having to do two recursive loops in
+ * opera and safari just to get both coordinates.  If you just want one value do
+ * use goog.style.getPageOffsetLeft() and goog.style.getPageOffsetTop(), but
+ * note if you call both those methods the tree will be analysed twice.
+ *
+ * Note: this is based on Yahoo's getXY method, which is
+ * Copyright (c) 2006, Yahoo! Inc.
+ * All rights reserved.
+ * 
+ * Redistribution and use of this software in source and binary forms, with or without modification, are
+ * permitted provided that the following conditions are met:
+ * 
+ * * Redistributions of source code must retain the above
+ *   copyright notice, this list of conditions and the
+ *   following disclaimer.
+ * 
+ * * Redistributions in binary form must reproduce the above
+ *   copyright notice, this list of conditions and the
+ *   following disclaimer in the documentation and/or other
+ *   materials provided with the distribution.
+ * 
+ * * Neither the name of Yahoo! Inc. nor the names of its
+ *   contributors may be used to endorse or promote products
+ *   derived from this software without specific prior
+ *   written permission of Yahoo! Inc.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED
+ * WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+ * PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ * ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
+ * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS
+ * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR
+ * TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+ * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ *
+ * @param {Element} el Element to get the page offset for
+ * @return {goog.math.Coordinate}
+ */
+goog.style.getPageOffset = function(el) {
+  var doc = goog.dom.getOwnerDocument(el);
+
+  // Gecko browsers normally use getBoxObjectFor to calculate the position.
+  // When invoked for an element with an implicit absolute position though it
+  // can be off by one. Therefor the recursive implementation is used in those
+  // (relatively rare) cases.
+  var BUGGY_GECKO_BOX_OBJECT = goog.userAgent.GECKO && doc.getBoxObjectFor &&
+      goog.style.getStyle_(el, 'position') == 'absolute' &&
+      (el.style.top == '' || el.style.left == '');
+
+  if (typeof goog.style.BUGGY_CAMINO_ == 'undefined') {
+    /**
+     * Camino versions up to 1.0.4 (which is navigator.version 1.8.0.10) return
+     * an invalid y-coordinate for the viewport element from calls to
+     * document.getBoxObjectFor. See:
+     * https://bugzilla.mozilla.org/show_bug.cgi?id=350018
+     *
+     * Constant defined out of global scope to eliminate runtime dependency.
+     * @type {Boolean}
+     * @private
+     */
+    goog.style.BUGGY_CAMINO_ = goog.userAgent.CAMINO &&
+                               !goog.userAgent.isVersion('1.8.0.11');
+  }
+
+  // NOTE: If element is hidden (display none or disconnected or any the
+  // ancestors are hidden) we get (0,0) by default but we still do the
+  // accumulation of scroll position.
+
+  var pos = new goog.math.Coordinate(0, 0);
+  var viewportElement = goog.style.getClientViewportElement(doc);
+  if (el == viewportElement) {
+    // viewport is always at 0,0 as that defined the coordinate system for this
+    // function - this avoids special case checks in the code below
+    return pos;
+  }
+
+  var parent = null;
+  var box;
+
+  if (el.getBoundingClientRect) { // IE
+    box = el.getBoundingClientRect();
+    var scrollTop = viewportElement.scrollTop;
+    var scrollLeft = viewportElement.scrollLeft;
+
+    pos.x = box.left + scrollLeft;
+    pos.y = box.top + scrollTop;
+
+  } else if (doc.getBoxObjectFor && !BUGGY_GECKO_BOX_OBJECT &&
+      !goog.style.BUGGY_CAMINO_) { // gecko
+    // Gecko ignores the scroll values for ancestors, up to 1.9.  See:
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=328881 and
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=330619
+
+    box = doc.getBoxObjectFor(el);
+    var vpBox = doc.getBoxObjectFor(viewportElement);
+    pos.x = box.screenX - vpBox.screenX;
+    pos.y = box.screenY - vpBox.screenY;
+
+  } else { // safari/opera
+    pos.x = el.offsetLeft;
+    pos.y = el.offsetTop;
+    parent = el.offsetParent;
+    if (parent != el) {
+      while (parent) {
+        pos.x += parent.offsetLeft;
+        pos.y += parent.offsetTop;
+        parent = parent.offsetParent;
+      }
+    }
+
+    // opera & (safari absolute) incorrectly account for body offsetTop
+    if (goog.userAgent.OPERA || (goog.userAgent.SAFARI &&
+        goog.style.getStyle_(el, 'position') == 'absolute')) {
+      pos.y -= doc.body.offsetTop;
+    }
+
+    // accumulate the scroll positions for everything but the body element
+    parent = el.offsetParent;
+    while (parent && parent != doc.body) {
+      pos.x -= parent.scrollLeft;
+      // see https://bugs.opera.com/show_bug.cgi?id=249965
+      if (!goog.userAgent.OPERA || parent.tagName != 'TR') {
+        pos.y -= parent.scrollTop;
+      }
+      parent = parent.offsetParent;
+    }
+  }
+
+  return pos;
+};
+}}}
+
+== The code walkthrough ==
+
+Here's the basic strategy for calculating the position of an element on the page:
+
+  # If the browser supports the `node.getBoundingClientRect` method, use it to determine the element's position relative to the viewport, then calculate how much the viewport has scrolled to find the actual position.  This works in [BrowserFamilyMSIE Microsoft Internet Explorer].
+  # If the browser supports the `node.getBoxObjectFor` method, use it to determine the screen position of both the element and the viewport, then take the difference to find the actual position.  This works in [BrowserFamilyFirefox Mozilla Firefox].
+  # If the browser supports neither method, walk up the DOM hierarchy looking at each node's offset and scroll positions relative to its parent, and add them all together to find the actual position.  This is a last resort because it is much slower than the first two methods (O(N) instead of O(1), where N is the element's depth in the DOM hierarchy).  On the bright side, it should work in all browsers.
+
+This strategy is made more complicated by several browser bugs:
+
+  * Firefox has an off-by-1 bug when getting the box object for an absolutely positioned element.
+  * Older versions of Camino return an invalid y-coordinate when getting the box object for the viewport element.
+  * Opera incorrectly accounts for the `offsetTop` property on `document.body`.  Safari shares this bug, but only when calculating the position of absolutely-positioned elements.
+  * Opera incorrectly accounts for the `scrollTop` property on all nodes except table rows.
+
+We need a combination of user-agent and object detection to see whether this element triggers the off-by-1 bug in Firefox:
+
+{{{
+  var BUGGY_GECKO_BOX_OBJECT = goog.userAgent.GECKO && doc.getBoxObjectFor &&
+      goog.style.getStyle_(el, 'position') == 'absolute' &&
+      (el.style.top == '' || el.style.left == '');
+}}}
+
+And similarly to check for the invalid y-coordinate bug in Camino.
+
+{{{
+  if (typeof goog.style.BUGGY_CAMINO_ == 'undefined') {
+    goog.style.BUGGY_CAMINO_ = goog.userAgent.CAMINO &&
+                               !goog.userAgent.isVersion('1.8.0.11');
+  }
+}}}
+
+First, check for the trivial case: if we're asking for the position of the viewport element, it's always (0,0).
+
+{{{
+  var pos = new goog.math.Coordinate(0, 0);
+  var viewportElement = goog.style.getClientViewportElement(doc);
+  if (el == viewportElement) {
+    // viewport is always at 0,0 as that defined the coordinate system for this
+    // function - this avoids special case checks in the code below
+    return pos;
+  }
+}}}
+
+No such luck?  OK, now the real fun starts.  If we can use the `getBoundingClientRect` method, do so.  This will give us the element's position relative to the viewport.  Then we figure out how much the viewport has scrolled (using `scrollLeft` and `scrollTop`) and add them to find the element's true position.
+
+{{{
+  if (el.getBoundingClientRect) { // IE
+    box = el.getBoundingClientRect();
+    var scrollTop = viewportElement.scrollTop;
+    var scrollLeft = viewportElement.scrollLeft;
+
+    pos.x = box.left + scrollLeft;
+    pos.y = box.top + scrollTop;
+}}}
+
+If we can use the `getBoxObjectFor` shortcut without triggering any browser bugs, let's do it.  This will give us the element's position on screen.  Subtract out the viewport's position on screen, and we get the element's true position.
+
+{{{
+  } else if (doc.getBoxObjectFor && !BUGGY_GECKO_BOX_OBJECT &&
+      !goog.style.BUGGY_CAMINO_) { // gecko
+    // Gecko ignores the scroll values for ancestors, up to 1.9.  See:
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=328881 and
+    // https://bugzilla.mozilla.org/show_bug.cgi?id=330619
+
+    box = doc.getBoxObjectFor(el);
+    var vpBox = doc.getBoxObjectFor(viewportElement);
+    pos.x = box.screenX - vpBox.screenX;
+    pos.y = box.screenY - vpBox.screenY;
+}}}
+
+Still no luck?  Now we have to do it the hard way.  Each element maintains an `offsetLeft` and `offsetTop` property, which is the element's position relative to its parent node.  We can walk up the DOM tree while accumulating offsets (accounting for browser bugs along the way) to calculate the element's true position.
+
+{{{
+  } else { // safari/opera
+    pos.x = el.offsetLeft;
+    pos.y = el.offsetTop;
+    parent = el.offsetParent;
+    if (parent != el) {
+      while (parent) {
+        pos.x += parent.offsetLeft;
+        pos.y += parent.offsetTop;
+        parent = parent.offsetParent;
+      }
+    }
+
+    // opera & (safari absolute) incorrectly account for body offsetTop
+    if (goog.userAgent.OPERA || (goog.userAgent.SAFARI &&
+        goog.style.getStyle_(el, 'position') == 'absolute')) {
+      pos.y -= doc.body.offsetTop;
+    }
+
+    // accumulate the scroll positions for everything but the body element
+    parent = el.offsetParent;
+    while (parent && parent != doc.body) {
+      pos.x -= parent.scrollLeft;
+      // see https://bugs.opera.com/show_bug.cgi?id=249965
+      if (!goog.userAgent.OPERA || parent.tagName != 'TR') {
+        pos.y -= parent.scrollTop;
+      }
+      parent = parent.offsetParent;
+    }
+  }
+
+  return pos;
+};
+}}}
+
+And that's all she wrote!
+
+== Further reading ==
+
+  * [ArticleCoordinates HOWTO deal with page coordinates (goog.math.Coordinate)]
+  * [ArticleUserAgent HOWTO determine the browser and version number (goog.userAgent)]
+  * [ArticleOwnerDocument HOWTO find the owner document of a node (goog.dom.getOwnerDocument)]
+  * [ArticleComputedStyle HOWTO calculate the current style of an element (goog.style.getStyle_)]
+  * [ArticleClientViewportElement HOWTO find the viewport (goog.style.getClientViewportElement)]
+  * [NodeGetBoundingClientRectMethod node.getBoundingClientRect method]
+  * [NodeGetBoxObjectForMethod node.getBoxObjectFor method]
+  * [NodeOffsetLeftProperty node.offsetLeft property]
+  * [NodeOffsetTopProperty node.offsetTop property]
+  * [NodeOffsetParentProperty node.offsetParent property]
+  * [NodeScrollTopProperty node.scrollTop property]
+  * [NodeScrollLeftProperty node.scrollLeft property]
+  * [NodeScreenXProperty node.screenX property]
+  * [NodeScreenYProperty node.screenY property]
+  * [https://bugzilla.mozilla.org/show_bug.cgi?id=350018 Mozilla bug 350018: nsIFrame code returns coordinates with (0, 0) in bottom-left on mac]
+  * [https://bugzilla.mozilla.org/show_bug.cgi?id=328881 Mozilla bug 328881: Set correct offsets on scrolled frames]
+  * [https://bugzilla.mozilla.org/show_bug.cgi?id=330619 Mozilla bug 330619: boxObject positions now depend on scroll position]
+  * [https://bugs.opera.com/show_bug.cgi?id=249965 Opera bug 249965 (requires Opera login)]
+
+

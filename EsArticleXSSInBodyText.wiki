@@ -1,0 +1,50 @@
+#summary COMO filtrar entradas de usuario en texto de cuerpo regular
+#sidebar EsTOCArticlesXSS
+
+= COMO filtrar entradas de usuario en texto de cuerpo regular =
+
+||[ArticleXSSInBodyText English]||[JaArticleXSSInBodyText 日本語]||[FrArticleXSSInBodyText Français]||
+||[EsWelcome Inicio]||||[EsArticlesXSS Seguridad Web]||
+
+Suponiendo que tienes una plantilla o fragmento HTML de la forma:
+
+{{{
+<b>Error:  Tu petición '%(query)s' no produjo ningun resultado.</b>
+}}}
+
+Si el atacante es capaz de hacer que la variable contenga, por ejemplo:
+
+{{{
+<script>evil_script()</script>
+}}}
+
+Entonces el fragmento HTML quedaría como:
+
+{{{
+<b>Error:  Tu petición '<script>evil_script()</script>' no arrojó ningún resultado.</b>
+}}}
+
+y el código maligno sería ejecutado en el navegador y podría por ejemplo robar las cookies de autentificación del usuario.
+
+== Solución ==
+
+Cualquier cadena que sea insertada dentro de una página debe tener los siguientes carácteres reemplazados con las entidades HTML/SGML correspondientes:
+
+  * Convertir `<` en `&lt;`
+  * Convertir `>` en `&gt;`
+  * Convertir `&` en `&amp;`
+  * Convertir `"` en `&quot;`
+  * Convertir `'` en `&#39;`
+
+== Razonando ==
+
+El caracter "menos que" y el "mas que" necesitan ser escapados pues estos delimitan las etiquetas HTML, y si no escapamos esas etiquetas (incluyendo las etiquetas <script>) podrían ser interpretadas por el navegador.
+
+Si el ampersand tampoco es escapado en este contexto, este podría no ser un problema de seguridad, pero podría resultar en un error de renderización pues el navegador puede interpretar el ampersand como el inicio de una entidad y no mostrarle (Nota: Hay que saber que las [http://devedge-temp.mozilla.org/library/manuals/2000/javascript/1.3/guide/embed.html#1013293 Entidades JavaScript] no trabajan fuera de los atributos.)
+
+No es estrictamente necesario escapar las comillas en este contexto, sin embargo será necesario en otros contextos, y es mucho más fácil usar las mismas funciones de escape en todas partes.
+
+== Para leer más ==
+
+  * [EsArticleXSS Todo lo que siempre quisiste saber sobre ataques cross-site scripting (XSS)]
+  * [http://devedge-temp.mozilla.org/library/manuals/2000/javascript/1.3/guide/embed.html#1013293 Usando Expresiones JavaScript como Valores de Atributos HTML]

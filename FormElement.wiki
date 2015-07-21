@@ -1,0 +1,37 @@
+#summary The form element acts as a container for form controls.
+#labels about-html,is-html-element,from-w3c,about-forms
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *form element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [FormAcceptAttribute accept]
+  * [FormAcceptCharsetAttribute accept-charset]
+  * [FormActionAttribute action]
+  * [FormAlignAttribute align]
+  * [FormAutocompleteAttribute autocomplete]
+  * [FormEnctypeAttribute enctype]
+  * [FormHeightAttribute height]
+  * [FormMethodAttribute method]
+  * [FormNameAttribute name]
+  * [FormTargetAttribute target]
+  * [FormWidthAttribute width]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/form-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/form-element-applies-style-test.html applies style] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-forms/current-work/ Web Forms 2.0]
+  * [http://www.w3.org/TR/html401/interact/forms.html#edef-FORM The form element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535249.aspx The form element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/f/form.htm The history of the form element on blooberry.com]
+

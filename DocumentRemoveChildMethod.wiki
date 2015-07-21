@@ -1,0 +1,32 @@
+#summary The document.removeChild method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+child, pointer to the element poised for removal.
+
+== Usage ==
+
+oldobj=parent.removeChild(child)
+
+In which:
+
+ * oldobj is a reference to the deleted child.
+ * parent is a reference to the parent object of the object to be removed.
+ * child is a reference to the removed object.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-removeChild-typeof-test.html typeOf(document.removeChild) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+ * [http://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html#method-removeChild w3c Dom level 1 specification]
+ * [http://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html#method-removeChild w3c Dom level 2 specification]
+ * [http://developer.mozilla.org/en/docs/DOM:element.removeChild Mozilla developer center, Element.removeChild]
+
+== Tips ==
+You can use the reference to the deleted object to re-insert the object underneath a new parent or even to temporarily remove the object from the DOM and reinsert it later.
+

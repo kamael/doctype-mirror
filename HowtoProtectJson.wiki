@@ -1,0 +1,31 @@
+#summary HOWTO protect json data against XSS
+#labels is-article,about-security,about-json
+
+= Introduction =
+
+When using AJAX, you have some special pages that serve information in various formats to be consumed by javascript on your pages.
+
+But you must protect that data from access from other domains. If the user is logged on in your website, and visit another malicious webpage, it could include a javascript request to try to get the information.
+
+All browsers have protections against this, so they could not make ajavascript http requests to domains that are different from the one that contains the js script that is being executed.
+
+But JSON is a bit special. It is valid javascript, so it could be referenced in a script tag, that is not controled by the browser, and it's open to any domain:
+
+{{{
+<script src="vulnerable_url">
+}}}
+
+It can be also included on an iframe, painted as HTML, and the remote page could access the contents, and decode the json data:
+
+{{{
+document.body.innerHTML="<div><iframe src='vulnerable_url' onload='access_and_decode()'></div>";
+}}}
+
+= How to protect JSON serving pages =
+
+  * Only return data on POST requests. All Ajax requests are POST requests, not GET, and requests from script tags and iframes are GET.
+  * Check referrer (if present) to check that it's your domain the one requesting the data. If the referrer is not present could be due to programs installed on the client (antispam, anonymizers...) so you should still return data.
+  * Don't use the session id received in cookies. Requests from other webpages could contain the cookie, because the browser automatically adds it. If your page requires the session id as a GET parameter, only pages that know the session id will be able to do the right requests.
+  * Return json data with the proper content type: application/json (application/x-javascript for some old opera browsers that have a bug). Browsers will prevent the load of the page as HTML, so the content won't be accessible when invoked from iframes.
+  * Return the json data encrypted. Only the js on your website will know the right key to decode the data.
+

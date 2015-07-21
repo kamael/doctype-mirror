@@ -1,0 +1,24 @@
+#summary The document.defaultView property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `document.defaultView` property returns a DocumentView.
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-defaultView-typeof-test.html typeOf(document.defaultView) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:document.defaultView The document.defaultView property on Mozilla Developer Center]
+  * [http://www.quirksmode.org/dom/w3c_html.html The document.defaultView property on quirksmode.org]
+  * [http://www.quirksmode.org/dom/getstyles.html The document.defaultView property on quirksmode.org]
+

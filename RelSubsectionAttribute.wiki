@@ -1,0 +1,24 @@
+#summary The rel="subsection" attribute indicates that the referenced document is a subsection in a document collection.
+#labels about-html,is-html-attribute,from-w3c
+
+`rel="subsection"` is one of several [LinkTypes link types] for describing relationships between documents.
+
+== Usage ==
+
+== Elements ==
+
+You can use the `rel="subsection"` attribute on these elements:
+
+  * [AElement <a>]
+  * [LinkElement <link>]
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/types.html#type-links The rel="subsection" link type in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534366.aspx The rel="subsection" link type on MSDN]
+
+

@@ -1,0 +1,19 @@
+#labels about-css,is-css-property
+ #summary The text-shadow CSS property ...
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *text-shadow*
+
+== Usage ==
+
+== Values ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+  * [http://www.css3.info/preview/text-shadow/ Preview of text-shadow on CSS3.info]
+  * [http://www.blooberry.com/indexdot/css/properties/text/textshadow.htm The history of the text-shadow property on blooberry.com]
+  * [http://reference.sitepoint.com/css/text-shadow The text-shadow property on the SitePoint CSS Reference]
+
+

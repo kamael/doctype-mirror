@@ -1,0 +1,16 @@
+#labels about-dom
+[EsDOMReference Español]
+
+
+== Document Object Model reference ==
+
+  * [DocumentObject document object]
+  * [WindowObject window object]
+  * [HistoryObject history object]
+  * [LocationObject location object]
+  * [NavigatorObject navigator object]
+  * [ScreenObject screen object]
+  * [ClipboardDataObject clipboardData object]
+  * [CryptoObject crypto object]
+  * [ExternalObject external object]
+

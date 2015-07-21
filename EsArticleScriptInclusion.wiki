@@ -1,0 +1,94 @@
+= COMO protegerse contra ataques de divulgación de datos cross-domain =
+
+||[ArticleScriptInclusion English]||[JaArticleScriptInclusion 日本語]||[FrArticleScriptInclusion Français]||
+||[EsWelcome Inicio]||[EsArticlesXSS Seguridad Web]||  
+
+Algunos de los problemas más importantes con los que te encontrarás en un día normal se relaciona con la divulgación no autorizada de datos entre dominios. Cualquier contenido en tu dominio puede ser llamado remotamente por el atacante a su página a través de la etiqueta `<SCRIPT SRC=...>`, que no pase por las restricciones de dominio del navegador; esta petición puede ser hecha a tus servidores con las cookies del navegador de las víctimas -- pero la respuesta es parseada por el navegador en el contexto seguro del sitio del atacante, divulgando posiblemente datos de usuario comprometedores a códigos maliciosos embebidos allí.
+
+Los navegadores interpretarán y ejecutarán una sorprendente variedad de formatos a través de la etiqueta `<SCRIPT SRC=...>`.  El rango de posibles vectores de ataque no tiene límites.  En general, tan pronto como el atacante es capaz de usar el navegador de la víctima para hacer una petición exitosa a nuestros recursos que devuelva información valiosa del usuario (como el contenido de su libreta de direcciones), tienes un problema, a pesar de como sea formateada la respuesta.
+
+== Ataques en asignación de variables y llamados ==
+
+Tal ves el esquema más simple de servir datos es elaborar una funciòn sencilla de callback, o establecer directamente una variable en la página que llama.  Por ejemplo, si tu script regresa su declaración completa, un asignamiento de variable:
+
+{{{
+var mis_contactos = { "Praxedis G. Guerrero", "pxdisgue@ejemplo.com", ... }
+}}}
+
+...o una serie completa de declaraciones, en este caso llamadas de función:
+
+{{{
+registerContact("Praxedis G. Guerrero", "pxdisgue@ejemplo.com");
+registerContact(...);
+}}}
+
+...entonces este puede recibirse con `XMLHttpRequest` y pasar directamente a `eval()`, o simplemente incluirse por la apertura de una nueva etiqueta `<SCRIPT SRC=...>` al documento.  Aunque el atacante no hace `XMLHttpRequest` para recibir datos, es libre de usar `<SCRIPT SRC=...>` en su página, y proporcionar su propia función `registerContact()` en este contexto, o accesar a la variable `mis_contactos` y robar información comprometedora.
+
+=== Protección fallida: serialización de array ===
+
+Debido al ataque mencionado, podrías pensar que sería más seguro devolver series de arrays. La siguiente carga:
+
+{{{
+[
+  [ "Praxedis G. Guerrero, "pxdisgue@ejemplo.com" ],
+  ...
+]
+}}}
+
+...parece ser sensible sólo para peticiones `XMLHttpRequest` y entonces pasar por `eval()` de manera que no descarte el valor retornado.  El atacante, que almacena su código malicioso en un dominio falso, no puede utilizar `XMLHttpRequest` para recibir recursos `google.com` (porque las políticas de seguridad cross-domain de los navegadores lo impiden con cada petición).  Lo que sigue no tiene efectos, sin embargo, como cada bloque `SCRIPT` es tratado con una semántica separada:
+
+{{{
+<SCRIPT>
+  var dame_la_informacion =
+</SCRIPT>
+<SCRIPT SRC="http://ejemplo.com/get_contacts"></SCRIPT>
+}}}
+
+Desafortunadamente, ¡el enfoque no es seguro por completo!  algunas características avanzadas de Javascript hacen posible la lectura de datos array durante el estado de inicialización, a pesar d elo que suceda con el valor retornado.  Este ataque depende de la habilidad del atacante para sobrecargar el objeto `Array` construido y definir canastas de valores y cambios para tipos de datos específicos. Esto suena complicado, pero el código es sorprendentemente corto:
+
+{{{
+function Array() {
+  var obj = this;
+  var ind = 0;
+  var getNext = function(x) {
+    obj[ind++] setter = getNext;
+    if (x) document.write(dump(x));
+  };
+  this[ind++] setter = getNext;
+}
+}}}
+
+Todo lo que el atacante tiene que hacer es definir este script _en su propa página_, entonces incluir un script de _tu página_ con un `<SCRIPT SRC=...>` estandard.  Si tu script devuelve un array (como arriba), el atacante será capaz de accesar al contenido del array, siempre y cuando este nunca haya sido almacenado explícitamente dentro de una variable o pasado a alguna función.
+
+=== Posible solución: serialización de objeto ===
+
+Otro tipo de respuesta JSON es para regresar objetos serializados en vez de arrayz, como este::
+
+{{{
+{
+  "contacto": {
+    "nombre": "Praxedis G. Guerrero",
+    "mail": "pxdisgue@ejemplo.com"
+  }
+}
+}}}
+
+Esto tambien se aplica a representaciones simples de objetos construidos (`String`, `Precision`, `Integer`), por ejemplo:
+
+{{{
+"5eb63bbbe01eeed093cb22bb8f5acdc3"
+}}}
+
+_Al día de hoy, hasta donde se sabe, no hay métodos fiables para retornarlos datos en este formato en cualquier navegador conocido. A diferencia del ataque de sobrecarga de `Array` que se mostró, los navegadores no permiten a los atacantes sobrecargar `Object` de la misma manera.  Sin embargo, necesitarás tener cuidado extremo con esta técnica. Hay casos documentados donde esquemas formateados de forma sutilmente diferente son usados -- 
+por ejemplo, cuando un `(...)` extra aparece alrededor de datos serializados, o si el objeto contiene arrays o iniciadores de llamadas anidados.  (ARRÉGLAME ¿Alguien tiene un ejemplo?)
+
+== Otras Soluciones ==
+
+Hay muchas otras técnicas que pueden ser empleadas para verificar peticiones prioritarias para retornar cualquier dato.  Estos no son mutuamente exclusivos; desearías emplea todos ellos en vez de uno.
+
+  * *Añade una cabecera personalizada al `XMLHttpRequest`*.  Cuando una petición es hecha desde el mismo dominio y quieres proteger la interface contra inclusiones cross-domain, puedes llamar al método `setRequestHeader()` añadiendo una cabecera HTTP como puede ser `X-Secret-Auth`.  Entonces, de lado del servidor, revisas que tu cabecera HTTP extra esta presente antes de entregar ningún dato.  No hay manera conocida de inyectar cabeceras personalizadas en una petición `<SCRIPT SRC=...>` remota.
+  * *Añade una autentificación token no predecible para URLs* única.  Una crptografía única, el token usuario-específico y aplicación-específica proporcionado por el servidor en el cuerpo de la página principal (o suplido a través de otros canales resistentes a la inclusión) pudiera ser requerida en todas las peticiones y ser validado por el servidor.  Esto previene que el atacante haga una petición válida en primera persona, pues no tendrá manera de construir la URL para hacer la petición.  Esto puede ser complicado, pero -- necesitas asegurarte de que las URL que contengan tokens secretos no son divulgadas en cabeceras `Referer`, y no permitirles cuentas de traspaso válidas.
+  * *Haz al Javascript no-parseable*.  La salida Javascript podría ser precedida con lineamientos que son conocidos para causar un fallo de parseo dependiente si se incluye a través de `<SCRIPT SRC=...>` - pero puede ser fácilmente despojado desde la salida `XMLHttpRequest`, antes de llamar a `eval()`.  Actualmente, el único lineamiento creible para ofrecer una oportunidad razonable de sucesos es `while (1);`, colocando efectivamente el navegador dentro de un ciclo infinito y previniendo la ejecución de los lineamientos siguientes que contienen los datos comprometedores.  (Nota que este método depende específicamente de los motores Javascript en los navegadores.  Hipotéticamente, una versión futura de un navegador podría escoger, para optimizar el parseo de JavaScript, mover inicializadores estáticos al frente de otro código, en la misma manera que los compiladores C escogen rearreglar lineamientos para optimizar el rendimiento.  En cada escenario, el bucle infinitoe `while` no necesariamente te protegería.)
+
+== Para Leer Más ==
+

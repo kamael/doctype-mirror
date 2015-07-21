@@ -1,0 +1,20 @@
+#summary The window.window property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `window.window` property returns a [WindowObject Window object].
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-window-typeof-test.html typeOf(window.window) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.window The window.window property on Mozilla Developer Center]
+

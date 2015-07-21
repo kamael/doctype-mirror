@@ -1,0 +1,17 @@
+#summary The -moz-user-select CSS property determines whether an element is selectable.
+
+== Usage ==
+
+== Values ==
+
+  * `none`
+  * `normal`
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-user-select The -moz-user-input property on Mozilla Developer Center]
+
+
+

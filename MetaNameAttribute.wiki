@@ -1,0 +1,48 @@
+#summary The meta name attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [MetaElement <meta> element] > *name attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `name` attribute on the following elements:
+
+  * [AElement <a>]
+  * [AppletElement <applet>]
+  * [ButtonElement <button>]
+  * [EmbedElement <embed>]
+  * [FormElement <form>]
+  * [FrameElement <frame>]
+  * [FramesetElement <frameset>]
+  * [IframeElement <iframe>]
+  * [IlayerElement <ilayer>]
+  * [ImgElement <img>]
+  * [KeygenElement <keygen>]
+  * [LayerElement <layer>]
+  * [LinkElement <link>]
+  * [MapElement <map>]
+  * [MetaElement <meta>]
+  * [ObjectElement <object>]
+  * [ParamElement <param>]
+  * [RtElement <rt>]
+  * [RubyElement <ruby>]
+  * [SelectElement <select>]
+  * [TextareaElement <textarea>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/meta-name-reflection-test.html meta.name reflects <meta name="foo">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#name The name attribute in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/global.html#adef-name-META The name attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534183.aspx The name attribute on MSDN]
+

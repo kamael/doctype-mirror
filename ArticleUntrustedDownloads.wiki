@@ -1,0 +1,34 @@
+#summary HOWTO serve untrusted files as downloads
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+||[EsArticleUntrustedDownloads Español]||[JaArticleUntrustedDownloads 日本語]||[FrArticleUntrustedDownloads Français]||[ZhArticleUntrustedDownloads 汉语]||
+||[Welcome Home]|[ArticlesXSS Web Security]||  
+
+Several of Google's applications serve files from untrusted sources to end-users, for download to their local hard disk.  Examples include the "Download" link for GMail attachments, message attachments in Google Groups, file attachments on Google Base items, or developer-provided downloads on Google Project Hosting.
+
+This feature is implemented using the Content-Disposition HTTP header, for example:
+
+{{{
+  Content-Disposition: attachment; filename="evil.html"
+}}}
+
+Such features certainly raise concerns regarding the serving of potentially malicious files for download to end-users' systems. It is highly recommended to virus-check such files on the server side.  Further discussion of viruses is beyond the scope of this document, but I would like to point out an unusual combination of bugs and features that can lead to an unexpected attack.
+
+You might assume that serving files for download would not result in a XSS risk.  After all, the file is downloaded to local disk on the user's system.  If they subsequently opened it, it would be treated as local content just like any other document on their hard disk (i.e. it would no longer be associated with the web site where they originally downloaded it).
+
+Unfortunately, IE violates this assumption.  When IE is served a document with `Content-Disposition:` attachment, it presents the user with a dialog box that permits the user to either "Save" the document to disk, or "Open" it straight away.  If the user selects "Open" and IE <u>[ArticleXSSInImages decides that the file contains HTML]</u>, IE will open the document in a new browser window _and associate with it the domain of the URL the document was loaded from_.  That means that !JavaScript included in the document will execute in the context of the domain of your remote web application, with full access to domain-specific cookies and other resources.
+
+(Firefox does not share this behavior.  It also allows the user to open a downloaded document directly in a new browser window, but loads it from the `file:///` URL it was downloaded to.  The JS domain context will be the local hard disk, not your remote web application, and therefore will not be able to mount XSS attacks.)
+
+== How to Avoid ==
+
+One workaround for this behavior is to serve file downloads to IE browsers by wrapping the file in a ZIP archive.  Since we do not know which content types are potentially dangerous in the above manner, it is safest to do so for all documents.
+
+If this is too much of inconvenience for your users, you can set up a separate domain name to serve files for download, e.g. DOMAINNAMEmail.com serving downloads for mail.DOMAINNAME.com. The file server domain shouldn't use any cookies, taking only a file identifier and download authorization key as URL parameters.
+
+
+== Further reading ==
+
+  * [ArticleContentSniffing HOWTO protect against malicious images and other non-HTML content (IE's content sniffing)]
+  * [ArticleXSS Everything you ever wanted to know about cross-site scripting (XSS) attacks]

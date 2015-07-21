@@ -1,0 +1,14 @@
+#summary The -moz-outline-width CSS property sets the width of an element's outline.
+
+== Usage ==
+
+== Values ==
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-outline-radius-width The -moz-outline-width property on Mozilla Developer Center]
+
+
+

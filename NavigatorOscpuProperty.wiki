@@ -1,0 +1,24 @@
+#summary The navigator.oscpu property
+#labels about-dom,is-dom-property,from-mozilla
+
+== Values ==
+
+The `navigator.oscpu` property returns a string.
+
+[BrowserFamilyFirefox Firefox] returns the operating system part of the [NavigatorUserAgentProperty navigator.userAgent] property.  Example: `"Windows NT 5.1"` on Microsoft Windows XP.
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/navigator/navigator-oscpu-typeof-test.html typeOf(navigator.oscpu) != 'undefined'] || N || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/navigator.oscpu The navigator.oscpu property on Mozilla Developer Center]
+

@@ -1,0 +1,57 @@
+#summary Day 7: Identifying your language
+#labels about-accessibility,is-article
+
+You are here: [Welcome Home] > [Articles Articles] > [ArticlesAccessibility Accessibility] > [ArticleAccessibility 30 days to a more accessible web site] > *Day 7: Identifying your language*
+
+You know what language you're writing in, so tell your readers... and their software.
+
+=== Who benefits? ===
+
+  * [ArticleAccessibility01 Jackie] benefits.  Her screen reader software ([http://www.freedomscientific.com/fs_products/software_jaws.asp JAWS]) needs to know what language your pages are written in, so it can pronounce your words properly when it reads them aloud.  If you don't identify your language, JAWS will try to guess what language you're using, and it can guess incorrectly, especially if you quote source code or include other non-language content in your pages.
+  * Search engines benefit, even if you are writing in English, but especially if you are writing in some other language.  According to the [http://www.google.com/press/zeitgeist.html Google Zeitgeist], 50% of Google users search in languages other than English, and many of these users specify in their [http://www.google.com/preferences Google preferences] to only search for pages in specific languages.  Other search engines have similar preferences.
+
+=== How to do it ===
+
+First, get the right two-character language code.  The code for English is "`en`"; the code for French is "`fr`"; German is "`de`".  If you're writing in another language, [http://www.loc.gov/standards/iso639-2/php/English_list.php look up your language code here].  Language codes are not case-sensitive.
+
+Now put your language code in your `<html>` tag.  Exactly how you do this depends on what version of HTML you're using.  [ArticleAccessibility06 Look at your `DOCTYPE`], then do one of the following:
+
+  * If you're using any variant of `HTML 4`, change your `<html>` tag to this (use your own language code if not English):
+{{{
+<html lang="en">
+}}}
+
+  * If you're using any variant of `XHTML 1.0`, change your `<html>` tag to this (use your language code in both places):
+{{{
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+}}}
+
+  * If you're using `XHTML 1.1`, change your `<html>` tag to this (again, insert your own language code):
+{{{
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+}}}
+
+Like the `DOCTYPE`, you should identify your language on every page of your web site.
+
+One additional note: if you have more than one language on a page, you can identify the language on any enclosing element.  For instance, if your web site uses HTML 4 and is primarily in German, but you quote an article in English, you could mark it up like this:
+
+{{{
+<html lang="de">
+  ...
+  <blockquote lang="en">
+    ...
+  </blockquote>`
+
+}}}
+
+=== Further reading ===
+
+  * [http://www.loc.gov/standards/iso639-2/php/English_list.php List of language codes]
+  * [http://www.w3.org/TR/REC-html40/struct/dirlang.html#h-8.1 The `lang` attribute in the HTML specification]
+  * [http://lists.w3.org/Archives/Public/w3c-wai-ig/2001AprJun/0713.html Jim Thatcher on `lang` attribute support in screen readers]. He describes their language auto-detection algorithms as "flaky", and he would know, since he designed the algorithm for [http://www-3.ibm.com/able/hpr.html Home Page Reader].  Other screen readers have added support for the `lang` attribute since his comments were written, but their auto-detection algorithms are still based on heuristics, making it even more important and useful to identify your language.
+
+----
+
+Next: [ArticleAccessibility08 Day 8: Constructing meaningful page titles]
+Back: [ArticleAccessibility06 Day 6: Choosing a DOCTYPE]
+

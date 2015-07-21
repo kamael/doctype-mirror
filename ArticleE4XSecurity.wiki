@@ -1,0 +1,109 @@
+#summary HOWTO protect against E4X markup injection
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+||[EsArticleE4XSecurity Español]||[JaArticleE4XSecurity 日本語]||[FrArticleE4XSecurity Français]||
+||[Welcome Home]||[ArticlesXSS Web Security]||  
+
+The following set of data inclusion problems may affect your application even if you do not explicitly serve dynamic Javascript.  You need to be aware of this attack if you wrap inline script blocks in HTML, as well as other payloads that may contain script snippets.  In short, because of a somewhat bizarre bid to make Javascript support XML data structures "natively," a resource does not have to serve pure Javascript to be vulnerable to `<SCRIPT SRC=...>` inclusion. A standard called [http://en.wikipedia.org/wiki/E4X E4X] (ECMAScript for XML), was originally designed to permit this fairly harmless notation:
+
+{{{
+  var x = <contact><name>John Doe</name><mail>jdoe@example.com</mail></contact>;
+  alert(x);
+}}}
+
+...and nesting of initializers in this style:
+
+{{{
+  alert(<name>{ get_name(); }</name><mail>none</mail>);
+}}}
+
+The standard is currently supported by default by several browsers, including [BrowserFamilyFirefox Firefox].
+
+== Attacks on embedded scripts ==
+
+The most important side consequence of E4X is that any standalone, well-formed XML markup is treated as a variable with an ignored value.  In other words, the following may be included as a script:
+
+{{{
+<contact><name>John Doe</name><mail>jdoe@example.com</mail></contact>
+}}}
+
+...and will be parsed to an object along the lines of:
+
+{{{
+{ "contact": {
+    "name": "John Doe"
+    "mail": "jdoe@example.com"
+  }
+}
+}}}
+
+Unfortunately, the very same XML syntax is used in any well-formed HTML document; the following can be included through `<SCRIPT SRC=...>` and will be parsed into a data structure likewise -- then promptly discarded, because the resulting value is not assigned to anything, effectively forming a no-op statement:
+
+{{{
+<html>
+<title>John Doe's mailbox</title>
+<script>alert('Hello world');</script>
+<body>
+  ...
+</body>
+</html>
+}}}
+
+So far, so good, and no harm done.  Where it gets hairy are embedded Javascript initializers - as noted before, any block inside `{...}` will be executed and used to initialize the data structure, even if preceded with random gibberish that does not form valid Javascript and would never clear the builtin interpreter.  Consider the following example:
+
+{{{
+<html>
+<script>
+  function dostuff() {
+    username = 'SERVER_INSERTED_STRING' ...
+  }
+</script>
+<body>
+  ...
+</body>
+</html>
+}}}
+
+If this page is included across domains with a `<SCRIPT SRC=...>` tag, the expression inside `{...}` will get executed in the context of the attacker's page.  A mitigating factor is that in Firefox, the initializer is limited to a single function call or statement.  This is not a great consolation, however, as there is a set of valid and likely Javascript code structures that would also serve as valid E4X initializers.
+
+And here's why it gets more complicated...
+
+== Attacks on plain old <nop>HTML documents ==
+
+Unfortunately, the trouble with E4X does not end there; because of how nested initializers work, the following may have the same interesting effect:
+
+{{{
+<html>
+<body>
+  Non-Javascript text
+  Something completely non-parseable - 1 2 3 **** }}
+  ...
+  { x =                       <- attacker-supplied
+    ...
+    User mailbox data
+    in HTML format
+    ...
+  }                           <- static or attacker-supplied
+</body>
+</html>
+}}}
+
+In effect, if the attacker is able to render non-escaped `{` character at some point on the page, in front of user-sensitive parameters (be it in a parameter copied over from URL data, a subject line from an e-mail), and can place or use a trailing `}` somewhere later on, the entire block well-formed HTML between these locations may be disclosed, in neatly parsed format, to the attacker.
+
+Alternatively, if the content between `{` and `}` is not a well-formed block of XML, but contains no line breaks and double quotes, injecting `{ x &#061; "` and `" }` might be used to achieve the same.
+
+== Preventing E4X markup injection ==
+
+Preventing E4X attacks is hard, and may not be able to be fully implemented on all pages because of usability concerns.  However, there are several lines of defense you can use for high profile targets.
+
+  * *Use non-predictable URLs with authentication tokens*.  This is similar to the recommendation made for [ArticleScriptInclusion other script inclusion attacks].
+  * *Serve pages that are not valid HTML*.  This is not a joke.  E4X XML parsers are strict, and bail out immediately on a single mismatching closing tag.  If HTML validation is not an immediate concern for a page, placing `<x></y>` near the end of a document is believed to be a sufficient defense against E4X inclusion.  If plain old HTML is used, unmatched `<br>` tags often suffice to break parsing.
+  * *Serve XHTML with the optional `<?xml ...>` prolog*. This prolog, being not a valid tag name, seems to break this Firefox parser.
+  * *Careful construction*.  Be sure to use multi-statement scripts that cannot mimick E4X initializers.  Escape `{` in user-supplied data, and construct your pages never to enclose single-line statements or user-sensitive, well-formed markup with attacker-controlled data.
+
+== Further reading ==
+
+  * [ArticleScriptInclusion HOWTO protect against cross-domain data disclosure attacks]
+  * [http://en.wikipedia.org/wiki/E4X E4X on Wikipedia]
+

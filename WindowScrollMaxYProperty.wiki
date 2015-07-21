@@ -1,0 +1,22 @@
+#summary The window.scrollMaxY property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `window.scrollMaxY` property returns an integer.
+
+This property is read/write.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-scrollMaxY-typeof-test.html typeOf(window.scrollMaxY) != 'undefined'] || N || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.scrollMaxY The window.scrollMaxY property on Mozilla Developer Center]
+

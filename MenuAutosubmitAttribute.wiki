@@ -1,0 +1,27 @@
+#summary The menu autosubmit attribute
+#labels about-html,is-html-attribute,from-whatwg
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [MenuElement <menu> element] > *autosubmit attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `autosubmit` attribute on the following elements:
+
+  * [MenuElement <menu>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/menu-autosubmit-absent-reflection-test.html menu.autosubmit reflects <menu>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/menu-autosubmit-reflection-test.html menu.autosubmit reflects <menu autosubmit>] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#autosubmit The autosubmit attribute in HTML 5]
+

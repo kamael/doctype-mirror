@@ -1,0 +1,94 @@
+#summary HOWTO protect against cross-domain data disclosure attacks
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+||[EsArticleScriptInclusion Español]||[JaArticleScriptInclusion 日本語]||[FrArticleScriptInclusion Français]||
+||[Welcome Home]||[ArticlesXSS Web Security]||  
+
+Some of the most important problems you encounter on a daily basis relate to unauthorized, cross-domain data disclosure. Any content in your domain may be remotely sourced by the attacker on his page through `<SCRIPT SRC=...>` tag, with no regard for browser domain restrictions; this request will be made to your servers with victim's browser cookies -- but the response will be parsed by the browser in the security context of attacker's site, possibly disclosing sensitive user data to malicious scripts embedded there.
+
+Browsers will parse and execute a surprising variety of formats through the `<SCRIPT SRC=...>` tag.  The range of possible attack vectors is in no way limited to complete, well-formed Javascript statements.  In general, as soon as the attacker is able to use victim's browser to make a successful request to our resource that returns sensitive user information (such as his addressbook or mailbox contents), you have a problem, regardless of how the response is formatted.
+
+== Attacks on variable setting and callbacks ==
+
+Perhaps the simplest data retrieval scheme is to perform a straightforward function callback, or directly set a variable on the calling page.  For example, if your script returns this complete statement, a variable assignment:
+
+{{{
+var my_contacts = { "John Doe", "jdoe@example.com", ... }
+}}}
+
+...or a series of complete statements, in this case function calls:
+
+{{{
+registerContact("John Doe", "jdoe@example.com");
+registerContact(...);
+}}}
+
+...then it can be retrieved with `XMLHttpRequest` and passed directly to `eval()`, or simply included by appending a new `<SCRIPT SRC=...>` tag to the document.  Although the attacker cannot make `XMLHttpRequest` to retrieve the data, he is free to use `<SCRIPT SRC=...>` on his page, and provide his own `registerContact()` function in this context, or access `my_contacts` variable and steal sensitive data.
+
+=== Failed protection: array serialization ===
+
+Because of the aforementioned attack, you might think you would be safer returning serialized arrays instead.  The following payload:
+
+{{{
+[
+  [ "John Doe, "jdoe@example.com" ],
+  ...
+]
+}}}
+
+...appears to make sense only if requested by `XMLHttpRequest` and then passed to `eval()` in a manner that does not discard the return value.  The attacker, hosting his malicious code in an unrelated domain, cannot use `XMLHttpRequest` to retrieve `google.com` resources (because of the cross-domain security policies that browsers enforce with such requests).  The following will have no desired effect, either, because each `SCRIPT` block is treated as semantically separate:
+
+{{{
+<SCRIPT>
+  var gimme_data =
+</SCRIPT>
+<SCRIPT SRC="http://example.com/get_contacts"></SCRIPT>
+}}}
+
+Unfortunately, the approach is still not safe!  Some advanced Javascript features make it possible to read array data during initialization stage, regardless of what happens to the return value.  This attack relies on the ability of the attacker to overload the builtin `Array` object and define value getters and setters for specific data types.  It sounds complicated, but the code is surprisingly short:
+
+{{{
+function Array() {
+  var obj = this;
+  var ind = 0;
+  var getNext = function(x) {
+    obj[ind++] setter = getNext;
+    if (x) document.write(dump(x));
+  };
+  this[ind++] setter = getNext;
+}
+}}}
+
+All the attacker has to do is define this script _in their own page_, then include a script from _your page_ with a standard `<SCRIPT SRC=...>` statement.  If your script returns an array (as above), the attacker will be able to access the contents of the array, even though it is never explicitly stored in a variable or passed to a function.
+
+=== Possible solution: object serialization ===
+
+Another type of JSON response is to return serialized objects instead of arrays, like this:
+
+{{{
+{
+  "contact": {
+    "name": "John Doe",
+    "mail": "jdoe@example.com"
+  }
+}
+}}}
+
+This may also apply to simple representations of builtin objects (`String`, `Precision`, `Integer`), for example:
+
+{{{
+"5eb63bbbe01eeed093cb22bb8f5acdc3"
+}}}
+
+_As of today_, there are no publicly known, reliable methods to read back the data in this format in any known browsers.  Unlike the `Array` overloading attack shown above, browsers do not allow attackers to overload `Object` in the same way.  However, you need to be extremely careful with this technique.  There are documented cases where subtly different formatting schemes are used -- for example, when an extra `(...)` appears around the serialized data, or if the object contains nested arrays or callback initializers.  FIXME citation?
+
+== Other solutions ==
+
+There are several other approaches that can be employed to verify requests prior to returning any data.  These are not mutually exclusive; you may wish to employ all of them at once.
+
+  * *Add a custom header to `XMLHttpRequest`*.  When a request is made from within the same domain, and you want to guard the interface against cross-domain inclusion, you can call the `setRequestHeader()` method add an HTTP header such as `X-Secret-Auth`.  Then on the server side, you check that your extra HTTP header is present before returning any data.  There is no known way to inject custom headers on remote `<SCRIPT SRC=...>` requests.
+  * *Add a unique, non-predictable authentication token to URLs*.  A unique, cryptographic, user- and application-specific token provided by the server in the body of the main page (or supplied through other inclusion-resistant channel) might be required on all requests and validated by the server.  This prevents the attacker from making a valid request in the first place, because they will have no way to construct the URL to make the request.  This can be tricky, though -- you need to ensure that URLs containing secret tokens are not disclosed in `Referer` headers, and not to keep them valid across accounts.
+  * *Make the Javascript non-parsable*.  The Javascript output might be preceeded with a statement that is known to cause a dependable failure if included through `<SCRIPT SRC=...>` - but can be easily stripped from `XMLHttpRequest` output, prior to calling `eval()`. There are two approaches to this problem: one, and arguably more reliable, is breaking semantics of the language to prevent any parsing altogether; a prologue that should give a very good chance of success with current and future versions of Javascript is the unbalanced syntax approach: `)]}'`, preferably then followed by a newline. Another way to prevent inclusion is breaking execution instead; a good example of a statement believed to offer a reasonable chance of success is `while (1);`. The latter approach is less future-proof, however, as there is no guarantee that correctly parsed syntax would have no side effects, or that optimizing Javascript compilers would one day not choose to move static initializers in front of the `while (1);` code. Other prologues may be attempted, too, but their efficiency should be carefully evaluated.
+
+== Further reading ==

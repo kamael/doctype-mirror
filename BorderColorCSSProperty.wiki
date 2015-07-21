@@ -1,0 +1,29 @@
+#summary The border-color property sets the color of the four borders.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *border-color*
+
+== Usage ==
+
+== Values ==
+
+  * `[ <color> || transparent ]{1,4}`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-color--hs-808080-equals-rgb-lp-128-cm--128-cm--128-rp--reflection-test.html style.borderColor reflects <div style='border-color: #808080'>] || N || N || N || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-color-black-equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.borderColor reflects <div style='border-color: black'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-color-rgb-lp-0-cm--0-cm--0-rp--equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.borderColor reflects <div style='border-color: rgb(0, 0, 0)'>] || N || N || N || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-color-transparent-equals-transparent-reflection-test.html style.borderColor reflects <div style='border-color: transparent'>] || Y || Y || N || N || N || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/box.html#propdef-border-color The border-color property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:border-color The border-color property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530729.aspx The border-color property on MSDN]
+  * [http://reference.sitepoint.com/css/border-color The border-color property on the SitePoint CSS Reference]
+

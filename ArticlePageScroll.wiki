@@ -1,0 +1,42 @@
+#summary HOWTO calculate how far the page has scrolled (goog.dom.getPageScroll)
+#labels is-article,about-dom
+#sidebar TOCArticlesDom
+
+TODO intro
+
+== The code ==
+
+{{{
+/**
+ * Gets the page scroll distance as a coordinate object.
+ *
+ * @param {Window} opt_window Optional window element to test.
+ * @return {goog.math.Coordinate} Object with values 'x' and 'y'
+ */
+goog.dom.getPageScroll = function(opt_window) {
+  var win = opt_window || goog.global || window;
+  var doc = win.document;
+
+  var x, y;
+  // Safari (2 and 3) needs body.scrollLeft in both quirks mode and strict mode
+  if (!goog.userAgent.SAFARI && doc.compatMode == 'CSS1Compat') {
+    x = doc.documentElement.scrollLeft;
+    y = doc.documentElement.scrollTop;
+  } else {
+    x = doc.body.scrollLeft;
+    y = doc.body.scrollTop;
+  }
+
+  return new goog.math.Coordinate(x, y);
+};
+}}}
+
+== The code walkthrough ==
+
+TODO walkthrough
+
+== Further reading ==
+
+TODO further reading
+
+

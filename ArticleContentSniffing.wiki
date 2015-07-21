@@ -1,0 +1,34 @@
+#summary HOWTO protect against malicious images and other non-HTML content
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+||[EsArticleContentSniffing Español]||[JaArticleContentSniffing 日本語]||[FrArticleContentSniffing Français]||
+||[Welcome Home]||[ArticlesXSS Web Security]||  
+
+In an ideal world, browsers are expected to honor the MIME type of the document as specified in the `Content-Type` HTTP header.  In particular, you might expect that a well-behaved browser would always render a document with `Content-Type: text/plain` as plain text, without interpreting HTML tags in the document.
+
+This is not an ideal world.
+
+[BrowserFamilyMSIE Internet Explorer] has a "feature" known as Content-Type sniffing.  The browser looks for HTML tags at the beginning of a document, and if it finds anything that looks like HTML, it will ignore the document's content type and render the document as HTML.  This can result in considerable headaches for applications that render non-HTML documents from untrusted sources.
+
+For example, GMail renders an email's source as plain text (specifying `Content-Type: text/plain`).  A malicious email could be crafted in such a way such that there are HTML tags in a mail header early enough in the message such that IE re-interprets the document as text/html and executes the script.
+
+But wait, there's more.  IE applies its content sniffing algorithms for images, too.  Imagine an image that contains HTML tags near the beginning of the file.  This could be a malformed image file, or even a valid image file with HTML tags in an invisible "image comment."  IE will notice the HTML tags, ignore the specified content type, re-interpret the image document as HTML, and execute any script incorporated in the document.  Note that it does so only if the image is accessed as an entire separate document, not when the image is embedded in an `<img>` tag.  Still, any user can right-click on an image at any time and view it in isolation.  Doing so can trigger execution of malicious script embedded in the image file.
+
+_Any application that let users upload images_ (or anything other kind of file) needs to worry about this.
+
+== How to Avoid ==
+
+Validate that each piece of user-generated content to be displayed is actually a document of the intended type.  This strategy would be most appropriate for images uploaded by users.  To be on the very safe side, it is best to actually process the image using an image manipulation library.  Read the image file, convert it into a bitmap, and then convert it back to an image file in the appropriate format.  Then, the file that is displayed to users is actually produced by code under your control, which helps to ensure that the image file is well-formed and does not contain any artifacts that may fool the browser into misinterpreting it as a different content type.
+
+When following this approach, keep in mind that your application will be parsing image files from untrusted sources.  Image file formats are often rather complex, and it is not uncommon for third-party image parsing libraries to themselves contain bugs which could be exploited by a maliciously malformed file.  Instead of targeting the end user's client-side browser, an attacker could target the server-side image parsing library that you were using to help avoid attacks against the end user's client-side browser!  There is no general solution to this problem, beyond keeping your server-side code up-to-date.
+
+For uploaded documents other than images, you must ensure that there are no HTML tags in the first 256 bytes of the file.  Depending on the file format, this could be as simple as pre-pending 256 whitespace characters.  (This number has been [http://msdn.microsoft.com/workshop/networking/moniker/overview/appendix_a.asp confirmed by Microsoft online documentation].)  However, there are no guarantees that future versions of IE may not behave differently.
+
+For plain text documents, you could also render the entire document as HTML (e.g., in `<pre>` tags) and HTML-escape the entire document.  However, this may not always be appropriate, especially if the user expects to have the option of saving the document as a plain text file.  And [ArticleUtf7 don't forget to declare your character encoding]!
+
+== Further reading ==
+
+  * [ArticleXSS Everything you ever wanted to know about cross-site scripting (XSS) attacks]
+  * [http://msdn.microsoft.com/workshop/networking/moniker/overview/appendix_a.asp MIME Type Detection in Internet Explorer]
+  * [http://code.google.com/p/browsersec/wiki/Part2#Survey_of_content_sniffing_behaviors Survey of content sniffing behaviors] from the _Browser Security Handbook_ by Michal Zalewski

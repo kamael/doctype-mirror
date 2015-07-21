@@ -1,0 +1,6 @@
+#summary The rel="first" attribute is a synonym for rel="start".
+#labels about-html,is-html-attribute
+
+See [RelStartAttribute rel="start"].
+
+

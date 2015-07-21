@@ -1,0 +1,11 @@
+#summary The opacity CSS property specifies the translucency of an element.
+
+== Usage ==
+
+== Values ==
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [https://developer.mozilla.org/en/CSS/opacity The opacity property on Mozilla Developer Center]

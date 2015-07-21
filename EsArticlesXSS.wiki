@@ -1,0 +1,34 @@
+#summary Artículos sobre seguridad web
+#sidebar EsTOCArticlesXSS
+
+||[ArticlesXSS English]|||[JaArticlesXSS 日本語]||[FrArticlesXSS Français]||
+||[EsWelcome Inicio]||||[EsArticles Artículos Howto]||    
+
+== Seguridad Web  ==
+
+  * [EsArticleIntroductionToXSS Introducción a Vulnerabilidades Cross-Site Scripting.]
+  * [EsArticleXSS Aquello que siempre quisiste saber sobre ataques cross-site scripting (XSS)]
+  * [EsArticleXSSInAttributes COMO filtrar entradas de usuario en atributos de etiquetas]
+  * [EsArticleXSSInBodyText COMO filtrar entradas de usuario en texto de cuerpo regular]
+  * [EsArticleXSSInEventHandlers COMO filtrar entradas de usuario en manejadores de evento JavaScript]
+  * [EsArticleXSSInHttpHeaders COMO filtrar entradas de usuario en cabeceras HTTP]
+  * [EsArticleXSSInJavaScript COMO filtrar entradas de usuario en contexto JavaScript]
+  * [EsArticleXSSInStyle COMO filtrar entradas de usuario en elementos de estilo y atributos]
+  * [EsArticleXSSInUrlAttributes COMO filtrar entradas de usuario en atributos de URL]
+  * [EsArticleScriptInclusion COMO protegerse contra ataques de divulgación de datos cross-domain]
+  * [EsArticleE4XSecurity COMO protegerse contra ataques de inyección E4X]
+  * [EsArticleCompartmentalizingApplications Compartimentar aplicaciones a través del mismo dominio]
+  * [EsArticleUtf7 UTF-7: el caso del charset perdido]
+  * [EsArticleMalformedUtf8 UTF-8 malformado: quien dice "hello%EE" no puede ser peligroso]
+  * [EsArticleContentSniffing COMO protegerse contra imágenes maliciosas y otros contenidos no-HTML]
+  * [EsArticleUntrustedDownloads COMO servir archivos no confiables como descargas]
+  * [EsArticleFlashSecurity Introduction to Flash security]
+  * [EsArticleFlashSecurityCrossDomain Flash cross-domain policy files]
+  * [EsArticleFlashSecurityPolicyAttack Flash cross-domain policy attacks]
+  * [EsArticleFlashSecurityGetURL Flash getURL XSS attacks]
+  * [EsArticleFlashSecurityClickTAG Flash clickTAG XSS attacks]
+  * [EsArticleFlashSecurityTextField Flash TextField XSS attacks]
+  * [EsArticleFlashSecurityLoadMovie Flash loadMovie XSS attacks]
+  * [EsArticleFlashSecurityAsFunction Flash asFunction XSS attacks]
+  * [EsArticleFlashSecurityURL Flash URL parameter attacks]
+  * [EsArticleFlashSecuritySolutions HOWTO secure your Flash applications]

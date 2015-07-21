@@ -1,0 +1,21 @@
+#summary The onbeforedeactivate event fires before an element stops being the active element.
+#labels about-dom,is-dom-event,from-microsoft
+
+== Usage ==
+
+== Event targets ==
+
+The `onbeforeactivate` event fires on these objects:
+
+  * [HtmlElements all elements]
+  * [DocumentObject document]
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms536903.aspx The onbeforedeactivate event on MSDN]
+
+

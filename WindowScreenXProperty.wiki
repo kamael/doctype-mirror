@@ -1,0 +1,22 @@
+#summary The window.screenX property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `window.screenX` property returns an integer.
+
+This property is read/write.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-screenX-typeof-test.html typeOf(window.screenX) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.screenX The window.screenX property on Mozilla Developer Center]
+

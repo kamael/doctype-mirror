@@ -1,0 +1,24 @@
+#summary The screen.left property
+#labels about-dom,is-dom-property,from-mozilla
+
+== Values ==
+
+The `screen.left` property returns an integer.
+
+In [BrowserFamilyFirefox Firefox], the value of the `screen.left` property is the left edge of the current screen, in pixels.  If you only have one monitor, this will always be `0`, but if you have multiple monitors, then its value depends on your monitor setup.
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/screen/screen-left-typeof-test.html typeOf(screen.left) != 'undefined'] || N || N || Y || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.screen.left The screen.left property on Mozilla Developer Center]
+

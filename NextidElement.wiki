@@ -1,0 +1,26 @@
+#summary The nextid element is a complete mystery.
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *nextid element*
+
+== Usage ==
+
+The `nextid` element has been obsolete for many, many years.  Don't use it.
+
+== Attributes ==
+
+  * [NextidNAttribute n]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/nextid-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/nextid-element-applies-style-test.html applies style] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.blooberry.com/indexdot/html/tagpages/n/nextid.htm The history of the nextid element on blooberry.com]
+

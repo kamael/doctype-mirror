@@ -1,0 +1,42 @@
+#summary List of HTML character entities
+#labels about-html,from-w3c
+
+You are here: [Welcome Home] > [HtmlReference HTML Reference] > [CharacterEntities Character entities] > *beginning with X*
+
+|| *Name* || *Value* || *Test* ||
+|| [XfrCharacterEntity &Xfr;] || U+1D51B || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xfr-capital-1d51b-entity-test.html test] ||
+|| [XiCharacterEntity &Xi;] || [http://www.fileformat.info/info/unicode/char/039e/index.htm U+0039E] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xi-capital-0039e-entity-test.html test] ||
+|| [XopfCharacterEntity &Xopf;] || U+1D54F || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xopf-capital-1d54f-entity-test.html test] ||
+|| [XscrCharacterEntity &Xscr;] || U+1D4B3 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xscr-capital-1d4b3-entity-test.html test] ||
+|| [XcapCharacterEntity &xcap;] || [http://www.fileformat.info/info/unicode/char/22c2/index.htm U+022C2] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xcap-022c2-entity-test.html test] ||
+|| [XcircCharacterEntity &xcirc;] || [http://www.fileformat.info/info/unicode/char/25ef/index.htm U+025EF] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xcirc-025ef-entity-test.html test] ||
+|| [XcupCharacterEntity &xcup;] || [http://www.fileformat.info/info/unicode/char/22c3/index.htm U+022C3] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xcup-022c3-entity-test.html test] ||
+|| [XdtriCharacterEntity &xdtri;] || [http://www.fileformat.info/info/unicode/char/25bd/index.htm U+025BD] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xdtri-025bd-entity-test.html test] ||
+|| [XfrCharacterEntity &xfr;] || U+1D535 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xfr-1d535-entity-test.html test] ||
+|| [XharrCharacterEntity &xhArr;] || [http://www.fileformat.info/info/unicode/char/27fa/index.htm U+027FA] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xharr-027fa-entity-test.html test] ||
+|| [XharrCharacterEntity &xharr;] || [http://www.fileformat.info/info/unicode/char/27f7/index.htm U+027F7] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xharr-027f7-entity-test.html test] ||
+|| [XiCharacterEntity &xi;] || [http://www.fileformat.info/info/unicode/char/03be/index.htm U+003BE] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xi-003be-entity-test.html test] ||
+|| [XlarrCharacterEntity &xlArr;] || [http://www.fileformat.info/info/unicode/char/27f8/index.htm U+027F8] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xlarr-027f8-entity-test.html test] ||
+|| [XlarrCharacterEntity &xlarr;] || [http://www.fileformat.info/info/unicode/char/27f5/index.htm U+027F5] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xlarr-027f5-entity-test.html test] ||
+|| [XmapCharacterEntity &xmap;] || [http://www.fileformat.info/info/unicode/char/27fc/index.htm U+027FC] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xmap-027fc-entity-test.html test] ||
+|| [XnisCharacterEntity &xnis;] || [http://www.fileformat.info/info/unicode/char/22fb/index.htm U+022FB] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xnis-022fb-entity-test.html test] ||
+|| [XodotCharacterEntity &xodot;] || [http://www.fileformat.info/info/unicode/char/2a00/index.htm U+02A00] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xodot-02a00-entity-test.html test] ||
+|| [XopfCharacterEntity &xopf;] || U+1D569 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xopf-1d569-entity-test.html test] ||
+|| [XoplusCharacterEntity &xoplus;] || [http://www.fileformat.info/info/unicode/char/2a01/index.htm U+02A01] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xoplus-02a01-entity-test.html test] ||
+|| [XotimeCharacterEntity &xotime;] || [http://www.fileformat.info/info/unicode/char/2a02/index.htm U+02A02] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xotime-02a02-entity-test.html test] ||
+|| [XrarrCharacterEntity &xrArr;] || [http://www.fileformat.info/info/unicode/char/27f9/index.htm U+027F9] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xrarr-027f9-entity-test.html test] ||
+|| [XrarrCharacterEntity &xrarr;] || [http://www.fileformat.info/info/unicode/char/27f6/index.htm U+027F6] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xrarr-027f6-entity-test.html test] ||
+|| [XscrCharacterEntity &xscr;] || U+1D4CD || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xscr-1d4cd-entity-test.html test] ||
+|| [XsqcupCharacterEntity &xsqcup;] || [http://www.fileformat.info/info/unicode/char/2a06/index.htm U+02A06] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xsqcup-02a06-entity-test.html test] ||
+|| [XuplusCharacterEntity &xuplus;] || [http://www.fileformat.info/info/unicode/char/2a04/index.htm U+02A04] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xuplus-02a04-entity-test.html test] ||
+|| [XutriCharacterEntity &xutri;] || [http://www.fileformat.info/info/unicode/char/25b3/index.htm U+025B3] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xutri-025b3-entity-test.html test] ||
+|| [XveeCharacterEntity &xvee;] || [http://www.fileformat.info/info/unicode/char/22c1/index.htm U+022C1] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xvee-022c1-entity-test.html test] ||
+|| [XwedgeCharacterEntity &xwedge;] || [http://www.fileformat.info/info/unicode/char/22c0/index.htm U+022C0] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/xwedge-022c0-entity-test.html test] ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/named.html Named character references in HTML 5]
+  * [http://www.w3.org/TR/html4/sgml/entities.html Character entity references in HTML 4]
+  * [http://www.evolt.org/article/ala/17/21234/ Chart of common character entities]
+
+

@@ -1,0 +1,44 @@
+#summary The <svg> element represents the root node of an SVG document or image.  It is analagous to the <html> element in an HTML document.
+You are here: [Welcome Home] > [SVGElements SVG Elements] > *svg element*
+
+= Introduction =
+
+The [SVGSVGElement <svg> element] represents the root node of an SVG document or image.  When included in an XML context (inline with XHTML or as a standalone SVG document), the [SVGSVGElement <svg> element] must include the SVG namespace (see [SVGSVGElement#Usage Usage] below).
+
+= Details =
+
+== Usage ==
+
+{{{
+<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 300 200">
+  <!-- rest of SVG document goes here -->
+</svg>
+}}}
+
+== Attributes ==
+
+Common attributes:
+
+  * [http://www.w3.org/TR/SVG11/struct.html#SVGElementWidthAttribute width] - if unspecified this value is 100%
+  * [http://www.w3.org/TR/SVG11/struct.html#SVGElementHeightAttribute height] - if unspecified this value is 100%
+  * [http://www.w3.org/TR/SVG11/coords.html#ViewBoxAttribute viewBox] - represents the coordinate system of the SVG document
+
+== DOM API ==
+
+The [SVGSVGElement <svg> element] supports the DOM [http://www.w3.org/TR/SVG11/struct.html#InterfaceSVGSVGElement SVGSVGElement interface].  Some of the noted methods of SVGSVGElement are:
+
+  * [http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-536297177 NodeList] getIntersectionList( SVGRect rect ):
+    * returns the list of nodes whose bounding boxes intersect with the input rectangle
+    * supported by Opera 9+
+    * NOT yet supported by Mozilla, see [http://bugzilla.mozilla.org/show_bug.cgi?id=501421 this bug]
+    * NOT yet supported by Webkit, see [http://bugs.webkit.org/show_bug.cgi?id=11274 this bug]
+  * [http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-536297177 NodeList] getEnclosureList( SVGRect rect ):
+    * returns the list of nodes whose bounding boxes are completely enclosed by the input rectangle
+    * supported by Opera 9+
+    * NOT yet supported by Mozilla, see [http://bugzilla.mozilla.org/show_bug.cgi?id=501421 this bug]
+    * NOT yet supported by Webkit, see [http://bugs.webkit.org/show_bug.cgi?id=11274 this bug]
+
+= Reference =
+
+  * [http://www.w3.org/TR/SVG11/struct.html#SVGElement The <svg> element in SVG 1.1]
+  * [http://www.w3.org/TR/SVGTiny12/struct.html#SVGElement The <svg> element in SVGT 1.2]

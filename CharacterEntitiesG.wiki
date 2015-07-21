@@ -1,0 +1,93 @@
+#summary List of HTML character entities
+#labels about-html,from-w3c
+
+You are here: [Welcome Home] > [HtmlReference HTML Reference] > [CharacterEntities Character entities] > *beginning with G*
+
+|| *Name* || *Value* || *Test* ||
+|| [GjcyCharacterEntity &GJcy;] || [http://www.fileformat.info/info/unicode/char/0403/index.htm U+00403] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gjcy-00403-entity-test.html test] ||
+|| [GtCharacterEntity &GT;] || [http://www.fileformat.info/info/unicode/char/003e/index.htm U+0003E] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gt-allcaps-0003e-entity-test.html test] ||
+|| [GtCharacterEntity &GT] || [http://www.fileformat.info/info/unicode/char/003e/index.htm U+0003E] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gt-allcaps-no-semicolon-0003e-entity-test.html test] ||
+|| [GammaCharacterEntity &Gamma;] || [http://www.fileformat.info/info/unicode/char/0393/index.htm U+00393] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gamma-capital-00393-entity-test.html test] ||
+|| [GammadCharacterEntity &Gammad;] || [http://www.fileformat.info/info/unicode/char/03dc/index.htm U+003DC] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gammad-capital-003dc-entity-test.html test] ||
+|| [GbreveCharacterEntity &Gbreve;] || [http://www.fileformat.info/info/unicode/char/011e/index.htm U+0011E] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gbreve-capital-0011e-entity-test.html test] ||
+|| [GcedilCharacterEntity &Gcedil;] || [http://www.fileformat.info/info/unicode/char/0122/index.htm U+00122] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gcedil-capital-00122-entity-test.html test] ||
+|| [GcircCharacterEntity &Gcirc;] || [http://www.fileformat.info/info/unicode/char/011c/index.htm U+0011C] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gcirc-capital-0011c-entity-test.html test] ||
+|| [GcyCharacterEntity &Gcy;] || [http://www.fileformat.info/info/unicode/char/0413/index.htm U+00413] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gcy-capital-00413-entity-test.html test] ||
+|| [GdotCharacterEntity &Gdot;] || [http://www.fileformat.info/info/unicode/char/0120/index.htm U+00120] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gdot-capital-00120-entity-test.html test] ||
+|| [GfrCharacterEntity &Gfr;] || U+1D50A || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gfr-capital-1d50a-entity-test.html test] ||
+|| [GgCharacterEntity &Gg;] || [http://www.fileformat.info/info/unicode/char/22d9/index.htm U+022D9] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gg-capital-022d9-entity-test.html test] ||
+|| [GopfCharacterEntity &Gopf;] || U+1D53E || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gopf-capital-1d53e-entity-test.html test] ||
+|| [GreaterequalCharacterEntity &GreaterEqual;] || [http://www.fileformat.info/info/unicode/char/2265/index.htm U+02265] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/greaterequal-02265-entity-test.html test] ||
+|| [GreaterequallessCharacterEntity &GreaterEqualLess;] || [http://www.fileformat.info/info/unicode/char/22db/index.htm U+022DB] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/greaterequalless-022db-entity-test.html test] ||
+|| [GreaterfullequalCharacterEntity &GreaterFullEqual;] || [http://www.fileformat.info/info/unicode/char/2267/index.htm U+02267] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/greaterfullequal-02267-entity-test.html test] ||
+|| [GreatergreaterCharacterEntity &GreaterGreater;] || [http://www.fileformat.info/info/unicode/char/2aa2/index.htm U+02AA2] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/greatergreater-02aa2-entity-test.html test] ||
+|| [GreaterlessCharacterEntity &GreaterLess;] || [http://www.fileformat.info/info/unicode/char/2277/index.htm U+02277] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/greaterless-02277-entity-test.html test] ||
+|| [GreaterslantequalCharacterEntity &GreaterSlantEqual;] || [http://www.fileformat.info/info/unicode/char/2a7e/index.htm U+02A7E] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/greaterslantequal-02a7e-entity-test.html test] ||
+|| [GreatertildeCharacterEntity &GreaterTilde;] || [http://www.fileformat.info/info/unicode/char/2273/index.htm U+02273] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/greatertilde-02273-entity-test.html test] ||
+|| [GscrCharacterEntity &Gscr;] || U+1D4A2 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gscr-capital-1d4a2-entity-test.html test] ||
+|| [GtCharacterEntity &Gt;] || [http://www.fileformat.info/info/unicode/char/226b/index.htm U+0226B] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gt-capital-0226b-entity-test.html test] ||
+|| [GeCharacterEntity &gE;] || [http://www.fileformat.info/info/unicode/char/2267/index.htm U+02267] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/ge-02267-entity-test.html test] ||
+|| [GelCharacterEntity &gEl;] || [http://www.fileformat.info/info/unicode/char/2a8c/index.htm U+02A8C] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gel-02a8c-entity-test.html test] ||
+|| [GacuteCharacterEntity &gacute;] || [http://www.fileformat.info/info/unicode/char/01f5/index.htm U+001F5] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gacute-001f5-entity-test.html test] ||
+|| [GammaCharacterEntity &gamma;] || [http://www.fileformat.info/info/unicode/char/03b3/index.htm U+003B3] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gamma-003b3-entity-test.html test] ||
+|| [GammadCharacterEntity &gammad;] || [http://www.fileformat.info/info/unicode/char/03dd/index.htm U+003DD] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gammad-003dd-entity-test.html test] ||
+|| [GapCharacterEntity &gap;] || [http://www.fileformat.info/info/unicode/char/2a86/index.htm U+02A86] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gap-02a86-entity-test.html test] ||
+|| [GbreveCharacterEntity &gbreve;] || [http://www.fileformat.info/info/unicode/char/011f/index.htm U+0011F] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gbreve-0011f-entity-test.html test] ||
+|| [GcircCharacterEntity &gcirc;] || [http://www.fileformat.info/info/unicode/char/011d/index.htm U+0011D] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gcirc-0011d-entity-test.html test] ||
+|| [GcyCharacterEntity &gcy;] || [http://www.fileformat.info/info/unicode/char/0433/index.htm U+00433] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gcy-00433-entity-test.html test] ||
+|| [GdotCharacterEntity &gdot;] || [http://www.fileformat.info/info/unicode/char/0121/index.htm U+00121] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gdot-00121-entity-test.html test] ||
+|| [GeCharacterEntity &ge;] || [http://www.fileformat.info/info/unicode/char/2265/index.htm U+02265] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/ge-02265-entity-test.html test] ||
+|| [GelCharacterEntity &gel;] || [http://www.fileformat.info/info/unicode/char/22db/index.htm U+022DB] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gel-022db-entity-test.html test] ||
+|| [GeqCharacterEntity &geq;] || [http://www.fileformat.info/info/unicode/char/2265/index.htm U+02265] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/geq-02265-entity-test.html test] ||
+|| [GeqqCharacterEntity &geqq;] || [http://www.fileformat.info/info/unicode/char/2267/index.htm U+02267] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/geqq-02267-entity-test.html test] ||
+|| [GeqslantCharacterEntity &geqslant;] || [http://www.fileformat.info/info/unicode/char/2a7e/index.htm U+02A7E] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/geqslant-02a7e-entity-test.html test] ||
+|| [GesCharacterEntity &ges;] || [http://www.fileformat.info/info/unicode/char/2a7e/index.htm U+02A7E] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/ges-02a7e-entity-test.html test] ||
+|| [GesccCharacterEntity &gescc;] || [http://www.fileformat.info/info/unicode/char/2aa9/index.htm U+02AA9] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gescc-02aa9-entity-test.html test] ||
+|| [GesdotCharacterEntity &gesdot;] || [http://www.fileformat.info/info/unicode/char/2a80/index.htm U+02A80] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gesdot-02a80-entity-test.html test] ||
+|| [GesdotoCharacterEntity &gesdoto;] || [http://www.fileformat.info/info/unicode/char/2a82/index.htm U+02A82] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gesdoto-02a82-entity-test.html test] ||
+|| [GesdotolCharacterEntity &gesdotol;] || [http://www.fileformat.info/info/unicode/char/2a84/index.htm U+02A84] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gesdotol-02a84-entity-test.html test] ||
+|| [GeslesCharacterEntity &gesles;] || [http://www.fileformat.info/info/unicode/char/2a94/index.htm U+02A94] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gesles-02a94-entity-test.html test] ||
+|| [GfrCharacterEntity &gfr;] || U+1D524 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gfr-1d524-entity-test.html test] ||
+|| [GgCharacterEntity &gg;] || [http://www.fileformat.info/info/unicode/char/226b/index.htm U+0226B] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gg-0226b-entity-test.html test] ||
+|| [GggCharacterEntity &ggg;] || [http://www.fileformat.info/info/unicode/char/22d9/index.htm U+022D9] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/ggg-022d9-entity-test.html test] ||
+|| [GimelCharacterEntity &gimel;] || [http://www.fileformat.info/info/unicode/char/2137/index.htm U+02137] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gimel-02137-entity-test.html test] ||
+|| [GjcyCharacterEntity &gjcy;] || [http://www.fileformat.info/info/unicode/char/0453/index.htm U+00453] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gjcy-00453-entity-test.html test] ||
+|| [GlCharacterEntity &gl;] || [http://www.fileformat.info/info/unicode/char/2277/index.htm U+02277] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gl-02277-entity-test.html test] ||
+|| [GleCharacterEntity &glE;] || [http://www.fileformat.info/info/unicode/char/2a92/index.htm U+02A92] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gle-02a92-entity-test.html test] ||
+|| [GlaCharacterEntity &gla;] || [http://www.fileformat.info/info/unicode/char/2aa5/index.htm U+02AA5] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gla-02aa5-entity-test.html test] ||
+|| [GljCharacterEntity &glj;] || [http://www.fileformat.info/info/unicode/char/2aa4/index.htm U+02AA4] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/glj-02aa4-entity-test.html test] ||
+|| [GneCharacterEntity &gnE;] || [http://www.fileformat.info/info/unicode/char/2269/index.htm U+02269] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gne-02269-entity-test.html test] ||
+|| [GnapCharacterEntity &gnap;] || [http://www.fileformat.info/info/unicode/char/2a8a/index.htm U+02A8A] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gnap-02a8a-entity-test.html test] ||
+|| [GnapproxCharacterEntity &gnapprox;] || [http://www.fileformat.info/info/unicode/char/2a8a/index.htm U+02A8A] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gnapprox-02a8a-entity-test.html test] ||
+|| [GneCharacterEntity &gne;] || [http://www.fileformat.info/info/unicode/char/2a88/index.htm U+02A88] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gne-02a88-entity-test.html test] ||
+|| [GneqCharacterEntity &gneq;] || [http://www.fileformat.info/info/unicode/char/2a88/index.htm U+02A88] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gneq-02a88-entity-test.html test] ||
+|| [GneqqCharacterEntity &gneqq;] || [http://www.fileformat.info/info/unicode/char/2269/index.htm U+02269] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gneqq-02269-entity-test.html test] ||
+|| [GnsimCharacterEntity &gnsim;] || [http://www.fileformat.info/info/unicode/char/22e7/index.htm U+022E7] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gnsim-022e7-entity-test.html test] ||
+|| [GopfCharacterEntity &gopf;] || U+1D558 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gopf-1d558-entity-test.html test] ||
+|| [GraveCharacterEntity &grave;] || [http://www.fileformat.info/info/unicode/char/0060/index.htm U+00060] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/grave-00060-entity-test.html test] ||
+|| [GscrCharacterEntity &gscr;] || [http://www.fileformat.info/info/unicode/char/210a/index.htm U+0210A] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gscr-0210a-entity-test.html test] ||
+|| [GsimCharacterEntity &gsim;] || [http://www.fileformat.info/info/unicode/char/2273/index.htm U+02273] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gsim-02273-entity-test.html test] ||
+|| [GsimeCharacterEntity &gsime;] || [http://www.fileformat.info/info/unicode/char/2a8e/index.htm U+02A8E] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gsime-02a8e-entity-test.html test] ||
+|| [GsimlCharacterEntity &gsiml;] || [http://www.fileformat.info/info/unicode/char/2a90/index.htm U+02A90] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gsiml-02a90-entity-test.html test] ||
+|| [GtCharacterEntity &gt;] || [http://www.fileformat.info/info/unicode/char/003e/index.htm U+0003E] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gt-0003e-entity-test.html test] ||
+|| [GtCharacterEntity &gt] || [http://www.fileformat.info/info/unicode/char/003e/index.htm U+0003E] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gt-no-semicolon-0003e-entity-test.html test] ||
+|| [GtccCharacterEntity &gtcc;] || [http://www.fileformat.info/info/unicode/char/2aa7/index.htm U+02AA7] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gtcc-02aa7-entity-test.html test] ||
+|| [GtcirCharacterEntity &gtcir;] || [http://www.fileformat.info/info/unicode/char/2a7a/index.htm U+02A7A] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gtcir-02a7a-entity-test.html test] ||
+|| [GtdotCharacterEntity &gtdot;] || [http://www.fileformat.info/info/unicode/char/22d7/index.htm U+022D7] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gtdot-022d7-entity-test.html test] ||
+|| [GtlparCharacterEntity &gtlPar;] || [http://www.fileformat.info/info/unicode/char/2995/index.htm U+02995] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gtlpar-02995-entity-test.html test] ||
+|| [GtquestCharacterEntity &gtquest;] || [http://www.fileformat.info/info/unicode/char/2a7c/index.htm U+02A7C] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gtquest-02a7c-entity-test.html test] ||
+|| [GtrapproxCharacterEntity &gtrapprox;] || [http://www.fileformat.info/info/unicode/char/2a86/index.htm U+02A86] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gtrapprox-02a86-entity-test.html test] ||
+|| [GtrarrCharacterEntity &gtrarr;] || [http://www.fileformat.info/info/unicode/char/2978/index.htm U+02978] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gtrarr-02978-entity-test.html test] ||
+|| [GtrdotCharacterEntity &gtrdot;] || [http://www.fileformat.info/info/unicode/char/22d7/index.htm U+022D7] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gtrdot-022d7-entity-test.html test] ||
+|| [GtreqlessCharacterEntity &gtreqless;] || [http://www.fileformat.info/info/unicode/char/22db/index.htm U+022DB] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gtreqless-022db-entity-test.html test] ||
+|| [GtreqqlessCharacterEntity &gtreqqless;] || [http://www.fileformat.info/info/unicode/char/2a8c/index.htm U+02A8C] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gtreqqless-02a8c-entity-test.html test] ||
+|| [GtrlessCharacterEntity &gtrless;] || [http://www.fileformat.info/info/unicode/char/2277/index.htm U+02277] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gtrless-02277-entity-test.html test] ||
+|| [GtrsimCharacterEntity &gtrsim;] || [http://www.fileformat.info/info/unicode/char/2273/index.htm U+02273] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/gtrsim-02273-entity-test.html test] ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/named.html Named character references in HTML 5]
+  * [http://www.w3.org/TR/html4/sgml/entities.html Character entity references in HTML 4]
+  * [http://www.evolt.org/article/ala/17/21234/ Chart of common character entities]
+
+

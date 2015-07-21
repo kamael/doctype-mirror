@@ -1,0 +1,34 @@
+#summary The ol value attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [OlElement <ol> element] > *value attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `value` attribute on the following elements:
+
+  * [ButtonElement <button>]
+  * [LiElement <li>]
+  * [MeterElement <meter>]
+  * [OlElement <ol>]
+  * [OptionElement <option>]
+  * [ParamElement <param>]
+  * [ProgressElement <progress>]
+  * [SelectElement <select>]
+  * [UlElement <ul>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/ol-value-reflection-test.html ol.value reflects <ol value="42">] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/lists.html#edef-OL The value attribute in HTML 4]
+

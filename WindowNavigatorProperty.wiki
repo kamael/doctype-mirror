@@ -1,0 +1,20 @@
+#summary The window.navigator property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `window.navigator` property returns a [NavigatorObject Navigator object].
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-navigator-typeof-test.html typeOf(window.navigator) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.navigator The window.navigator property on Mozilla Developer Center]
+

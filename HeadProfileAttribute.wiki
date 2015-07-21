@@ -1,0 +1,24 @@
+#summary The head profile attribute
+#labels about-html,is-html-attribute,from-w3c
+
+== Usage ==
+The profile attribute allows one to point to a page which instructs a User-Agent how to interpret and understand a document. A current use of this is GRDDL, which allows you to describe a mechanism to extract RDF metadata from the document.
+
+== Values ==
+
+== Elements ==
+
+You can use the `profile` attribute on the following elements:
+
+  * [HeadElement <head>]
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/global.html#adef-profile The profile attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534351.aspx The profile attribute on MSDN]
+  * [http://www.w3.org/TR/2006/WD-grddl-primer-20061002/ GRDDL Primer] and [http://www.w3.org/TR/grddl/ Specification] at W3C
+

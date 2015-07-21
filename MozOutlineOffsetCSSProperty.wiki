@@ -1,0 +1,16 @@
+#summary The -moz-outline-offset CSS property sets the offset of an element's outline.
+
+== Usage ==
+
+This is a Mozilla-specific synonym of [OutlineOffsetCSSProperty outline], which is more widely supported.
+
+== Values ==
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-outline-offset The -moz-outline-offset property on Mozilla Developer Center]
+
+
+

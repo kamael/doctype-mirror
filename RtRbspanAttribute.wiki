@@ -1,0 +1,21 @@
+#summary The rt rbspan attribute
+#labels about-html,is-html-attribute
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `rbspan` attribute on the following elements:
+
+  * [RtElement <rt>]
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+
+

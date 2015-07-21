@@ -1,0 +1,17 @@
+#summary The layout-grid-char-spacing CSS property
+#labels about-css,is-css-property
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *layout-grid-char-spacing*
+
+== Usage ==
+
+== Values ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.blooberry.com/indexdot/css/properties/intl/lgcharspace.htm The history of the layout-grid-char-spacing property on blooberry.com]
+

@@ -1,0 +1,19 @@
+#summary The external.menuArguments property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `external.menuArguments` property returns a [WindowObject Window object].
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms534165.aspx The external.menuArguments property on MSDN]
+

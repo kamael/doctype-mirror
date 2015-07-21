@@ -1,0 +1,35 @@
+#summary The outline-style property sets the style of the outline within a box.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *outline-style*
+
+== Usage ==
+
+== Values ==
+
+See [BorderStyleCSSProperty border styles].
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-style-bogus-equals-none-reflection-test.html style.outlineStyle reflects <div style='outline-style: bogus'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-style-dashed-equals-dashed-reflection-test.html style.outlineStyle reflects <div style='outline-style: dashed'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-style-dotted-equals-dotted-reflection-test.html style.outlineStyle reflects <div style='outline-style: dotted'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-style-double-equals-double-reflection-test.html style.outlineStyle reflects <div style='outline-style: double'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-style-groove-equals-groove-reflection-test.html style.outlineStyle reflects <div style='outline-style: groove'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-style-hidden-equals-hidden-reflection-test.html style.outlineStyle reflects <div style='outline-style: hidden'>] || N || N || N || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-style-inset-equals-inset-reflection-test.html style.outlineStyle reflects <div style='outline-style: inset'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-style-none-equals-none-reflection-test.html style.outlineStyle reflects <div style='outline-style: none'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-style-outset-equals-outset-reflection-test.html style.outlineStyle reflects <div style='outline-style: outset'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-style-ridge-equals-ridge-reflection-test.html style.outlineStyle reflects <div style='outline-style: ridge'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-style-solid-equals-solid-reflection-test.html style.outlineStyle reflects <div style='outline-style: solid'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-style-window-inset-equals-window-inset-reflection-test.html style.outlineStyle reflects <div style='outline-style: window-inset'>] || Y || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/ui.html#propdef-outline-style The outline-style property in CSS 2.1]
+  * [http://www.blooberry.com/indexdot/css/properties/outline/outstyle.htm The history of the outline-style property on blooberry.com]
+  * [http://reference.sitepoint.com/css/outline-style The outline-style property on the SitePoint CSS Reference]
+

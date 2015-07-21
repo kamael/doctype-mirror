@@ -1,0 +1,35 @@
+#summary Articles about web security
+#labels is-landing
+#sidebar TOCArticlesXSS
+
+||[EsArticlesXSS Español]||[JaArticlesXSS 日本語]||[FrArticlesXSS Français]||
+||[Welcome Home]||[Articles Howto Articles]||   
+
+== Web security ==<OBJECT classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" id="Player_79cd3a9b-0762-4b36-8a6c-03b795c51c84"  WIDTH="336px" HEIGHT="280px"> <PARAM NAME="movie" VALUE="http://ws.amazon.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Fwidgetsamazon-20%2F8009%2F79cd3a9b-0762-4b36-8a6c-03b795c51c84&Operation=GetDisplayTemplate"><PARAM NAME="quality" VALUE="high"><PARAM NAME="bgcolor" VALUE="#FFFFFF"><PARAM NAME="allowscriptaccess" VALUE="always"><embed src="http://ws.amazon.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Fwidgetsamazon-20%2F8009%2F79cd3a9b-0762-4b36-8a6c-03b795c51c84&Operation=GetDisplayTemplate" id="Player_79cd3a9b-0762-4b36-8a6c-03b795c51c84" quality="high" bgcolor="#ffffff" name="Player_79cd3a9b-0762-4b36-8a6c-03b795c51c84" allowscriptaccess="always"  type="application/x-shockwave-flash" align="middle" height="280px" width="336px"></embed></OBJECT> <NOSCRIPT><A HREF="http://ws.amazon.com/widgets/q?ServiceVersion=20070822&MarketPlace=US&ID=V20070822%2FUS%2Fwidgetsamazon-20%2F8009%2F79cd3a9b-0762-4b36-8a6c-03b795c51c84&Operation=NoScript">Amazon.com Widgets</A></NOSCRIPT>
+
+  * [ArticleIntroductionToXSS Introduction to Cross-Site Scripting Vulnerabilities]
+  * [ArticleXSS Everything you ever wanted to know about cross-site scripting (XSS) attacks]
+  * [ArticleXSSInAttributes HOWTO filter user input in tag attributes]
+  * [ArticleXSSInBodyText HOWTO filter user input in regular body text]
+  * [ArticleXSSInEventHandlers HOWTO filter user input in JavaScript event handlers]
+  * [ArticleXSSInHttpHeaders HOWTO filter user input in HTTP headers]
+  * [ArticleXSSInJavaScript HOWTO filter user input in JavaScript context]
+  * [ArticleXSSInStyle HOWTO filter user input in style elements and attributes]
+  * [ArticleXSSInUrlAttributes HOWTO filter user input in URL attributes]
+  * [ArticleScriptInclusion HOWTO protect against cross-domain data disclosure attacks]
+  * [ArticleE4XSecurity HOWTO protect against E4X injection attacks]
+  * [ArticleCompartmentalizingApplications Compartmentalizing applications within the same domain]
+  * [ArticleUtf7 UTF-7: the case of the missing charset]
+  * [ArticleMalformedUtf8 Malformed UTF-8: Who said "hello%EE" can't be dangerous]
+  * [ArticleContentSniffing HOWTO protect against malicious images and other non-HTML content]
+  * [ArticleUntrustedDownloads HOWTO serve untrusted files as downloads]
+  * [ArticleFlashSecurity Introduction to Flash security]
+  * [ArticleFlashSecurityCrossDomain Flash cross-domain policy files]
+  * [ArticleFlashSecurityPolicyAttack Flash cross-domain policy attacks]
+  * [ArticleFlashSecurityGetURL Flash getURL XSS attacks]
+  * [ArticleFlashSecurityClickTAG Flash clickTAG XSS attacks]
+  * [ArticleFlashSecurityTextField Flash TextField XSS attacks]
+  * [ArticleFlashSecurityLoadMovie Flash loadMovie XSS attacks]
+  * [ArticleFlashSecurityAsFunction Flash asFunction XSS attacks]
+  * [ArticleFlashSecurityURL Flash URL parameter attacks]
+  * [ArticleFlashSecuritySolutions HOWTO secure your Flash applications]

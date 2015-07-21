@@ -1,0 +1,25 @@
+#summary The navigator.language property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `navigator.language` property returns a string.
+  * [BrowserFamilyFirefox Firefox] returns your browser language and country code.  Example: `"en-US"`
+  * [BrowserFamilySafari Safari] returns your browser language.  Example: `"en"`
+  * [BrowserFamilyOpera Opera] returns your browser language.  Example: `"en"`
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/navigator/navigator-language-typeof-test.html typeOf(navigator.language) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/navigator.language The navigator.language property on Mozilla Developer Center]
+

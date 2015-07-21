@@ -1,0 +1,13 @@
+#summary The -moz-border-right-colors CSS property sets only the border color for the right edge of an element with borders.
+
+== Usage ==
+
+== Values ==
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-border-right-colors The -moz-border-right-colors property on Mozilla Developer Center]
+
+

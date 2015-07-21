@@ -1,0 +1,63 @@
+#summary List of HTML character entities
+#labels about-html,from-w3c
+
+You are here: [Welcome Home] > [HtmlReference HTML Reference] > [CharacterEntities Character entities] > *beginning with M*
+
+|| *Name* || *Value* || *Test* ||
+|| [MapCharacterEntity &Map;] || [http://www.fileformat.info/info/unicode/char/2905/index.htm U+02905] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/map-capital-02905-entity-test.html test] ||
+|| [McyCharacterEntity &Mcy;] || [http://www.fileformat.info/info/unicode/char/041c/index.htm U+0041C] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mcy-capital-0041c-entity-test.html test] ||
+|| [MediumspaceCharacterEntity &MediumSpace;] || [http://www.fileformat.info/info/unicode/char/205f/index.htm U+0205F] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mediumspace-0205f-entity-test.html test] ||
+|| [MellintrfCharacterEntity &Mellintrf;] || [http://www.fileformat.info/info/unicode/char/2133/index.htm U+02133] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mellintrf-capital-02133-entity-test.html test] ||
+|| [MfrCharacterEntity &Mfr;] || U+1D510 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mfr-capital-1d510-entity-test.html test] ||
+|| [MinusplusCharacterEntity &MinusPlus;] || [http://www.fileformat.info/info/unicode/char/2213/index.htm U+02213] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/minusplus-02213-entity-test.html test] ||
+|| [MopfCharacterEntity &Mopf;] || U+1D544 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mopf-capital-1d544-entity-test.html test] ||
+|| [MscrCharacterEntity &Mscr;] || [http://www.fileformat.info/info/unicode/char/2133/index.htm U+02133] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mscr-capital-02133-entity-test.html test] ||
+|| [MuCharacterEntity &Mu;] || [http://www.fileformat.info/info/unicode/char/039c/index.htm U+0039C] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mu-capital-0039c-entity-test.html test] ||
+|| [MddotCharacterEntity &mDDot;] || [http://www.fileformat.info/info/unicode/char/223a/index.htm U+0223A] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mddot-0223a-entity-test.html test] ||
+|| [MacrCharacterEntity &macr;] || [http://www.fileformat.info/info/unicode/char/00af/index.htm U+000AF] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/macr-000af-entity-test.html test] ||
+|| [MacrCharacterEntity &macr] || [http://www.fileformat.info/info/unicode/char/00af/index.htm U+000AF] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/macr-no-semicolon-000af-entity-test.html test] ||
+|| [MaleCharacterEntity &male;] || [http://www.fileformat.info/info/unicode/char/2642/index.htm U+02642] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/male-02642-entity-test.html test] ||
+|| [MaltCharacterEntity &malt;] || [http://www.fileformat.info/info/unicode/char/2720/index.htm U+02720] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/malt-02720-entity-test.html test] ||
+|| [MalteseCharacterEntity &maltese;] || [http://www.fileformat.info/info/unicode/char/2720/index.htm U+02720] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/maltese-02720-entity-test.html test] ||
+|| [MapCharacterEntity &map;] || [http://www.fileformat.info/info/unicode/char/21a6/index.htm U+021A6] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/map-021a6-entity-test.html test] ||
+|| [MapstoCharacterEntity &mapsto;] || [http://www.fileformat.info/info/unicode/char/21a6/index.htm U+021A6] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mapsto-021a6-entity-test.html test] ||
+|| [MapstodownCharacterEntity &mapstodown;] || [http://www.fileformat.info/info/unicode/char/21a7/index.htm U+021A7] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mapstodown-021a7-entity-test.html test] ||
+|| [MapstoleftCharacterEntity &mapstoleft;] || [http://www.fileformat.info/info/unicode/char/21a4/index.htm U+021A4] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mapstoleft-021a4-entity-test.html test] ||
+|| [MapstoupCharacterEntity &mapstoup;] || [http://www.fileformat.info/info/unicode/char/21a5/index.htm U+021A5] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mapstoup-021a5-entity-test.html test] ||
+|| [MarkerCharacterEntity &marker;] || [http://www.fileformat.info/info/unicode/char/25ae/index.htm U+025AE] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/marker-025ae-entity-test.html test] ||
+|| [McommaCharacterEntity &mcomma;] || [http://www.fileformat.info/info/unicode/char/2a29/index.htm U+02A29] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mcomma-02a29-entity-test.html test] ||
+|| [McyCharacterEntity &mcy;] || [http://www.fileformat.info/info/unicode/char/043c/index.htm U+0043C] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mcy-0043c-entity-test.html test] ||
+|| [MdashCharacterEntity &mdash;] || [http://www.fileformat.info/info/unicode/char/2014/index.htm U+02014] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mdash-02014-entity-test.html test] ||
+|| [MeasuredangleCharacterEntity &measuredangle;] || [http://www.fileformat.info/info/unicode/char/2221/index.htm U+02221] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/measuredangle-02221-entity-test.html test] ||
+|| [MfrCharacterEntity &mfr;] || U+1D52A || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mfr-1d52a-entity-test.html test] ||
+|| [MhoCharacterEntity &mho;] || [http://www.fileformat.info/info/unicode/char/2127/index.htm U+02127] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mho-02127-entity-test.html test] ||
+|| [MicroCharacterEntity &micro;] || [http://www.fileformat.info/info/unicode/char/00b5/index.htm U+000B5] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/micro-000b5-entity-test.html test] ||
+|| [MicroCharacterEntity &micro] || [http://www.fileformat.info/info/unicode/char/00b5/index.htm U+000B5] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/micro-no-semicolon-000b5-entity-test.html test] ||
+|| [MidCharacterEntity &mid;] || [http://www.fileformat.info/info/unicode/char/2223/index.htm U+02223] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mid-02223-entity-test.html test] ||
+|| [MidastCharacterEntity &midast;] || [http://www.fileformat.info/info/unicode/char/002a/index.htm U+0002A] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/midast-0002a-entity-test.html test] ||
+|| [MidcirCharacterEntity &midcir;] || [http://www.fileformat.info/info/unicode/char/2af0/index.htm U+02AF0] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/midcir-02af0-entity-test.html test] ||
+|| [MiddotCharacterEntity &middot;] || [http://www.fileformat.info/info/unicode/char/00b7/index.htm U+000B7] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/middot-000b7-entity-test.html test] ||
+|| [MiddotCharacterEntity &middot] || [http://www.fileformat.info/info/unicode/char/00b7/index.htm U+000B7] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/middot-no-semicolon-000b7-entity-test.html test] ||
+|| [MinusCharacterEntity &minus;] || [http://www.fileformat.info/info/unicode/char/2212/index.htm U+02212] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/minus-02212-entity-test.html test] ||
+|| [MinusbCharacterEntity &minusb;] || [http://www.fileformat.info/info/unicode/char/229f/index.htm U+0229F] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/minusb-0229f-entity-test.html test] ||
+|| [MinusdCharacterEntity &minusd;] || [http://www.fileformat.info/info/unicode/char/2238/index.htm U+02238] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/minusd-02238-entity-test.html test] ||
+|| [MinusduCharacterEntity &minusdu;] || [http://www.fileformat.info/info/unicode/char/2a2a/index.htm U+02A2A] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/minusdu-02a2a-entity-test.html test] ||
+|| [MlcpCharacterEntity &mlcp;] || [http://www.fileformat.info/info/unicode/char/2adb/index.htm U+02ADB] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mlcp-02adb-entity-test.html test] ||
+|| [MldrCharacterEntity &mldr;] || [http://www.fileformat.info/info/unicode/char/2026/index.htm U+02026] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mldr-02026-entity-test.html test] ||
+|| [MnplusCharacterEntity &mnplus;] || [http://www.fileformat.info/info/unicode/char/2213/index.htm U+02213] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mnplus-02213-entity-test.html test] ||
+|| [ModelsCharacterEntity &models;] || [http://www.fileformat.info/info/unicode/char/22a7/index.htm U+022A7] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/models-022a7-entity-test.html test] ||
+|| [MopfCharacterEntity &mopf;] || U+1D55E || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mopf-1d55e-entity-test.html test] ||
+|| [MpCharacterEntity &mp;] || [http://www.fileformat.info/info/unicode/char/2213/index.htm U+02213] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mp-02213-entity-test.html test] ||
+|| [MscrCharacterEntity &mscr;] || U+1D4C2 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mscr-1d4c2-entity-test.html test] ||
+|| [MstposCharacterEntity &mstpos;] || [http://www.fileformat.info/info/unicode/char/223e/index.htm U+0223E] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mstpos-0223e-entity-test.html test] ||
+|| [MuCharacterEntity &mu;] || [http://www.fileformat.info/info/unicode/char/03bc/index.htm U+003BC] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mu-003bc-entity-test.html test] ||
+|| [MultimapCharacterEntity &multimap;] || [http://www.fileformat.info/info/unicode/char/22b8/index.htm U+022B8] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/multimap-022b8-entity-test.html test] ||
+|| [MumapCharacterEntity &mumap;] || [http://www.fileformat.info/info/unicode/char/22b8/index.htm U+022B8] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/mumap-022b8-entity-test.html test] ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/named.html Named character references in HTML 5]
+  * [http://www.w3.org/TR/html4/sgml/entities.html Character entity references in HTML 4]
+  * [http://www.evolt.org/article/ala/17/21234/ Chart of common character entities]
+
+

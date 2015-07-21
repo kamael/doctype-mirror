@@ -1,0 +1,19 @@
+#summary The image element represents an image or graphic.
+#labels about-html,is-html-element
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *image element*
+
+== Usage ==
+
+The `image` element is an alternate spelling of the [ImgElement img] element which is supported by all major browsers.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/image-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/image-element-applies-style-test.html applies style] || Y || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+

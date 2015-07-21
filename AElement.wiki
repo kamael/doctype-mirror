@@ -1,0 +1,63 @@
+#summary The HTML <a> element represents a hyperlink or placeholder.
+#labels about-html,is-html-element,from-w3c
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *a element*
+
+[EsAElement Español]
+
+If the `<a>` element has an `href` attribute, then it represents a hyperlink. 
+
+If the `<a>` element has a `name` attribute, it serves as an anchor, so that a hyperlink can lead to a specific place in a html page.
+
+The `target` attribute specifies if the link will open in the same window, or a new one. If [FrameElement frames] are used, those can be the target too.
+
+SVG also defines its own [SVGAElement <a> element] which has a similar purpose.
+
+== Usage ==
+
+{{{
+<a href="/">home</a>
+<a name="navbar"></a>
+<a href="#navbar">navigation</a>
+<a href="example.com" target="_blank">somewhere</a>
+}}}
+
+== Attributes ==
+
+Common attributes:
+
+  * [AHrefAttribute href]
+  * [ANameAttribute name]
+  * [ATargetAttribute target]
+
+Other attributes:
+
+  * [ACharsetAttribute charset]
+  * [ACoordsAttribute coords]
+  * [ADisabledAttribute disabled]
+  * [AHrefLangAttribute hreflang]
+  * [AMediaAttribute media]
+  * [AMethodsAttribute methods]
+  * [APingAttribute ping]
+  * [ARelAttribute rel]
+  * [ARevAttribute rev]
+  * [AShapeAttribute shape]
+  * [ASuppressAttribute suppress]
+  * [ATypeAttribute type]
+  * [AURNAttribute urn]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/a-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/a-element-applies-style-test.html applies style] || Y || N || N || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-a The <a> element in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/links.html#h-12.2 The <a> element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535173.aspx The <a> element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/a/a-hyperlink.htm History of the <a> element on blooberry.com]
+  * [http://reference.sitepoint.com/html/a The <a> element on the SitePoint HTML Reference]
+

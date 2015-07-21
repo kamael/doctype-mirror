@@ -1,0 +1,63 @@
+#summary Day 15: Defining keyboard shortcuts
+#labels about-accessibility,is-article
+
+You are here: [Welcome Home] > [Articles Articles] > [ArticlesAccessibility Accessibility] > [ArticleAccessibility 30 days to a more accessible web site] > *Day 15: Defining keyboard shortcuts*
+
+One of the least known features of HTML is the `accesskey` attribute for links and forms, which allows the web designer to define keyboard shortcuts for frequently-used links or form fields.  In Internet Explorer, you can press ALT + an access key.  In Mozilla Firefox, you press Shift + ALT + an access key.  If the access key is defined on a link, your browser will follow the link; if defined on a form field, your browser will set focus on that field.  Internet Explorer has supported access keys since version 4, Netscape since version 6, Firefox always.  Older browsers simply ignore them, with no harmful effect.
+
+While there are no standards for which keys should be assigned to which features, here are some commonly-used keyboard shortcuts:
+
+  * _S_: skip to main content (see [ArticleAccessibility11 Day 11: skipping over navigation links)
+  * _1_: jump to site's home page
+  * _4_: jump to site's search box
+  * _9_: jump to site's feedback page
+  * _0_: jump to explanation of available access keys (possibly as part of a larger [ArticleAccessibility30 accessibility statement])
+
+=== Who benefits? ===
+
+  * [ArticleAccessibility01 Jackie] benefits.  When [http://www.freedomscientific.com/fs_products/software_jaws.asp JAWS] reads a link that defines an `accesskey`, it announces the access key as well.  For example, the link `<a href="/" accesskey="1">Home page</a>` would be read by JAWS as "link: Home page, ALT + 1".  Jackie can focus on the link by pressing <kbd>ALT+1</kbd>, then follow it by pressing <kbd>ENTER</kbd>.
+  * [ArticleAccessibility03 Bill] benefits.  Since Bill can not use a mouse effectively since his stroke, he relies on keyboard navigation and keyboard shortcuts to move around the page.  Access keys are an excellent way for him to jump to common or frequently-used links.  Bill can type `Shift+ALT+1`, and [http://www.getfirefox.com/ Firefox] immediately follows the link that defines `accesskey="1"` (typically the home page).
+
+=== How to do it: home page link ===
+
+You can put the `accesskey` attribute on any link.  Assuming you have a link to your home page:
+
+{{{
+<a href="/">Home</a>
+}}}
+
+You can simply add the `accesskey` attribute:
+
+{{{
+<a href="/" accesskey="1">Home</a>
+}}}
+
+=== How to do it: skip navigation link ===
+
+Do you have a [ArticleAccessibility11 link to skip over your navigation bar]?  If so, give it an `accesskey="2"`.
+
+{{{
+<a class="skiplink" href="#startcontent" accesskey="2">Skip over navigation</a>
+}}}
+
+=== How to do it: feedback link ===
+
+Do you have a link to a feeback form or contact page?  If so, give it an `accesskey="9"`.
+
+{{{
+<a href="/contact/" accesskey="9">Contact us</a>
+}}}
+
+Be sure to include each `accesskey` on each page of your web site.
+
+=== Further reading ===
+
+  * WebAIM: [http://www.webaim.org/techniques/keyboard/accesskey.php Keyboard Accessibility: Providing Keyboard Shortcuts Using accesskey].
+  * Jukka Korpela: [http://www.cs.tut.fi/~jkorpela/forms/accesskey.html Improving accessibility with `accesskey` in HTML forms and links].  Explains why all my suggested `accesskey` codes are numbers, instead of letters.
+  * Paul Bohman: [http://www.webaim.org/discussion/mail_message.php?id=800 Access keys, IE6].  Part of a discussion of `accesskey` on the [http://www.webaim.org/discussion/ Web Accessibility Forum Mailing List].
+
+----
+
+Next: [ArticleAccessibility16 Day 16: Not opening new windows]
+Back: [ArticleAccessibility14 Day 14: Adding titles to links]
+

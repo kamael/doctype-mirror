@@ -1,0 +1,47 @@
+#summary Magic properties make Firefox synchronously load the Java plugin
+#labels is-article,about-performance
+#sidebar TOCArticlesPerformance
+
+||[Welcome Home]||[Articles Articles]||[ArticlesPerformance Performance]||
+
+Here's a small "gotcha" for web developers. There are a few "magic" properties on Mozilla's `DOMWindow` interface for supporting [https://developer.mozilla.org/en/LiveConnect LiveConnect] that will initialize the Java plugin and all the baggage that comes with it (which, with modern Java plugins, means launching java.exe as a subprocess). Looking up these properties on the [WindowObject window object] is all it takes.
+
+For example, take [http://doctype.googlecode.com/svn/trunk/examples/suntest.html the following sample page]:
+
+{{{
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+function sun() {}
+</script>
+</head>
+<body>
+</body>
+</html>
+}}}
+
+Harmless, right? Actually it's not. It turns out that Mozilla Firefox treats `window.sun` as a magic LiveConnect property. (I tested with Mozilla Firefox 3.0.6 on Windows.) What's LiveConnect? It was [http://en.wikipedia.org/wiki/NPAPI#LiveConnect introduced in Netscape 4] to allow plugins to be scripted. Accessing any magic LiveConnect property will start the Java plugin -- even if your code has nothing to do with Java. And starting the Java plugin will load a JVM. Oh, and did I mention that all of this will happen synchronously? As in, Firefox will stop loading your page and wait for the JVM to start up. And all you did was access `window.sun`.
+
+"But, but, but..." I hear you sputter. "I'm not accessing the `window.sun` property!" Ah, but you are. Declaring a global function is like assigning a property to the `window` object. (The property's value is the function itself.) In order to assign that property, Firefox first looks up the slot before reassigning it, and that lookup... launches a JVM. Synchronously.
+
+The list of these performance-killing magic LiveConnect properties is [http://mxr.mozilla.org/firefox/source/dom/src/base/nsDOMClassInfo.h#318 buried deep within the Mozilla source code]. They are:
+
+  * `java`
+  * `Packages`
+  * `netscape`
+  * `sun`
+  * `JavaClass`
+  * `JavaArray`
+  * `JavaMember`
+
+In other words, don't define a window-level function called `sun()`. It will absolutely kill your page's performance, because at least one modern-day browser will think you want Java, because of a "feature" invented by Netscape in 1997.
+
+(Many thanks to [http://kellegous.com/ Kelly Norton], who researched this issue and brought it to my attention.)
+
+== Further reading ==
+
+  * [https://developer.mozilla.org/en/LiveConnect LiveConnect on Mozilla Developer Center]
+  * [http://en.wikipedia.org/wiki/NPAPI#LiveConnect LiveConnect on Wikipedia]
+  * [http://www-archive.mozilla.org/oji/ Open JVM integration in the Mozilla.org archives]
+

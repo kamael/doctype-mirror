@@ -1,0 +1,18 @@
+#summary Naming conventions for new articles and pages
+#labels is-meta
+
+What would a wiki be without naming conventions for pages?  This is what's worked for us so far:
+
+  * `ArticleFooBar` - an article, HOWTO, or other non-reference page (example: ArticleFlashSecurity)
+  * `ObjectFooMethod` - a reference page on the `object.foo` method (example: WindowStopMethod)
+  * `ObjectBarProperty` - a reference page on the `document.bar` property (example: ScreenColorDepthProperty)
+  * `FooObject` - a reference page on the `foo` object, which may have its own properties and methods (example: ScreenObject)
+  * `FooElement` - a reference page on the `foo` element (example: AElement)
+  * `FooBarAttribute` - a reference page on the `bar` attribute of the `foo` element (example: ATargetAttribute)
+  * `BarAttribute` - a reference page on the `bar` attribute which is allowed on any element (example: AccesskeyAttribute)
+  * `FooCSSProperty` - a reference page on a specific CSS property (example: BorderLeftCSSProperty)
+  * `FooCSSColor` - a reference page on a specific CSS color keyword (example: PapayawhipCSSColor)
+  * `FooCSSPseudoClass` - a reference page on a specific CSS pseudo-class (example: HoverCSSPseudoClass)
+  * `MetaFoo` - a meta-page about the project itself (like this page on naming conventions)
+
+

@@ -1,0 +1,21 @@
+#summary The document.attributes property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `document.attributes` property returns a [http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-1780488922 NamedNodeMap] containing the attributes of this node.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-attributes-typeof-test.html typeOf(document.attributes) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-attributes-typeof-test2.html typeOf(document.attributes) == 'NamedNodeMap'] || ? || ? || ? || ? || ? || ? || ? || ? ||
+
+== Further reading ==
+
+[http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-84CF096 DOM Level 2 Core]
+

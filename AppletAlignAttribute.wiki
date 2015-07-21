@@ -1,0 +1,78 @@
+#summary The applet align attribute specifies the horizontal alignment of the element within its bounding box.
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AppletElement <applet> element] > *align attribute*
+
+== Usage ==
+
+...
+
+== Values ==
+
+`left`, `center`, or `right`.  The default value is `left`.
+
+== Elements ==
+
+You can use the `align` attribute on the following elements:
+
+  * [AddressElement <address>]
+  * [AppletElement <applet>]
+  * [BlockquoteElement <blockquote>]
+  * [BodyElement <body>]
+  * [CaptionElement <caption>]
+  * [CenterElement <center>]
+  * [ColElement <col>]
+  * [ColgroupElement <colgroup>]
+  * [DdElement <dd>]
+  * [DirElement <dir>]
+  * [DivElement <div>]
+  * [DlElement <dl>]
+  * [DtElement <dt>]
+  * [EmbedElement <embed>]
+  * [FieldsetElement <fieldset>]
+  * [FormElement <form>]
+  * [HrElement <hr>]
+  * [IframeElement <iframe>]
+  * [ImgElement <img>]
+  * [InputElement <input>]
+  * [IsindexElement <isindex>]
+  * [LegendElement <legend>]
+  * [LiElement <li>]
+  * [ListingElement <listing>]
+  * [MenuElement <menu>]
+  * [ObjectElement <object>]
+  * [OlElement <ol>]
+  * [PElement <p>]
+  * [PlaintextElement <plaintext>]
+  * [SelectElement <select>]
+  * [SpacerElement <spacer>]
+  * [TableElement <table>]
+  * [TbodyElement <tbody>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TfootElement <tfoot>]
+  * [TheadElement <thead>]
+  * [TrElement <tr>]
+  * [UlElement <ul>]
+  * [XmpElement <xmp>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/applet-align-absbottom-reflection-test.html applet.align reflects <applet align="absbottom">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/applet-align-absmiddle-reflection-test.html applet.align reflects <applet align="absmiddle">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/applet-align-baseline-reflection-test.html applet.align reflects <applet align="baseline">] || Y || Y || Y || Y || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/applet-align-bottom-reflection-test.html applet.align reflects <applet align="bottom">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/applet-align-left-reflection-test.html applet.align reflects <applet align="left">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/applet-align-middle-reflection-test.html applet.align reflects <applet align="middle">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/applet-align-right-reflection-test.html applet.align reflects <applet align="right">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/applet-align-texttop-reflection-test.html applet.align reflects <applet align="texttop">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/applet-align-top-reflection-test.html applet.align reflects <applet align="top">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/present/graphics.html#adef-align The align attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms533066.aspx The align attribute on MSDN]
+

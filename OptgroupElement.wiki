@@ -1,0 +1,30 @@
+#summary The optgroup element represents a group of options within a select list.
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *optgroup element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [OptgroupDisabledAttribute disabled]
+  * [OptgroupLabelAttribute label]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/optgroup-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/optgroup-element-as-child-of-select-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/optgroup-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/optgroup-element-as-child-of-select-appears-in-dom-test.html appears in DOM as child of select] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/optgroup-element-as-child-of-select-applies-style-test.html applies style as child of select] || Y || Y || Y || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/interact/forms.html#edef-OPTGROUP The optgroup element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535876.aspx The optgroup element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/o/optgroup.htm The history of the optgroup element on blooberry.com]
+

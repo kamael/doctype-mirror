@@ -1,0 +1,26 @@
+#summary The contextmenu attribute specifies an element's context menu.
+#labels about-html,is-html-attribute,from-whatwg
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [DivElement <div> element] > *contextmenu attribute*
+
+== Usage ==
+
+== Values ==
+
+The value of a `contextmenu` attribute is the ID of a [MenuElement menu] element defined elsewhere in the document.
+
+== Elements ==
+
+You can use the `contextmenu` attribute on any element.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/div-contextmenu-reflection-test.html div.contextmenu reflects <div contextmenu="foo">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#contextmenu The contextmenu attribute in HTML 5]
+

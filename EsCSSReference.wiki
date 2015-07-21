@@ -1,0 +1,10 @@
+[CSSReference English]
+
+La referencia sobre CSS està dividida en cuatro secciones principales:
+
+  * [EsCSSSyntax Sintaxis]
+  * [EsCSSProperties Propiedades]
+  * [EsCSSPseudoClasses Pseudo-clases] y [EsCSSPseudoElements pseudo-elementos]
+  * [EsCSSAtRules Reglas At]
+  * [EsCSSColors Colores]
+

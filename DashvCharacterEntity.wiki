@@ -1,0 +1,28 @@
+#summary &dashv; character entity
+#labels about-html,from-w3c
+#sidebar TOCCharacterEntitiesD
+
+You are here: [Welcome Home] > [HtmlReference HTML Reference] > [CharacterEntities Character entities] > [CharacterEntitiesD D] > &dashv;
+
+== Value ==
+
+There are 2 variations of this entity:
+
+  * `&Dashv;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/2ae4/index.htm U+02AE4].
+  * `&dashv;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/22a3/index.htm U+022A3].
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/dashv-022a3-entity-test.html &dashv; character entity treated as U+022A3] || Y || Y || Y || Y || Y || N || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/dashv-capital-02ae4-entity-test.html &Dashv; character entity treated as U+02AE4] || Y || Y || Y || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/named.html Named character references in HTML 5]
+  * [http://www.w3.org/TR/html4/sgml/entities.html Character entity references in HTML 4]
+  * [http://blooberry.com/indexdot/html/tagpages/text.htm Text in HTML (blooberry.com)]
+
+

@@ -1,0 +1,36 @@
+#summary The letter-spacing property specifies the spacing between characters.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *letter-spacing*
+
+== Usage ==
+
+== Values ==
+
+  * `normal`
+  * [CSSLengthType <length>]
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/letter-spacing-0-equals-0pt-reflection-test.html style.letterSpacing reflects <div style='letter-spacing: 0'>] || Y || Y || Y || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/letter-spacing-1cm-equals-1cm-reflection-test.html style.letterSpacing reflects <div style='letter-spacing: 1cm'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/letter-spacing-1em-equals-1em-reflection-test.html style.letterSpacing reflects <div style='letter-spacing: 1em'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/letter-spacing-1ex-equals-1ex-reflection-test.html style.letterSpacing reflects <div style='letter-spacing: 1ex'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/letter-spacing-1in-equals-1in-reflection-test.html style.letterSpacing reflects <div style='letter-spacing: 1in'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/letter-spacing-1mm-equals-1mm-reflection-test.html style.letterSpacing reflects <div style='letter-spacing: 1mm'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/letter-spacing-1pc-equals-1pc-reflection-test.html style.letterSpacing reflects <div style='letter-spacing: 1pc'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/letter-spacing-1pt-equals-1pt-reflection-test.html style.letterSpacing reflects <div style='letter-spacing: 1pt'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/letter-spacing-1px-equals-1px-reflection-test.html style.letterSpacing reflects <div style='letter-spacing: 1px'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/letter-spacing-normal-equals-normal-reflection-test.html style.letterSpacing reflects <div style='letter-spacing: normal'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/text.html#propdef-letter-spacing The letter-spacing property in CSS 2.1]
+  * [http://msdn2.microsoft.com/en-us/library/ms530780.aspx The letter-spacing property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/text/letterspace.htm The history of the letter-spacing property on blooberry.com]
+  * [http://reference.sitepoint.com/css/letter-spacing The letter-spacing property on the SitePoint CSS Reference]
+

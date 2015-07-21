@@ -1,0 +1,25 @@
+#summary The screen.fontSmoothingEnabled property
+#labels about-dom,is-dom-property,from-microsoft
+
+== Values ==
+
+The `screen.fontSmoothingEnabled` property returns a boolean.
+
+  * `true` means that ClearType is enabled
+  * `false` means that ClearType is disabled
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/screen/screen-fontSmoothingEnabled-typeof-test.html typeOf(screen.fontSmoothingEnabled) != 'undefined'] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms533763.aspx The screen.fontSmoothingEnabled property on MSDN]
+

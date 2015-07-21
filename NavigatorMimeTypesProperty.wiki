@@ -1,0 +1,21 @@
+#summary The navigator.mimeTypes property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `navigator.mimeTypes` property returns a [MimeTypeArrayObject MimeTypeArray object].
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/navigator/navigator-mimeTypes-typeof-test.html typeOf(navigator.mimeTypes) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/navigator.mimeTypes The navigator.mimeTypes property on Mozilla Developer Center]
+  * [http://msdn.microsoft.com/workshop/browser/mshtml/reference/ifaces/iomnavigator/get_mimetypes.asp The navigator.mimeTypes property on MSDN]
+

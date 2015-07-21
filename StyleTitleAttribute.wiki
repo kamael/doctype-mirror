@@ -1,0 +1,29 @@
+#summary The style title attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [StyleElement <style> element] > *title attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `title` attribute on the following elements:
+
+  * [CommandElement <command>]
+  * [FrameElement <frame>]
+  * [LinkElement <link>]
+  * [StyleElement <style>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/style-title-reflection-test.html style.title reflects <style title="foo">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/global.html#adef-title The title attribute in HTML 4]
+

@@ -1,0 +1,33 @@
+#summary The meta element lets you define metadata about a document.
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *meta element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [MetaCharsetAttribute charset]
+  * [MetaContentAttribute content]
+  * [MetaHttpEquivAttribute http-equiv]
+  * [MetaNameAttribute name]
+  * [MetaSchemeAttribute scheme]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/meta-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/meta-element-applies-style-test.html applies style] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#meta The meta element in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/global.html#edef-META The meta element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535853.aspx The meta element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/m/meta.htm The history of the meta element on blooberry.com]
+  * [http://www.blooberry.com/indexdot/html/tagpages/m/metauses.htm The history of the meta element on blooberry.com]
+  * [http://vancouver-webpages.com/META/ A dictionary of HTML META tags]
+

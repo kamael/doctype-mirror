@@ -1,0 +1,39 @@
+Bienvenido a Google Doctype.  Escrito para Desarrolladores Web por Desarrolladores Web.
+
+== ¿Qué quieres aprender hoy? ==
+
+Lee [EsArticles Artículos  HOWTO] sobre:
+
+  * [EsArticlesXSS Seguridad Web]
+  * [EsArticlesDom manipulación DOM]
+  * [EsArticlesStyle estilo y CSS]
+  * [EsArticlesTips consejos y trucos]
+  * [EsArticlesShims Creación de librerías que extienden navegadores web]
+
+Sumérgete en los [EsDOMReference objetos DOM], Incluyendo
+
+  * [EsDocumentObject documento]
+  * [EsWindowObject ventana]
+  * [EsHistoryObject historial]
+  * [EsLocationObject localización]
+  * [EsNavigatorObject navegador]
+  * [EsScreenObject pantalla]
+  * y otras curiosidades históricas
+
+Estiliza tus páginas con [EsCSSReference CSS]
+
+  * [EsCSSProperties propiedades CSS]
+  * [EsCSSPseudoClasses pseudo-clases] y [EsCSSPseudoElements pseudo-elementos]
+  * [EsCSSAtRules reglas at]
+  * [EsCSSColors colores]
+  * ...y más aún
+
+Haz la búsqueda de tu sitio más amigable
+  * [EsArticleSEOHtmlTags Usa los meta tags correctamente]
+  * [EsArticleSEOPreventCrawl Prevenir que el contenido se entrometa en los resultados de búsqueda]
+
+¿Necesitas ayuda con algún [EsHTMLElements elemento HTML]?  Tenemos una referencia HTML desde la [EsAElement <a>] hasta el [EsXmpElement <xmp>].
+
+¿Quieres [EsSVGIntroduction aprender SVG]?  Hemos comenzado también una sección de referencia para [EsSVGElements elementos SVG].
+
+||[Welcome English]||||[JaWelcome 日本語]||||[FrWelcome Français]||

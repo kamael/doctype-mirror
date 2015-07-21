@@ -1,0 +1,6 @@
+#summary The rel="home" attribute is a synonym for rel="start".
+#labels about-html,is-html-attribute
+
+See [RelStartAttribute rel="start"].
+
+

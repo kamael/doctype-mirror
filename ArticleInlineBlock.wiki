@@ -1,0 +1,86 @@
+#summary HOWTO dynamically set 'display: inline-block' for an element (goog.style.setInlineBlock)
+#labels is-article,about-dom,about-css
+#sidebar TOCArticlesStyle
+
+This is admittedly an esoteric subject, but it can be useful in some instances to dynamically set an element to be displayed as an inline block.
+
+== The code ==
+
+This function relies on code explained elsewhere:
+
+  * [ArticleUserAgent HOWTO determine the browser name and version number]
+
+{{{
+/**
+ * Sets 'display: inline-block' for an element (cross-browser).
+ * @param {Element} el Element to which the inline-block display style is to be
+ *    applied
+ */
+goog.style.setInlineBlock = function(el) {
+  // Without position:relative, weirdness ensues.  Just accept it and move on.
+  el.style.position = 'relative';
+
+  if (goog.userAgent.IE) {
+    // Zoom:1 forces hasLayout, display:inline gives inline behavior.
+    el.style.zoom = '1';
+    el.style.display = 'inline';
+  } else if (goog.userAgent.GECKO) {
+    // Pre-Firefox 3, Gecko doesn't support inline-block, but -moz-inline-box
+    // is close enough.
+    el.style.display =
+        goog.userAgent.compare(goog.userAgent.VERSION, '1.8') > 0 ?
+            'inline-block' : '-moz-inline-box';
+  } else {
+    // Opera, Webkit, and Safari seem to do OK with the standard inline-block
+    // style.
+    el.style.display = 'inline-block';
+  }
+};
+}}}
+
+== The code walkthrough ==
+
+There are 3 ways to set inline-block.
+
+  * Set `style.display='inline'`.  This only works in [BrowserFamilyMSIE Microsoft Internet Explorer], and only if the element already [ArticleHasLayout has layout].
+  * Set `style.display='-moz-inline-box'`.  This only works in [BrowserFamilyFirefox Mozilla Firefox].
+  * Set `style.display='inline-block'`.  This works in [BrowserFirefox3 Mozilla Firefox 3 and later], [BrowserFamilyOpera Opera], and [BrowserFamilySafari Safari].
+
+Inline-block mode works best if you first explicitly set position='relative'.  I don't know why.
+
+{{{
+  el.style.position = 'relative';
+}}}
+
+In Microsoft Internet Explorer, we can force the element to [ArticleHasLayout have layout] by setting `style.zoom='1'`, then set inline-block mode.
+
+{{{
+  if (goog.userAgent.IE) {
+    el.style.zoom = '1';
+    el.style.display = 'inline';
+}}}
+
+In Mozilla Firefox, we need to resort to a user-agent check, because there is no other way to determine whether the browser supports a particular CSS property value.  `-moz-inline-box` isn't quite identical to `inline-block`, but it is close enough for most purposes.
+
+{{{
+  } else if (goog.userAgent.GECKO) {
+    el.style.display =
+        goog.userAgent.compare(goog.userAgent.VERSION, '1.8') > 0 ?
+            'inline-block' : '-moz-inline-box';
+}}}
+
+For Opera, Safari, and recent versions of Mozilla Firefox, we can do it The Right Way and set `style.display='inline-block'`.
+
+{{{
+  } else {
+    el.style.display = 'inline-block';
+  }
+};
+}}}
+
+== Further reading ==
+
+  * [ArticleHasLayout The mystery of hasLayout in Microsoft Internet Explorer]
+  * [ArticleUserAgent HOWTO determine the browser name and version number]
+
+

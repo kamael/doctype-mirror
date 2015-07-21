@@ -1,0 +1,28 @@
+#summary The area nohref attribute serves no purpose whatsoever.
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AreaElement <area> element] > *nohref attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `nohref` attribute on the following elements:
+
+  * [AreaElement <area>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/area-nohref-absent-reflection-test.html area.noHref reflects <area>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/area-nohref-reflection-test.html area.noHref reflects <area nohref>] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/objects.html#adef-nohref The nohref attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534193.aspx The nohref attribute on MSDN]
+

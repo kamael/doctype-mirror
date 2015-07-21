@@ -1,0 +1,18 @@
+#summary The document.routeEvent method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-routeEvent-typeof-test.html typeOf(document.routeEvent) != 'undefined'] || N || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.xulplanet.com/references/xpcomref/ifaces/nsIDOMNSHTMLDocument.html#method_routeEvent The document.routeEvent method on XUL Planet]
+

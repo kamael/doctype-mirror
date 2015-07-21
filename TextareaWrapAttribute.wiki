@@ -1,0 +1,30 @@
+#summary The textarea wrap attribute
+#labels about-html,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [TextareaElement <textarea> element] > *wrap attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `wrap` attribute on the following elements:
+
+  * [PreElement <pre>]
+  * [TextareaElement <textarea>]
+
+== Browser compatibility ==
+
+  * In some instances, Internet Explorer and Opera may truncate the contents of a [TextareaElement <textarea>] element when submitted. Using the wrap="virtual" attribute will resolve these issues.
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/textarea-wrap-hard-reflection-test.html textarea.wrap reflects <textarea wrap="hard">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/textarea-wrap-off-reflection-test.html textarea.wrap reflects <textarea wrap="off">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/textarea-wrap-soft-reflection-test.html textarea.wrap reflects <textarea wrap="soft">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms534379.aspx The wrap attribute on MSDN]

@@ -1,0 +1,16 @@
+#summary The sidebar.addMicrosummaryGenerator method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/sidebar/sidebar-addMicrosummaryGenerator-typeof-test.html typeOf(sidebar.addMicrosummaryGenerator) != 'undefined'] || N || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+

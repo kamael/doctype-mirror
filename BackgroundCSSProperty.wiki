@@ -1,0 +1,56 @@
+#summary The background property is a shorthand property for setting 'background-color', 'background-image', 'background-repeat', 'background-attachment' and 'background-position'.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *background*
+
+== Usage ==
+{{{
+body {
+   background: #0066CC url(background_image.png) repeat-x top center;
+}
+/* An example of condensing many background-X properties into the shorthand background property. */
+}}}
+== Values ==
+
+  * `['background-color' || 'background-image' || 'background-repeat' || 'background-attachment' || 'background-position']`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background--hs-808080-equals-rgb-lp-128-cm--128-cm--128-rp--reflection-test.html style.backgroundColor reflects <div style='background: #808080'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-10-pt--40-pt--equals-10-pt--40-pt--reflection-test.html style.backgroundPosition reflects <div style='background: 10% 40%'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-5px-10em-equals-5px-10em-reflection-test.html style.backgroundPosition reflects <div style='background: 5px 10em'>] || Y || Y || Y || N || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-black-equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.backgroundColor reflects <div style='background: black'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-bogus-equals-none-reflection-test.html style.backgroundImage reflects <div style='background: bogus'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-bogus-equals-scroll-reflection-test.html style.backgroundAttachment reflects <div style='background: bogus'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-bottom-equals-50-pt--bottom-reflection-test.html style.backgroundPosition reflects <div style='background: bottom'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-bottom-right-equals-right-bottom-reflection-test.html style.backgroundPosition reflects <div style='background: bottom right'>] || Y || Y || Y || N || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-center-center-equals-center-center-reflection-test.html style.backgroundPosition reflects <div style='background: center center'>] || Y || Y || Y || N || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-center-equals-center-center-reflection-test.html style.backgroundPosition reflects <div style='background: center'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-fixed-equals-fixed-reflection-test.html style.backgroundAttachment reflects <div style='background: fixed'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-left-equals-left-center-reflection-test.html style.backgroundPosition reflects <div style='background: left'>] || N || N || N || N || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-no-repeat-equals-no-repeat-reflection-test.html style.backgroundRepeat reflects <div style='background: no-repeat'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-none-equals-none-reflection-test.html style.backgroundImage reflects <div style='background: none'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-repeat-equals-repeat-reflection-test.html style.backgroundRepeat reflects <div style='background: repeat'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-repeat-x-equals-repeat-x-reflection-test.html style.backgroundRepeat reflects <div style='background: repeat-x'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-repeat-y-equals-repeat-y-reflection-test.html style.backgroundRepeat reflects <div style='background: repeat-y'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-rgb-lp-0-cm--0-cm--0-rp--equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.backgroundColor reflects <div style='background: rgb(0, 0, 0)'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-right-equals-right-center-reflection-test.html style.backgroundPosition reflects <div style='background: right'>] || N || N || N || N || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-scroll-equals-scroll-reflection-test.html style.backgroundAttachment reflects <div style='background: scroll'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-top-equals-50-pt--top-reflection-test.html style.backgroundPosition reflects <div style='background: top'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-top-left-equals-left-top-reflection-test.html style.backgroundPosition reflects <div style='background: top left'>] || Y || Y || Y || N || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-transparent-equals-transparent-reflection-test.html style.backgroundColor reflects <div style='background: transparent'>] || Y || Y || Y || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-url-lp--qu-http-cl--sl--sl-www-dt-example-dt-com-sl--qu--rp--equals-url-lp-http-cl--sl--sl-www-dt-example-dt-com-sl--rp--reflection-test.html style.backgroundImage reflects <div style='background: url(\"http://www.example.com/\")'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-url-lp-http-cl--sl--sl-www-dt-example-dt-com-sl--rp--equals-url-lp--qu-http-cl--sl--sl-www-dt-example-dt-com-sl--qu--rp--reflection-test.html style.backgroundImage reflects <div style='background: url(http://www.example.com/)'>] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/colors.html#propdef-background The background property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:background The background property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530722.aspx The background property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/colorbg/bg.htm The history of the background property on blooberry.com]
+  * [http://reference.sitepoint.com/css/background The background property on the SitePoint CSS Reference]
+

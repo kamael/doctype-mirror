@@ -1,0 +1,106 @@
+#summary figure element
+#labels about-html,is-html-element,from-whatwg
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *figure element*
+
+== Usage ==
+
+The figure element represents some flow content, optionally with a caption, which can be moved away from the main flow of the document without affecting the document's meaning. It is used to annotate illustrations, diagrams, photos, code listings, etc, that are referred to from the main content of the document, but that could, without affecting the flow of the document, be moved away from that primary content, e.g. to the side of the page, to dedicated pages, or to an appendix.
+
+This example shows the figure element to mark up a code listing.
+
+{{{
+<p>In <a href="#l4">listing 4</a> we see the primary core interface
+API declaration.</p>
+<figure id="l4">
+ <legend>Listing 4. The primary core interface API declaration.</legend>
+ <pre><code>interface PrimaryCore {
+  boolean verifyDataLine();
+  void sendData(in sequence&lt;byte> data);
+  void initSelfDestruct();
+}</code></pre>
+</figure>
+<p>The API is designed to use UTF-8.</p>
+}}}
+
+Here we see a figure element to mark up a photo.
+
+{{{
+<figure>
+ <img src="bubbles-work.jpeg"
+      alt="Bubbles, sitting in his office chair, works on his
+           latest project intently.">
+ <legend>Bubbles at work</legend>
+</figure>
+}}}
+
+In this example, we see an image that is not a figure, as well as an image and a video that are.
+
+{{{
+<h2>Malinko's comics</h2>
+
+<p>This case centered on some sort of "intellectual property"
+infringement related to a comic (see Exhibit A). The suit started
+after a trailer ending with these words:</p>
+
+<img src="promblem-packed-action.png" alt="ROUGH COPY! Promblem-Packed Action!">
+
+<p>...was aired. A lawyer, armed with a Bigger Notebook, launched a
+preemptive strike using snowballs. A complete copy of the trailer is
+included with Exhibit B.</p>
+
+<figure>
+ <img src="ex-a.png" alt="Two squiggles on a dirty piece of paper.">
+ <legend>Exhibit A. The alleged <cite>rough copy</cite> comic.</legend>
+</figure>
+
+<figure>
+ <video src="ex-b.mov"></video>
+ <legend>Exhibit B. The <code>Rough Copy</cite> trailer.</legend>
+</figure>
+
+<p>The case was resolved out of court.</p>
+}}}
+
+Here, a part of a poem is marked up using figure.
+
+{{{
+<figure>
+ <p>'Twas brillig, and the slithy toves<br>
+Did gyre and gimble in the wabe;<br>
+All mimsy were the borogoves,<br>
+And the mome raths outgrabe.</p>
+ <legend><cite>Jabberwocky</cite> (first verse). Lewis Carroll, 1832-98</legend>
+</figure>
+}}}
+
+In this example, which could be part of a much larger work discussing a castle, the figure has three images in it.
+
+{{{
+<figure>
+ <img src="castle1423.jpeg" title="Etching. Anonymous, ca. 1423."
+      alt="The castle has one tower, and a tall wall around it.">
+ <img src="castle1858.jpeg" title="Oil-based paint on canvas. Maria Towle, 1858."
+      alt="The castle now has two towers and two walls.">
+ <img src="castle1999.jpeg" title="Film photograph. Peter Jankle, 1999."
+      alt="The castle lies in ruins, the original tower all that remains in one piece.">
+ <legend>The castle through the ages: 1423, 1858, and 1999 respectively.</legend>
+</figure>
+}}}
+
+== Attributes ==
+
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/figure-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/figure-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/embedded-content-0.html#the-figure-element The figure element in HTML 5]
+

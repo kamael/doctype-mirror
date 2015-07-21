@@ -1,0 +1,24 @@
+#summary The font-family property is a prioritized list of font family names, including generic font families.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *font-family*
+
+== Usage ==
+
+== Values ==
+
+  * `[ <family-name> || <generic-family> ] [, <family-name> || <generic-family>]* ]`
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/fonts.html#propdef-font-family The font-family property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:font-family The font-family property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530758.aspx The font-family property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/font/fontfamily.htm The history of the font-family property on blooberry.com]
+  * [http://reference.sitepoint.com/css/font-family The font-family property on the SitePoint CSS Reference]
+

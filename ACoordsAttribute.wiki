@@ -1,0 +1,28 @@
+#summary The a coords attribute specifies the position and shape of a link in a client-side image map.
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AElement <a> element] > *coords attribute*
+
+== Usage ==
+
+See [AreaCoordsAttribute <area coords>] for usage information and examples.
+
+== Elements ==
+
+You can use the `coords` attribute on the following elements:
+
+  * [AElement <a>]
+  * [AreaElement <area>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/a-coords-reflection-test.html a.coords reflects <a coords="0,0,10,10">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/objects.html#adef-coords The coords attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms533695.aspx The coords attribute on MSDN]
+

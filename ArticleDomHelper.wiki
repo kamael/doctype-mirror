@@ -1,0 +1,78 @@
+#summary Introducing DOMHelper
+#labels is-article,about-dom
+#sidebar TOCArticlesDom
+
+||[EsArticleDomHelper Español]||[JaArticleDomHelper 日本語]||[FrArticleDomHelper Français]||
+||[Welcome Home]||[ArticlesDom Articles DOM]||
+
+TODO intro
+
+== The code ==
+
+{{{
+/**
+ * This is used when calling methods that depend on a document_ instance
+ * @private
+ * @return {goog.dom.DomHelper}
+ */
+goog.dom.getDefaultDomHelper_ = function() {
+  if (!goog.dom.defaultDomHelper_) {
+    goog.dom.defaultDomHelper_ = new goog.dom.DomHelper;
+  }
+  return goog.dom.defaultDomHelper_;
+};
+
+
+/**
+ * Gets the dom helper object for the document where the element resides.
+ * @param {Element} opt_element If present, gets the DomHelper for this element.
+ * @return {goog.dom.DomHelper} The DomHelper.
+ */
+goog.dom.getDomHelper = function(opt_element) {
+  return opt_element ?
+      new goog.dom.DomHelper(goog.dom.getOwnerDocument(opt_element)) :
+      goog.dom.getDefaultDomHelper_();
+};
+
+
+/**
+ * Create an instance of a DOM helper with a new document object
+ * @param {Document} opt_document Document object to associate with this DOM helper
+ * @constructor
+ */
+goog.dom.DomHelper = function(opt_document) {
+  /**
+   * Reference to the document object to use
+   * @type Document
+   */
+  this.document_ = opt_document || window.document || document;
+};
+
+/**
+ * Set the document object
+ * @param {Document} document Document object
+ */
+goog.dom.DomHelper.prototype.setDocument = function(document) {
+  this.document_ = document;
+};
+
+
+/**
+ * Get the document object being used by the dom library
+ * @return {Document} Document object
+ */
+goog.dom.DomHelper.prototype.getDocument = function() {
+  return this.document_;
+};
+}}}
+
+== The code walkthrough ==
+
+{{{
+TODO walkthrough
+}}}
+
+== Further reading ==
+
+TODO further reading
+

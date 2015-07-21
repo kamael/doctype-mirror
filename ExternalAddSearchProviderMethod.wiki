@@ -1,0 +1,19 @@
+#summary The external.AddSearchProvider method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/external/external-AddSearchProvider-typeof-test.html typeOf(external.AddSearchProvider) != 'undefined'] || N || N || N || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/Adding_search_engines_from_web_pages The external.AddSearchProvider method on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms535931.aspx The external.AddSearchProvider method on MSDN]
+

@@ -1,0 +1,27 @@
+#summary The base element specifies the document's base URI for the purpose of resolving relative URIs.
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *base element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [BaseHrefAttribute href]
+  * [BaseTargetAttribute target]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/base-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/base-element-applies-style-test.html applies style] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-base The base element in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/links.html#h-12.4 The base element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535191.aspx The base element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/b/base.htm The history of the base element on blooberry.com]
+

@@ -1,0 +1,27 @@
+#summary The meta scheme attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [MetaElement <meta> element] > *scheme attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `scheme` attribute on the following elements:
+
+  * [MetaElement <meta>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/meta-scheme-reflection-test.html meta.scheme reflects <meta scheme="foo">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/global.html#adef-scheme The scheme attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534386.aspx The scheme attribute on MSDN]
+

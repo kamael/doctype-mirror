@@ -1,0 +1,35 @@
+#summary The SVG <a> element represents a hyperlink or placeholder similar to the HTML <a> element.
+#labels about-svg
+You are here: [Welcome Home] > [SVGElements SVG Elements] > *a element*
+
+= Introduction =
+
+The a element is used to create a hyperlink around SVG elements.  The a element uses attributes in the [XLink] [XMLNamespaces namespace] and thus, attributes like href and title must be prefixed with a namespace prefix that maps to "http://www.w3.org/1999/xlink".
+
+HTML has an [AElement <a> element] which serves a similar purpose.
+
+= Details =
+== Usage ==
+
+{{{
+<a xlink:href="/" xlink:title="Go Home">
+  <circle cx="50%" cy="50%" r="20%" fill="green"/>
+</a>
+<a xlink:href="example.com" target="_blank">
+  <text x="50" y="50" font-size="20">Example</text>
+</a>
+}}}
+
+== Attributes ==
+
+Common attributes:
+
+  * [XLinkHrefAttribute xlink:href]
+  * [XLinkTitleAttribute xlink:title]
+  * [ATargetAttribute target]
+
+
+= Reference =
+
+  * [http://www.w3.org/TR/SVG11/linking.html#Links The <a> element in SVG 1.1]
+  * [http://www.w3.org/TR/SVGTiny12/linking.html#AElement The <a> element in SVGT 1.2]

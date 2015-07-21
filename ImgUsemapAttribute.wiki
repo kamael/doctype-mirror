@@ -1,0 +1,29 @@
+#summary The img usemap attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [ImgElement <img> element] > *usemap attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `usemap` attribute on the following elements:
+
+  * [ImgElement <img>]
+  * [ObjectElement <object>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/img-usemap-reflection-test.html img.useMap reflects <img usemap="http://www.example.com/">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#usemap1 The usemap attribute in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/objects.html#adef-usemap The usemap attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534711.aspx The usemap attribute on MSDN]
+

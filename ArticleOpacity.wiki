@@ -1,0 +1,33 @@
+#summary HOWTO set an element's opacity (goog.style.setOpacity)
+#labels is-article,about-dom,about-css
+#sidebar TOCArticlesStyle
+
+TODO intro
+
+== The code ==
+
+{{{
+/**
+ * Sets the opacity of a node (x-browser)
+ * @param {Element} el Elements
+ * @param {number} alpha Opacity between 0 and 1
+ */
+goog.style.setOpacity = function(el, alpha) {
+  var style = el.style;
+  if ('opacity' in style) {
+    style.opacity = alpha;
+  } else if ('MozOpacity' in style) {
+    style.MozOpacity = alpha;
+  } else if ('KhtmlOpacity' in style) {
+    style.KhtmlOpacity = alpha;
+  } else if ('filter' in style) {
+    style.filter = 'alpha(opacity=' + (alpha * 100) + ')';
+  }
+};
+}}}
+
+== The code walkthrough ==
+
+TODO walkthrough
+
+== Further reading ==

@@ -1,0 +1,28 @@
+#summary The img longdesc attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [ImgElement <img> element] > *longdesc attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `longdesc` attribute on the following elements:
+
+  * [FrameElement <frame>]
+  * [IframeElement <iframe>]
+  * [ImgElement <img>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/img-longdesc-reflection-test.html img.longDesc reflects <img longdesc="http://www.example.com/">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/objects.html#adef-longdesc-IMG The longdesc attribute in HTML 4]
+

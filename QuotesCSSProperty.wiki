@@ -1,0 +1,23 @@
+#summary The quotes property specifies quotation marks for any number of embedded quotations.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *quotes*
+
+== Usage ==
+
+== Values ==
+
+  * `[<string> <string>]+`
+  * `none`
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/generate.html#propdef-quotes The quotes property in CSS 2.1]
+  * [http://www.blooberry.com/indexdot/css/properties/generate/quotes.htm The history of the quotes property on blooberry.com]
+  * [http://reference.sitepoint.com/css/quotes The quotes property on the SitePoint CSS Reference]
+

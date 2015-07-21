@@ -1,0 +1,23 @@
+#summary The window.outerHeight property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `window.outerHeight` property returns an integer.
+
+This property is read/write.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-outerHeight-typeof-test.html typeOf(window.outerHeight) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.outerHeight The window.outerHeight property on Mozilla Developer Center]
+  * [http://www.quirksmode.org/viewport/compatibility.html The window.outerHeight property on quirksmode.org]
+

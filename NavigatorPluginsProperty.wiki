@@ -1,0 +1,22 @@
+#summary The navigator.plugins property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `navigator.plugins` property returns a [PluginArrayObject PluginArray object].
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/navigator/navigator-plugins-typeof-test.html typeOf(navigator.plugins) != 'undefined'] || N || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/navigator.plugins The navigator.plugins property on Mozilla Developer Center]
+  * [http://msdn.microsoft.com/workshop/author/dhtml/reference/collections/plugins_0.asp The navigator.plugins property on MSDN]
+  * [http://developer.apple.com/internet/webcontent/detectplugins.html]
+

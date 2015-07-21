@@ -1,0 +1,17 @@
+#summary The window.getComputedStyle method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf4* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-getComputedStyle-typeof-test.html typeOf(window.getComputedStyle) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.getComputedStyle The window.getComputedStyle method on Mozilla Developer Center]

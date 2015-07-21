@@ -1,0 +1,27 @@
+#summary The object standby attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [ObjectElement <object> element] > *standby attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `standby` attribute on the following elements:
+
+  * [ObjectElement <object>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/object-standby-reflection-test.html object.standby reflects <object standby="foo">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/objects.html#adef-standby The standby attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534644.aspx The standby attribute on MSDN]
+

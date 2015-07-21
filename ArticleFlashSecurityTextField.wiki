@@ -1,0 +1,23 @@
+#summary Flash TextField XSS attacks
+#labels is-artlce,about-security
+#sidebar TOCArticlesXSS
+
+Now consider `userinput2` in [ArticleFlashSecurityGetURL the `VulnerableMovie` code].  By default, `TextFields` only accept plain text, but by setting `html = true`, developers can place HTML in `TextFields` and `TextAreas`. It is common practice for developers to use Flash's limited HTML functionality.
+
+If the part of the text for the `TextField` originates from user input, an attacker can inject both HTML and arbitrary ActionScript.  Injecting HTML is quite simple:
+
+{{{
+http://www.example.com/VulnerableMovie.swf?userinput2=%3Ca+href%3D%22javascript%3Aalert%281%29%22%3Eclick+here+to+be+hacked%3C/a%3E
+}}}
+
+adds the HTML
+
+{{{
+<a href="javascript:alert(1)">click here to be hacked</a>
+}}}
+
+If the user clicks the "click here to be hacked" link, then the attacker can run malicious JavaScript on the domain hosting the SWF.
+
+
+
+

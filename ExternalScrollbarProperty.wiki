@@ -1,0 +1,19 @@
+#summary The external.scrollbar property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `external.scrollbar` property returns a boolean.
+
+This property is read/write.
+
+== Usage ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/aa342519.aspx The external.scrollbar property on MSDN]
+

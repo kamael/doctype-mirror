@@ -1,0 +1,45 @@
+#summary HOWTO set the background of an element to a transparent image (goog.style.setTransparentBackgroundImage)
+#labels is-article,about-dom,about-css
+#sidebar TOCArticlesStyle
+
+TODO intro
+
+== The code ==
+
+{{{
+/**
+ * Sets the background of an element to a transparent image in a browser-
+ * independent manner.
+ *
+ * This function does not support repeating backgrounds or alternate background
+ * positions to match the behavior of Internet Explorer. It also does not
+ * support sizingMethods other than crop since they cannot be replicated in
+ * browsers other than Internet Explorer.
+ *
+ * @param {Element} el
+ * @param {String} src The image source URL
+ */
+goog.style.setTransparentBackgroundImage = function(el, src) {
+  var style = el.style;
+  if ('filter' in style) {
+    style.filter = 'progid:DXImageTransform.Microsoft.AlphaImageLoader(' +
+        'src="' + src + '", sizingMethod="crop")';
+  } else {
+    // Set style properties individually instead of using background shorthand
+    // to prevent overwriting a pre-existing background color.
+    style.backgroundImage = 'url(' + src + ')';
+    style.backgroundPosition = 'top left';
+    style.backgroundRepeat = 'no-repeat';
+  }
+};
+}}}
+
+== The code walkthrough ==
+
+TODO walkthrough
+
+== Further reading ==
+
+TODO further reading
+
+

@@ -1,0 +1,28 @@
+#summary &tfr; character entity
+#labels about-html,from-w3c
+#sidebar TOCCharacterEntitiesT
+
+You are here: [Welcome Home] > [HtmlReference HTML Reference] > [CharacterEntities Character entities] > [CharacterEntitiesT T] > &tfr;
+
+== Value ==
+
+There are 2 variations of this entity:
+
+  * `&Tfr;` maps to the Unicode character U+1D517.
+  * `&tfr;` maps to the Unicode character U+1D531.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/tfr-1d531-entity-test.html &tfr; character entity treated as U+1D531] || Y || Y || Y || Y || Y || N || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/tfr-capital-1d517-entity-test.html &Tfr; character entity treated as U+1D517] || Y || Y || Y || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/named.html Named character references in HTML 5]
+  * [http://www.w3.org/TR/html4/sgml/entities.html Character entity references in HTML 4]
+  * [http://blooberry.com/indexdot/html/tagpages/text.htm Text in HTML (blooberry.com)]
+
+

@@ -1,0 +1,22 @@
+#summary The rel="fontdef" attribute indicates that the referenced document is a downloadable font definition file.
+#labels about-html,is-html-attribute,from-mozilla
+
+`rel="fontdef"` is one of several [LinkTypes link types] for describing relationships between documents.
+
+== Usage ==
+
+== Elements ==
+
+You can use the `rel="fontdef"` attribute on these elements:
+
+  * [LinkElement <area>]
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.blooberry.com/indexdot/html/tagpages/l/link.htm Link types on blooberry.com]
+
+

@@ -1,0 +1,135 @@
+#summary HOWTO quickly create multiple DOM nodes (goog.dom.createDom)
+#labels is-article,about-dom
+#sidebar TOCArticlesDom
+
+== The code ==
+
+{{{
+/**
+ * Returns a dom node with a set of attributes.  This function accepts varargs
+ * for subsequent nodes to be added.  Subsequent nodes will be added to the
+ * first node as childNodes.
+ *
+ * So:
+ * <code>createDom('div', null, createDom('p'), createDom('p'));</code>
+ * would return a div with two child paragraphs
+ *
+ * @param {String} tagName Tag to create
+ * @param {Object} opt_attributes Map of name-value pairs for attributes
+ * @param {Object|Array} var_args Further DOM nodes or strings for text nodes.
+ *     If one of the var_args is an array, its children will be added as
+ *     childNodes instead.
+ * @return {Element} Reference to a DOM node
+ */
+goog.dom.createDom = function(tagName, opt_attributes, var_args) {
+  var dh = goog.dom.getDefaultDomHelper_();
+  return dh.createDom.apply(dh, arguments);
+};
+
+
+/**
+ * Alias for createDom
+ * @type Function
+ */
+goog.dom.$dom = goog.dom.createDom;
+
+/**
+ * Create a new element
+ * @param {String} name Tag name
+ * @return {Element}
+ */
+goog.dom.createElement = function(name) {
+  return goog.dom.getDefaultDomHelper_().createElement(name);
+};
+
+
+/**
+ * Create a new text node
+ * @param {String} content Content
+ * @return {Element}
+ */
+goog.dom.createTextNode = function(content) {
+  return goog.dom.getDefaultDomHelper_().createTextNode(content);
+};
+
+
+/**
+ * Converts an HTML string into a document fragment.
+ *
+ * @param {String} htmlString The HTML string to convert.
+ * @return {DocumentFragment} The resulting document fragment.
+ */
+goog.dom.htmlToDocumentFragment = function(htmlString) {
+  return goog.dom.getDefaultDomHelper_().htmlToDocumentFragment(htmlString);
+};
+
+/**
+ * Appends a child to a node
+ * @param {Node} parent Parent
+ * @param {Node} child Child
+ */
+goog.dom.appendChild = function(parent, child) {
+  parent.appendChild(child);
+};
+
+
+/**
+ * Removes all the child nodes on a DOM node
+ * @param {Node} node Node to remove children from
+ */
+goog.dom.removeChildren = function(node) {
+  // Note: Iterations over live collections can be slow, this is the fastest
+  // we could find. The double parenthesis are used to prevent JsCompiler and
+  // strict warnings.
+  var child;
+  while ((child = node.firstChild)) {
+    node.removeChild(child);
+  }
+};
+
+
+/**
+ * Inserts a new node before an existing reference node (i.e. as the previous
+ * sibling). If the reference node has no parent, then does nothing.
+ * @param {Node} newNode Node to insert
+ * @param {Node} refNode Reference node to insert before
+ */
+goog.dom.insertSiblingBefore = function(newNode, refNode) {
+  if (refNode.parentNode) {
+    refNode.parentNode.insertBefore(newNode, refNode);
+  }
+};
+
+
+/**
+ * Inserts a new node after an existing reference node (i.e. as the next
+ * sibling). If the reference node has no parent, then does nothing.
+ * @param {Node} newNode Node to insert
+ * @param {Node} refNode Reference node to insert after
+ */
+goog.dom.insertSiblingAfter = function(newNode, refNode) {
+  if (refNode.parentNode) {
+    refNode.parentNode.insertBefore(newNode, refNode.nextSibling);
+  }
+};
+
+
+/**
+ * Removes a node from its parent
+ * @param {Node} node The node to remove
+ * @return {Node|Null} The node removed if removed; else, null
+ */
+goog.dom.removeNode = function(node) {
+  return node.parentNode ? node.parentNode.removeChild(node) : null;
+};
+}}}
+
+== The code walkthrough ==
+
+TODO walkthrough
+
+== Further reading ==
+
+TODO further reading
+
+

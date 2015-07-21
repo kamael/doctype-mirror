@@ -1,0 +1,24 @@
+#summary The rel="section" attribute indicates that the referenced document is a section in a document collection.
+#labels about-html,is-html-attribute,from-w3c
+
+`rel="section"` is one of several [LinkTypes link types] for describing relationships between documents.
+
+== Usage ==
+
+== Elements ==
+
+You can use the `rel="section"` attribute on these elements:
+
+  * [AElement <a>]
+  * [LinkElement <link>]
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/types.html#type-links The rel="section" link type in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534366.aspx The rel="section" link type on MSDN]
+
+

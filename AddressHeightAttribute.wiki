@@ -1,0 +1,66 @@
+#summary The address height attribute is a deprecated method of specifying the height of the element's bounding box.
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AddressElement <address> element] > *height attribute*
+
+== Usage ==
+
+{{{
+<address height=50>Copyright &copy; 2007 John Doe</address>
+}}}
+
+== Values ==
+
+The `height` attribute specifies the height in pixels, and as such it must be a positive integer, or 0.  Unlike heights in CSS, this attribute must NOT include the "px" unit of measure.  The `height` attribute is always understood in pixels.
+
+== Elements ==
+
+You can use the `height` attribute on the following elements:
+
+  * [AddressElement <address>]
+  * [AppletElement <applet>]
+  * [BlockquoteElement <blockquote>]
+  * [CaptionElement <caption>]
+  * [CanvasElement <canvas>]
+  * [CenterElement <center>]
+  * [DdElement <dd>]
+  * [DirElement <dir>]
+  * [DivElement <div>]
+  * [DlElement <dl>]
+  * [DtElement <dt>]
+  * [EmbedElement <embed>]
+  * [FieldsetElement <fieldset>]
+  * [FormElement <form>]
+  * [FrameElement <frame>]
+  * [IframeElement <iframe>]
+  * [IlayerElement <ilayer>]
+  * [ImgElement <img>]
+  * [InputElement <input>]
+  * [IsindexElement <isindex>]
+  * [LayerElement <layer>]
+  * [LiElement <li>]
+  * [ListingElement <listing>]
+  * [MarqueeElement <marquee>]
+  * [MenuElement <menu>]
+  * [ObjectElement <object>]
+  * [OlElement <ol>]
+  * [PElement <p>]
+  * [SpacerElement <spacer>]
+  * [TableElement <table>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TextareaElement <textarea>]
+  * [TrElement <tr>]
+  * [UlElement <ul>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/address-height-reflection-test.html address.height reflects <address height="7">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.blooberry.com/indexdot/html/tagpages/a/address.htm The history of the height attribute on blooberry.com]
+

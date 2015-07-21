@@ -1,0 +1,30 @@
+#summary HOWTO calculate the bounding rectangle of an element (goog.style.getBounds)
+#labels is-article,about-dom
+#sidebar TOCArticlesStyle
+
+TODO intro
+
+== The code ==
+
+{{{
+/**
+ * Returns a bounding rectangle for a given element in page space.
+ * @param {Element} element Element to get bounds of
+ * @return {goog.math.Rect} Bounding rectangle for the element.
+ */
+goog.style.getBounds = function(element) {
+  var o = goog.style.getPageOffset(element);
+  var s = goog.style.getSize(element);
+  return new goog.math.Rect(o.x, o.y, s.width, s.height);
+};
+}}}
+
+== The code walkthrough ==
+
+TODO walkthrough
+
+== Further reading ==
+
+TODO further reading
+
+

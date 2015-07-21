@@ -1,0 +1,24 @@
+#summary The navigator.vendor property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `navigator.vendor` property returns a string.
+  * [BrowserFamilyFirefox Firefox] returns an empty string.
+  * [BrowserFamilySafari Safari] returns the string `"Apple Computer, Inc."`
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/navigator/navigator-vendor-typeof-test.html typeOf(navigator.vendor) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/navigator.vendor The navigator.vendor property on Mozilla Developer Center]
+

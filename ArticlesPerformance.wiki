@@ -1,0 +1,9 @@
+#summary Articles on performance
+#sidebar TOCArticlesPerformance
+
+||[Welcome Home]||[Articles Articles]||
+
+== Performance ==
+
+  * [ArticleHereComesTheSun Magic properties make Firefox synchronously load the Java plugin]
+

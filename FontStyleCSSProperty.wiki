@@ -1,0 +1,31 @@
+#summary The font-style property selects between normal, italic, and oblique faces within a font family.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *font-style*
+
+== Usage ==
+
+== Values ==
+
+  * `normal`
+  * `italic`
+  * `oblique`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/font-style-bogus-equals-normal-reflection-test.html style.fontStyle reflects <div style='font-style: bogus'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/font-style-italic-equals-italic-reflection-test.html style.fontStyle reflects <div style='font-style: italic'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/font-style-normal-equals-normal-reflection-test.html style.fontStyle reflects <div style='font-style: normal'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/font-style-oblique-equals-oblique-reflection-test.html style.fontStyle reflects <div style='font-style: oblique'>] || Y || Y || Y || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/fonts.html#propdef-font-style The font-style property in CSS 2.1]
+  * [http://msdn2.microsoft.com/en-us/library/ms530760.aspx The font-style property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/font/fontstyle.htm The history of the font-style property on blooberry.com]
+  * [http://reference.sitepoint.com/css/font-style The font-style property on the SitePoint CSS Reference]
+

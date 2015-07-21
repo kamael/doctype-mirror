@@ -1,0 +1,63 @@
+#summary COMO filtrar entradas de usuario en manejadores de evento JavaScript
+#sidebar EsTOCArticlesXSS
+= COMO filtrar entradas de usuario en manejadores de evento JavaScript =
+||[ArticleXSSInEventHandlers English]||[JaArticleXSSInEventHandlers 日本語]||[FrArticleXSSInEventHandlers Français]||
+||[EsWelcome Inicio]||||[EsArticlesXSS Seguridad Web]||
+
+En adición a [EsArticleXSSInJavaScript todos los medios para inyectar códigos maliciosos en etiquetas <script>], esta es una complicación adicional que surge por los manejadores de eventos de JavaScript.  (By "event handlers," I mean JavaScript-valued tag attributes such as `onclick`, `onload`, or `onerror`.)  *The values of such attributes are HTML-unescaped before they are passed to the JS interpreter.*
+
+== Ejemplo ==
+
+En principio, consideremos el trozo de plantilla:
+
+{{{
+  <form:button ...
+               onclick='IraUrl("%(Urldestino)s");'>
+}}}
+
+Supongamos que un atacante inyecta el valor:
+
+{{{
+  foo&quot;);evil_script(&quot;
+}}}
+
+para `Urldestino`.  Fijémonos en esta cadena y nos damos cuenta que no necesitamos ningun escape de JS, porque esa cadena no contiene más carácteres JS sin escapar que comillas o metacaracteres HTML. Sin embargo, el escenario anterior deviene en el siguiente documento para ser evaluado por el navegador:
+
+{{{
+  <form:button ...
+               onclick='IraUrl("foo&quot;);
+                        evil_script(&quot;");'>
+}}}
+
+¿Porqué?  Porque el navegador desescapa el valor del atributo `onclick` automáticamente.  La expresión que es evaluada actualmente por el interprete JS del navegador es esta:
+
+{{{
+  IraUrl("foo");evil_script("");
+}}}
+
+Entonces el interprete terminará ejecutando `evil_script`.
+
+== Como evitarlo ==
+
+Si deseas insertar literales dentro del contexto del atributo que es interpretado como una expresión JavaScript (como son `onclick`, `onload`, `onerror`, o una más de estos),
+
+  # asegurate que la literal encadejada es escapada por JavaScript usando una función que  [EsArticleXSSInJavaScript satisfaga los criterios definidos para el contexto JavaScript]
+  # Asegurate de que la literal encadenada está encerrada en comillas simples
+  # Escapa por HTML el valor de atributo suministrado
+  # Asegurate de que elvalor del atributo suministrado está encerrado en comillas dobles
+(El orden de la operación es importante aquí!  haz tus escapes en este orden exacto!)
+
+Como un consejo de seguridad adicional, tu función de escape JS también escapa los cinco metacaracteres HTML `&`, `<`, `>`, `"`, y `'` dentro de sus escapes de carácter JavaScript Unicode correspondientes.
+
+== Razonando ==
+
+El paso de escape adicional HTML nos asegura que esa expresión JS pasa al interprete JS como es debido, y un atacante no puede "fisgonear" en carácteres HTML codificados.
+
+Usar estilos distintos de comillas para literales JS y los atributos proporciona una medida segura contra un tipo de comilla accidentalmente termine la otra.
+
+El uso de una función de escape JS que escape metacaracteres HTML en cadenas de escape JS numéricas proporciona una medida de seguridad adicional en casos donde un programador olvide usar ambos escapes en secuencia y solo utilice el escape JS.  Nota que para que esta medida sea efectiva, es importante usar el escape numérico para caracteres de comilla (p.e. `\x22` en lugar de `\"`), pues el parseador HTML no considera la diagonal invertida un carácter de escape, y sin embargo una "\" no-HTML escapada podría actualmente "cerar" el atributo.
+
+== Para leer más ==
+
+  * [EsArticleXSS Lo que siempre quisiste saber sobre ataques cross-site scripting (XSS)]
+  * [EsArticleXSSInJavaScript COMO filtrar entradas de usuario en contexto JavaScript]

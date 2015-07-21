@@ -1,0 +1,31 @@
+#summary The td scope attribute
+#labels about-html,about-tables,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [TdElement <td> element] > *scope attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `scope` attribute on the following elements:
+
+  * [TdElement <td>]
+  * [ThElement <th>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/td-scope-col-reflection-test.html td.scope reflects <td scope="col">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/td-scope-colgroup-reflection-test.html td.scope reflects <td scope="colgroup">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/td-scope-row-reflection-test.html td.scope reflects <td scope="row">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/td-scope-rowgroup-reflection-test.html td.scope reflects <td scope="rowgroup">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/tables.html#adef-scope The scope attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534387.aspx The scope attribute on MSDN]
+

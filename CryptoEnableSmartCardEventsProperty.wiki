@@ -1,0 +1,20 @@
+#summary The crypto.enableSmartCardEvents property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `crypto.enableSmartCardEvents` property returns a boolean.
+
+This property is read/write.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/crypto/crypto-enableSmartCardEvents-typeof-test.html typeOf(crypto.enableSmartCardEvents) != 'undefined'] || N || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+

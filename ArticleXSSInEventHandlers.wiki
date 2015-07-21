@@ -1,0 +1,57 @@
+#summary HOWTO filter user input in JavaScript event handlers
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+||[EsArticleXSSInEventHandlers Español]||[JaArticleXSSInEventHandlers 日本語]||[FrArticleXSSInEventHandlers Français]||
+||[Welcome Home]||||[ArticlesXSS Web Security]||
+
+In addition to [ArticleXSSInJavaScript all the ways to inject malicious script in <script> tags], there is an additional complication that arises for JavaScript in event handlers.  (By "event handlers," I mean JavaScript-valued tag attributes such as `onclick`, `onload`, or `onerror`.)  *The values of such attributes are HTML-unescaped before they are passed to the JS interpreter.*
+
+== Example ==
+
+For instance, consider the template snippet
+
+{{{
+  <form:button ...
+               onclick='GotoUrl("%(targetUrl)s");'>
+}}}
+
+Suppose an attacker injects the value targetUrl:
+
+{{{
+  foo");evil_script("
+}}}
+
+Why?  Because the browser HTML-unescapes the value of the `onclick` attribute automatically.  The expression that is actually evaluated by the browser's JS interpreter is this:
+
+{{{
+  GotoUrl("foo");evil_script("");
+}}}
+
+So the JavaScript interpreter will end up executing `evil_script`.
+
+== How to Avoid ==
+
+If you must insert dynamic string literals into the context of an attribute that is interpreted as a JavaScript expression (such as `onclick`, `onload`, `onerror`, or a myriad of others),
+
+  # ensure that the string literal is JavaScript-escaped using a function that [ArticleXSSInJavaScript satisfies the criteria defined for JavaScript context]
+  # ensure that the string literal is enclosed in single quotes
+  # HTML-escape the surrounding attribute value
+  # ensure that the surrounding attribute value is enclosed in double quotes
+
+(Order of operation is important here!  Escape in this exact order!)
+
+As an additional safety measure, your JS-escape function should also escape the five HTML metacharacters `&`, `<`, `>`, `"`, and `'` into their corresponding hexadecimal or Unicode JavaScript character escapes.
+
+== Rationale ==
+
+The additional HTML-escaping step ensures that the JS expression passed to the JS interpreter is as intended, and an attacker cannot "sneak-in" HTML encoded characters.
+
+Using different style quotes for JS literals and the attribute provides a safety measure against one type of quote accidentally "ending" the other.
+
+The use of a JS-escaping function that escapes HTML metacharacters into numeric JS-string-escapes provides an additional safety measure in cases where a programmer forgets to use both escapings in sequence and only uses the JS escape.  Note that for this measure to be effective, it is important to use the numeric escape for quote characters (i.e. `\x22` instead of `\"`), since the HTML parser doesn't consider the backslash an escape character, and therefore a non-HTML-escaped `\"` would actually "end" the attribute.
+
+== Further reading ==
+
+  * [ArticleXSS Everything you ever wanted to know about cross-site scripting (XSS) attacks]
+  * [ArticleXSSInJavaScript HOWTO filter user input in JavaScript context]

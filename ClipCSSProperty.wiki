@@ -1,0 +1,24 @@
+#summary The clip property specifies the clipping region of an absolutely positioned element.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *clip*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSShapeType <shape>]
+  * `auto`
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/visufx.html#propdef-clip The clip property in CSS 2.1]
+  * [http://msdn2.microsoft.com/en-us/library/ms530748.aspx The clip property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/position/clip.htm The history of the clip property on blooberry.com]
+  * [http://reference.sitepoint.com/css/clip The clip property on the SitePoint CSS Reference]
+

@@ -1,0 +1,25 @@
+#summary The text-decoration property describes decorations that are added to the text of an element.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *text-decoration*
+
+== Usage ==
+
+== Values ==
+
+  * `none`
+  * `[ underline || overline || line-through || blink ]`
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+||   ?    ||   ?   ||   ?   ||  ?    ||  ?    ||   ?    ||  Y  ||   N    ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/text.html#propdef-text-decoration The text-decoration property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:text-decoration The text-decoration property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms531165.aspx The text-decoration property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/text/textdec.htm The history of the text-decoration property on blooberry.com]
+  * [http://reference.sitepoint.com/css/text-decoration The text-decoration property on the SitePoint CSS Reference]

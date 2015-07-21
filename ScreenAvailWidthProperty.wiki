@@ -1,0 +1,27 @@
+#summary The screen.availWidth property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `screen.availWidth` property returns an integer.
+
+All browsers support this property uniformly.  They calculate the available width by taking the total screen width and subtracting any space used by "always on top" taskbars (on Windows) or panels (on Linux).  Another way to look at it is the maximum width of the browser window, including the window border, sidebar, and scroll bars.
+
+Example: if your screen is 1400 x 1050 pixels and you have a taskbar on the left edge of your screen that is 200 pixels wide and is set to "keep the taskbar on top of other windows," then `screen.availWidth` will be `1200`.
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/screen/screen-availWidth-typeof-test.html typeOf(screen.availWidth) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.screen.availWidth The screen.availWidth property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms533488.aspx The screen.availWidth property on MSDN]
+

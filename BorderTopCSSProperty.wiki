@@ -1,0 +1,63 @@
+#summary The border-top property sets the width, style, and color of the top border of a box.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *border-top*
+
+== Usage ==
+
+== Values ==
+
+  * `[ <border-width> || <border-style> || 'border-top-color' ]`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top--hs-808080-equals-rgb-lp-128-cm--128-cm--128-rp--reflection-test.html style.borderTopColor reflects <div style='border-top: #808080'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-0-equals-0pt-reflection-test.html style.borderTopWidth reflects <div style='border-top: 0'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1cm-equals-1cm-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1cm'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1cm-sc--border-style-cl--solid-equals-1cm-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1cm; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1em-equals-1em-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1em'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1em-sc--border-style-cl--solid-equals-1em-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1em; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1ex-equals-1ex-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1ex'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1ex-sc--border-style-cl--solid-equals-1ex-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1ex; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1in-equals-1in-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1in'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1in-sc--border-style-cl--solid-equals-1in-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1in; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1mm-equals-1mm-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1mm'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1mm-sc--border-style-cl--solid-equals-1mm-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1mm; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1pc-equals-1pc-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1pc'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1pc-sc--border-style-cl--solid-equals-1pc-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1pc; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1pt-equals-1pt-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1pt'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1pt-sc--border-style-cl--solid-equals-1pt-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1pt; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1px-equals-1px-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1px'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-1px-sc--border-style-cl--solid-equals-1px-reflection-test.html style.borderTopWidth reflects <div style='border-top: 1px; border-style: solid'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-black-equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.borderTopColor reflects <div style='border-top: black'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-bogus-equals-none-reflection-test.html style.borderTopStyle reflects <div style='border-top: bogus'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-dashed-equals-dashed-reflection-test.html style.borderTopStyle reflects <div style='border-top: dashed'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-dotted-equals-dotted-reflection-test.html style.borderTopStyle reflects <div style='border-top: dotted'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-double-equals-double-reflection-test.html style.borderTopStyle reflects <div style='border-top: double'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-groove-equals-groove-reflection-test.html style.borderTopStyle reflects <div style='border-top: groove'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-hidden-equals-hidden-reflection-test.html style.borderTopStyle reflects <div style='border-top: hidden'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-inset-equals-inset-reflection-test.html style.borderTopStyle reflects <div style='border-top: inset'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-none-equals-none-reflection-test.html style.borderTopStyle reflects <div style='border-top: none'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-outset-equals-outset-reflection-test.html style.borderTopStyle reflects <div style='border-top: outset'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-rgb-lp-0-cm--0-cm--0-rp--equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.borderTopColor reflects <div style='border-top: rgb(0, 0, 0)'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-ridge-equals-ridge-reflection-test.html style.borderTopStyle reflects <div style='border-top: ridge'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-solid-equals-solid-reflection-test.html style.borderTopStyle reflects <div style='border-top: solid'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-thick-equals-5px-reflection-test.html style.borderTopWidth reflects <div style='border-top: thick'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-thick-sc--border-style-cl--solid-equals-5px-reflection-test.html style.borderTopWidth reflects <div style='border-top: thick; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-thin-equals-thin-reflection-test.html style.borderTopWidth reflects <div style='border-top: thin'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-thin-sc--border-style-cl--solid-equals-thin-reflection-test.html style.borderTopWidth reflects <div style='border-top: thin; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-transparent-equals-transparent-reflection-test.html style.borderTopColor reflects <div style='border-top: transparent'>] || Y || Y || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-window-inset-equals-window-inset-reflection-test.html style.borderTopStyle reflects <div style='border-top: window-inset'>] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/box.html#propdef-border-top The border-top property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:border-top The border-top property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530739.aspx The border-top property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/border/btop.htm The history of the border-top property on blooberry.com]
+  * [http://reference.sitepoint.com/css/border-top The border-top property on the SitePoint CSS Reference]
+

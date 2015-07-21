@@ -1,0 +1,24 @@
+#summary The navigator.productSub property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `navigator.productSub` property returns a string.
+  * [BrowserFamilyFirefox Firefox] returns the date the browser was compiled.  Example: `"20070515"`
+  * [BrowserFamilySafari Safari] returns a date of unknown origin.  Example: `"20030107"`
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/navigator/navigator-productSub-typeof-test.html typeOf(navigator.productSub) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/navigator.productSub The navigator.productSub property on Mozilla Developer Center]
+

@@ -1,0 +1,29 @@
+#summary The pre wrap attribute
+#labels about-html,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [PreElement <pre> element] > *wrap attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `wrap` attribute on the following elements:
+
+  * [PreElement <pre>]
+  * [TextareaElement <textarea>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/pre-wrap-hard-reflection-test.html pre.wrap reflects <pre wrap="hard">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/pre-wrap-off-reflection-test.html pre.wrap reflects <pre wrap="off">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/pre-wrap-soft-reflection-test.html pre.wrap reflects <pre wrap="soft">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms535152.aspx The wrap attribute on MSDN]
+

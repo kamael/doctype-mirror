@@ -1,0 +1,116 @@
+#summary Introduction to SVG and Reference for SVG elements
+
+Scalable Vector Graphics (SVG) is a markup for 2D graphical elements in your web pages.  See [SVGIntroduction Introduction to SVG].
+
+== Basic Graphical Elements ==
+
+|| Element || SVG Version || Deprecated || Obsolete || Browser ||
+|| [SVGCircleElement <circle> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/shapes.html#CircleElement 1.1] || || || ||
+|| [SVGEllipseElement <ellipse> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/shapes.html#EllipseElement 1.1] || || || ||
+|| [SVGImageElement <image> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/struct.html#ImageElement 1.1] || || || ||
+|| [SVGLineElement <line> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/shapes.html#LineElement 1.1] || || || ||
+|| [SVGPathElement <path> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/paths.html#PathElement 1.1] || || || ||
+|| [SVGPolygonElement <polygon> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/shapes.html#PolygonElement 1.1] || || || ||
+|| [SVGPolylineElement <polyline> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/shapes.html#PolylineElement 1.1] || || || ||
+|| [SVGRectElement <rect> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/shapes.html#RectElement 1.1] || || || ||
+|| [SVGTextElement <text> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/text.html#TextElement 1.1] || || || ||
+
+== Basic Structural Elements ==
+
+|| Element || SVG Version || Deprecated || Obsolete || Browser ||
+|| [SVGAElement <a>] || [http://www.w3.org/TR/2001/REC-SVG-20010904/linking.html#AElement 1.1] || || || ||
+|| [SVGDefsElement <defs> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/struct.html#DefsElement 1.1] || || || ||
+|| [SVGDescElement <desc> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/struct.html#DescElement 1.1] || || || ||
+|| [SVGGElement <g> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/struct.html#GElement 1.1] || || || ||
+|| [SVGSVGElement <svg> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/struct.html#SVGElement 1.1] || || || ||
+|| [SVGTitleElement <title> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/struct.html#TitleElement 1.1] || || || ||
+
+== Gradient Elements ==
+
+|| Element || SVG Version || Deprecated || Obsolete || Browser ||
+|| [SVGLinearGradientElement <linearGradient> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/pservers.html#LinearGradientElement 1.1] || || || ||
+|| [SVGRadialGradientElement <radialGradient> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/pservers.html#RadialGradientElement 1.1] || || || ||
+|| [SVGStopElement <stop> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/pservers.html#StopElement 1.1] || || || ||
+
+== Text Elements ==
+
+|| Element || SVG Version || Deprecated || Obsolete || Browser ||
+|| [SVGTextPathElement <textPath> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/text.html#TextPathElement 1.1] || || || ||
+|| [SVGTrefElement <tref> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/text.html#TRefElement 1.1] || || || ||
+|| [SVGTspanElement <tspan> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/text.html#TSpanElement 1.1] || || || ||
+
+== Font Elements ==
+
+|| Element || SVG Version || Deprecated || Obsolete || Browser ||
+|| [SVGAltGlyphElement <altGlyph>] || [http://www.w3.org/TR/2001/REC-SVG-20010904/text.html#AltGlyphElement 1.1] || || || ||
+|| [SVGAltGlyphDefElement <altGlyphDef>] || [http://www.w3.org/TR/2001/REC-SVG-20010904/text.html#AltGlyphDefElement 1.1] || || || ||
+|| [SVGAltGlyphItemElement <altGlyphItem> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/text.html#AltGlyphItemElement 1.1] || || || ||
+|| [SVGDefinitionSrcElement <definition-src> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/fonts.html#DefinitionSrcElement 1.1] || || || ||
+|| [SVGFontElement <font> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/fonts.html#FontElement 1.1] || || || ||
+|| [SVGFontFaceElement <font-face> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/fonts.html#FontFaceElement 1.1] || || || ||
+|| [SVGFontFaceFormatElement <font-face-format> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/fonts.html#FontFaceNameElement 1.1] || || || ||
+|| [SVGFontFaceElement <font-face-name> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/fonts.html#FontFaceNameElement 1.1] || || || ||
+|| [SVGFontFaceElement <font-face-src> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/fonts.html#FontFaceSrcElement 1.1] || || || ||
+|| [SVGFontFaceElement <font-face-uri> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/fonts.html#FontFaceNameElement 1.1] || || || ||
+|| [SVGGlyphElement <glyph> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/fonts.html#GlyphElement 1.1] || || || ||
+|| [SVGGlyphRefElement <glyphRef> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/text.html#GlyphRefElement 1.1] || || || ||
+|| [SVGHKernElement <hkern> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/fonts.html#HKernElement 1.1] || || || ||
+|| [SVGMissingGlyphElement <missing-glyph> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/fonts.html#MissingGlyphElement 1.1] || || || ||
+|| [SVGVKernElement <vkern> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/fonts.html#VKernElement 1.1] || || || ||
+
+== Animation Elements ==
+
+|| Element || SVG Version || Deprecated || Obsolete || Browser ||
+|| [SVGAnimateElement <animate> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/animate.html#AnimateElement 1.1] || || || ||
+|| [SVGAnimateColorElement <animateColor> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/animate.html#AnimateColorElement 1.1] || || || ||
+|| [SVGAnimateMotionElement <animateMotion> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/animate.html#AnimateMotionElement 1.1] || || || ||
+|| [SVGAnimateTransformElement <animateTransform> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/animate.html#AnimateTransformElement 1.1] || || || ||
+|| [SVGMPathElement <mpath> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/animate.html#mpathElement 1.1] || || || ||
+|| [SVGSetElement <set> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/animate.html#SetElement 1.1] || || || ||
+
+== Filter Elements ==
+
+|| Element || SVG Version || Deprecated || Obsolete || Browser ||
+|| [SVGFeBlendElement <feBlend> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feBlendElement 1.1] || || || ||
+|| [SVGFeColorMatrixElement <feColorMatrix> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feColorMatrixElement 1.1] || || || ||
+|| [SVGFeComponentTransferElement <feComponentTransfer> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feComponentTransferElement 1.1] || || || ||
+|| [SVGFeCompositeElement <feComposite> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feCompositeElement 1.1] || || || ||
+|| [SVGFeConvolveMatrixElement <feConvolveMatrix> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feConvolveMatrixElement 1.1] || || || ||
+|| [SVGFeDiffuseLightingElement <feDiffuseLighting> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feDiffuseLightingElement 1.1] || || || ||
+|| [SVGFeDisplacementMapElement <feDisplacementMap> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feDisplacementMapElement 1.1] || || || ||
+|| [SVGFeDistantLightElement <feDistantLight> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feDistantLightElement 1.1] || || || ||
+|| [SVGFeFloodElement <feFlood> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feFloodElement 1.1] || || || ||
+|| [SVGFeFuncAElement <feFuncA> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feFuncAElement 1.1] || || || ||
+|| [SVGFeFuncBElement <feFuncB> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feFuncBElement 1.1] || || || ||
+|| [SVGFeFuncGElement <feFuncG> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feFuncGElement 1.1] || || || ||
+|| [SVGFeFuncRElement <feFuncR> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feFuncRElement 1.1] || || || ||
+|| [SVGFeGaussianBlurElement <feGaussianBlur> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feGaussianBlurElement 1.1] || || || ||
+|| [SVGFeImageElement <feImage> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feImageElement 1.1] || || || ||
+|| [SVGFeMergeElement <feMerge> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feMergeElement 1.1] || || || ||
+|| [SVGFeMergeNodeElement <feMergeNode> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feMergeNodeElement 1.1] || || || ||
+|| [SVGFeMorphologyElement <feMorphology> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feMorphologyElement 1.1] || || || ||
+|| [SVGFeOffsetElement <feOffset> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feOffsetElement 1.1] || || || ||
+|| [SVGFePointLightElement <fePointLight> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#fePointLightElement 1.1] || || || ||
+|| [SVGFeSpecularLightingElement <feSpecularLighting> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feSpecularLightingElement 1.1] || || || ||
+|| [SVGFeSpotLightElement <feSpotLight> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feSpotLightElement 1.1] || || || ||
+|| [SVGFeTileElement <feTile> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feTileElement 1.1] || || || ||
+|| [SVGFeTurbulenceElement <feTurbulence> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#feTurbulenceElement 1.1] || || || ||
+|| [SVGFilterElement <filter> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/filters.html#FilterElement 1.1] || || || ||
+
+== Other Advanced Elements ==
+
+|| Element || SVG Version || Deprecated || Obsolete || Browser ||
+|| [SVGClipPathElement <clipPath> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/masking.html#ClipPathElement 1.1] || || || ||
+|| [SVGColorProfileProfileElement <color-profile> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/color.html#ColorProfileElement 1.1] || || || ||
+|| [SVGCursorElement <cursor> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/interact.html#CursorElement 1.1] || || || ||
+|| [SVGForeignObjectElement <foreignObject> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/extend.html#ForeignObjectElement 1.1] || || || ||
+|| [SVGMarkerElement <marker> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/painting.html#MarkerElement 1.1] || || || ||
+|| [SVGMaskElement <mask> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/masking.html#MaskElement 1.1] || || || ||
+|| [SVGMetadataElement <metadata> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/metadata.html#MetadataElement 1.1] || || || ||
+|| [SVGPatternElement <pattern> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/pservers.html#PatternElement 1.1] || || || ||
+|| [SVGScriptElement <script> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/script.html#ScriptElement 1.1] || || || ||
+|| [SVGStyleElement <style> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/styling.html#StyleElement 1.1] || || || ||
+|| [SVGSwitchElement <switch> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/struct.html#SwitchElement 1.1] || || || ||
+|| [SVGSymbolElement <symbol> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/struct.html#SymbolElement 1.1] || || || ||
+|| [SVGViewElement <view> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/linking.html#ViewElement 1.1] || || || ||
+|| [SVGUseElement <use> ] || [http://www.w3.org/TR/2001/REC-SVG-20010904/struct.html#UseElement 1.1] || || || ||

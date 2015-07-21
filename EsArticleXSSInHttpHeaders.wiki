@@ -1,0 +1,70 @@
+#summary COMO filtrar entradas de usuario en cabeceras HTTP
+#sidebar EsTOCArticlesXSS
+= COMO filtrar entradas de usuario en cabeceras HTTP =
+
+||[ArticleXSSInHttpHeaders English]|||[JaArticleXSSInHttpHeaders 日本語]||[FrArticleXSSInHttpHeaders Français]||
+||[EsWelcome Inicio]||||[EsArticlesXSS Seguridad Web]||    
+
+Problemas de seguridad pueden surgir si una entrada derivada de un usuario no es validada/filtrada apropiadamente y entonces es insertada en cabeceras HTTP como respuesta.
+
+== Ejemplo ==
+
+Considerando un servidor que retorna una redirección HTTP a una URL basandose en un parámetro:
+
+{{{
+HTTP/1.1 302 Moved
+Content-Type: text/html; charset=ISO-8859-1
+Location: %(url_redirecionada)s
+
+<html><head><title>Movida</title></head><body>
+Movida <a href='%(url_redireccionada)s'>aquí</a>
+}}}
+
+Supongamos que un atacante es capaz de cambiar la URL redireccionada a la cadena:
+
+{{{
+blah:foo\r\nSet-Cookie: PREF=bogus; domain=google.com\r\n\r\n
+     <script>evil()</script>
+}}}
+
+`\r` y `\n` marcan una nueva línea y retorno de carro,l y la cadena ha sido envuelta para reformar la página. El atacante podría también suministrar una nueva línea de caracteres en la forma codificada URI, por ejemplo`'blah:foo%0d%0aSet-Cookie...'`.
+
+El resultado del HTTP de respuesta sería:
+
+{{{
+HTTP/1.1 302 Moved
+Content-Type: text/html; charset=ISO-8859-1
+Location: blah:foo
+Set-Cookie: PREF=bogus; domain=google.com
+
+<script>evil()</script><html><head><title>Movida</title></head><body>
+Movida <a href='blah:foo
+Set-Cookie: PREF=bogus; domain=google.com
+
+&lt;script&gt;evil()&lt;/script&gt;'>aquí</a>
+}}}
+
+Esto hará que la cookie escogida por el atacante sea establecida por el navegador del usuario, y puede también ejecutar el script malicioso. Por ejemplo, Firefox podría determinar que la cabecera `Location:` de esta respuesta HTML no es válida, y entonces solo renderizaría el HTML en el cuerpo de la respuesta, esto ejecuta el script.
+
+Un escenario similar podría ocurrir para servlets que emitan cabeceras `Set-Cookie` y deriven el nombre de la cookie o valores desde la entrada del usuario. (Esto también es peligroso por otras razones -- el atacante podría causar que las cookies sean cambiadas en una forma que la aplicación no tenga prevista.)
+
+== Como Evitarlo ==
+
+Cuando se establecen las cabeceras `Location:`, asegúrate que la URL suministrada es inherentemente algo con la forma de URL `http` o `https`.  Aun mejor, debe consistir solo de caracteres que son legales en una especificación URL dentro de las normas RFC 2396.
+
+Cuando se establecen cookies, asegúrate que el nombre de las cookies y valores contengan solamente caracteres permitidos por la norma RFC 2109.
+
+Cuando se establecen otras cabeceras(como `X-Mycustomheader:`), asegurate que el contenido del valor de las cabeceras contenga solo caracteres permitidos por la norma RFC 2068.
+
+== Razonando ==
+
+Restringuiendo juegos de caracteres a los permitidos por los diversos RFC nos asegura que la respuesta HTTP será parseada correctamente por el navegador como se pretendía.
+
+Validar la URL nos asegura que solo se redirija a URLs HTTP legales.  Navegadores antiguos pueden ejecutar código directamente desde la cabecera `Location:` si esta contiene una pseudo-URL `javascript:`
+
+== Para Leer Más ==
+
+  * [EsArticleXSS Lo que siempre quisiste saber sobre ataques cross-site scripting (XSS)]
+  * [http://www.ietf.org/rfc/rfc2396 RFC 2396]
+  * [http://www.ietf.org/rfc/rfc2109 RFC 2109]
+  * [http://www.ietf.org/rfc/rfc2068 RFC 2068]

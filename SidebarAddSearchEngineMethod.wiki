@@ -1,0 +1,18 @@
+#summary The sidebar.addSearchEngine method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/sidebar/sidebar-addSearchEngine-typeof-test.html typeOf(sidebar.addSearchEngine) != 'undefined'] || N || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/Adding_search_engines_from_web_pages The sidebar.addSearchEngine method on Mozilla Developer Center]
+

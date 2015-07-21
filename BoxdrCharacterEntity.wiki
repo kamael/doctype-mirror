@@ -1,0 +1,32 @@
+#summary &boxdr; character entity
+#labels about-html,from-w3c
+#sidebar TOCCharacterEntitiesB
+
+You are here: [Welcome Home] > [HtmlReference HTML Reference] > [CharacterEntities Character entities] > [CharacterEntitiesB B] > &boxdr;
+
+== Value ==
+
+There are 4 variations of this entity:
+
+  * `&boxDR;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/2554/index.htm U+02554].
+  * `&boxDr;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/2553/index.htm U+02553].
+  * `&boxdR;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/2552/index.htm U+02552].
+  * `&boxdr;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/250c/index.htm U+0250C].
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/boxdr-0250c-entity-test.html &boxdr; character entity treated as U+0250C] || Y || Y || Y || Y || Y || N || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/boxdr-02552-entity-test.html &boxdR; character entity treated as U+02552] || Y || Y || Y || Y || Y || N || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/boxdr-02553-entity-test.html &boxDr; character entity treated as U+02553] || Y || Y || Y || Y || Y || N || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/boxdr-02554-entity-test.html &boxDR; character entity treated as U+02554] || Y || Y || Y || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/named.html Named character references in HTML 5]
+  * [http://www.w3.org/TR/html4/sgml/entities.html Character entity references in HTML 4]
+  * [http://blooberry.com/indexdot/html/tagpages/text.htm Text in HTML (blooberry.com)]
+
+

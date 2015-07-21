@@ -1,0 +1,20 @@
+#summary Pseudo-classes are CSS selectors that match elements based on information outside the DOM.
+#labels about-css
+[EsCSSPseudoClasses Español]
+
+== Pseudo-classes ==
+
+  * [ActiveCSSPseudoClass :active]
+  * [DefaultCSSPseudoClass :default]
+  * [EmptyCSSPseudoClass :empty]
+  * [FirstChildCSSPseudoClass :first-child]
+  * [FocusCSSPseudoClass :focus]
+  * [HoverCSSPseudoClass :hover]
+  * [LangCSSPseudoClass :lang]
+  * [LastChildCSSPseudoClass :last-child]
+  * [LinkCSSPseudoClass :link]
+  * [NotCSSPseudoClass :not]
+  * [RootCSSPseudoClass :root]
+  * [TargetCSSPseudoClass :target]
+  * [VisitedCSSPseudoClass :visited]
+

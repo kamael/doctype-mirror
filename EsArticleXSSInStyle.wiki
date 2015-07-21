@@ -1,0 +1,43 @@
+= COMO filtrar entradas de usuario en elementos de estilo y atributos =
+
+||[ArticleXSSInStyle English]||[JaArticleXSSInStyle 日本語]||[FrArticleXSSInStyle Français]||
+||[EsWelcome Inicio]||[EsArticlesXSS Seguridad Web]||   
+
+Los atributos de estilo pueden ser peligrosos si un atacante puede controlar el valor del atributo, pues los estilos CSS pueden causar ejecuciones de código de varias maneras.
+
+Por ejemplo, consideremos el siguiente fragmento de plantilla:
+
+{{{
+<div style="background: %(color)s;">
+    blah
+</div>
+}}}
+
+Si el atacante puede causar que el color contenga:
+
+{{{
+green; background-image: url(javascript:evil_script())
+}}}
+
+despues de la sustitución el HTML evaluado por el navegador sería:
+
+{{{
+<div style="background: green; background-image: url(javascript:evil_script());">
+    blah
+</div>
+}}}
+
+Esto hará que `evil_script()` comience a ser ejecutado, al menos en [BrowserFamilyMSIE IE].  (Firefox aparentemente no desreferencia URLs `javascript:` en este contexto.)
+
+== Como evitarlo ==
+
+CSS es un lenguaje bastante complicado y hay algunos modos en que el estilo pudiera ejecutar scripts. Esto hace que sea difícil hacer un filtrado confiable de todo lo que pudiera ser malicioso. Es muy importante validar la variable que debe ser insertada dentro del atributo de estilo, usando un enfoque de "lista de permitidos". La mejor forma es comparar el valor contra un patrón herméticamente especificado. ¡No olvides enfocar el patrón al principio y al final de la cadena! Por ejemplo, un valor que es usado en el contexto de un estilo podría ser comparado con `/^([a-z]+)|(#[0-9a-f]+)$/i` (nota que el `^` compara el principio de la cadena, `$` compara el final, y `/i` compara mayúsculas y minúsculas).
+
+Una alternativa siempre segura es no derivar el valor directamente de una entrada controlada por el usuario, pero expuesta a diferentes parámetros que son mapeados a un juego de valores establecidos. Por ejemplo, exponer externamente un `color_id` integer, entonces mirar la cadena de color correspondiente en una tabla y mostrar el resultado. ¡No olvides revisar nuevamente el índice antes de mostrarlo!
+
+Como con todos los atributos, es importante asegurarse de que el valor del atributo `style` no contenga ningún carácter de comillas, y que el valor entero está encerrado en comillas dobles dentro de tu plantilla.
+
+== Para leer más ==
+
+  * [EsArticleXSS Todo lo que siempre quisiste saber sobre ataques cross-site scripting (XSS)]
+

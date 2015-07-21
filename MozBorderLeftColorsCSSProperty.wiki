@@ -1,0 +1,13 @@
+#summary The -moz-border-left-colors CSS property sets only the border color for the left edge of an element with borders.
+
+== Usage ==
+
+== Values ==
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-border-left-colors The -moz-border-left-colors property on Mozilla Developer Center]
+
+

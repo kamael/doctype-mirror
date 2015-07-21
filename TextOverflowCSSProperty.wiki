@@ -1,0 +1,21 @@
+#summary The text-overflow property specifies how to render text that overflows its container box.
+#labels about-css,is-css-property,from-microsoft
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *text-overflow*
+
+== Usage ==
+
+== Values ==
+
+  * `ellipsis`
+  * `clip`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms531174.aspx The text-overflow property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/position/textoverflow.htm The history of the text-overflow property on blooberry.com]
+

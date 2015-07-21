@@ -1,0 +1,13 @@
+#summary Google Doctype project welcome page.
+#sidebar TOCArticles
+
+= Introduction =
+
+Welcome to Google Doctype! Feel free to browse through the article categories at left.
+
+= Details =
+
+Edit pages on the wiki! Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages

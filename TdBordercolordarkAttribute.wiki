@@ -1,0 +1,29 @@
+#summary The td bordercolordark attribute
+#labels about-html,about-tables,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [TdElement <td> element] > *bordercolordark attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `bordercolordark` attribute on the following elements:
+
+  * [TableElement <table>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TrElement <tr>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/td-bordercolordark-reflection-test.html td.borderColorDark reflects <td bordercolordark="#ffffff">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms533514.aspx The bordercolordark attribute on MSDN]
+

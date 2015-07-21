@@ -1,0 +1,20 @@
+#summary The window.event property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `window.event` property returns an [MSEventObject MSEvent object].
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-event-typeof-test.html typeOf(window.event) != 'undefined'] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn.microsoft.com/workshop/author/dhtml/reference/objects/obj_event.asp The window.event property on MSDN]
+

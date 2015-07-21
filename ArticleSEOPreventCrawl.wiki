@@ -1,0 +1,29 @@
+﻿#summary HOWTO Prevent your content from being crawled or from appearing in search results
+
+First, _preventing your page from being crawled is not the same as preventing the URL from appearing in search results_. This is because while you may block search engines from crawling your content, they may still have signals about the URL, such as the anchor text used to link to your URL throughout the web, and therefore enough information to show your URL in search results.
+
+Decide if what your goal is: prevention of the URL from being crawled or prevention of it appearing in search results. In most cases, the rules are more simpler to prevent crawling than to not index a page. Also, if your information is truly sensitive, it's best not to rely on search engine behavior. Consider more secure options, such as password protection.
+
+== Preventing content from being crawled ==
+
+*_Using the robots.txt file_*
+
+Google, Microsoft, and Yahoo! have formalized the Robots Exclusion Protocol (REP) such that they all follow similar guidelines for not crawling documents in your [http://www.robotstxt.org/norobots-rfc.txt]. This method is often the simplest way to prevent your content from being crawled. To verify that your robots.txt is blocking the correct content (as well as allowing the right content to be crawled) you can use the free [https://www.google.com/support/webmasters/bin/answer.py?answer=35237 robots.txt analyzer] in Google Webmaster Tools.
+
+|| *DIRECTIVE*  || *IMPACT* || * USE CASES* || *EXAMPLE* ||
+|| Disallow ||  Tells a crawler not to index your site -- your site's robots.txt file still needs to be crawled to find this directive, however disallowed pages will not be crawled ||  'No Crawl' page from a site. This directive in the default syntax prevents specific path(s) of a site from being crawled. || Disallow: /orcs/ ||
+|| Allow || Tells a crawler the specific pages on your site you want indexed so you can use this in combination with Disallow || This is useful in particular in conjunction with Disallow clauses, where a large section of a site is disallowed except for a small section within it.  || Allow: /orcs/cute-ones/ ||
+|| $ Wildcard Support || Tells a crawler to match everything from the end of a URL -- large number of directories without specifying specific pages  || 'No Crawl' files with specific patterns, for example, files with certain filetypes that always have a certain extension, say pdf. || Disallow: /*.pdf$ ||
+|| !* Wildcard Support || Tells a crawler to match a sequence of characters ||  'No Crawl' URLs with certain patterns, for example, disallow URLs with your "printer-friendly" parameter || 
+
+== Preventing content from appearing in search results==
+
+In order to prevent your content from appearing in search results, it needs to be prevented from being indexed. In the three major search engines, prevention from being indexed is dictated on a per URL basis (not as pattern matches such as in the robots.txt for crawl prevention). 
+
+For a URL not to be indexed, you can place a NOINDEX tag in the HTTP header. This works well for pdf files or spreadsheets.
+
+{{{X-Robots-Tag: noindex}}}
+
+For HTML files not to be indexed, you can insert a NOINDEX metatag in the head of the page:
+
+{{{<meta name="robots" content="noindex, nofollow">}}}

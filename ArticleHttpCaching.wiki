@@ -1,0 +1,150 @@
+#summary HOWTO control caching with HTTP headers
+#labels is-article,about-security,about-best-practices
+
+Web Applications return cache-related headers in their HTTP response in order to indicate whether content may be cached.  These headers are respected both by the end user's browser and by proxies between the user and the originating web server.
+
+Every web application needs set cache-related headers appropriately.  This article aims to provide the necessary information to achieve correct and consistent header settings.
+
+The HTTP/1.0 specification included a simple method to define caching of content.  The HTTP/1.1 specification includes more fine-grained (but complicated) methods for caching.  As a web developer, you must understand both specifications and how they affect users' browsers and intermediary proxies -- neither of which are under your control.
+
+Note that this article was written from the perspective of the web application (i.e. server).  We do not concern ourselves here with what caching directives the browser may wish to send, although these clearly play a role in controlling proxy decisions since they may impact both the request and the response caching.
+
+Several terms in this article are borrowed from the HTTP/1.1 RFC:
+
+  * Client: the program that establishes connections for the purpose of sending requests.  In the context of this article, it is essentially a browser.
+  * Server, a.k.a web application, front-end: the program that services user HTTP requests.
+  * Proxy: an intermediary program which acts as both a server and a client.  Proxies make requests on behalf of other clients.  In the context of this article, a proxy is defined as any intermediary between the server and the client which may modify or cache client requests and server responses.
+
+== Security concerns ==
+
+There are two main design goals to satisfy when choosing a caching policy:
+
+  * Caching provides significant opportunities to improve user-perceived latency and reduce the overall bandwidth costs for your web application and for your users.
+  * Setting the wrong cache headers may have very serious security implications.
+
+Security implications?  Absolutely.  Setting cache headers incorrectly can lead to information leaks of allegedly private cookies or even entire web pages.  In a worst-case scenario, private user data may get cached by proxies and subsequently served to other users.
+
+  * A web application returns a dynamic response, i.e. one that is a destined to a specific user/session, but with incorrect caching headers.  The response gets cached by a proxy.  This proxy then returns that response in subsequent requests from other users.
+  * A web application returns a response marked as cache-able but also returns a =Set-Cookie= header to store a user-specific cookie.  Some proxies  cache the cookie along with the response, and return both in subsequent requests.  This can lead to a user receiving cookies destined to another user.  If the cookie contains authentication information, this could lead to a complete account compromise.
+
+== Use cases ==
+
+Depending on the type of data being returned in the HTTP response and whether it includes private user information, the server must set caching-related headers appropriately.  This section outlines three fundamental use cases and suggests how to set the cache-related headers to solve them.
+
+In all cases:
+
+  * You MUST always set a `Date` header with the current time, properly formatted as defined in the HTTP/1.1 RFC.
+  * You MUST always set an `Expires` header, except for responses with certain status codes that are never cached (e.g. 302, 307).
+  * You SHOULD always set a `Cache-Control` header.
+
+=== No caching ===
+
+Use case: your application is sending dynamic data that should not be cached by the browser nor by any proxies along the way.  Send these response headers:
+
+{{{
+Date: <ServercurrentDate>
+Expires: Fri, 01 Jan 1990 00:00:00 GMT
+Pragma: no-cache
+Cache-control: no-cache, must-revalidate
+}}}
+
+Explanation:
+
+  * Setting an `Expires` header in the past ensures that HTTP/1.0 and HTTP/1.1 proxies and browsers will not cache the content.
+  * This is the only possibly justified case for the `Pragma: no-cache` directive.  Microsoft servers still send it, we can too.
+  * The `Cache-control` directive also tells HTTP/1.1 proxies not to cache the content.  Even if proxies may be configured to return stale content when they should not, the `must-revalidate` re-affirms that they SHOULD NOT do it.
+
+Possible variations:
+
+  * You can add `no-store` in `Cache-control` so it becomes `Cache-control: no-cache, no-store, must-revalidate` but technically it is used to tell the proxy and browser not to store that content in non-volatile memory.
+  * Any `Expires` header value that is equal to or less than the current server `Date` should accomplish the same outcome.
+
+=== Only the end user's browser is allowed to cache ===
+
+Sometimes you want to allow the browser to cache the content but not proxies.  The browser cache is typically private, whereas the proxy's cache is typically shared.  You can allow the browser to cache content for performance/bandwidth reasons, but not have the content cached by proxies.  Send these response headers:
+
+{{{
+Date: <ServercurrentDate>
+Expires: Fri, 01 Jan 1990 00:00:00 GMT
+Cache-control: private, max-age=<1dayInSeconds>
+}}}
+
+Explanation:
+
+  * Setting an `Expires` header in the past ensures that legacy HTTP/1.0 proxies do not try to cache the content.  It also means that legacy browsers will not cache it either, but all modern browsers support HTTP/1.1, so in practice this is not a problem.
+  * HTTP/1.1 proxies will not cache the content either due to the `private` directive in `Cache-control`.
+  * Set `max-age` to the (non-negative) time in seconds you want to cache the content at the browser, for example 1 day.  All modern browsers pick this value over the one in the `Expires` header, even if the latter is more restrictive.  The `max-age` parameter set to `0` means that the browser is allowed to cache the response, but the response expires right away.  Hence the browser needs to validate it with the server before re-using it.
+
+Possible variations:
+
+  * You can add `no-store` in `Cache-control` if you want the browser not to swap it to disk.
+
+=== Both browser and proxy allowed to cache ===
+
+This is typically used when you have static content, such as Javascript, CSS, images, or even HTML that contains no dynamic data.  You want to allow both browsers and proxies to cache this content.  You can decide how long to allow them to cache the content, though anything more than one year is discouraged by the HTTP/1.1 spec.  (If you find you need to change the content before the expiration period, you will need to serve it from a different URL.)
+
+Send these response headers:
+
+{{{
+Date: <ServercurrentDate>
+Expires: <ServerCurrentDate + 1month>
+Cache-control: public, max-age=<1month>
+}}}
+
+Explanation:
+
+  * We set both the `Expires` header and the `max-age` directives with the correct time for caching.  If you have a reason why HTTP/1.1 browsers and modern proxies should cache for a longer time than legacy proxies, you can make the two timeouts different.  HTTP/1.1 proxies/browsers will honor the `max-age` parameter, whereas old proxies will only honor the `Expires` header.
+  * The timeout (1month in the above example) should be a non-negative number less than or equal to one year.  `0` is a legitimate value; it tells browsers and proxies that they can cache the response but that the response expires right away.  Hence they need to validate it with the server if they want to re-use it.
+
+== When proxies cache ==
+
+It is easier to start by answering what responses they will NOT cache. They will not cache any of the following:
+
+  * HTTPS traffic.
+  * HTTP methods PUT, DELETE, and TRACE.
+  * POST responses, unless the server explicitly tells them to cache the response.
+  * Responses to GET requests with HTTP response code that is NOT one of 200, 203, 206, 300, 301, unless the server explicitly tells them to cache the response.
+  * Responses that have headers to indicate the content should not be cached, in particular both an `Expires` header in the past and a `Cache-Control` header that is not `public`.
+
+What might they cache, depending on vendor-specific heuristics?
+
+  * Responses without an `Expires` header and without a `Cache-Control` header.  In this case, some proxies will apply heuristics if the page "appears" static.  What this means is proxy-specific.
+
+Don't take chances.  Always include the right combination of HTTP headers to tell proxies and browsers exactly what you want them to do.
+
+== Anti-patterns ==
+
+Note: as noted in the previous section, some responses are always non-cacheable.  If the response is non-cacheable, you can ignore this section.
+
+These items are known to be a security risk:
+
+  * Combination of `Set-Cookie` and an `Expires` header in the future.  This may cause some proxies to cache the `Set-Cookie` with the response.
+  * Combination of `Set-Cookie` and a `Cache-Control` set to `public` or missing.  This may cause some proxies to cache the `Set-Cookie` with the response.
+  * Combination of `Expires` header in the future and `Cache-Control` set to `no-cache` or `private`.  HTTP/1.0 proxies will still possibly cache the content.  This is almost certainly not what the web developer had in mind.  Please follow the recommendations above to figure out how these headers should be set for private caching or no caching.
+  * Combination of no `Expires` header at all and `Cache-Control` set to `no-cache` or `private`.  HTTP/1.0 proxies will still possibly cache the content.  This is almost certainly not what the web developer had in mind.
+  * Any of the above combinations, plus a request URL that has no query parameters.  URLs that do not have query parameters are more likely to be interpreted by proxies as static pages and hence valid for caching, so you must to be very careful about setting correct caching headers for them.
+  * Any of the above combinations, plus a response with a `Set-Cookie` header.
+
+These items may introduce unwanted side-effects:
+
+  * Missing `Date` header.  Without this header, caches have no basis to compare the `Expires` header.
+  * Missing `Expires` header.  Without this header, HTTP/1.0 proxies may implement their own caching policy.
+  * Missing `Cache-Control` header.  This is not strictly cause for alarm, but it is safer to have the header present and set to the appropriate value.
+  * Combination of `Pragma: no-cache` and a `Cache-control` that is not set to `no-cache`.  At the very least, it is a conflicting set of directives.  It could also indicate incorrect setting of the `Cache-Control` header.
+
+== More fiddly details that I can't fit into other sections because of the lateness of the hour ==
+
+  * An `Expires` header set in the future (compared to the `Date` header) may cause legacy proxies to cache the content.
+  * The `max-age` parameter, when present, overwrites the `Expires` header for HTTP/1.1 proxies and browsers, even if the `Expires` header is more restrictive.  Therefore, if you want to allow HTTP/1.1-compliant browsers (that's all modern browsers) to cache but NOT legacy proxies, you can always set the `Expires` header in the past and give a positive value for `max-age`.  This is even noted in HTTP/1.1 spec (section 14.9.3).
+  * The `s-maxage` parameter instructs a proxy (and only a proxy) to use that timeout instead of the `Expires` or `max-age`.  This may be useful if you want to allow a browser to cache the content for a longer time than a proxy.  This seems to be marginally useful, most likely only when you have a public `cache-control`.
+  * If your application uses HTTPS exclusively, you don't have to worry as much about proxies in-between your server and your users.  Proxies  can only tunnel data and cannot see/modify the contents of your users' requests or your server's responses.
+  * As per `HTTP/1.0` and `HTTP/1.1`, `Pragma: no-cache` is used only in a user's request, not a server's response.  However, there is an extension supported by IE and other browsers to define a meaning for it in server responses.  It is intended for the browser to receive a directive from a `HTTP/1.0` server to not cache content received over HTTPS.  For more information, see [http://support.microsoft.com/kb/234067 Microsoft knowledge base article 234067].
+  * `HTTP/1.1` also supports a [http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html Vary header] to indicate that server response is a function of other request headers sent by the client.  This becomes a hint for intermediate caches that the document can only be reused when those other headers are identical to the headers in their stored copy.  HTTP/1.1 requires that "when the cache receives a subsequent request whose Request-URI specifies one or more cache entries including a `Vary` header field, the cache MUST NOT use such a cache entry to construct a response to the new request unless all of the selecting request-headers present in the new request match the corresponding stored request-headers in the original request."
+  * A common "defense-in-depth" technique is to send a `Vary: cookie` or `Vary: *` header for non-cacheable documents (along with all the appropriate caching headers).  This disables sharing of private pages because different users, since they will have different cookies.  An HTTP/1.1-compliant cache can not serve the same document across two requests with differing headers specified in the `Vary:` field.  `Vary: *` indicates that requests must be considered different regardless of the value of headers.
+
+== Further reading ==
+
+  * [http://www.ietf.org/rfc/rfc1945.txt RFC 1945: HTTP/1.0]
+  * [http://www.ietf.org/rfc/rfc2616.txt RFC 2616: HTTP/1.1]
+  * [http://www.ietf.org/rfc/rfc3143.txt RFC 3143: Known HTTP Proxy/Caching Problems]
+  * [http://support.microsoft.com/kb/234067 Microsoft knowledge base article 234067: Pragma header]

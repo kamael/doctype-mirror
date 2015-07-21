@@ -1,0 +1,72 @@
+#summary Introduction to using Flash's ExternalInterface for bridging JavaScript and Flash.
+
+= Introduction =
+
+Flash's !ExternalInterface API, which first appeared in Flash 8, is instrumental in bridging !JavaScript and Flash when creating [ArticlesShims JavaScript shims]. It allows you to make method calls bidirectionally between Flash !ActionScript and !JavaScript.
+
+
+= Details =
+
+The !ExternalInterface API [http://livedocs.adobe.com/flash/8/main/wwhelp/wwhimpl/common/html/wwhelp.htm?context=LiveDocs_Parts&file=00002200.html reference documentation] is a very useful source of tips and tricks.
+
+== Calling Flash From !JavaScript ==
+
+If you want to call Flash !ActionScript from !JavaScript, you must first register your !ActionScript functions on the Flash side:
+
+{{{
+// ActionScript 3
+import flash.external.ExternalInterface;
+
+public class Example {
+  public function Example() {
+     ExternalInterface.addCallback("flashHelloWorld", this, flashHelloWorld);
+  }
+
+  public function flashHelloWorld():String {
+     return 'Hello from Flash!';
+  }
+}
+}}}
+
+In the code above we 'bind' the method flashHelloWorld using !ExternalInterface.addCallback. This function takes the method name exposed to !JavaScript; the instance to bind it to; and the local function that will get called. In the example above we make the external name visible to !JavaScript and the local name the same, but we could make them different if we wished.
+
+In our !JavaScript, we now get a reference to the Flash object in the page and call the method as defined in addCallback:
+
+{{{
+// JavaScript
+var flashObj = document.getElementById('myFlashObject');
+alert(flashObj.flashHelloWorld()); // should print 'Hello from Flash!'
+}}}
+
+== Calling !JavaScript from Flash ==
+
+Calling !JavaScript from Flash is simpler; we simply use the 'call' method from our Flash:
+
+{{{
+// ActionScript 3
+var results:String = ExternalInterface.call('javascriptHelloWorld');
+
+// providing arguments
+ExternalInterface.call('foobar', 'param1', 'param2');
+}}}
+
+{{{
+// JavaScript
+function javascriptHelloWorld() {
+   return 'Hello from JavaScript!';
+}
+}}}
+
+A little known fact is that you can actually 'navigate' into objects as well as send and retrieve complex JSON data over the bridge; here's an example from a shim:
+
+{{{
+// ActionScript 3
+var result:Object = ExternalInterface.call(
+                    "window._onMessage", 
+                    { type: 'event', eventType: 'onFlashLoaded', 
+                      uniqueId: this.js_uniqueId } );
+}}}
+
+== Issues ==
+
+Note that !ExternalInterface can have some 'gotcha' issues that you must workaround. See ArticleFixingFlashExternalInterface for details.

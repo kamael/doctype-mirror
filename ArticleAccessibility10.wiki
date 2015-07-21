@@ -1,0 +1,75 @@
+#summary Day 10: Presenting your main content first
+#labels about-accessibility,is-article
+
+You are here: [Welcome Home] > [Articles Articles] > [ArticlesAccessibility Accessibility] > [ArticleAccessibility 30 days to a more accessible web site] > *Day 10: Presenting your main content first*
+
+One of the main advantages of using a purely CSS-based layout is that it is easy to rearrange elements within your HTML source without affecting the visual layout, so that your main content displays while the rest of the page is still loading.  However, I am aware that most web sites still use table-based layouts, so this tip is for you.
+
+If you have a table-based layout with a navigation bar along the left, your navigation bar is being presented to blind users like [ArticleAccessibility05 Marcus] and [ArticleAccessibility01 Jackie] before your main content.  There is no way to describe how much of a problem this is; you have to see it for yourself:
+
+  * [http://doctype.googlecode.com/trunk/examples/notabletrick.html Sample table-based layout].
+  * [http://doctype.googlecode.com/trunk/examples/tabletrick.html Modified layout, with content first].  These two layouts should look essentially the same in visual browsers, but in Lynx, the difference is obvious.
+  * [http://doctype.googlecode.com/trunk/examples/notabletrick.txt The original layout, rendered by Lynx].
+  * [http://doctype.googlecode.com/trunk/examples/tabletrick.txt The modified layout, rendered by Lynx].  The main content is displayed first, then the navigation bar.
+
+You do not need to redesign your entire template from scratch to avoid this problem.  There is a (relatively) simple technique, affectionately called the "table trick", that can present your main content first, while still keeping your navigation bar on the left side.
+
+=== Who benefits? ===
+
+  * [ArticleAccessibility05 Marcus] benefits.  As demonstrated by the examples above, Lynx displays content in the order in which it appears in the HTML source.  This means Marcus must scroll through your entire navigation bar _every time he visits your page_.  Scrolling sucks.
+  * [ArticleAccessibility01 Jackie] benefits.  [http://www.freedomscientific.com/fs_products/software_jaws.asp JAWS], like Lynx, presents content in the order in it appears in the HTML source code, not the order they appear on screen.  With JAWS, the problem is even worse, because Jackie must sit through JAWS _reading your entire navigation bar_ before hearing any real content, and there is no sure-fire way to jump straight to the main content.  (We'll talk more about this problem in the next section.)
+  * Search engines benefits.  For example, Google gives more weight to content closer to the top of the page.  That's the top of your HTML source, not the visual top of the page after it's rendered in a visual browser.
+
+=== How to do it ===
+
+View your own site in the [http://www.delorie.com/web/lynxview.html Lynx Viewer] and see if your daily posts are displayed first, before your navigation bar.  Most modern web design templates get this right, so you may not need to do anything.  But view your site in the Lynx Viewer anyway, because it will give you a deeper understanding of the issues involved.
+
+There is no specific copy-and-paste way to do this; you will have to dig into your own templates and look at their table structure.  The [http://doctype.googlecode.com/trunk/examples/notabletrick.html sample layout] and [http://doctype.googlecode.com/trunk/examples/tabletrick.html modified sample layout] show the basic technique.
+
+Instead of the obvious table layout:
+
+{{{
+<table>
+<tr>
+  <td valign="top" align="left" width="25%">
+    ... navigation bar ...
+  </td>
+  <td valign="top" align="left">
+    ... main content ...
+  </td>
+</tr>
+</table>
+}}}
+
+We do this instead:
+
+{{{
+<table>
+<tr>
+  <!-- spacer GIF in upper-left cell -->
+  <td><img src="/images/1.gif" width="1" height="1" alt=""></td>
+  <!-- main content cell first, with rowspan=2 -->
+  <td valign="top" align="left" rowspan="2">
+    ... main content ...
+  </td>
+</tr>
+<tr>
+  <td valign="top" align="left" width="25%">
+    ... navigation bar ...
+  </td>
+</tr>
+</table>
+}}}
+
+Here's a [http://doctype.googlecode.com/trunk/examples/1.gif 1 pixel transparent spacer GIF] you can use.
+
+=== Further reading ===
+
+  * [http://www.delorie.com/web/lynxview.html Lynx Viewer]
+  * A Promotion Guide: [http://www.apromotionguide.com/tabletrick.html The Table Trick]
+
+----
+
+Next: [ArticleAccessibility11 Day 11: Skipping over navigation links]
+Back: [ArticleAccessibility09 Day 9: Providing additional navigation aids]
+

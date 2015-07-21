@@ -1,0 +1,79 @@
+#summary The blockquote align attribute specifies the horizontal alignment of the element within its bounding box.
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [BlockquoteElement <blockquote> element] > *align attribute*
+
+== Usage ==
+
+{{{
+<blockquote align="center">
+<p>A horse is a horse, of course, of course...</p>
+</blockquote>
+}}}
+
+The `align` attribute is deprecated in favor of the [TextAlignCSSProperty text-align CSS property], but browsers still support it.
+
+== Values ==
+
+  * `left` (default)
+  * `center`
+  * `right`
+
+== Elements ==
+
+You can use the `align` attribute on the following elements:
+
+  * [AddressElement <address>]
+  * [AppletElement <applet>]
+  * [BlockquoteElement <blockquote>]
+  * [BodyElement <body>]
+  * [CaptionElement <caption>]
+  * [CenterElement <center>]
+  * [ColElement <col>]
+  * [ColgroupElement <colgroup>]
+  * [DdElement <dd>]
+  * [DirElement <dir>]
+  * [DivElement <div>]
+  * [DlElement <dl>]
+  * [DtElement <dt>]
+  * [EmbedElement <embed>]
+  * [FieldsetElement <fieldset>]
+  * [FormElement <form>]
+  * [HrElement <hr>]
+  * [IframeElement <iframe>]
+  * [ImgElement <img>]
+  * [InputElement <input>]
+  * [IsindexElement <isindex>]
+  * [LegendElement <legend>]
+  * [LiElement <li>]
+  * [ListingElement <listing>]
+  * [MenuElement <menu>]
+  * [ObjectElement <object>]
+  * [OlElement <ol>]
+  * [PElement <p>]
+  * [PlaintextElement <plaintext>]
+  * [SelectElement <select>]
+  * [SpacerElement <spacer>]
+  * [TableElement <table>]
+  * [TbodyElement <tbody>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TfootElement <tfoot>]
+  * [TheadElement <thead>]
+  * [TrElement <tr>]
+  * [UlElement <ul>]
+  * [XmpElement <xmp>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/blockquote-align-center-reflection-test.html blockquote.align reflects <blockquote align="center">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/blockquote-align-justify-reflection-test.html blockquote.align reflects <blockquote align="justify">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/blockquote-align-left-reflection-test.html blockquote.align reflects <blockquote align="left">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/blockquote-align-right-reflection-test.html blockquote.align reflects <blockquote align="right">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+

@@ -1,0 +1,49 @@
+#summary The font property is a shorthand property for setting 'font-style', 'font-variant', 'font-weight', 'font-size', 'line-height' and 'font-family'.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *font*
+
+== Usage ==
+
+== Values ==
+
+  * `[ [ 'font-style' || 'font-variant' || 'font-weight' ]? 'font-size' [ / 'line-height' ]? 'font-family' ]`
+  * `caption`
+  * `icon`
+  * `menu`
+  * `message-box`
+  * `small-caption`
+  * `status-bar`
+  * `inherit`
+  * `-moz-window`
+  * `-moz-document`
+  * `-moz-workspace`
+  * `-moz-desktop`
+  * `-moz-info`
+  * `-moz-dialog`
+  * `-moz-button`
+  * `-moz-pull-down-menu`
+  * `-moz-list`
+  * `-moz-field`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/font-bogus-equals-normal-reflection-test.html style.fontStyle reflects <div style='font: bogus'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/font-italic-equals-italic-reflection-test.html style.fontStyle reflects <div style='font: italic'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/font-normal-bogus-equals-normal-reflection-test.html style.fontVariant reflects <div style='font: normal bogus'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/font-normal-equals-normal-reflection-test.html style.fontStyle reflects <div style='font: normal'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/font-normal-normal-equals-normal-reflection-test.html style.fontVariant reflects <div style='font: normal normal'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/font-normal-small-caps-equals-small-caps-reflection-test.html style.fontVariant reflects <div style='font: normal small-caps'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/font-oblique-equals-oblique-reflection-test.html style.fontStyle reflects <div style='font: oblique'>] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/fonts.html#propdef-font The font property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:font The font property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530756.aspx The font property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/font/font.htm The history of the font property on blooberry.com]
+  * [http://reference.sitepoint.com/css/font The font property on the SitePoint CSS Reference]
+

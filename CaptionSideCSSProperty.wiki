@@ -1,0 +1,27 @@
+#summary The caption-side property specifies the position of the caption box with respect to the table box.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *caption-side*
+
+== Usage ==
+
+== Values ==
+
+  * `top`
+  * `bottom`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/caption-side-bottom-equals-bottom-reflection-test.html style.captionSide reflects <div style='caption-side: bottom'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/caption-side-top-equals-top-reflection-test.html style.captionSide reflects <div style='caption-side: top'>] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/tables.html#propdef-caption-side The caption-side property in CSS 2.1]
+  * [http://www.blooberry.com/indexdot/css/properties/table/capside.htm The history of the caption-side property on blooberry.com]
+  * [http://reference.sitepoint.com/css/caption-side The caption-side property on the SitePoint CSS Reference]
+

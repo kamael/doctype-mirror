@@ -1,0 +1,23 @@
+#summary The document.doctype property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `document.doctype` property returns a string.
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-doctype-typeof-test.html typeOf(document.doctype) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:document.doctype The document.doctype property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms533737.aspx The document.doctype property on MSDN]
+

@@ -1,0 +1,25 @@
+#summary The right property specifies how far a box's right margin edge is offset to the left of the right edge of the box's containing block.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *right*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSLengthType <length>]
+  * [CSSPercentageType <percentage>]
+  * `auto`
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/visuren.html#propdef-right The right property in CSS 2.1]
+  * [http://msdn2.microsoft.com/en-us/library/ms531149.aspx The right property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/position/right.htm The history of the right property on blooberry.com]
+  * [http://reference.sitepoint.com/css/right The right property on the SitePoint CSS Reference]
+

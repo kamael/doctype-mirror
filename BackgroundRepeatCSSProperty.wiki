@@ -1,0 +1,33 @@
+#summary If a background image is specified, the background-repeat property specifies whether the image is repeated.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *background-repeat*
+
+== Usage ==
+
+== Values ==
+
+  * `repeat`
+  * `repeat-x`
+  * `repeat-y`
+  * `no-repeat`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-repeat-no-repeat-equals-no-repeat-reflection-test.html style.backgroundRepeat reflects <div style='background-repeat: no-repeat'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-repeat-repeat-equals-repeat-reflection-test.html style.backgroundRepeat reflects <div style='background-repeat: repeat'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-repeat-repeat-x-equals-repeat-x-reflection-test.html style.backgroundRepeat reflects <div style='background-repeat: repeat-x'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-repeat-repeat-y-equals-repeat-y-reflection-test.html style.backgroundRepeat reflects <div style='background-repeat: repeat-y'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/colors.html#propdef-background-repeat The background-repeat property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:background-repeat The background-repeat property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530721.aspx The background-repeat property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/colorbg/bgrepeat.htm The history of the background-repeat property on blooberry.com]
+  * [http://reference.sitepoint.com/css/background-repeat The background-repeat property on the SitePoint CSS Reference]
+

@@ -1,0 +1,16 @@
+#summary The -moz-background-clip CSS property determines whether an element's background (image or color) is displayed under its border.
+
+== Usage ==
+
+== Values ==
+
+  * `border`
+  * `padding`
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-background-clip The -moz-background-clip property on Mozilla Developer Center]
+
+

@@ -1,0 +1,111 @@
+= COMO filtrar entradas de usuario en contexto JavaScript =
+
+||[ArticleXSSInJavaScript English]||[JaArticleXSSInJavaScript 日本語]||[FrArticleXSSInJavaScript Français]||
+||[EsWelcome Inicio]||[EsArticlesXSS Seguridad Web]||   
+
+Por obvias razones, deberás tener mucho cuidado al momento de incluir contenido dinámico en etiquetas `<script>` u otros elementos que explícitamente contengan scripts.  Si un atacante puede causar cadenas arbitrarias para ser inyectadas, entonces puede fácilmente ejecutar código malicioso. Escapes de datos HTML no es suficiente, pues el atacante no necesita insertar ninguna etiqueta HTML.
+
+Contenido dinámico con etiquetas `<script>` debería evitarse lo más posible. No hay una razón realmente legítima para usarlo, con una excepción: Muchas veces es útil poblar literales de cadenas javascript con datos derivados dinámicamente.  GMail hace un uso extensivo de esta técnica. Sin embargo esto puede llevar fácilmente a una vulnerabilidad de inyección de script.
+
+== Ejemplo ==
+
+Consideremos el siguiente fragmento de plantilla:
+
+{{{
+<script>
+   var mensaje_de_texto = '%(mensaje_de_texto)s';
+   // ...
+   // Hacer algo con mensaje_de_texto
+</script>
+}}}
+
+Si el atacante puede hacer que el mensaje de texto contenga:
+
+{{{
+blah'; evil_script(); //
+}}}
+
+Después de que el HTML sea evaluado por el navegador quedaría:
+
+{{{
+<script>
+   var mensaje_de_texto = 'blah'; evil_script(); //';
+   // ...
+   // Hacer Algo con mensaje_de_texto
+</script>
+}}}
+
+lo que causaría que `evil_script()` se ejecute.
+
+== Como evitarlo ==
+
+No insertes cadenas controlables por el usuario dentro de una plantilla HTML a través de etiquetas `<script>`, excepto para poblar cadenas de literales.  En el caso de literales de cadenas pobladas, es necesario encerrar la cadena dentro de la plantilla entre comillas simples (javascript), y entonces asegurarse de que la cadena en sí misma es una cadena  javascript escapada.
+
+Los caracteres siguientes necesitan ser codificados como un mínimo. Usamos la convención "U+<dígitos-hexadecimales>" para referir puntos de código Unicode no imprimibles.
+
+|| Caracter || Escape || Comentario ||
+|| `U+0009` || `\t` || Tabulación ||
+|| `U+000a` || `\n` || Salto de línea||
+|| `U+000d` || `\r` || Retorno de carro ||
+|| `U+0085` || `\u0085` || Siguiente línea ||
+|| `U+2028` || `\u2028` || Separador de línea ||
+|| `U+2029` || `\u2029` || Separador de párrafo ||
+|| `'` || `\x27` ó `\u0027` || Comillas Simples ||
+|| `"` || `\x22` ó `\u0022` || Comillas Dobles ||
+|| `\` || `\\` || Diagonal invertida ||
+|| `&` || `\x26` ó `\u0026` || Ampersand ||
+|| `<` || `\x3c` ó `\u003c` || Menor Que ||
+|| `>` || `\x3e` ó `\u003e` || Mayor Que ||
+|| `=` || `\x3d` ó `\u003d` || Igual ||
+
+asegúrate que esa literal de cadena no es usada nuevamente en un contexto que por sí misma pudiera ser interpretada como script (como un estatuto javascript `eval()`).
+
+Literales que no son cadenas (como integers, floats, etc) necesitan ser formateados apropiadamente para asegurar que la representación de la cadena resultante no pueda terminar en un javascript malicioso.
+
+== Razonando ==
+
+Embebiendo, los lineamientos javascript que son derivados dinámicamente desde una entrada de usuario dentro de etiquetas `<script>` son extremadamente peligrosos.  Por lo general, es imposible distinguir correctamente trozos "inofensivos" de código de aquellos peligrosos.
+
+Encerando en comillas y escapando las diagonales invertidas de la cadena insertada aseguramos que el parseador JavaScript interpreta la cadena como una simple cadena literal, como es debido.  Debemos escapar comillas y caracteres de salto de línea, pues estos pueden ser interpretados como el final de la variable de cadena y permitir un ataque de "escape desde la comilla".  Debemos también escapar la diagonal invertida, de lo contrario el atacante podría proveer una simple diagonal invertida que pudiera escapar a nuestra comilla que se supone debe ser el final de la variable de cadena.  Despues de todo, el sentido de variables de cadena "interiores" y "exteriores" es invertido, y el atacante podría ser capaz de causar la ejecución de un script si controla alguna otra cadena que sea insertada posteriormente en el mismo bloque del script.
+
+El escape de los caracteres "mayor que" y "menor que" es necesario porque e lo contrario un atacante podría causar la ejecución de código arbitrario por inyección.(dentro de la variable `mensaje_de_texto` en el ejemplo anterior),
+
+{{{
+foo</script><script>evil-script;</script><script>
+}}}
+
+Despues de la sustitución, el HTML evaluado por el navegador sería (los saltos de línea extras las insertamos por razones de formato):
+
+{{{
+  <script>
+    var mensaje_de_texto = 'foo</script>
+    <script>evil-script;</script>
+    <script>'
+    // ...
+    // acer algo con mensaje_de_texto
+  </script>
+}}}
+
+Algo sorprendente, este documento HTML en efecto resultara en la ejecución de `evil-script;`. La razón es que el navegador primero interpreta el documento como un HTML, y sólo después pasa el texto encerrado en etiquetas `<script>` al intérprete JavaScript.  En otras palabras, el parseador HTML no respeta o tiene cuidado con  los delimitadores de las constantes de cadena de JavaScript.  Por eso, el fragmento HTML anterior sera parseado en tres etiquetas `<script>` separadas.  La primera etiqueta `<script>` contiene JavaScript inválido y podría resultar en un error de sintaxis.  Sin embargo, la mayoría de los navegadores evaluaran por separado las etiquetas `<script>` y ejecutarán la segunda etiqueta (sintácticamente correcta) que contiene el script malicioso.  La tercera etiqueta resultara en error también, pero para entonces ya es demasiado tarde.
+
+Finalmente, escapamos el carácter "igual que" como una defensa más profunda, previniendo que la cadenas proveídas por el atacante sean interpretadas como un atributo de etiqueta.
+
+Las variables numéricas por lo general son seguras si su representación de cadena es obtenida en una conversión apropiada desde un tipo de datos nativamente numérico. Nota que en muchos lenguajes débilmente tipeados como Perl, Python, ó PHP, es importante forzar en la conversión de tipos al tipo numérico apropiado, para asegurarse de que no sea posible "fisgonear" una cadena arbitraria después de todo.
+
+== Reuso de variables script ==
+
+Estamos seguros de que el script de lado del cliente puede en sí mismo ser vulnerable a inyecciones si los datos evaluados dinámicamente derivados desde recursos invasivos. Por ejemplo, el fragmento de plantilla:
+
+{{{
+<script>
+   var mensaje_de_texto  = '%(mensajedetexto)s';
+   // ...
+   document.write(mensaje_de_texto);
+</script>
+}}}
+
+es poco vulnerable a XSS siempre y cuando el escape JS fuera aplicado a la variable `mensaje_de_texto`, mientras que la variable JS no es escapada de HTML al tiempo que es insertada en el documento por la llamada `document.write`.
+
+== Para leer más ==
+
+  * [EsArticleXSS Todo lo que siempre quisiste saber sobre ataques cross-site scripting (XSS)]

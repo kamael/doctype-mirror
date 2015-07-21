@@ -1,0 +1,30 @@
+#summary List of HTML character entities
+#labels about-html,from-w3c
+
+You are here: [Welcome Home] > [HtmlReference HTML Reference] > [CharacterEntities Character entities] > *beginning with Q*
+
+|| *Name* || *Value* || *Test* ||
+|| [QuotCharacterEntity &QUOT;] || [http://www.fileformat.info/info/unicode/char/0022/index.htm U+00022] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/quot-allcaps-00022-entity-test.html test] ||
+|| [QuotCharacterEntity &QUOT] || [http://www.fileformat.info/info/unicode/char/0022/index.htm U+00022] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/quot-allcaps-no-semicolon-00022-entity-test.html test] ||
+|| [QfrCharacterEntity &Qfr;] || U+1D514 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/qfr-capital-1d514-entity-test.html test] ||
+|| [QopfCharacterEntity &Qopf;] || [http://www.fileformat.info/info/unicode/char/211a/index.htm U+0211A] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/qopf-capital-0211a-entity-test.html test] ||
+|| [QscrCharacterEntity &Qscr;] || U+1D4AC || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/qscr-capital-1d4ac-entity-test.html test] ||
+|| [QfrCharacterEntity &qfr;] || U+1D52E || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/qfr-1d52e-entity-test.html test] ||
+|| [QintCharacterEntity &qint;] || [http://www.fileformat.info/info/unicode/char/2a0c/index.htm U+02A0C] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/qint-02a0c-entity-test.html test] ||
+|| [QopfCharacterEntity &qopf;] || U+1D562 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/qopf-1d562-entity-test.html test] ||
+|| [QprimeCharacterEntity &qprime;] || [http://www.fileformat.info/info/unicode/char/2057/index.htm U+02057] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/qprime-02057-entity-test.html test] ||
+|| [QscrCharacterEntity &qscr;] || U+1D4C6 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/qscr-1d4c6-entity-test.html test] ||
+|| [QuaternionsCharacterEntity &quaternions;] || [http://www.fileformat.info/info/unicode/char/210d/index.htm U+0210D] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/quaternions-0210d-entity-test.html test] ||
+|| [QuatintCharacterEntity &quatint;] || [http://www.fileformat.info/info/unicode/char/2a16/index.htm U+02A16] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/quatint-02a16-entity-test.html test] ||
+|| [QuestCharacterEntity &quest;] || [http://www.fileformat.info/info/unicode/char/003f/index.htm U+0003F] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/quest-0003f-entity-test.html test] ||
+|| [QuesteqCharacterEntity &questeq;] || [http://www.fileformat.info/info/unicode/char/225f/index.htm U+0225F] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/questeq-0225f-entity-test.html test] ||
+|| [QuotCharacterEntity &quot;] || [http://www.fileformat.info/info/unicode/char/0022/index.htm U+00022] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/quot-00022-entity-test.html test] ||
+|| [QuotCharacterEntity &quot] || [http://www.fileformat.info/info/unicode/char/0022/index.htm U+00022] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/quot-no-semicolon-00022-entity-test.html test] ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/named.html Named character references in HTML 5]
+  * [http://www.w3.org/TR/html4/sgml/entities.html Character entity references in HTML 4]
+  * [http://www.evolt.org/article/ala/17/21234/ Chart of common character entities]
+
+

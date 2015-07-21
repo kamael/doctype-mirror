@@ -1,0 +1,22 @@
+#summary The document.URL property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `document.URL` property returns a string.
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-URL-typeof-test.html typeOf(document.URL) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [https://developer.mozilla.org/en/DOM/document.URL The document.URL property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms534708.aspx The document.URL property on MSDN]

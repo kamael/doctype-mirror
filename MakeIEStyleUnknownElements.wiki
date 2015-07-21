@@ -1,0 +1,21 @@
+#labels about-css,is-tip,from-microsoft
+#sidebar TOCArticlesTips
+
+= Introduction =
+
+IE doesn't apply CSS to elements which it doesn't know about.
+
+= Details =
+
+{{{
+document.createElement("nav");
+}}}
+
+After this JS line is executed, IE applies CSS to <nav/> element.
+
+Note: I don't know if this element shows up in the DOM.
+
+= External links =
+
+* [http://intertwingly.net/blog/2008/01/22/Best-Standards-Support#c1201006277 Comment by Sjoerd Visscher describing this trick]
+

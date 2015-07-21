@@ -1,0 +1,14 @@
+#summary The -moz-user-focus CSS property determines whether an element is focusable.
+
+== Usage ==
+
+== Values ==
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-user-focus The -moz-user-focus property on Mozilla Developer Center]
+
+
+

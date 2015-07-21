@@ -1,0 +1,27 @@
+#summary The frame application attribute
+#labels about-html,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [FrameElement <frame> element] > *application attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `application` attribute on the following elements:
+
+  * [FrameElement <frame>]
+  * [IframeElement <iframe>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/frame-application-reflection-test.html frame.application reflects <frame application="foo">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms536474.aspx The application attribute on MSDN]
+

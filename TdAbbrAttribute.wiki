@@ -1,0 +1,27 @@
+#summary The td abbr attribute
+#labels about-html,about-tables,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [TdElement <td> element] > *abbr attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `abbr` attribute on the following elements:
+
+  * [TdElement <td>]
+  * [ThElement <th>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/td-abbr-reflection-test.html td.abbr reflects <td abbr="foo">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/tables.html#adef-abbr The abbr attribute in HTML 4]
+

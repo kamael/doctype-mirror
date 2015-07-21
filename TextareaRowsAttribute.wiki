@@ -1,0 +1,28 @@
+#summary The textarea rows attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [TextareaElement <textarea> element] > *rows attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `rows` attribute on the following elements:
+
+  * [FramesetElement <frameset>]
+  * [TextareaElement <textarea>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/textarea-rows-reflection-test.html textarea.rows reflects <textarea rows="42">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/interact/forms.html#adef-rows-TEXTAREA The rows attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534379.aspx The rows attribute on MSDN]
+

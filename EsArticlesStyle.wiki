@@ -1,0 +1,20 @@
+[ArticlesStyle English]
+
+== Estilo y CSS ==
+
+  * [EsArticleCompatMode COMO determinar el modo de compatibilidad del documento]
+  * [EsArticleAboveTheFold COMO detectar si un elemento esta localizado a través del punto de vista visible]
+  * [EsArticleClientViewportElement COMO encontrar el punto de vista (goog.style.getClientViewportElement)]
+  * [EsArticleComputedStyle COMO calcular el estilo actual de un elemento (goog.style.getStyle_)]
+  * [EsArticleComputedStyleVsCascadedStyle Estilo Computado vs. Estilo en Cascada]
+  * [EsArticleElementBounds COMO calcular el rectángulo de anclamiento de un elemento (goog.style.getBounds)]
+  * [EsArticleElementSize COMO calcular el tamaño de un elemento (goog.style.getSize)]
+  * [EsArticleInlineBlock COMO establecer dinámicamente 'display: inline-block' para un elemento (goog.style.setInlineBlock)]
+  * [EsArticleInstallStyles COMO agregar dinámicamente estilos CSS a una página (goog.style.installStyles)]
+  * [EsArticleOpacity COMO establecer la opacidad de un elemento (goog.style.setOpacity)]
+  * [EsArticlePageOffset COMO calcular la posición de un elemento en la página (goog.style.getPageOffset)]
+  * [EsArticlePreWrap COMO establecer un elemento para recapitulación de texto preformateado (goog.style.setPreWrap)]
+  * [EsArticleRelativePosition COMO calcular la distancia entre dos elementos (goog.style.getRelativePosition)]
+  * [EsArticleTransparentBackgroundImage COMO establecer el fondo de un elemento como imagen transparente (goog.style.setTransparentBackgroundImage)]
+  * [EsArticleHasLayout El misterio de hasLayout en Microsoft Internet Explorer]
+

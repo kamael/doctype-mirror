@@ -1,0 +1,42 @@
+#summary meter element
+#labels about-html,is-html-element,from-whatwg
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *meter element*
+
+== Usage ==
+
+The meter element represents a scalar measurement within a known range, or a fractional value; for example disk usage, the relevance of a query result, or the fraction of a voting population to have selected a particular candidate. This is also known in some programming contexts as a "gauge."
+
+The following examples all represent a measurement of three quarters (of the maximum of whatever is being measured):
+
+{{{
+<meter>75%</meter>
+<meter>3/4</meter>
+<meter>6 blocks used (out of 8 total)</meter>
+<meter>max: 100; current: 75</meter>
+<meter><object data="graph75.png">0.75</object></meter>
+<meter min="0" max="100" value="75"></meter>
+}}}
+
+== Attributes ==
+
+  * [MeterValueAttribute value]
+  * [MeterMinAttribute min]
+  * [MeterLowAttribute low]
+  * [MeterHighAttribute high]
+  * [MeterMaxAttribute max]
+  * [MeterOptimumAttribute optimum]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/meter-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/meter-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-meter-element The meter element in HTML 5]
+

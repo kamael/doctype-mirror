@@ -1,0 +1,28 @@
+#summary &ccirc; character entity
+#labels about-html,from-w3c
+#sidebar TOCCharacterEntitiesC
+
+You are here: [Welcome Home] > [HtmlReference HTML Reference] > [CharacterEntities Character entities] > [CharacterEntitiesC C] > &ccirc;
+
+== Value ==
+
+There are 2 variations of this entity:
+
+  * `&Ccirc;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/0108/index.htm U+00108].
+  * `&ccirc;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/0109/index.htm U+00109].
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/ccirc-00109-entity-test.html &ccirc; character entity treated as U+00109] || Y || Y || Y || Y || Y || N || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/ccirc-capital-00108-entity-test.html &Ccirc; character entity treated as U+00108] || Y || Y || Y || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/named.html Named character references in HTML 5]
+  * [http://www.w3.org/TR/html4/sgml/entities.html Character entity references in HTML 4]
+  * [http://blooberry.com/indexdot/html/tagpages/text.htm Text in HTML (blooberry.com)]
+
+

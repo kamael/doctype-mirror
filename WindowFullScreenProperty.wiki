@@ -1,0 +1,18 @@
+#summary The window.fullScreen property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `window.fullScreen` property returns a boolean.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-fullScreen-typeof-test.html typeOf(window.fullScreen) != 'undefined'] || N || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+

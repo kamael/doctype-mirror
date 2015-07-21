@@ -1,0 +1,23 @@
+#summary The empty-cells property controls the rendering of borders and backgrounds around cells that have no visible content.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *empty-cells*
+
+== Usage ==
+
+== Values ==
+
+  * `show`
+  * `hide`
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/tables.html#propdef-empty-cells The empty-cells property in CSS 2.1]
+  * [http://www.blooberry.com/indexdot/css/properties/table/emptycell.htm The history of the empty-cells property on blooberry.com]
+  * [http://reference.sitepoint.com/css/empty-cells The empty-cells property on the SitePoint CSS Reference]
+

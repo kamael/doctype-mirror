@@ -1,0 +1,21 @@
+#summary The zoom CSS property
+#labels about-css,is-css-property,from-microsoft
+
+== Usage ==
+
+== Values ==
+
+  * normal
+  * <number>
+  * <percentage>
+
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+
+== Further reading ==
+
+  * [http://msdn.microsoft.com/en-us/library/ms531189(VS.85).aspx The zoom property on MSDN]
+

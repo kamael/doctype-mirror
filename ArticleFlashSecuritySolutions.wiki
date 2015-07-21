@@ -1,0 +1,61 @@
+#summary HOWTO secure your Flash applications
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+Flash and ActionScript developers must understand that insecure Flash applications impact their users as much as server side web application insecurities.  With that knowledge in mind, Flash and ActionScript developers should do ALL of the following:
+
+  * Validate or sanitize user definable input in URL parameters and `flashvars` intended for the SWF,
+  * Compile with Flash 8 or higher, and
+  * Take advantage of optional Flash `<object>` and `<embed>` tag security attributes.
+
+Input validation is a challenge for Flash applications and server side web applications, alike.  Here are some pointers to help.
+
+  * Reduce the number of user definable URL parameters or `flashvars` in functions that load URLs or used in `TextField` and `TextArea` objects.
+  * When using user definable parameters in functions that load URLs, either check that the URLs begin with `http://` or `https://`. Even better, prefix the user definable parameters with your domain/path so you don't accidentally include a redirector *and* the user input does not contain ".." or encodings thereof, like so: 
+
+{{{
+loadMovie(“http://www.google.com/noRedirectorsInThisPath/” + doesNotContainDoubleDots(_root.someRelativeUrl);
+}}}
+
+  * HTML entity encode all user definable data before placing it in `TextField` and `TextArea` objects. For example, at least replace all instances of `<` with `&lt;` and `>` with `&gt;` in the definable data before placing it in `TextField` and `TextArea` objects.
+  * When using user definable input with `getURL("javascript:someJsFunctionInThePage(\"" + _root.someUserInput + "\");")` make sure to [http://livedocs.adobe.com/flashlite/2/main/wwhelp/wwhimpl/common/html/wwhelp.htm?context=LiveDocs_Parts&file=00000154.html escape()] all user input, like so: 
+
+{{{
+getURL("javascript:someJsFunctionInThePage(\"" + escape(_root.someUserInput) + "\");");
+}}}
+
+== Security features introduced in Flash 8 ==
+
+Compile your Flash applications with Flash version 8 or higher to take some advantage of newer security features, such as the `swliveconnect`, `allowNetworking`, and `allowScriptAccess` attributes. Unless explicitly necessary we recommending disallowing LiveConnect, networking and script access.  A recommended and safer object tag is below:
+
+{{{
+<object
+ classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000"
+ codebase="http://fpdownload.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0"
+ type="application/x-shockwave-flash"
+ data="/MyFlashApp.swf"
+ height="640"
+ width="480">
+<param name="allowScriptAccess" value="never">
+<param name="allowNetworking" value="none">
+<param name="swliveconnect" value="false">
+<param name="movie" value="/MyFlashApp.swf">
+</object>
+}}}
+
+If the Flash application is compiled with Flash 8 or higher, then the Flash application will not be able to execute JavaScript or create network connections.
+
+== Further reading ==
+
+  * [ArticleFlashSecurity Introduction to Flash security]
+  * [ArticleFlashSecurityCrossDomain Flash cross-domain policy files]
+  * [ArticleFlashSecurityPolicyAttack Flash cross-domain policy attacks]
+  * [ArticleFlashSecurityGetURL Flash getURL XSS attacks]
+  * [ArticleFlashSecurityClickTAG Flash clickTAG XSS attacks]
+  * [ArticleFlashSecurityTextField Flash TextField XSS attacks]
+  * [ArticleFlashSecurityLoadMovie Flash loadMovie XSS attacks]
+  * [ArticleFlashSecurityAsFunction Flash asFunction XSS attacks]
+  * [ArticleFlashSecurityURL Flash URL parameter XSS attacks]
+  * [http://livedocs.adobe.com/flashlite/2/main/wwhelp/wwhimpl/common/html/wwhelp.htm?context=LiveDocs_Parts&file=00000154.html ActionScript escape() function on adobe.com]
+
+

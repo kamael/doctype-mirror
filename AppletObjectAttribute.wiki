@@ -1,0 +1,26 @@
+#summary The applet object attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AppletElement <applet> element] > *object attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `object` attribute on the following elements:
+
+  * [AppletElement <applet>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/applet-object-reflection-test.html applet.object reflects <applet object="foo">] || N || N || N || N || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/objects.html#adef-object The object attribute in HTML 4]
+

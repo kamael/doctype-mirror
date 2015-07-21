@@ -1,0 +1,9 @@
+#summary The @-moz-document is a Gecko-specific rule which restricts the styles it contains to documents which match the specified URL rules.
+#labels about-css
+
+== Usage ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:%40-moz-document The @-moz-document at rule on Mozilla Developer Center]
+

@@ -1,0 +1,49 @@
+#summary HOWTO calculate the size of an element (goog.style.getSize)
+#labels is-article,about-dom
+#sidebar TOCArticlesStyle
+
+TODO intro
+
+== The code ==
+
+{{{
+/**
+ * Gets the height and width of an element, even if its display is none.
+ * Specifically, this returns the height and width of the border box,
+ * irrespective of the box model in effect.
+ * @param {Element} element Element to get width of
+ * @return {goog.math.Size} Object with width/height properties
+ */
+goog.style.getSize = function(element) {
+  if (goog.style.getStyle_(element, 'display') != 'none') {
+    return new goog.math.Size(element.offsetWidth, element.offsetHeight);
+  }
+
+  var style = element.style;
+  var originalVisibility = style.visibility;
+  var originalPosition = style.position;
+
+  style.visibility = 'hidden';
+  style.position = 'absolute';
+  style.display = '';
+
+  var originalWidth = element.offsetWidth;
+  var originalHeight = element.offsetHeight;
+
+  style.display = 'none';
+  style.position = originalPosition;
+  style.visibility = originalVisibility;
+
+  return new goog.math.Size(originalWidth, originalHeight);
+};
+}}}
+
+== The code walkthrough ==
+
+TODO walkthrough
+
+== Further reading ==
+
+TODO further reading
+
+

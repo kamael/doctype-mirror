@@ -1,0 +1,35 @@
+#summary param element
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *param element*
+
+== Usage ==
+
+The param element defines a parameter in an [ObjectElement embedded object].
+
+== Attributes ==
+
+  * [ParamNameAttribute name]
+  * [ParamTypeAttribute type]
+  * [ParamValueAttribute value]
+  * [ParamValuetypeAttribute valuetype]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/param-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/param-element-as-child-of-object-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/param-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/param-element-as-child-of-object-appears-in-dom-test.html appears in DOM as child of object] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/param-element-as-child-of-object-applies-style-test.html applies style as child of object] || Y || Y || Y || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/embedded-content-0.html#the-param-element The param element in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/objects.html#edef-PARAM The param element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535880.aspx The param element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/p/param.htm The history of the param element on blooberry.com]
+

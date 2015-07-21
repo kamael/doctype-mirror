@@ -1,0 +1,23 @@
+#summary darkgray is a color keyword defined in CSS and usable wherever a color value is required.
+#labels about-css
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSColors Colors] > *darkgray*
+
+== Value ==
+
+The `darkgray` color keyword is equivalent to `#a9a9a9`.
+
+[CSSColors List of CSS color constants]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/colors/darkgray-a9a9a9-test.html darkgray == #a9a9a9] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/css3-color/#svg-color Color keywords in CSS 3]
+
+

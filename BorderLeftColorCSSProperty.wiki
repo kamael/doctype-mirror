@@ -1,0 +1,31 @@
+#summary The border-left-color property sets the color of the left border.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *border-left-color*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSColorType <color>]
+  * `transparent`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-left-color--hs-808080-equals-rgb-lp-128-cm--128-cm--128-rp--reflection-test.html style.borderLeftColor reflects <div style='border-left-color: #808080'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-left-color-black-equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.borderLeftColor reflects <div style='border-left-color: black'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-left-color-rgb-lp-0-cm--0-cm--0-rp--equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.borderLeftColor reflects <div style='border-left-color: rgb(0, 0, 0)'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-left-color-transparent-equals-transparent-reflection-test.html style.borderLeftColor reflects <div style='border-left-color: transparent'>] || Y || Y || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/box.html#propdef-border-left-color The border-left-color property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:border-left-color The border-left-color on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530731.aspx The border-left-color property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/border/btcolor.htm The history of the border-left-color property on blooberry.com]
+  * [http://reference.sitepoint.com/css/border-left-color The border-left-color property on the SitePoint CSS Reference]
+

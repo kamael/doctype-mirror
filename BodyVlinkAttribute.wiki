@@ -1,0 +1,22 @@
+#summary The body vlink attribute
+#labels about-html,is-html-attribute,from-microsoft
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `vlink` attribute on the following elements:
+
+  * [BodyElement <body>]
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms535138.aspx The vlink attribute on MSDN]
+
+

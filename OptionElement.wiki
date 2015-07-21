@@ -1,0 +1,32 @@
+#summary The option element represents an item in a select list.
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *option element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [OptionDisabledAttribute disabled]
+  * [OptionLabelAttribute label]
+  * [OptionSelectedAttribute selected]
+  * [OptionValueAttribute value]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/option-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/option-element-as-child-of-select-appears-in-dom-test.html appears in DOM] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/option-element-applies-style-test.html applies style] || N || Y || Y || N || N || Y || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/option-element-as-child-of-select-appears-in-dom-test.html appears in DOM as child of select] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/option-element-as-child-of-select-applies-style-test.html applies style as child of select] || Y || Y || Y || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/interact/forms.html#edef-OPTION The option element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535877.aspx The option element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/o/option.htm The history of the option element on blooberry.com]
+

@@ -1,0 +1,38 @@
+#summary The a href attribute represents the destination resource of a hyperlink.
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AElement <a> element] > *href attribute*
+
+The `href` attribute on a [AElement hyperlink element] must have a value that is a URI (or IRI). This URI is the destination resource of the hyperlink.
+
+The `href` attribute on [AElement a] and [AreaElement area] elements is not required; when those elements do not have `href` attributes, they do not represent hyperlinks.
+
+== Usage ==
+
+{{{
+<a href="/">home</a>
+}}}
+
+== Elements ==
+
+You can use the `href` attribute on the following elements:
+
+  * [AElement <a>]
+  * [AreaElement <area>]
+  * [LinkElement <link>]
+
+There is also [BaseHrefAttribute an href attribute on the base element], but it means something else.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/a-href-reflection-test.html a.href reflects <a href="http://www.example.com/">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#href5 The a href attribute in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/links.html#adef-href The a href attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms533863.aspx The a href attribute on MSDN]
+

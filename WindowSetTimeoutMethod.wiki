@@ -1,0 +1,75 @@
+#summary The window.setTimeout method, used to execute javascript code after a set delay.
+#labels about-dom,is-dom-method
+
+Introduced in Javascript 1.0, the window.setTimeout method (or simply, setTimeout), allows the page to execute a block of javascript after a short delay, given in milliseconds.  Starting with Javascript 1.2, the method was modified to execute a function reference in addition to a text string containing javascript code.
+
+The Gecko based and IE based browsers implement this function with slightly different optional parameters, detailed below.
+
+== Arguments ==
+===Cross-Browser===
+  * *code*: Either a text string containing javascript (or other code, see below), or a function reference to be called.
+  * *delay:* A timed delay, given in milliseconds.
+===Gecko Browsers===
+  * *[param1, param2, ...]:* additional parameters to be passed to the function reference, optional.
+===Internet Explorer===
+  * *language:* Enumerated variable detailing the language contained in the first string.  The possible values are:
+    * JavaScript
+    * JScript
+    * VBScript
+
+==Returns==
+Returns a timerId suitable for calling with [WindowClearTimeoutMethod window.clearTimeout]
+
+== Usage ==
+{{{
+var timerId = window.setTimeout(code, delay);
+var timerId = window.setTimeout(functionReference, delay);
+
+//Alternate syntax
+var timerId = setTimeout(code, delay);
+var timerId = setTimeout(functionReference, delay);
+
+//Only in Gecko Browsers (Firefox)
+var timerId = window.setTimeout(functionReference, delay, param1, param2, param3);
+
+//Only in IE Browsers
+var timerId = window.setTimeout(code, delay, "JavaScript");
+}}}
+
+Everything run through the setTimeout function is executed in the global scope, causing potential issues with using the *this* variable and OO designs.  By using the the function reference ability of setTimeout and closures, a feature of javascript itself, allows us to overcome some of those limitations:
+{{{
+function wontWork() {
+  var outputVar = "This won't work!";
+
+  // outputVar will be undefined
+  setTimeout("alert(outputVar);", 200);
+}
+
+//Using closures
+
+function willWork() {
+  var outputVar = "This will work!";
+
+  var tempFunction = function() {
+    //Due to closures, outputVar will be populated
+    alert(outputVar);
+  };
+  //Will call function in local scope
+  setTimeout(tempFunction, 200);
+}
+}}}
+
+In the object oriented context, this allows you to access public methods of an object, causing the this variable to be set correctly instead of operating in the global scope.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-setTimeout-typeof-test.html typeOf(window.setTimeout) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.setTimeout The window.setTimeout method on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms536753.aspx The window.setTimeout method on MSDN]
+

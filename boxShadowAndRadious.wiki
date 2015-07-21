@@ -1,0 +1,11 @@
+#labels box,Radious,Shadow,webkit,moz
+*= Introduction =*
+Shadow with radious with a blur distance of 8px, color red:
+
+#Example_RS {
+-moz-border-radius: 8px;
+border-radius: 8px;
+-moz-box-shadow: 8px 8px 8px red;
+-webkit-box-shadow: 8px 8px 8px red;
+box-shadow: 8px 8px 8px red;
+}

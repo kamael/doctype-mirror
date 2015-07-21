@@ -1,0 +1,41 @@
+#summary UTF-7: the case of the missing charset
+#labels about-security,is-article
+#sidebar TOCArticlesXSS
+
+||[EsArticleUtf7 Español]||[JaArticleUtf7 日本語]||[FrArticleUtf7 Français]||
+||[Welcome Home]||[ArticlesXSS Web Security]||  
+
+UTF-7 is an encoding originally designed for SMTP gateways that couldn't deal with 8-bit/binary characters. It uses a modified Base64 encoding to represent 8-bit characters and ASCII non-printable characters using 7-bit ASCII.  The string {{{<script>alert(1)</script>}}} can be encoded in UTF-7 as {{{+ADw-script+AD4-alert(1)+ADw-/script+AD4-}}}
+
+Generally, a character encoding is set in the Content-Type HTTP Header or a META tag in the HTML itself.
+
+When the web server does not include an explicit character encoding in its HTTP response,  Internet Explorer will attempt to guess the encoding.  If certain strings of user input -- say, {{{+ADw-script+AD4-alert(1)+ADw-/script+AD4-}}} -- are echoed back early enough in the HTML page, *Internet Explorer may incorrectly guess that the page is encoded in UTF-7.*   Suddenly, the otherwise harmless user input becomes active HTML and will execute.
+
+== Solution ==
+
+  * To the extent possible, validate all user input.  If your application allows you to confine certain input to ASCII-compatible alphanumeric characters {{{[0-9a-z]}}}, this UTF-7 string would never have passed your filters.
+  * Always set a character encoding, either in the HTML itself or in the `Content-Type` HTTP header.  If set in the HTML, set it in the [http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#charset first 512 bytes] of the document.
+    * Set the character encoding before the `<title>` tag.
+    * Of course, you need to ensure that it corresponds with the actual encoding you're using.  Declaring an incorrect charset can be worse than not setting one at all.
+  * Even if your page will just perform a 302 redirect, make sure it has a charset.
+
+To set the encoding in the HTTP headers, use the `charset` parameter of the `Content-Type` header:
+
+{{{
+Content-Type: text/html; charset=UTF-8
+}}}
+          
+To set the encoding with the HTML document, use a `<meta>` tag:
+
+{{{
+<meta charset="utf-8">
+}}}
+
+Important: The `<meta>` tag must appear in the document before any content that could be controlled by an attacker, such as a `<title>` tag containing a dynamically generated title for the document. 
+
+== Further reading ==
+
+  * [ArticleXSS Everything you ever wanted to know about cross-site scripting (XSS) attacks]
+  * [http://en.wikipedia.org/wiki/UTF-7 UTF-7 on Wikipedia]
+  * [http://www.ietf.org/rfc/rfc2152.txt UTF-7 RFC]
+  * [http://www.motobit.com/util/charset-codepage-conversion.asp Online tool to convert between different encodings]

@@ -1,0 +1,17 @@
+#summary The layer-background-image CSS property
+#labels about-css,is-css-property
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *layer-background-image*
+
+== Usage ==
+
+== Values ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.blooberry.com/indexdot/css/properties/colorbg/lbgimage.htm The history of the layer-background-image property on blooberry.com]
+

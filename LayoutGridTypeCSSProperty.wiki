@@ -1,0 +1,28 @@
+#summary The layout-grid-type property sets the type of grid used for rendering text.
+#labels about-css,is-css-property,from-microsoft
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *layout-grid-type*
+
+== Usage ==
+
+== Values ==
+
+  * `loose`
+  * `strict`
+  * `fixed`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-type-bogus-equals-loose-reflection-test.html style.layoutGridType reflects <div style='layout-grid-type: bogus'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-type-fixed-equals-fixed-reflection-test.html style.layoutGridType reflects <div style='layout-grid-type: fixed'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-type-loose-equals-loose-reflection-test.html style.layoutGridType reflects <div style='layout-grid-type: loose'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-type-strict-equals-strict-reflection-test.html style.layoutGridType reflects <div style='layout-grid-type: strict'>] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms530775.aspx The layout-grid-type property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/intl/lgtype.htm The history of the layout-grid-type property on blooberry.com]
+

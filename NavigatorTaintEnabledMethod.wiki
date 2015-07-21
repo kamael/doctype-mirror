@@ -1,0 +1,19 @@
+#summary The navigator.taintEnabled method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/navigator/navigator-taintEnabled-typeof-test.html typeOf(navigator.taintEnabled) != 'undefined'] || Y || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.navigator The navigator.taintEnabled method on Mozilla Developer Center]
+  * [http://msdn.microsoft.com/workshop/author/dhtml/reference/methods/taintenabled.asp The navigator.taintEnabled method on MSDN]
+

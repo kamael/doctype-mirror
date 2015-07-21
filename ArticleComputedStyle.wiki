@@ -1,0 +1,108 @@
+#summary HOWTO calculate the current style of an element (goog.style.getStyle_)
+#labels is-article,about-dom,about-css
+#sidebar TOCArticlesStyle
+
+As explained in [ArticleComputedStyleVsCascadedStyle Computed style vs. cascaded style], there is no cross-browser-compatible way to find the current style of an element.  However, this function will attempt to get as close as possible.  Please note the caveats with this approach.
+
+== The code ==
+
+This code relies on functions explained elsewhere:
+
+  * [ArticleOwnerDocument HOWTO get the owner document of a DOM node (goog.dom.getOwnerDocument)]
+
+{{{
+/**
+ * Retrieves a computed style value of a node, or null if the value cannot be
+ * computed (which will be the case in Internet Explorer).
+ *
+ * @param {Element} element Element to get style of
+ * @param {String} style Property to get (camel-case)
+ * @return {String} Style value
+ */
+goog.style.getComputedStyle = function(element, style) {
+  var doc = goog.dom.getOwnerDocument(element);
+  if (doc.defaultView && doc.defaultView.getComputedStyle) {
+    var styles = doc.defaultView.getComputedStyle(element, "");
+    if (styles) {
+      return styles[style];
+    }
+  }
+
+  return null;
+};
+
+
+/**
+ * Gets the cascaded style value of a node, or null if the value cannot be
+ * computed (only Internet Explorer can do this).
+ *
+ * @param {Element} element Element to get style of
+ * @param {String} style Property to get (camel-case)
+ * @return {String} Style value
+ */
+goog.style.getCascadedStyle = function(element, style) {
+  return element.currentStyle ? element.currentStyle[style] : null;
+};
+
+
+/**
+ * Cross-browser pseudo get computed style. It returns the computed style where
+ * available. If not available it tries the cascaded style value (IE
+ * currentStyle) and in worst case the inline style value.
+ *
+ * @param {Element} element Element to get style of
+ * @param {String} style Property to get (must be camelCase, not css-style.)
+ * @return {String} Style value
+ * @private
+ */
+goog.style.getStyle_ = function(element, style) {
+  return goog.style.getComputedStyle(element, style) ||
+         goog.style.getCascadedStyle(element, style) ||
+         element.style[style];
+};
+}}}
+
+== The code walkthrough ==
+
+As explained in [ArticleComputedStyleVsCascadedStyle Computed style vs. cascaded style], there are really three different functions here being wrapped into one.  The first function gets the "computed style" of a particular property.  This works in [BrowserFamilyFirefox Mozilla Firefox], [BrowserFamilySafari Safari], and [BrowserFamilyOpera Opera].  Firefox and Opera support `window.getComputedStyle`, but Safari does not.  However, all three support `document.defaultView.getComputedStyle`, so we will use that instead.
+
+{{{
+goog.style.getComputedStyle = function(element, style) {
+  var doc = goog.dom.getOwnerDocument(element);
+  if (doc.defaultView && doc.defaultView.getComputedStyle) {
+    var styles = doc.defaultView.getComputedStyle(element, "");
+    if (styles) {
+      return styles[style];
+    }
+  }
+
+  return null;
+};
+}}}
+
+In browsers where `getComputedStyle` is not available, we attempt to get the "cascaded style" using the `element.currentStyle` property.  This works in [BrowserFamilyMSIE Microsoft Internet Explorer].
+
+{{{
+goog.style.getCascadedStyle = function(element, style) {
+  return element.currentStyle ? element.currentStyle[style] : null;
+};
+}}}
+
+Finally, one function declaration to rule them all:
+
+{{{
+goog.style.getStyle_ = function(element, style) {
+  return goog.style.getComputedStyle(element, style) ||
+         goog.style.getCascadedStyle(element, style) ||
+         element.style[style];
+};
+}}}
+
+== Further reading ==
+
+  * [WindowGetComputedStyleMethod window.getComputedStyle method]
+  * [NodeCurrentStyleProperty node.currentStyle property]
+  * [ArticleComputedStyleVsCascadedStyle Computed style vs. cascaded style]
+  * [ArticleGetOwnerDocument HOWTO get the owner document of a DOM node (goog.dom.getOwnerDocument)]
+
+

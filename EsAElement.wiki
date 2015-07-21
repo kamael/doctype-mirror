@@ -1,0 +1,56 @@
+#summary El elemento a representa un hyperlink ó destino.
+#labels is-element,about-html,from-w3c
+[AElement English]
+
+Si el elemento `<a>` tiene un atributo `href`, entonces representa un hyperlink. 
+
+Si el elemento `<a>` tiene un atributo `name`, este sirve como un ancla, entonces un hyperlink puede apuntar a un lugar en específico dentro de una página html.
+
+El atributo `target` especifíca si el enlace se abre en la misma ventana, o en una nueva. Si se usan [EsFrameElement frames], entonces pueden ser un objetivo también.
+
+== Uso ==
+
+{{{
+<a href="/">Inicio</a>   <!-- hyperlink simple -->
+<a name="navbar"></a>    <!-- ancla -->
+<a href="#navbar">navegacion</a>   <!-- hyperlink apuntando a un ancla -->
+<a href="ejemplo.com" target="_blank">Algún Lugar</a> <!-- hyperlink que se abrirá en una nueva ventana -->
+}}}
+
+== Atributos ==
+
+Atributos comunes:
+
+  * [EsAHrefAttribute href]
+  * [EsANameAttribute name]
+  * [EsATargetAttribute target]
+
+Otros atributos:
+
+  * [EsACharsetAttribute charset]
+  * [EsACoordsAttribute coords]
+  * [EsADisabledAttribute disabled]
+  * [EsAHrefLangAttribute hreflang]
+  * [EsAMediaAttribute media]
+  * [EsAMethodsAttribute methods]
+  * [EsAPingAttribute ping]
+  * [EsARelAttribute rel]
+  * [EsARevAttribute rev]
+  * [EsAShapeAttribute shape]
+  * [EsASuppressAttribute suppress]
+  * [EsATypeAttribute type]
+  * [EsAURNAttribute urn]
+
+== Compatibilidad con navegadores ==
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/a-element-appears-in-dom-test.html aparece en DOM] || Sí || Sí || Sí || Sí || Sí || Sí ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/a-element-applies-style-test.html estilos aplicables] || No || No || No || No || No || No ||
+
+== Para leer más ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-a El elemento <a> en HTML 5] (Inglés)
+  * [http://www.w3.org/TR/html401/struct/links.html#h-12.2 El elemento <a> en HTML 4] (Inglés)
+  * [http://msdn2.microsoft.com/en-us/library/ms535173.aspx El elemento <a> en MSDN] (Inglés)
+  * [http://www.blooberry.com/indexdot/html/tagpages/a/a-hyperlink.htm Historia del elemento <a> en blooberry.com] (Inglés)
+  * [http://reference.sitepoint.com/html/a El elemento <a> en la SitePoint HTML Reference] (Inglés)

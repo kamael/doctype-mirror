@@ -1,0 +1,18 @@
+#summary The include-source CSS property
+#labels about-css,is-css-property
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *include-source*
+
+== Usage ==
+
+== Values ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.blooberry.com/indexdot/css/properties/generate/incsource.htm` The history of the include-source property on blooberry.com]
+
+

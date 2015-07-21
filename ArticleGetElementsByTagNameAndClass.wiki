@@ -1,0 +1,27 @@
+#summary HOWTO filter elements by both tag and class name
+#labels is-article,about-dom
+#sidebar TOCArticlesTips
+
+== The code ==
+
+{{{
+/**
+ * Does a getElementsByTagName and checks class as well
+ * @param {String} opt_tag Element id
+ * @param {String} opt_class Optional classname
+ * @param {Element} opt_el Optional element to look in
+ * @return {Array} Array of elements
+ */
+goog.dom.getElementsByTagNameAndClass = function(opt_tag, opt_class, opt_el) {
+  return goog.dom.getDefaultDomHelper_().getElementsByTagNameAndClass(
+      opt_tag, opt_class, opt_el);
+};
+
+
+/**
+ * Alias for getElementsByTagNameAndClass
+ * @type Function
+ */
+goog.dom.$$ = goog.dom.getElementsByTagNameAndClass;
+}}}
+

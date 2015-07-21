@@ -1,0 +1,16 @@
+#summary The -moz-outline-color CSS property sets the color of an element's outline.
+
+== Usage ==
+
+This is a Mozilla-specific synonym of [OutlineColorCSSProperty outline], which is more widely supported.
+
+== Values ==
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-outline-color The -moz-outline-color property on Mozilla Developer Center]
+
+
+

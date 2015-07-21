@@ -1,0 +1,24 @@
+#summary The screen.top property
+#labels about-dom,is-dom-property,from-mozilla
+
+== Values ==
+
+The `screen.top` property returns an integer.
+
+In [BrowserFamilyFirefox Firefox], the value of the `screen.top` property is the top edge of the current screen, in pixels.  If you only have one monitor, this will always be `0`, but if you have multiple monitors, then its value depends on your monitor setup.
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/screen/screen-top-typeof-test.html typeOf(screen.top) != 'undefined'] || N || N || Y || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.screen.top The screen.top property on Mozilla Developer Center]
+

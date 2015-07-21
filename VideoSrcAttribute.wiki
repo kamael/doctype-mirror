@@ -1,0 +1,31 @@
+#summary video src attribute
+#labels about-html,is-html-attribute,from-whatwg
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [VideoElement <video> element] > *src attribute*
+
+== Usage ==
+
+The video src attribute gives the address of the video.
+
+== Values ==
+
+The video src attribute must be a [http://www.whatwg.org/specs/web-apps/current-work/multipage/infrastructure.html#valid-url valid URL].
+
+== Elements ==
+
+You can use the `src` attribute on the following elements:
+
+  * [AudioElement <audio>]
+  * [VideoElement <video>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/video-src-reflection-test.html video.src reflects <video src="http://www.example.com/">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#attr-media-src The video src attribute in HTML 5]
+

@@ -1,0 +1,13 @@
+#summary The :not CSS pseudo-class acts as a negation operator for other selectors.
+#labels about-css
+
+== Usage ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* || *Opera9.5* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/css3-selectors/#negation The :not pseudo-class in the CSS 3 specification]
+

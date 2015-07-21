@@ -1,0 +1,47 @@
+#summary The border-width property is a shorthand property for setting 'border-top-width', 'border-right-width', 'border-bottom-width', and 'border-left-width'
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *border-width*
+
+== Usage ==
+
+== Values ==
+
+  * `<border-width>{1,4}`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-0-equals-0pt-reflection-test.html style.borderWidth reflects <div style='border-width: 0'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1cm-equals-1cm-reflection-test.html style.borderWidth reflects <div style='border-width: 1cm'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1cm-sc--border-style-cl--solid-equals-1cm-reflection-test.html style.borderWidth reflects <div style='border-width: 1cm; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1em-equals-1em-reflection-test.html style.borderWidth reflects <div style='border-width: 1em'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1em-sc--border-style-cl--solid-equals-1em-reflection-test.html style.borderWidth reflects <div style='border-width: 1em; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1ex-equals-1ex-reflection-test.html style.borderWidth reflects <div style='border-width: 1ex'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1ex-sc--border-style-cl--solid-equals-1ex-reflection-test.html style.borderWidth reflects <div style='border-width: 1ex; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1in-equals-1in-reflection-test.html style.borderWidth reflects <div style='border-width: 1in'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1in-sc--border-style-cl--solid-equals-1in-reflection-test.html style.borderWidth reflects <div style='border-width: 1in; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1mm-equals-1mm-reflection-test.html style.borderWidth reflects <div style='border-width: 1mm'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1mm-sc--border-style-cl--solid-equals-1mm-reflection-test.html style.borderWidth reflects <div style='border-width: 1mm; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1pc-equals-1pc-reflection-test.html style.borderWidth reflects <div style='border-width: 1pc'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1pc-sc--border-style-cl--solid-equals-1pc-reflection-test.html style.borderWidth reflects <div style='border-width: 1pc; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1pt-equals-1pt-reflection-test.html style.borderWidth reflects <div style='border-width: 1pt'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1pt-sc--border-style-cl--solid-equals-1pt-reflection-test.html style.borderWidth reflects <div style='border-width: 1pt; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1px-equals-1px-reflection-test.html style.borderWidth reflects <div style='border-width: 1px'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-1px-sc--border-style-cl--solid-equals-1px-reflection-test.html style.borderWidth reflects <div style='border-width: 1px; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-thick-equals-5px-reflection-test.html style.borderWidth reflects <div style='border-width: thick'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-thick-sc--border-style-cl--solid-equals-5px-reflection-test.html style.borderWidth reflects <div style='border-width: thick; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-thin-equals-thin-reflection-test.html style.borderWidth reflects <div style='border-width: thin'>] || Y || Y || Y || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-width-thin-sc--border-style-cl--solid-equals-thin-reflection-test.html style.borderWidth reflects <div style='border-width: thin; border-style: solid'>] || Y || Y || Y || N || N || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/box.html#propdef-border-width The border-width property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:border-width The border-width property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530743.aspx The border-width property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/border/bwidth.htm The history of the border-width property on blooberry.com]
+  * [http://reference.sitepoint.com/css/border-width The border-width property on the SitePoint CSS Reference]
+

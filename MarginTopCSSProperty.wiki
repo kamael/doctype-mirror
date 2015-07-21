@@ -1,0 +1,37 @@
+#summary The margin-top property sets the top margin of a box.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *margin-top*
+
+== Usage ==
+
+== Values ==
+
+  * `<margin-width>`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/margin-top-0-equals-0pt-reflection-test.html style.marginTop reflects <div style='margin-top: 0'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/margin-top-1cm-equals-1cm-reflection-test.html style.marginTop reflects <div style='margin-top: 1cm'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/margin-top-1em-equals-1em-reflection-test.html style.marginTop reflects <div style='margin-top: 1em'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/margin-top-1ex-equals-1ex-reflection-test.html style.marginTop reflects <div style='margin-top: 1ex'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/margin-top-1in-equals-1in-reflection-test.html style.marginTop reflects <div style='margin-top: 1in'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/margin-top-1mm-equals-1mm-reflection-test.html style.marginTop reflects <div style='margin-top: 1mm'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/margin-top-1pc-equals-1pc-reflection-test.html style.marginTop reflects <div style='margin-top: 1pc'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/margin-top-1pt-equals-1pt-reflection-test.html style.marginTop reflects <div style='margin-top: 1pt'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/margin-top-1px-equals-1px-reflection-test.html style.marginTop reflects <div style='margin-top: 1px'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/margin-top-42-pt--equals-42-pt--reflection-test.html style.marginTop reflects <div style='margin-top: 42%'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/margin-top-auto-equals-auto-reflection-test.html style.marginTop reflects <div style='margin-top: auto'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/margin-top-none-equals-none-reflection-test.html style.marginTop reflects <div style='margin-top: none'>] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/box.html#propdef-margin-top The margin-top property in CSS 2.1]
+  * [http://msdn2.microsoft.com/en-us/library/ms530808.aspx The margin-top property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/margin/margintop.htm The history of the margin-top property on blooberry.com]
+  * [http://reference.sitepoint.com/css/margin-top The margin-top property on the SitePoint CSS Reference]
+

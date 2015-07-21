@@ -1,0 +1,35 @@
+#summary The table frame attribute
+#labels about-html,about-tables,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [TableElement <table> element] > *frame attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `frame` attribute on the following elements:
+
+  * [TableElement <table>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/table-frame-above-reflection-test.html table.frame reflects <table frame="above">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/table-frame-below-reflection-test.html table.frame reflects <table frame="below">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/table-frame-border-reflection-test.html table.frame reflects <table frame="border">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/table-frame-box-reflection-test.html table.frame reflects <table frame="box">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/table-frame-hsides-reflection-test.html table.frame reflects <table frame="hsides">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/table-frame-lhs-reflection-test.html table.frame reflects <table frame="lhs">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/table-frame-rhs-reflection-test.html table.frame reflects <table frame="rhs">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/table-frame-void-reflection-test.html table.frame reflects <table frame="void">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/table-frame-vsides-reflection-test.html table.frame reflects <table frame="vsides">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/tables.html#adef-frame The frame attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms533769.aspx The frame attribute on MSDN]
+

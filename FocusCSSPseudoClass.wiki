@@ -1,0 +1,14 @@
+#summary The :focus CSS pseudo-class matches the element that currently has focus.
+#labels about-css
+
+== Usage ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* || *Opera9.5* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/selector.html#pseudo-elements Pseudo-classes in the CSS 2.1 specification]
+  * [http://www.w3.org/TR/css3-selectors/#useraction-pseudos The :focus pseudo-class in the CSS 3 specification]
+

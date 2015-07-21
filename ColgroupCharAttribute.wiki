@@ -1,0 +1,33 @@
+#summary The colgroup char attribute
+#labels about-html,about-tables,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [ColgroupElement <colgroup> element] > *char attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `char` attribute on the following elements:
+
+  * [ColElement <col>]
+  * [ColgroupElement <colgroup>]
+  * [TbodyElement <tbody>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TfootElement <tfoot>]
+  * [TheadElement <thead>]
+  * [TrElement <tr>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/colgroup-char-reflection-test.html colgroup.char reflects <colgroup char="C">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/tables.html#adef-char The char attribute in HTML 4]
+

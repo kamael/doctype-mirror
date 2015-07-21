@@ -1,0 +1,26 @@
+#summary The bgsound volume attribute
+#labels about-html,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [BgsoundElement <bgsound> element] > *volume attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `volume` attribute on the following elements:
+
+  * [BgsoundElement <bgsound>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/bgsound-volume-reflection-test.html bgsound.volume reflects <bgsound volume="-1">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms535140.aspx The volume attribute on MSDN]
+

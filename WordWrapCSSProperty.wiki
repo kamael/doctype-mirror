@@ -1,0 +1,21 @@
+#summary The word-wrap property specifies how to wrap multi-line text blocks.
+#labels about-css,is-css-property,from-microsoft
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *word-wrap*
+
+== Usage ==
+
+== Values ==
+
+  * `normal`
+  * `break-word`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms531186.aspx The word-wrap property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/text/wordwrap.htm The history of the word-wrap property on blooberry.com]
+

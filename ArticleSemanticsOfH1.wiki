@@ -1,0 +1,89 @@
+#summary Should there be one h1 on a page, or several?
+#labels about-html,is-article
+
+= Introduction =
+
+HTML's numbered heading tags (`<h1>` and so on) correspond semantically to hierarchical headings in a structured document.
+
+However, there's ambiguity about what `<h1>` corresponds to.
+
+In many web pages, there's a page title that appears at the top of the document itself, inside the browser window.  Call this the "top-of-page title."  HTML doesn't have a heading tag that explicitly denotes that kind of a title.  Some HTML authors tag the top-of-page title with `<h1>`, in which case there's usually only a single `<h1>` tag in the document.
+
+But in traditional printed documents, written using a word processor stylesheet, the style name for that top-of-page title element is generally something like "Title" or "Document Title" or "Chapter Title."  When writers and editors use terms like "level-1 head" or "Heading1," they're usually referring to the main headings within a chapter, rather than to the chapter title.
+
+So to some writers, it feels natural to use HTML's `<h1>` tag to denote main headings within a page, in which case there are multiple `<h1>` tags. But then it's unclear what tag to use for the top-of-page title.
+
+Question: Should there be one `<h1>` at the top of the page, or many throughout the page?
+
+
+= Options =
+
+== A. Use one `<h1>` tag at the top of the page; use `<h2>` for section headings ==
+
+Example:
+
+{{{
+<h1>My Document</h1>
+...
+<h2>Section one</h2>
+...
+<h2>Section two</h2>
+...
+}}}
+
+Advantages: Maintains a strict semantic hierarchy of headings, which is particularly useful for accessibility purposes.
+
+Disadvantages: The `<h1>` tag no longer corresponds to the usual meaning of the term "level-1 heading."
+
+
+== B. Use `<h1>` for main headings within the page and for top-of-page ==
+
+In this option, you can use CSS to style the top-of-page `<h1>` differently.
+
+Example:
+
+{{{
+<h1 class="topOfPage">My Document</h1>
+...
+<h1>Section one</h1>
+...
+<h1>Section two</h1>
+...
+}}}
+
+Advantages: Allows the phrase "level-one heading" to retain its usual meaning.
+
+Disadvantages: Makes it hard for software (including screen readers) to distinguish between the two types of headings.
+
+
+== C. Use `<h1>` for main headings; use image for top-of-page ==
+
+Example:
+
+{{{
+<img alt='My Document' height='60' width='660' id='headerImage' src='PageTitle.gif' />
+...
+<h1>Section one</h1>
+...
+<h1>Section two</h1>
+...
+}}}
+
+Advantages: Allows "level-one heading" to retain its usual meaning.
+
+Disadvantages: Makes it hard for software (including screen readers) to recognize the top-of-page heading as a heading.
+
+
+= Recommendation =
+
+Use one `<h1>` tag at the top of the page; use `<h2>` for section headings.
+
+The accessibility issue trumps the desire to have HTML terminology match traditional document-writing terminology.
+
+Note that various future markup languages may have somewhat better ways of dealing with headings. As of this writing, the draft of [http://www.w3.org/TR/xhtml2/mod-structural.html#sec_8.5. XHTML 2] uses nested `<section>` elements with `<h>` elements to specify the level of the heading, while [http://www.whatwg.org/specs/web-apps/current-work/#the-h1 HTML 5] uses the old syntax.
+
+= Further reading =
+
+ * [http://www.simplebits.com/notebook/2003/08/27/simplequiz_part_i_headings.html SimpleQuiz, Part I: Headings]
+ * [http://www.simplebits.com/notebook/2003/09/13/simplequiz_part_v_site_and_page_titles.html SimpleQuiz, Part V: Site and Page Titles]
+

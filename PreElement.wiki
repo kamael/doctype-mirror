@@ -1,0 +1,32 @@
+#summary The pre element represents pre-formatted text.
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *pre element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [PreClearAttribute clear]
+  * [PreColsAttribute cols]
+  * [PreVariableAttribute variable]
+  * [PreWidthAttribute width]
+  * [PreWrapAttribute wrap]
+  * [PreXmlSpaceAttribute xml:space]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/pre-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/pre-element-applies-style-test.html applies style] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-pre The pre element in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/text.html#edef-PRE The pre element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535883.aspx The pre element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/p/pre.htm The history of the pre element on blooberry.com]
+

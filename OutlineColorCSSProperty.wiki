@@ -1,0 +1,29 @@
+#summary The outline-color property sets the color of the outline within a box.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *outline-color*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSColorType <color>]
+  * `invert`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-color--hs-808080-equals-rgb-lp-128-cm--128-cm--128-rp--reflection-test.html style.outlineColor reflects <div style='outline-color: #808080'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-color-black-equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.outlineColor reflects <div style='outline-color: black'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-color-rgb-lp-0-cm--0-cm--0-rp--equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.outlineColor reflects <div style='outline-color: rgb(0, 0, 0)'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-color-transparent-equals-transparent-reflection-test.html style.outlineColor reflects <div style='outline-color: transparent'>] || Y || N || N || Y || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/ui.html#propdef-outline-color The outline-color property in CSS 2.1]
+  * [http://www.blooberry.com/indexdot/css/properties/outline/outcolor.htm The history of the outline-color property on blooberry.com]
+  * [http://reference.sitepoint.com/css/outline-color The outline-color property on the SitePoint CSS Reference]
+

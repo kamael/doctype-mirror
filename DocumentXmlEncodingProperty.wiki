@@ -1,0 +1,18 @@
+#summary The document.xmlEncoding property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `document.xmlEncoding` property returns  .
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-xmlEncoding-typeof-test.html typeOf(document.xmlEncoding) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+

@@ -1,0 +1,26 @@
+#summary The bottom property specifies how far a box's bottom margin edge is offset above the bottom of the box's containing block.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *bottom*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSLengthType <length>]
+  * [CSSPercentageType <percentage>]
+  * `auto`
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/visuren.html#propdef-bottom The bottom property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:bottom The bottom property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530745.aspx The bottom property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/position/bottom.htm The history of the bottom property on blooberry.com]
+  * [http://reference.sitepoint.com/css/bottom The bottom property on the SitePoint CSS Reference]
+

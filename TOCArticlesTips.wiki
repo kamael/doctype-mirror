@@ -1,0 +1,10 @@
+  * [Articles ↑ Other HOWTO articles]
+  * [ArticlesTips Tips and tricks]
+    * [ArticleUserAgent HOWTO determine the browser name and version number]
+    * [ArticleDetectFlash HOWTO detect whether the user has Flash installed (goog.userAgent.flash)]
+    * [ArticleGetElementsByTagNameAndClass HOWTO filter elements by both tag and class name]
+    * [ArticleUndefined HOWTO determine if a JavaScript variable is undefined]
+    * [ArticleArraySlice HOWTO slice an array that's not really an Array (goog.array.slice)]
+    * [ArticleArraySplice HOWTO splice an array that's not really an Array (goog.array.splice)]
+    * [MakeIEStyleUnknownElements HOWTO make IE apply style to unknown elements]
+

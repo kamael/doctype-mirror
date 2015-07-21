@@ -1,0 +1,30 @@
+#summary The ime-mode property sets the state of an input method editor.
+#labels about-css,is-css-property,from-microsoft
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *ime-mode*
+
+== Usage ==
+
+== Values ==
+
+  * `auto`
+  * `active`
+  * `inactive`
+  * `disabled`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/ime-mode-active-equals-active-reflection-test.html style.imeMode reflects <div style='ime-mode: active'>] || Y || Y || Y || Y || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/ime-mode-auto-equals-auto-reflection-test.html style.imeMode reflects <div style='ime-mode: auto'>] || Y || Y || Y || Y || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/ime-mode-bogus-equals--reflection-test.html style.imeMode reflects <div style='ime-mode: bogus'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/ime-mode-disabled-equals-disabled-reflection-test.html style.imeMode reflects <div style='ime-mode: disabled'>] || Y || Y || Y || Y || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/ime-mode-inactive-equals-inactive-reflection-test.html style.imeMode reflects <div style='ime-mode: inactive'>] || Y || Y || Y || Y || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms530767.aspx The ime-mode property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/intl/imemode.htm The history of the ime-mode property on blooberry.com]
+

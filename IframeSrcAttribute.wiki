@@ -1,0 +1,41 @@
+#summary The iframe src attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [IframeElement <iframe> element] > *src attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `src` attribute on the following elements:
+
+  * [AppletElement <applet>]
+  * [AudioElement <audio>]
+  * [BgsoundElement <bgsound>]
+  * [EmbedElement <embed>]
+  * [FrameElement <frame>]
+  * [IframeElement <iframe>]
+  * [IlayerElement <ilayer>]
+  * [ImgElement <img>]
+  * [LayerElement <layer>]
+  * [LinkElement <link>]
+  * [ScriptElement <script>]
+  * [SoundElement <sound>]
+  * [SourceElement <source>]
+  * [VideoElement <video>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/iframe-src-reflection-test.html iframe.src reflects <iframe src="http://www.example.com/">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#src1 The src attribute in HTML 5]
+  * [http://www.w3.org/TR/html401/interact/forms.html#adef-src The src attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534643.aspx The src attribute on MSDN]
+

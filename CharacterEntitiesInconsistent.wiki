@@ -1,0 +1,13 @@
+#summary Character entities supported inconsistently across browsers
+#labels about-html,from-w3c
+
+You are here: [Welcome Home] > [HtmlReference HTML Reference] > [CharacterEntities Character entities] > *inconsistently supported*
+
+The following [CharacterEntities character entities] are supported in some browsers but not others:
+
+  * [AposCharacterEntity &apos;]
+  * [NsupCharacterEntity &nsup;]
+  * [PercntCharacterEntity &percnt;]
+  * [TradeCharacterEntity &TRADE;]
+
+

@@ -1,0 +1,18 @@
+#summary The :target CSS pseudo-class matches the element that is the target of the URI fragment identifier.
+#labels about-css
+
+== Usage ==
+{{{
+a:target {
+   color: red;
+}
+/* This code segment will make the element that is the target of the URI fragment identifier turn red in color. */
+}}}
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* || *Opera9.5* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/css3-selectors/#target-pseudo The :target pseudo-class in the CSS 3 specification]
+

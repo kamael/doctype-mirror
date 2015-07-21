@@ -1,0 +1,38 @@
+#summary UTF-7: charsetが欠けている場合
+
+||[ArticleUtf7 English]||[EsArticleUtf7 Español]||[FrArticleUtf7 Français]||
+||[JaWelcome Home]||[JaArticlesXSS Web Security]||  
+
+
+UTF-7 はもともとは8ビットバイナリなデータを扱えない SMTP ゲートウェイのためにデザインされたエンコーディングです。7ビットのASCII文字を使って8ビットの文字やprintableでないASCII文字を表現するために、Base64をもとにしてエンコードします。文字列  {{{&lt;script&gt;alert(1)&lt;/script&gt;}}} は、UTF-7 では {{{+ADw-script+AD4-alert(1)+ADw-/script+AD4-}}}
+にエンコードされます。
+
+When the web server does not include an explicit character encoding in its HTTP response -- be it in the Content-Type HTTP Header or the META tag in the HTML itself -- Internet Explorer will attempt to guess the encoding.  If certain strings of user input -- say, {{{+ADw-script+AD4-alert(1)+ADw-/script+AD4-}}} -- are echoed back early enough in the HTML page, Internet Explorer may incorrectly guess that the page is encoded in UTF-7.   Suddenly, the otherwise harmless user input becomes active HTML and will execute.
+
+== 対策 ==
+
+  * To the extent possible, validate all user input.  If your application allows you to confine certain input to ASCII-compatible alphanumeric characters {{{[0-9a-z]}}}, this UTF-7 string would never have passed your filters.
+  * Always set a character encoding, either in the HTML itself or in the `Content-Type` HTTP header. Of course, you need to ensure that it corresponds with the actual encoding you're using.  Declaring an incorrect charset can be worse than not setting one at all.
+  * Even if your page will just perform a 302 redirect, make sure it has a charset.
+
+`Content-Type`ヘッダの`charset`パラメータを使って、HTTPレスポンスヘッダでエンコーディング名を指定する:
+
+{{{
+Content-Type: text/html; charset=UTF-8
+}}}
+          
+`<meta>`タグを使ってHTMLドキュメント内でエンコーディング名を指定する:
+
+{{{
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+}}}
+
+重要: `<meta>` タグはドキュメント内において、動的に生成されるドキュメントのタイトルを含む <title> のような、攻撃者がコントロールできる内容よりも先頭寄りに置かなければならない。
+
+== 参考文献 ==
+
+  * [ArticleXSS Everything you ever wanted to know about cross-site scripting (XSS) attacks]
+  * [http://en.wikipedia.org/wiki/UTF-7 UTF-7 on Wikipedia]
+  * [http://www.ietf.org/rfc/rfc2152.txt UTF-7 RFC]
+  * [http://www.motobit.com/util/charset-codepage-conversion.asp Online tool to convert between different encodings]
+

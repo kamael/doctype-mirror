@@ -1,0 +1,38 @@
+#summary The border-right-style property sets the style of the right border.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *border-right-style*
+
+== Usage ==
+
+== Values ==
+
+  * `<border-style>`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-right-style-bogus-equals-none-reflection-test.html style.borderRightStyle reflects <div style='border-right-style: bogus'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-right-style-dashed-equals-dashed-reflection-test.html style.borderRightStyle reflects <div style='border-right-style: dashed'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-right-style-dotted-equals-dotted-reflection-test.html style.borderRightStyle reflects <div style='border-right-style: dotted'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-right-style-double-equals-double-reflection-test.html style.borderRightStyle reflects <div style='border-right-style: double'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-right-style-groove-equals-groove-reflection-test.html style.borderRightStyle reflects <div style='border-right-style: groove'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-right-style-hidden-equals-hidden-reflection-test.html style.borderRightStyle reflects <div style='border-right-style: hidden'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-right-style-inset-equals-inset-reflection-test.html style.borderRightStyle reflects <div style='border-right-style: inset'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-right-style-none-equals-none-reflection-test.html style.borderRightStyle reflects <div style='border-right-style: none'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-right-style-outset-equals-outset-reflection-test.html style.borderRightStyle reflects <div style='border-right-style: outset'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-right-style-ridge-equals-ridge-reflection-test.html style.borderRightStyle reflects <div style='border-right-style: ridge'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-right-style-solid-equals-solid-reflection-test.html style.borderRightStyle reflects <div style='border-right-style: solid'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-right-style-window-inset-equals-window-inset-reflection-test.html style.borderRightStyle reflects <div style='border-right-style: window-inset'>] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/box.html#propdef-border-right-style The border-right-style property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:border-right-style The border-right-style on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530736.aspx The border-right-style property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/border/btstyle.htm The history of the border-right-style property on blooberry.com]
+  * [http://reference.sitepoint.com/css/border-right-style The border-left-color property on the SitePoint CSS Reference]
+

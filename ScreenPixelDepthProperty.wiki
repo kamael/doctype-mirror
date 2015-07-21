@@ -1,0 +1,26 @@
+#summary The screen.pixelDepth property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `screen.pixelDepth` property returns an integer.
+
+This property is identical to [ScreenColorDepthProperty screen.colorDepth] except it doesn't work in [BrowserFamilyMSIE Internet Explorer].
+
+This property is read-only.
+
+== Usage ==
+
+Don't use this property; use [ScreenColorDepthProperty screen.colorDepth] instead.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/screen/screen-pixelDepth-typeof-test.html typeOf(screen.pixelDepth) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.screen.pixelDepth The screen.pixelDepth property on Mozilla Developer Center]
+

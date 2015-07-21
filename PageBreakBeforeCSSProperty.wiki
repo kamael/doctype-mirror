@@ -1,0 +1,33 @@
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *page-break-before*
+
+== Usage ==
+
+== Values ==
+
+  * `auto`
+  * `always`
+  * `avoid`
+  * `left`
+  * `right`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/page-break-before-always-equals-always-reflection-test.html style.pageBreakBefore reflects <div style='page-break-before: always'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/page-break-before-auto-equals-auto-reflection-test.html style.pageBreakBefore reflects <div style='page-break-before: auto'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/page-break-before-avoid-equals-avoid-reflection-test.html style.pageBreakBefore reflects <div style='page-break-before: avoid'>] || Y || N || N || N || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/page-break-before-bogus-equals--reflection-test.html style.pageBreakBefore reflects <div style='page-break-before: bogus'>] || N || N || N || N || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/page-break-before-left-equals-left-reflection-test.html style.pageBreakBefore reflects <div style='page-break-before: left'>] || Y || Y || Y || N || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/page-break-before-right-equals-right-reflection-test.html style.pageBreakBefore reflects <div style='page-break-before: right'>] || Y || Y || Y || N || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/page.html#propdef-page-break-before The page-break-before property in CSS 2.1]
+  * [http://www.blooberry.com/indexdot/css/properties/print/pbbefore.htm The history of the page-break-before property on blooberry.com]
+  * [http://reference.sitepoint.com/css/page-break-before The page-break-before property on the SitePoint CSS Reference]
+

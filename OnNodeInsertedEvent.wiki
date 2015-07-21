@@ -1,0 +1,16 @@
+#summary The onnodeinserted event
+#labels about-dom,is-dom-event,from-w3c
+
+== Usage ==
+
+== Event targets ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/DOM-Level-2-Events/events.html#Events-eventgroupings-mutationevents The onnodeinserted event in DOM Level 2]
+
+

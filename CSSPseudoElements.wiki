@@ -1,0 +1,11 @@
+#summary Pseudo-elements are CSS selectors that match elements based on information outside the DOM.
+#labels about-css
+[http://www.w3.org/TR/css3-selectors/#pseudo-elements CSS3] specify that pseudo-elements should be made of two colons (::), to make clear distinction between pseudo-elements and pseudo-classes.
+
+[EsCSSPseudoElements Español]
+
+  * [AfterCSSPseudoElement ::after]
+  * [BeforeCSSPseudoElement ::before]
+  * [FirstLetterCSSPseudoElement ::first-letter]
+  * [FirstLineCSSPseudoElement ::first-line]
+  * [SelectionCSSPseudoElement ::selection]

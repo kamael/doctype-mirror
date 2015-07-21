@@ -1,0 +1,70 @@
+#summary The display property determines how an element is rendered.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *display*
+
+== Usage ==
+
+== Values ==
+
+  * `inline`
+  * `block`
+  * `list-item`
+  * `run-in`
+  * `inline-block`
+  * `table`
+  * `inline-table`
+  * `table-row-group`
+  * `table-header-group`
+  * `table-footer-group`
+  * `table-row`
+  * `table-column-group`
+  * `table-column`
+  * `table-cell`
+  * `table-caption`
+  * `none`
+  * `inherit`
+  * `-moz-box`
+  * `-moz-inline-box`
+  * `-moz-grid`
+  * `-moz-inline-grid`
+  * `-moz-grid-group`
+  * `-moz-grid-line`
+  * `-moz-stack`
+  * `-moz-inline-stack`
+  * `-moz-deck`
+  * `-moz-popup`
+  * `-moz-groupbox`
+  * `compact`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-block-equals-block-reflection-test.html style.display reflects <div style='display: block'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-compact-equals-compact-reflection-test.html style.display reflects <div style='display: compact'>] || N || N || N || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-inline-block-equals-inline-block-reflection-test.html style.display reflects <div style='display: inline-block'>] || Y || Y || Y || Y || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-inline-equals-inline-reflection-test.html style.display reflects <div style='display: inline'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-inline-table-equals-inline-table-reflection-test.html style.display reflects <div style='display: inline-table'>] || Y || N || N || Y || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-list-item-equals-list-item-reflection-test.html style.display reflects <div style='display: list-item'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-none-equals-none-reflection-test.html style.display reflects <div style='display: none'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-run-in-equals-run-in-reflection-test.html style.display reflects <div style='display: run-in'>] || Y || N || N || N || N || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-table-caption-equals-table-caption-reflection-test.html style.display reflects <div style='display: table-caption'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-table-cell-equals-table-cell-reflection-test.html style.display reflects <div style='display: table-cell'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-table-column-equals-table-column-reflection-test.html style.display reflects <div style='display: table-column'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-table-column-group-equals-table-column-group-reflection-test.html style.display reflects <div style='display: table-column-group'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-table-equals-table-reflection-test.html style.display reflects <div style='display: table'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-table-footer-group-equals-table-footer-group-reflection-test.html style.display reflects <div style='display: table-footer-group'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-table-header-group-equals-table-header-group-reflection-test.html style.display reflects <div style='display: table-header-group'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-table-row-equals-table-row-reflection-test.html style.display reflects <div style='display: table-row'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/display-table-row-group-equals-table-row-group-reflection-test.html style.display reflects <div style='display: table-row-group'>] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/visuren.html#propdef-display The display property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:display The display property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530751.aspx The display property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/classify/display.htm The history of the display property on blooberry.com]
+  * [http://reference.sitepoint.com/css/display The display property on the SitePoint CSS Reference]
+

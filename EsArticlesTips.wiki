@@ -1,0 +1,11 @@
+[ArticlesTips English]
+
+== Miscelanea: trucos y consejos ==
+
+  * [EsArticleUserAgent COMO determinar el nombre del navegador y el número de versión]
+  * [EsArticleDetectFlash COMO detectar si el usuario tiene flash instalado (goog.userAgent.flash)]
+  * [EsArticleGetElementsByTagNameAndClass COMO filtrar elementos por etiqueta y nombre de clase]
+  * [EsArticleUndefined COMO determinar si una variable JavaScript no está definida]
+  * [EsArticleArraySlice COMO rebanar un array que no es realmente un array (goog.array.slice)]
+  * [EsArticleArraySplice COMO empalmar un array que no es realmente un array (goog.array.splice)]
+

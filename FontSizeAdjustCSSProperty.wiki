@@ -1,0 +1,20 @@
+#labels about-css,is-css-property,from-mozilla
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *font-size-adjust*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSNumberType <number>]
+  * `none`
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:font-size-adjust The font-size-adjust property on Mozilla Developer Center]
+  * [http://www.blooberry.com/indexdot/css/properties/font/fontsizeadjust.htm The history of the font-size-adjust property on blooberry.com]
+

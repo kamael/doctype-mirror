@@ -1,0 +1,29 @@
+#summary The window.clearTimeout stops the execution of delayed code.
+#labels about-dom,is-dom-method
+
+The window.clearTimeout function halts the possible execution of code initialized with either the [WindowSetTimeoutMethod window.setTimeout] or [WindowSetIntervalMethod window.setInterval] methods.
+
+The passed in timerId can be null, though no action will result.  This can be useful for blind clearing timeouts that may not have been set.
+
+== Arguments ==
+  * timerId: Id returned from [WindowSetTimeoutMethod window.setTimeout] or [WindowSetIntervalMethod window.setInterval]. 
+== Usage ==
+{{{
+var timerId = window.setTimeout("alert('this will not be called", 100);
+window.clearTimeout(timerId);
+
+//Alternate Syntax
+clearTimeout(timerId);
+}}}
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-clearTimeout-typeof-test.html typeOf(window.clearTimeout) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.clearTimeout The window.clearTimeout method on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms536357.aspx The window.clearTimeout method on MSDN]
+

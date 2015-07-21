@@ -1,0 +1,107 @@
+= COMO protegerse contra inyecciones de marcas E4X =
+
+||[ArticleE4XSecurity English]||[JaArticleE4XSecurity 日本語]||[FrArticleE4XSecurity Français]||
+||[EsWelcome Inicio]||[EsArticlesXSS Seguridad Web]||  
+
+El siguiente juego de problemas de inclusión de datos pueden afectar a tu aplicación siempre y cuando no sirvas explícitamente JavaScript dinámicamente.  Debes ser conciente de este ataque si recapitulas bloques de script en línea dentro del HTML, así como otras cargas que podrían contener trozos de script.  En pocas palabras, debido a alguna oferta bizarra para hacer que Javascript soporte estructuras de datos XML "nativamente," un recurso no tiene que servir Javascript puro para servir a una inclusión `<SCRIPT SRC=...>`. Una llamada estándar [http://en.wikipedia.org/wiki/E4X E4X] (ECMAScript por XML), fue diseñada originalmente para permitirle notación bastante inofensiva:
+
+{{{
+  var x = <contacto><nombre>Praxedis G. Guerrero</nombre><mail>prxedis@ejemplo.com</mail></contacto>;
+  alert(x);
+}}}
+
+...e inicializadores de anidación en este estilo:
+
+{{{
+  alert(<nombre>{ get_name(); }</nombre><mail>none</mail>);
+}}}
+
+El estándar es soportado actualmente por defecto en muchos navegadores, incluyendo [BrowserFamilyFirefox Firefox].
+
+== Ataques en Scripts Embebidos ==
+
+La consecuencia mas importante de lado de E4X es que cualquier marca de forma parecida a XML solitaria es tratada como una variable con un valor ignorado.  En otras palabras, lo siguiente puede ser incluido como un Script:
+
+{{{
+<contacto><nombre>Praxedis G. Guerrero</nombre><mail>prxedis@ejemplo.com</mail></contacto>
+}}}
+
+...y ser parseado en un objeto a través de líneas de:
+
+{{{
+{ "contacto": {
+    "nombre": "Praxedis G. Guerrero"
+    "mail": "prxedis@ejemplo.com"
+  }
+}
+}}}
+
+Desafortunadamente, el mismo tipo de sintaxis XML es usada en cualquier documento formado como HTML; lo siguiente puede ser incluido a través de `<SCRIPT SRC=...>` y será parseado detro de algo parecido a una estructura de datos -- entonces promptly queda descartado, porque el valor resultante no es asignado a nada, formando efectivamente un estatuto no-op:
+
+{{{
+<html>
+<title>Buzón de Praxedis G. Guerrero</title>
+<script>alert('Hola Mundo');</script>
+<body>
+  ...
+</body>
+</html>
+}}}
+
+Muy rápido, muy bueno y sin daños.  Cuando se vuelve peliaguda se insertan inicializadores Javascript - como se vio antes, cualquier bloque dentro de `{...}` será ejecutado y usado para inicilizar la estructura de datos, siempre y estén precedidos por galimatías aleatorias que no forman Javascript válido y jamar limpiarían el interprete de construcción.  Consideremos el siguiente ejemplo:
+
+{{{
+<html>
+<script>
+  function dostuff() {
+    username = 'SERVER_INSERTED_STRING' ...
+  }
+</script>
+<body>
+  ...
+</body>
+</html>
+}}}
+
+Si esta página es incluida en otros dominios con una etiqueta `<SCRIPT SRC=...>`, la expresión dentro de `{...}` será ejecutada en el contexto de la página del atacante.  Un factor mitigante es que en Firefox, el inicializador está limitado a una simple llamada de función o estatuto.  Esto no es un gran consuelo, sin embargo, hay un juego de códigos Javascript válidos y semejantes que podrían servir como inicializadores E4X válidos.
+
+Y aquí esta el porqué se vuelve más complicado...
+
+== Ataques sobre llanos documentos <nop>HTML viejos ==
+
+Por desgracia, el problema con E4X no termina aquí; debido a como trabajan los inicializadores anidados, lo siguiente tendría el mismo efecto interesante:
+
+{{{
+<html>
+<body>
+  Non-Javascript text
+  Algo Completamente no parseable - 1 2 3 **** }}
+  ...
+  { x =                       <- suministrado por el atacante
+    ...
+    Datos del buzón del Usuario
+    en formato HTML
+    ...
+  }                           <- estático o suministrado por el atacante
+</body>
+</html>
+}}}
+
+En efecto, si el atacante es capaz de renderizar un carácter `{` no escapado en el mismo punto de la página, enfrente de parámetros de usuario sensibles (estos serían copiados por encima desde datos de URL, una línea de asunto de un email, etc), y puede usar un `}` de cierre en cualquier parte, el bloque entero de forma de HTML entre esas dos localidades puede ser divulgado, en formato de parseo anidado, al atacante.
+
+Alternativamente, si el contenido entre `{` y `}` no en un bloque a manera de XML, pero no contiene saltos de línea y comillas dobles, inyectar `{ x &#061; "` y `" }` se podría usar para lo mismo.
+
+== Previniendo inyecciones de marcas E4X ==
+
+Prevenir ataques E4X es difícil (casi tanto como traducir este artículo), y puede que no sea posible que sea implementado por completo en todas las páginas debido a razones de usabilidad.  Sin embargo, hay varias líneas de defensa que puedes usar para objetivos de perfil alto.
+
+  * *Usa URLs no predecibles con tokens de autentificación*.  Esto es similar a la recomendación hecha para [EsArticleScriptInclusion otros ataques de inclusión de scripts].
+  * *Sirve páginas que no sean HTML válido*.  Esto no es una broma.  Los parseadores E4X XML son estrictos, y rechazan inmediatamente una simple etiqueta de cierre perdida.  Si la validación HTML no es una prioridad inmediata para una página, colocando `<x></y>` cerca del final de un documento se convertirá en suficiente defensa contra la inclusión E4X.  Si se usó HTML viejo plano, desmarcando etiquetas `<br>` se obtiene lo suficiente para romper el parseo.
+  * *Servir XHTML con el prólogo opcional `<?xml ...>`*. Este prólogo, al no ser un nombre de etiqueta válido, parece romper ese parser de Firefox.
+  * *Construcción cuidadosa*.  Asegurate de usar scripts multi-establecidos que no puedan mimetizar inicializadores E4X.  Escapa `{` en datos suplidos por el usuario, y construye tus páginas para que nunca encierren estatutos de línea simple o sensibles del usuario, marcas a manera de ser controlados por el atacante.
+
+== Para leer más ==
+
+  * [EsArticleScriptInclusion COMO protegerse cintra ataques de divulgación de datos cross-domain]
+  * [http://en.wikipedia.org/wiki/E4X E4X en Wikipedia](Inglés)
+

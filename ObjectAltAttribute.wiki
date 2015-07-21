@@ -1,0 +1,29 @@
+#summary The object alt attribute specifies alternate text that describes the element in case it can not be displayed or the browser does not support it.
+#labels about-html,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [ObjectElement <object> element] > *alt attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `alt` attribute on the following elements:
+
+  * [AppletElement <applet>]
+  * [AreaElement <area>]
+  * [ImgElement <img>]
+  * [ObjectElement <object>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/object-alt-reflection-test.html object.alt reflects <object alt="foo">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms533073.aspx The alt attribute on MSDN]
+

@@ -1,0 +1,20 @@
+#summary The window.location property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `window.location` property returns a [LocationObject Location object].
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-location-typeof-test.html typeOf(window.location) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.location The window.location property on Mozilla Developer Center]
+

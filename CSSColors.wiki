@@ -1,0 +1,10 @@
+#summary List of CSS color keywords
+#labels about-css
+[EsCSSColors Español]
+
+
+<wiki:gadget url="http://zjwebstuffs.info/google_css_colors.php" height="4200" width="500" border="0" />
+
+<wiki:comment>
+Original source can be found at: http://zjwebstuffs.info/google_css.txt
+</wiki:comment>

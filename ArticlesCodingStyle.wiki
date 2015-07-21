@@ -1,0 +1,6 @@
+== HTML best practices ==
+
+  * [ArticleFormattingWithoutSemanticTags HOWTO format text when there's no appropriate semantic tag]
+  * [ArticleSemanticsOfH1 HOWTO tag top-of-page document titles]
+  * [ArticleFormattingDelAndIns HOWTO format the <del> and <ins> tags]
+

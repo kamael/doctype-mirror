@@ -1,0 +1,31 @@
+#summary The basefont size attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [BasefontElement <basefont> element] > *size attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `size` attribute on the following elements:
+
+  * [BasefontElement <basefont>]
+  * [FontElement <font>]
+  * [HrElement <hr>]
+  * [SelectElement <select>]
+  * [SpacerElement <spacer>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/basefont-size-reflection-test.html basefont.size reflects <basefont size="42">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/present/graphics.html#adef-size-FONT The size attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534631.aspx The size attribute on MSDN]
+

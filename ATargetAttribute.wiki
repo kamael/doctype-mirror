@@ -1,0 +1,39 @@
+#summary The a target attribute represents a browsing context that browsers may use when following a hyperlink.
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AElement <a> element] > *target attribute*
+
+== Usage ==
+
+On [AElement the <a> element], the `target` attribute specifies where the author would like a link to open.  Normally if you click a link, your browser replaces the document you're viewing with the new document.  But if the link has a `target` attribute, your browser may open the link somewhere else.
+
+=== Values ===
+
+  * `target="_blank"`: open the link in a new window
+  * `target="_self"`: open the link in the current frame or document
+  * `target="_parent"`: open the link in the parent frame or document, if there is one
+  * `target="_top"`: open the link in the current top-level document.  This is useful for links within frames because it replaces the entire framed page with the new document.
+  * `target="_media"`: open the link in the Media Bar.  *InternetExplorerOnly*
+  * `target="_search"`: open the link in the browser search pane.  *InternetExplorerOnly*
+  * `target="some-frame-name"`: open the link in the frame with the specified [FrameNameAttribute name attribute]
+  * `target="some-other-name"`: open the link in a new window and assign it that specific name.  If that window remains open and the user follows a second link with the same `target` attribute, the same window will be re-used and the previous document will be replaced.
+
+TipTargetNew
+
+Depending on the end user's preferences, browsers may choose to ignore the `target` attribute, especially `target="_blank"`.
+
+[TargetAttribute Other elements have a target attribute], but it means something else.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/a-target-reflection-test.html a.target reflects <a target="foo">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#target3 The target attribute in HTML 5]
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-rules The rules for choosing a browsing context given a browsing context name]
+  * [http://msdn2.microsoft.com/en-us/library/ms534659.aspx The target attribute on MSDN]
+

@@ -1,0 +1,91 @@
+#summary Flash getURL XSS attacks
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+Consider the following Flash application, compiled and published at `www.example.com/VulnerableMovie.swf`:
+
+{{{
+class VulnerableMovie {
+
+  static var app : VulnerableMovie;
+
+  function VulnerableMovie() {
+    _root.createTextField("tf",0,100,100,640,480);
+ 
+    if (_root.userinput1 != null) {
+      getURL(_root.userinput1);
+    } 
+    
+    _root.tf.html = true; // default is safely false
+    _root.tf.htmlText = "Hello " + _root.userinput2;
+
+    if (_root.userinput3 != null ) {
+      _root.loadMovie(_root.userinput3);
+    }
+  }
+
+  static function main(mc) {
+    app = new VulnerableMovie();
+  }
+}
+}}}
+
+The `VulnerableMovie.swf` Flash application takes three user definable inputs: `userinput1`, `userinput2`, and `userinput3`, via URL parameters in the source of the object tag.
+
+{{{
+<object type="application/x-shockwave-flash" data="http://www.example.com/VulnerableMovie.swf?userinput2=dude" height="480" width="640">
+<param name="movie" value="http://www.example.com/VulnerableMovie.swf?userinput2=dude">
+</object>
+}}}
+
+Or via the `flashvars` parameter:
+
+{{{
+<object type="application/x-shockwave-flash" data="http://www.example.com/VulnerableMovie.swf" height="480" width="640">
+<param name="movie" value="http://www.example.com/VulnerableMovie.swf">
+<param name=”flashvars” value=”userinput2=dude”>
+</object>
+}}}
+
+As with all user input, the user input is accessed in the Flash application via the `_root object`: `_root.userinput1`, `_root.userinput2`, and `_root.userinput3` respectively.  It displays a hello message to `userinput2`.  If `userinput1` is provided, then sends the user to a URL specified in `userinput1`.  If `_root.userinput3` is provided, then the Flash application loads another Flash application.
+
+An attacker can use *all* of these user inputs to perform XSS.
+
+First, consider `userinput1`.  This variable is initialized by its presence in the Flash input variables, but uninitialized by the Flash application.  If it is initialized via a URL parameter, like in the following URL:
+{{{
+http://www.example.com/VulnerableMovie.swf?userinput1=javascript%3Aalert%281%29
+}}}
+
+then the `getURL()` function tells the browser to load the `javascript:alert(1)` URL that executes JavaScript on the domain where the Flash application is hosted.
+
+== Solution ==
+
+To fix this issue, ensure that user input is properly validated. First and foremost, whitelist the protocol handler so that it must either be `http` or `https`, like so:
+
+{{{
+var myUrl = _root.userinput1;
+if ( myURL.indexOf("http:") == 0 || myURL.indexOf("https:") == 0) {
+  getURL(myURL);
+}
+}}}
+
+(This attack was first noted in 2002 by a user called "obscure" in [http://www.cgisecurity.com/lib/flash-xss.htm Bypassing JavaScript Filters – the Flash! Attack].)
+
+Also, `getURL()` is commonly used for calling javascript in the browser, like so:
+
+{{{
+getURL("javascript:someJsFunctionInThePage(\"" + _root.someUserInput + "\");");
+}}}
+
+This could also be exploited by setting `_root.someUserInput` to `");alert(1)//`. To fix this issue, [http://livedocs.adobe.com/flashlite/2/main/wwhelp/wwhimpl/common/html/wwhelp.htm?context=LiveDocs_Parts&file=00000154.html escape()] all user input before using it in javascript, like so:
+
+{{{
+getURL("javascript:someJsFunctionInThePage(\"" + escape(_root.someUserInput) + "\");");
+}}}
+
+== Further reading ==
+
+  * [http://www.cgisecurity.com/lib/flash-xss.htm Bypassing JavaScript Filters – the Flash! Attack]
+  * [http://livedocs.adobe.com/flashlite/2/main/wwhelp/wwhimpl/common/html/wwhelp.htm?context=LiveDocs_Parts&file=00000154.html ActionScript escape() function on adobe.com]
+
+

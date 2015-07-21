@@ -1,0 +1,41 @@
+#summary The tr element represents a row in an HTML table.
+#labels about-html,is-html-element,from-w3c,about-tables
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *tr element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [TrAlignAttribute align]
+  * [TrBackgroundAttribute background]
+  * [TrBgcolorAttribute bgcolor]
+  * [TrBordercolorAttribute bordercolor]
+  * [TrBordercolordarkAttribute bordercolordark]
+  * [TrBordercolorlightAttribute bordercolorlight]
+  * [TrChAttribute ch]
+  * [TrCharAttribute char]
+  * [TrChoffAttribute choff]
+  * [TrCharoffAttribute charoff]
+  * [TrHeightAttribute height]
+  * [TrNowrapAttribute nowrap]
+  * [TrValignAttribute valign]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/tr-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/tr-element-as-child-of-table-appears-in-dom-test.html appears in DOM] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/tr-element-applies-style-test.html applies style] || N || Y || Y || N || N || Y || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/tr-element-as-child-of-table-appears-in-dom-test.html appears in DOM as child of table] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/tr-element-as-child-of-table-applies-style-test.html applies style as child of table] || Y || Y || Y || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-tr The tr element in HTML 5]
+  * [http://msdn2.microsoft.com/en-us/library/ms535911.aspx The tr element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/t/tr.htm The history of the tr element on blooberry.com]
+

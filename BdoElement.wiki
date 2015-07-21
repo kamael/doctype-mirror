@@ -1,0 +1,29 @@
+#summary The bdo element lets you override the Unicode bidi algorithm by explicitly specifying a direction override.
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *bdo element*
+
+== Usage ==
+
+The bdo element allows authors to override the Unicode bidi algorithm by explicitly specifying a direction override.
+
+== Attributes ==
+
+  * [BdoLangAttribute lang]
+  * [BdoDirAttribute dir]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/bdo-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/bdo-element-applies-style-test.html applies style] || Y || N || N || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-bdo The bdo element in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/dirlang.html#h-8.2.4 The bdo element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535196.aspx The bdo element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/b/bdo.htm The history of the bdo element on blooberry.com]
+

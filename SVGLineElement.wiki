@@ -1,0 +1,28 @@
+#summary The SVG <line> element represents a straight line.
+You are here: [Welcome Home] > [SVGElements SVG Elements] > *line element*
+
+= Introduction =
+
+The line element is used to draw a line.
+
+= Details =
+== Usage ==
+
+{{{
+<line x1="50" y1="50" x2="200" y2="100" fill="green" />
+}}}
+
+== Attributes ==
+
+Common attributes:
+
+  * [http://www.w3.org/TR/SVG11/shapes.html#LineElementX1Attribute x1] - the x-coordinate of the first point of the line.  Defaults to 0.
+  * [http://www.w3.org/TR/SVG11/shapes.html#LineElementY1Attribute y1] - the y-coordinate of the first point of the line.  Defaults to 0.
+  * [http://www.w3.org/TR/SVG11/shapes.html#LineElementX2Attribute x2] - the x-coordinate of the second point of the line.  Defaults to 0.
+  * [http://www.w3.org/TR/SVG11/shapes.html#LineElementY2Attribute y2] - the y-coordinate of the second point of the line.  Defaults to 0.
+  * [http://www.w3.org/TR/SVG11/painting.html#StrokeProperty stroke] - describes how the line should be painted, see [SVGStrokeProperties]. The default value is "none".
+
+
+= Reference =
+
+  * [http://www.w3.org/TR/SVG11/shapes.html#LineElement The <line> element in SVG 1.1]

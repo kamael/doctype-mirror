@@ -1,0 +1,24 @@
+#summary The counter-increment property accepts one or more names of counters and increments them by a specified amount.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *counter-increment*
+
+== Usage ==
+
+== Values ==
+
+  * `[ <identifier> <integer>? ]+`
+  * `none`
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/generate.html#propdef-counter-increment The counter-increment property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:counter-increment The counter-increment property on Mozilla Developer Center]
+  * [http://www.blooberry.com/indexdot/css/properties/generate/counterinc.htm The history of the counter-increment property on blooberry.com]
+  * [http://reference.sitepoint.com/css/counter-increment The counter-increment property on the SitePoint CSS Reference]
+

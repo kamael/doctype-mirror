@@ -1,0 +1,24 @@
+#summary The rel="prefetch" attribute indicates that the author recommends preemptively fetching and caching the specified resource.
+#labels about-html,is-html-attribute,from-mozilla
+
+`rel="prefetch"` is one of several [LinkTypes link types] for describing relationships between documents.
+
+== Usage ==
+
+== Elements ==
+
+You can use the `rel="prefetch"` attribute on these elements:
+
+  * [LinkElement <link>]
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#prefetch The rel="prefetch" link type in HTML 5]
+  * [http://developer.mozilla.org/en/docs/Link_prefetching_FAQ Link prefetching FAQ on Mozilla Developer Center]
+  * [http://www.google.com/help/features.html#prefetch Google Help: Results Prefetching]
+
+

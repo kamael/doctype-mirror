@@ -1,0 +1,22 @@
+#summary The onbeforeprint event fires before you print a document or frame.
+#labels about-dom,is-dom-event,from-microsoft
+
+== Usage ==
+
+== Event targets ==
+
+The `onbeforeprint` event fires on these objects:
+
+  * [BodyElement <body>]
+  * [FramesetElement <frameset>]
+  * [WindowObject window]
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms536906.aspx The onbeforeprint event on MSDN]
+
+

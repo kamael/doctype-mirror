@@ -1,0 +1,6 @@
+#summary The rel="toc" attribute is a synonym for rel="contents".
+#labels about-html,is-html-attribute,from-w3c
+
+See [RelContentsAttribute rel="contents"].
+
+

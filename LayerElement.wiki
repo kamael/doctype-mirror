@@ -1,0 +1,40 @@
+#summary The layer element is an obsolete method of positioning elements within a document.
+#labels about-html,is-html-element,from-mozilla
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *layer element*
+
+== Usage ==
+
+Do not use `<layer>`.  It was introduced in [BrowserNetscape4 Netscape 4] and has never been supported by any other browser.
+
+== Attributes ==
+
+  * [LayerAboveAttribute above]
+  * [LayerBelowAttribute below]
+  * [LayerBgcolorAttribute bgcolor]
+  * [LayerClipAttribute clip]
+  * [LayerHeightAttribute height]
+  * [LayerLeftAttribute left]
+  * [LayerNameAttribute name]
+  * [LayerOverflowAttribute overflow]
+  * [LayerPagexAttribute pagex]
+  * [LayerPageyAttribute pagey]
+  * [LayerSrcAttribute src]
+  * [LayerTopAttribute top]
+  * [LayerVisibilityAttribute visibility]
+  * [LayerWidthAttribute width]
+  * [LayerZIndexAttribute z-index]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/layer-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/layer-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.blooberry.com/indexdot/html/tagpages/l/layer.htm The history of the layer element on blooberry.com]
+

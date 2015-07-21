@@ -1,0 +1,48 @@
+#summary Introduction to Microsoft Behaviors.
+
+= Introduction =
+
+Microsoft Behaviors are an extremely powerful way to extend Internet Explorer's layout engine. They literally allow you to define new tags (or override how existing HTML tags are interpreted), and can also be used to do some of the magic in older versions of Internet Explorer that more modern browsers can do, such as create dynamic getters and setters and watch property changes. However, they should be used with care; it is easy to shoot yourself in the foot though [ArticleFixingIEBehaviors most issues can be worked around]; make sure you know what you are doing when you use them.
+
+
+= Details =
+
+Behaviors, also sometimes called HTCs (for HTML Components), first appeared in Internet Explorer 5.0 (with some extra features added in IE 5.5). They are a proprietary IE feature (though [http://dean.edwards.name/moz-behaviors/ emulation libraries exist] for some other browsers).
+
+Behaviors are useful for shim writers for the following primary reasons:
+   * They let you extend or override Internet Explorer's layout engine
+   * They can be used to simulate native support for magic getters and setters (i.e. getters and setters that actually call methods)
+   * They can be used to watch property changes on an element, such as seeing style changes
+   * They can be used to override native functions and events, such as returning your own value when nodeType is called on a node
+   * They can be used to 'hide' content from the external DOM, such as a Flash object that does all the real rendering.
+   * They are first-class citizens of the DOM, and CSS, etc. gets applied to them
+   * They can be used to nest multiple levels of custom tags.
+
+Some developers are familiar with the [http://ajaxian.com/archives/adding-custom-tags-to-internet-explorer-the-official-way createElement] trick to force IE to see new tags. However, this trick falls over quickly as you get more complicated: styling isn't truly applied; nested tags don't parse correctly; dynamically creating new custom tags using {{{createElement}}} won't work as expected; and more. The {{{createElement}}} trick can be appropriate for some situations but in general you need to delve into Behaviors when doing more advanced shims.
+
+Most developers who are aware of Behaviors imagine that there is only one kind of Behavior; however, there is actually a zoo of different kinds of Behaviors.
+
+This article is not meant to be a general introduction to Behaviors, but rather a place to touch on aspects of Behaviors not generally known focused on the needs of the shim writer.
+
+The best introduction to Behaviors (that explains the seldom known fact that there are many different kinds) can be read on MSDN [http://msdn.microsoft.com/en-us/magazine/cc301531.aspx here]. The primary reference work when using Behaviors is [http://msdn.microsoft.com/en-us/library/ms531018(VS.85).aspx here].
+
+=== The Zoo of Behaviors ===
+
+First, Behaviors divide into two broad classes:
+
+   * Binary Behaviors - these are Behaviors implemented as COM controls. The original Adobe SVG viewer, for example, is a collection of these. These must generally be packaged as an ActiveX control and require an explicit download. They are not generally useful to the !JavaScript shim writer. Details on using them can be found on MSDN [http://msdn.microsoft.com/en-us/magazine/cc301528.aspx here] and [http://msdn.microsoft.com/en-us/library/aa744100(VS.85).aspx here].
+   * JavaScript Behaviors - these are Behaviors implemented in JavaScript, located in a separate HTC file, such as myBehavior.htc. These are the tool of the shim writer.
+
+!JavaScript Behaviors then divide into two more classes:
+
+   * Attached Behaviors - these are Behaviors that you attach to your document using a CSS statement. In general, you can think of these as separate from the element themselves. The element has some behavior _attached_ onto it. These are explained more in the "Attached Behaviors" section.
+   * Namespace Behaviors - these are Behaviors that attach to all tags in an HTML document that are in some namespace, such as svg:rect, svg:g, etc. These kind of Behaviors are intrinsic to the tag itself; i.e. the tag looks like a native part of the layout engine. These are explained more in the "Namespace Behaviors" section.
+
+The two kinds of behaviors above then divide into two more kinds of behaviors:
+
+   * !ViewLink Behaviors - little known, these Behaviors make it possible to have 'shadow' content hidden inside your new custom tag. For example, you might provide a CALENDAR tag that then has extensive markup inside of it for a calendar, hidden from the external DOM. These are documented in the "!ViewLink Behavior" section.
+   * Light Weight Behaviors - these Behaviors have no shadow DOM, unlike the !ViewLink behaviors, and are therefore 'lightweight' and take up less memory and are faster since they don't need their own internal HTML engine.
+
+=== Attached Behaviors ===   
+
+TO BE FINISHED

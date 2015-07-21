@@ -1,0 +1,51 @@
+#summary HOWTO filter user input in regular body text
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+||[EsArticleXSSInBodyText Español]||[JaArticleXSSInBodyText 日本語]||[FrArticleXSSInBodyText Français]||
+||[Welcome Home]||||[ArticlesXSS Web Security]||
+
+Suppose you have a template or HTML fragment of the form
+
+{{{
+<b>Error:  Your query '%(query)s' did not return any results.</b>
+}}}
+
+If the attacker is able to cause query to contain, for example,
+
+{{{
+<script>evil_script()</script>
+}}}
+
+Then the HTML snippet would render as
+
+{{{
+<b>Error:  Your query '<script>evil_script()</script>' did not
+    return any results.</b>
+}}}
+
+and the evil script would execute in the browser and could e.g. steal the victim user's authentication cookie.
+
+== Solution ==
+
+Any string that is inserted into a page must have the following characters replaced with the corresponding HTML/SGML entities:
+
+  * Convert `<` into `&lt;`
+  * Convert `>` into `&gt;`
+  * Convert `&` into `&amp;`
+  * Convert `"` into `&quot;`
+  * Convert `'` into `&#39;`
+
+== Rationale ==
+
+The "less-than" and "greater-than" characters need to be escaped because they delimit HTML tags, and if not escaped these tags (including <script> tags) would be evaluated by the browser.
+
+If the ampersand were not escaped in this context, this would not result in a security issue, but could result in a rendering bug because the browser may interpret the ampersand as the beginning of an entity and not display it. (Note: To the best of our knowledge, [http://devedge-temp.mozilla.org/library/manuals/2000/javascript/1.3/guide/embed.html#1013293 JavaScript Entities] do not work outside of attributes.)
+
+It's not strictly necessary to escape the quotes in this context; however this will be necessary in other contexts, and it's easiest to use the same escaping function everywhere.
+
+== Further reading ==
+
+  * [ArticleXSS Everything you ever wanted to know about cross-site scripting (XSS) attacks]
+  * [http://devedge-temp.mozilla.org/library/manuals/2000/javascript/1.3/guide/embed.html#1013293 Using JavaScript Expressions as HTML Attribute Values]
+

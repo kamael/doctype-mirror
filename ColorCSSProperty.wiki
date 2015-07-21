@@ -1,0 +1,30 @@
+#summary The color property describes the foreground color of an element's text content.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *color*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSColorType <color>]
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/color--hs-808080-equals-rgb-lp-128-cm--128-cm--128-rp--reflection-test.html style.color reflects <div style='color: #808080'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/color-black-equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.color reflects <div style='color: black'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/color-rgb-lp-0-cm--0-cm--0-rp--equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.color reflects <div style='color: rgb(0, 0, 0)'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/color-transparent-equals-transparent-reflection-test.html style.color reflects <div style='color: transparent'>] || Y || Y || Y || Y || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/colors.html#propdef-color The color property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:color The color property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530749.aspx The color property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/colorbg/color.htm The history of the color property on blooberry.com]
+  * [http://reference.sitepoint.com/css/color The color property on the SitePoint CSS Reference]
+

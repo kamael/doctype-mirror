@@ -1,0 +1,29 @@
+#summary The SVG <ellipse> element represents an ellipse.
+You are here: [Welcome Home] > [SVGElements SVG Elements] > *ellipse element*
+
+= Introduction =
+
+The ellipse element is used to create an ellipse (oval).
+
+= Details =
+== Usage ==
+
+{{{
+<ellipse cx="100" cy="100" rx="50" ry="30" fill="blue" stroke="yellow" />
+}}}
+
+== Attributes ==
+
+Common attributes:
+
+  * [http://www.w3.org/TR/SVG11/shapes.html#EllipseeElementCXAttribute cx] - the x-coordinate of the center of the ellipse
+  * [http://www.w3.org/TR/SVG11/shapes.html#EllipseElementCYAttribute cy] - the y-coordinate of the center of the ellipse
+  * [http://www.w3.org/TR/SVG11/shapes.html#EllipseElementRXAttribute rx] - the x-radius of the ellipse
+  * [http://www.w3.org/TR/SVG11/shapes.html#EllipseElementRYAttribute ry] - the y-radius of the ellipse
+  * [http://www.w3.org/TR/SVG11/painting.html#FillProperty fill] - describes how the interior of the ellipse should be painted, see [SVGFillProperties].  The default value is "black".
+  * [http://www.w3.org/TR/SVG11/painting.html#StrokeProperty stroke] - describes how the outline of the ellipse should be painted, see [SVGStrokeProperties]. The default value is "none".
+
+
+= Reference =
+
+  * [http://www.w3.org/TR/SVG11/shapes.html#EllipseeElement The <ellipse> element in SVG 1.1]

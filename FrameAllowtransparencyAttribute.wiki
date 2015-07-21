@@ -1,0 +1,30 @@
+#summary The frame allowtransparency attribute
+#labels about-html,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [FrameElement <frame> element] > *allowtransparency attribute*
+
+== Usage ==
+
+Despite the fact that [http://www.w3.org/TR/html401/intro/sgmltut.html#h-3.2.2 HTML attribute names are supposed to be case-insensitive], and despite the fact that [http://msdn2.microsoft.com/en-us/library/ms533072(VS.85).aspx MSDN shows a case-insensitive example], the `allowTransparency` attribute must be specified in camel-case in your HTML markup.  Uppercase T, lowercase everything else.  Otherwise it will not be properly [http://www.whatwg.org/specs/web-apps/current-work/multipage/section-elements.html#reflecting reflected] in the DOM.
+
+== Values ==
+
+== Elements ==
+
+You can use the `allowtransparency` attribute on the following elements:
+
+  * [FrameElement <frame>]
+  * [IframeElement <iframe>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/frame-allowtransparency-absent-reflection-test.html frame.allowTransparency reflects <frame>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/frame-allowtransparency-reflection-test.html frame.allowTransparency reflects <frame allowtransparency>] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms533072.aspx The allowtransparency attribute on MSDN]
+

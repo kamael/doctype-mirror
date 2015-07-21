@@ -1,0 +1,25 @@
+#summary How to replicate the functionality of min-width in IE6
+#sidebar TOCArticlesStyle
+
+= Introduction =
+
+One of the most frustrating CSS deficiencies of IE6 is the inability to handle the min-width property.  A common workaround is to use an Expression to imitate it.
+
+
+= Details =
+
+The following code will enforce a min-width restriction of 900px on IE6 (IE7+ don't have any problem with min-width):
+
+{{{
+<style type="text/css">
+body { min-width: 900px; }
+</style>
+
+<!--[if lte IE 6]>
+<style type="text/css">
+body {
+  width:expression( documentElement.clientWidth < 900 ? (documentElement.clientWidth == 0 ? (body.clientWidth < 900 ? "900" : "auto") : "900px") : "auto" );
+}
+</style>
+<![endif]-->
+}}}

@@ -1,0 +1,33 @@
+#summary The dt nowrap attribute
+#labels about-html,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [DtElement <dt> element] > *nowrap attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `nowrap` attribute on the following elements:
+
+  * [BodyElement <body>]
+  * [DdElement <dd>]
+  * [DivElement <div>]
+  * [DtElement <dt>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TrElement <tr>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/dt-nowrap-absent-reflection-test.html dt.noWrap reflects <dt>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/dt-nowrap-reflection-test.html dt.noWrap reflects <dt nowrap>] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms534196.aspx The nowrap attribute on MSDN]
+

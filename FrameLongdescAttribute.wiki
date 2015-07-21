@@ -1,0 +1,28 @@
+#summary The frame longdesc attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [FrameElement <frame> element] > *longdesc attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `longdesc` attribute on the following elements:
+
+  * [FrameElement <frame>]
+  * [IframeElement <iframe>]
+  * [ImgElement <img>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/frame-longdesc-reflection-test.html frame.longDesc reflects <frame longdesc="http://www.example.com/">] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/present/frames.html#adef-longdesc-FRAME The longdesc attribute in HTML 4]
+

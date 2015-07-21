@@ -1,0 +1,13 @@
+#summary The -moz-appearance CSS property makes an element look and feel like a platform-native control.
+
+== Usage ==
+
+== Values ==
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-appearance The -moz-appearance property on Mozilla Developer Center]
+
+

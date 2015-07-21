@@ -1,0 +1,31 @@
+#summary The background-image property sets the background image of an element.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *background-image*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSURIType <uri>]
+  * `none`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-image-bogus-equals-none-reflection-test.html style.backgroundImage reflects <div style='background-image: bogus'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-image-none-equals-none-reflection-test.html style.backgroundImage reflects <div style='background-image: none'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-image-url-lp--qu-http-cl--sl--sl-www-dt-example-dt-com-sl--qu--rp--equals-url-lp-http-cl--sl--sl-www-dt-example-dt-com-sl--rp--reflection-test.html style.backgroundImage reflects <div style='background-image: url(\"http://www.example.com/\")'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-image-url-lp-http-cl--sl--sl-www-dt-example-dt-com-sl--rp--equals-url-lp--qu-http-cl--sl--sl-www-dt-example-dt-com-sl--qu--rp--reflection-test.html style.backgroundImage reflects <div style='background-image: url(http://www.example.com/)'>] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/colors.html#propdef-background-image The background-image property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:background-image The background-image property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530717.aspx The background-image property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/colorbg/bgimage.htm The history of the background-image property on blooberry.com]
+  * [http://reference.sitepoint.com/css/background-image The background-image property on the SitePoint CSS Reference]
+

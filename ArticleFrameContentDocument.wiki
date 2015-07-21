@@ -1,0 +1,34 @@
+#summary HOWTO get the document element of a frame or iframe (goog.dom.getFrameContentDocument)
+#labels is-article,about-dom
+#sidebar TOCArticlesDom
+
+This function does exactly what it says on the tin: it gets the [DocumentObject document] object of a [FrameElement frame] or [IFrameElement iframe].
+
+== The code ==
+
+This function relies on code explained elsewhere:
+
+  * [ArticleUserAgent HOWTO determine the browser name and version number]
+
+{{{
+/**
+ * Cross browser function for getting the document element of a frame or iframe.
+ * @param {HTMLIFrameElement|HTMLFrameElement} frame Frame element
+ * @return {HTMLDocument}
+ */
+goog.dom.getFrameContentDocument = function(frame) {
+  return goog.userAgent.SAFARI ?
+          (frame.document || frame.contentWindow.document) :
+          (frame.contentDocument || frame.contentWindow.document);
+};
+}}}
+
+== The code walkthrough ==
+
+This function is so short that it doesn't really need a walkthrough.  The only thing to know is that Safari needs to be special-cased because it doesn't support the `contentDocument` property on a frame.  Luckily it does support a proprietary `frame.document` property which accomplishes the same thing.
+
+== Further reading ==
+
+  * [ArticleUserAgent HOWTO determine the browser name and version number]
+
+

@@ -1,0 +1,29 @@
+#summary The basefont element sets the base font size, using the size attribute.
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *basefont element*
+
+== Usage ==
+
+[SpecificationHTML4 HTML 4] says, "Font size changes achieved with `font` are relative to the base font size set by `basefont`. If `basefont` is not used, the default base font size is 3."
+
+== Attributes ==
+
+  * [BasefontColorAttribute color]
+  * [BasefontFaceAttribute face]
+  * [BasefontSizeAttribute size]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/basefont-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/basefont-element-applies-style-test.html applies style] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/present/graphics.html#h-15.2.2 The basefont element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535193.aspx The basefont element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/b/basefont.htm The history of the basefont element on blooberry.com]
+

@@ -1,0 +1,18 @@
+#summary The font-stretch CSS property
+#labels about-css,is-css-property
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *font-stretch*
+
+== Usage ==
+
+== Values ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.blooberry.com/indexdot/css/properties/font/fontstretch.htm The history of the font-stretch property on blooberry.com]
+  * [http://reference.sitepoint.com/css/font-stretch The font-stretch property on the SitePoint CSS Reference]
+

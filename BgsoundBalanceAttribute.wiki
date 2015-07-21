@@ -1,0 +1,26 @@
+#summary The bgsound balance attribute
+#labels about-html,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [BgsoundElement <bgsound> element] > *balance attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `balance` attribute on the following elements:
+
+  * [BgsoundElement <bgsound>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/bgsound-balance-reflection-test.html bgsound.balance reflects <bgsound balance="42">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms533500.aspx The balance attribute on MSDN]
+

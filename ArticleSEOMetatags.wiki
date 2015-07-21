@@ -1,0 +1,22 @@
+﻿#summary HOWTO utilize the right metatags for search engines
+
+= Introduction =
+
+Search engines utilize various HTML tags to better understand your content. Here's a list of what tags are worthwhile as well as pointers to more information.
+
+== HTML tags and search engines =
+
+||  || *Google* || *Yahoo!* || *Microsoft* ||
+|| *title* || [http://www.google.com/support/webmasters/bin/answer.py?answer=70928 important, make unique] || [http://help.yahoo.com/l/us/yahoo/search/ranking/ranking-02.html important, make unique] || important, make unique ||
+|| *h1, h2* || semantic markup helpful || unknown || semantic markup helpful ||
+|| *meta keywords* || pointless || [http://help.yahoo.com/l/us/yahoo/search/ranking/ranking-02.html useful] || pointless ||
+|| *meta description* || [http://www.google.com/support/webmasters/bin/answer.py?answer=79812&topic=15262 useful for possible snippet] || [http://help.yahoo.com/l/us/yahoo/search/ranking/ranking-02.html useful for possible snippet] || [http://help.live.com/help.aspx?mkt=en-us&project=wl_webmasters useful for possible snippet] ||
+|| *meta revisit-after* || pointless || pointless || pointless ||
+|| *meta robots="noodp"* || [http://www.google.com/support/webmasters/bin/answer.py?answer=79812&topic=15262 useful if ODP is unwanted in snippet] || [http://help.live.com/help.aspx?mkt=en-us&project=wl_webmasters useful if ODP is unwanted in snippet] || unknown ||
+|| *meta robots=[noindex, nofollow, etc.]* || see below || see below || see below ||
+|| *img alt* || [http://www.google.com/support/webmasters/bin/answer.py?answer=70928 useful] || [http://help.yahoo.com/l/us/yahoo/search/ranking/ranking-02.html useful] || unknown ||
+|| *img title* || pointless || unknown || unknown ||
+
+There are many variations on meta robots tags. You can read additional resources from [http://help.yahoo.com/l/us/yahoo/search/indexing/indexing-11.html Yahoo!], [http://www.google.com/support/webmasters/bin/answer.py?answer=79812 Google], and [http://help.live.com/help.aspx?mkt=en-US&project=wl_webmasters#toc Microsoft].
+
+

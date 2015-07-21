@@ -1,0 +1,36 @@
+#summary The td valign attribute specifies the vertical alignment of the element within its bounding box.
+#labels about-html,about-tables,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [TdElement <td> element] > *valign attribute*
+
+== Usage ==
+
+== Elements ==
+
+You can use the `valign` attribute on the following elements:
+
+  * [CaptionElement <caption>]
+  * [ColElement <col>]
+  * [ColgroupElement <colgroup>]
+  * [TbodyElement <tbody>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TfootElement <tfoot>]
+  * [TheadElement <thead>]
+  * [TrElement <tr>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/td-valign-baseline-reflection-test.html td.vAlign reflects <td valign="baseline">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/td-valign-bottom-reflection-test.html td.vAlign reflects <td valign="bottom">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/td-valign-middle-reflection-test.html td.vAlign reflects <td valign="middle">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/td-valign-top-reflection-test.html td.vAlign reflects <td valign="top">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/tables.html#adef-valign The valign attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535120.aspx The valign attribute on MSDN]
+

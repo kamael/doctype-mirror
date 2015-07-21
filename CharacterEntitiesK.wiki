@@ -1,0 +1,32 @@
+#summary List of HTML character entities
+#labels about-html,from-w3c
+
+You are here: [Welcome Home] > [HtmlReference HTML Reference] > [CharacterEntities Character entities] > *beginning with K*
+
+|| *Name* || *Value* || *Test* ||
+|| [KhcyCharacterEntity &KHcy;] || [http://www.fileformat.info/info/unicode/char/0425/index.htm U+00425] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/khcy-00425-entity-test.html test] ||
+|| [KjcyCharacterEntity &KJcy;] || [http://www.fileformat.info/info/unicode/char/040c/index.htm U+0040C] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kjcy-0040c-entity-test.html test] ||
+|| [KappaCharacterEntity &Kappa;] || [http://www.fileformat.info/info/unicode/char/039a/index.htm U+0039A] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kappa-capital-0039a-entity-test.html test] ||
+|| [KcedilCharacterEntity &Kcedil;] || [http://www.fileformat.info/info/unicode/char/0136/index.htm U+00136] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kcedil-capital-00136-entity-test.html test] ||
+|| [KcyCharacterEntity &Kcy;] || [http://www.fileformat.info/info/unicode/char/041a/index.htm U+0041A] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kcy-capital-0041a-entity-test.html test] ||
+|| [KfrCharacterEntity &Kfr;] || U+1D50E || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kfr-capital-1d50e-entity-test.html test] ||
+|| [KopfCharacterEntity &Kopf;] || U+1D542 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kopf-capital-1d542-entity-test.html test] ||
+|| [KscrCharacterEntity &Kscr;] || U+1D4A6 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kscr-capital-1d4a6-entity-test.html test] ||
+|| [KappaCharacterEntity &kappa;] || [http://www.fileformat.info/info/unicode/char/03ba/index.htm U+003BA] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kappa-003ba-entity-test.html test] ||
+|| [KappavCharacterEntity &kappav;] || [http://www.fileformat.info/info/unicode/char/03f0/index.htm U+003F0] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kappav-003f0-entity-test.html test] ||
+|| [KcedilCharacterEntity &kcedil;] || [http://www.fileformat.info/info/unicode/char/0137/index.htm U+00137] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kcedil-00137-entity-test.html test] ||
+|| [KcyCharacterEntity &kcy;] || [http://www.fileformat.info/info/unicode/char/043a/index.htm U+0043A] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kcy-0043a-entity-test.html test] ||
+|| [KfrCharacterEntity &kfr;] || U+1D528 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kfr-1d528-entity-test.html test] ||
+|| [KgreenCharacterEntity &kgreen;] || [http://www.fileformat.info/info/unicode/char/0138/index.htm U+00138] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kgreen-00138-entity-test.html test] ||
+|| [KhcyCharacterEntity &khcy;] || [http://www.fileformat.info/info/unicode/char/0445/index.htm U+00445] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/khcy-00445-entity-test.html test] ||
+|| [KjcyCharacterEntity &kjcy;] || [http://www.fileformat.info/info/unicode/char/045c/index.htm U+0045C] || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kjcy-0045c-entity-test.html test] ||
+|| [KopfCharacterEntity &kopf;] || U+1D55C || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kopf-1d55c-entity-test.html test] ||
+|| [KscrCharacterEntity &kscr;] || U+1D4C0 || [http://doctype.googlecode.com/svn/trunk/tests/html/entities/kscr-1d4c0-entity-test.html test] ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/named.html Named character references in HTML 5]
+  * [http://www.w3.org/TR/html4/sgml/entities.html Character entity references in HTML 4]
+  * [http://www.evolt.org/article/ala/17/21234/ Chart of common character entities]
+
+

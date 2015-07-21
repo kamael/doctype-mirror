@@ -1,0 +1,153 @@
+#summary The window object is the AbstractView of the document.
+#labels about-dom,is-dom-object
+
+It is also the "global" object in JavaScript. As such, any global variable that you define is accessible as a property of the window object. This can avoid unnecessary use of {{{eval()}}} to retrieve a global object/function for which the name is only available in the form a string.
+
+E.g.
+{{{
+<script type="text/javascript">
+var myVariable = 23;
+
+function aFunction(paramA) {
+  alert(myVariable);           // 23
+  alert(window.myVariable);    // 23
+  alert(window['myVariable'];  // 23
+
+  if (typeof paramA === 'string') {
+    alert(window[paramA]);    // 23 if paramA is 'myVariable'
+  }
+
+  alert(eval('myVariable'));   // 23, but much slower because the compiler has to kick in.
+  
+  if (typeof paramA === 'string') {
+    alert(eval(paramA));      // 23 if paramA is 'myVariable' but again slower, and poses security risk.
+  }
+}
+</script>
+}}}
+
+
+[EsWindowObject Español]
+
+== Properties ==
+
+  * [WindowClientInformationObject clientInformation]
+  * [WindowClipboardDataObject clipboardData]
+  * [WindowClosedProperty closed]
+  * [WindowContentProperty content]
+  * [WindowControllersProperty controllers]
+  * [WindowCryptoObject crypto]
+  * [WindowDefaultStatusProperty defaultStatus]
+  * [WindowDialogArgumentsProperty dialogArguments]
+  * [WindowDialogHeightProperty dialogHeight]
+  * [WindowDialogLeftProperty dialogLeft]
+  * [WindowDialogTopProperty dialogTop]
+  * [WindowDialogWidthProperty dialogWidth]
+  * [WindowDirectoriesProperty directories]
+  * [WindowEventObject event]
+  * [WindowFrameElementProperty frameElement]
+  * [WindowFramesProperty frames]
+  * [WindowFullScreenProperty fullScreen]
+  * [WindowGlobalStorageObject globalStorage]
+  * [WindowHistoryObject history]
+  * [WindowInnerHeightProperty innerHeight]
+  * [WindowInnerWidthProperty innerWidth]
+  * [WindowLengthProperty length]
+  * [WindowLocationObject location]
+  * [WindowLocationbarProperty locationbar]
+  * [WindowMenubarProperty menubar]
+  * [WindowNameProperty name]
+  * [WindowNavigatorObject navigator]
+  * [WindowOffscreenBufferingProperty offscreenBuffering]
+  * [WindowOpenerProperty opener]
+  * [WindowOuterHeightProperty outerHeight]
+  * [WindowOuterWidthProperty outerWidth]
+  * [WindowPageXOffsetProperty pageXOffset]
+  * [WindowPageYOffsetProperty pageYOffset]
+  * [WindowParentProperty parent]
+  * [WindowPersonalbarProperty personalbar]
+  * [WindowPkcs11Object pkcs11]
+  * [WindowReturnValueProperty returnValue]
+  * [WindowScreenObject screen]
+  * [WindowScreenLeftProperty screenLeft]
+  * [WindowScreenTopProperty screenTop]
+  * [WindowScreenXProperty screenX]
+  * [WindowScreenYProperty screenY]
+  * [WindowScrollbarsProperty scrollbars]
+  * [WindowScrollMaxXProperty scrollMaxX]
+  * [WindowScrollMaxYProperty scrollMaxY]
+  * [WindowScrollXProperty scrollX]
+  * [WindowScrollYProperty scrollY]
+  * [WindowSelfProperty self]
+  * [WindowSessionStorageObject sessionStorage]
+  * [WindowSidebarObject sidebar]
+  * [WindowStatusProperty status]
+  * [WindowStatusbarProperty statusbar]
+  * [WindowToolbarProperty toolbar]
+  * [WindowTopProperty top]
+  * [WindowXMLHttpRequestObject XMLHttpRequest]
+  * [WindowWindowProperty window]
+
+== Methods ==
+
+  * [WindowAlertMethod alert()]
+  * [WindowAtobMethod atob()]
+  * [WindowAttachEventMethod attachEvent()]
+  * [WindowBackMethod back()]
+  * [WindowBlurMethod blur()]
+  * [WindowBtoaMethod btoa()]
+  * [WindowCaptureEventsMethod captureEvents()]
+  * [WindowClearIntervalMethod clearInterval()]
+  * [WindowClearTimeoutMethod clearTimeout()]
+  * [WindowCloseMethod close()]
+  * [WindowConfirmMethod confirm()]
+  * [WindowCreatePopupMethod createPopup()]
+  * [WindowDisableExternalCaptureMethod disableExternalCapture()]
+  * [WindowDetachEventMethod detachEvent()]
+  * [WindowDispatchEventMethod dispatchEvent()]
+  * [WindowDumpMethod dump(])
+  * [WindowEnableExternalCaptureMethod enableExternalCapture()]
+  * [WindowEscapeMethod escape()]
+  * [WindowExecScriptMethod execScript()]
+  * [WindowFindMethod find()]
+  * [WindowFocusMethod focus()]
+  * [WindowForwardMethod forward()]
+  * [WindowGetComputedStyleMethod getComputedStyle()]
+  * [WindowGetSelectionMethod getSelection()]
+  * [WindowHomeMethod home()]
+  * [WindowMoveByMethod moveBy()]
+  * [WindowMoveToMethod moveTo()]
+  * [WindowNavigateMethod navigate()]
+  * [WindowOpenMethod open()]
+  * [WindowOpenDatabaseMethod openDatabase()]
+  * [WindowOpenDialogMethod openDialog()]
+  * [WindowPrintMethod print()]
+  * [WindowPromptMethod prompt()]
+  * [WindowReleaseEventsMethod releaseEvents()]
+  * [WindowRemoveEventListenerMethod removeEventListener()]
+  * [WindowResizeByMethod resizeBy()]
+  * [WindowResizeToMethod resizeTo()]
+  * [WindowRouteEventMethod routeEvent()]
+  * [WindowScrollMethod scroll()]
+  * [WindowScrollByMethod scrollBy()]
+  * [WindowScrollByLinesMethod scrollByLines()]
+  * [WindowScrollByPagesMethod scrollByPages()]
+  * [WindowScrollToMethod scrollTo()]
+  * [WindowSetActiveMethod setActive()]
+  * [WindowSetIntervalMethod setInterval()]
+  * [WindowSetResizableMethod setResizable()]
+  * [WindowSetTimeoutMethod setTimeout()]
+  * [WindowShowHelpMethod showHelp()]
+  * [WindowShowModalDialogMethod showModalDialog()]
+  * [WindowShowModelessDialogMethod showModelessDialog()]
+  * [WindowSizeToContentMethod sizeToContent()]
+  * [WindowStopMethod stop()]
+  * [WindowUnescapeMethod unescape()]
+  * [WindowUpdateCommandsMethod updateCommands()]
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/Window/ Window Object 1.0 specification] (out of date)
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/browsers.html#the-window-object The Window object in the HTML specification]
+  * [http://developer.mozilla.org/en/docs/DOM:window The window object on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms535873.aspx The window object on MSDN]

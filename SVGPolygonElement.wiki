@@ -1,0 +1,26 @@
+#summary The SVG <polygon> element represents a closed shape whose border consist of a series of connected line segments.
+You are here: [Welcome Home] > [SVGElements SVG Elements] > *polygon element*
+
+= Introduction =
+
+The polygon element is used to draw a closed geometric shape whose border is a series of connected line segments.  Also see the [SVGPolylineElement polyline] element. 
+
+= Details =
+== Usage ==
+
+{{{
+<polygon stroke="blue" fill="yellow" points="100,200 300,200 200,100"/>
+}}}
+
+== Attributes ==
+
+Common attributes:
+
+  * [http://www.w3.org/TR/SVG11/shapes.html#PolygonElementPointsAttribute points] - a comma- or space-separated list of x,y coordinates for each line segment.  This list must contain an even number of points.
+  * [http://www.w3.org/TR/SVG11/painting.html#FillProperty fill] - describes how the interior of the polygon should be painted, see [SVGFillProperties].  The default value is "black".
+  * [http://www.w3.org/TR/SVG11/painting.html#StrokeProperty stroke] - describes how the outline of the polygon should be painted, see [SVGStrokeProperties]. The default value is "none".
+
+
+= Reference =
+
+  * [http://www.w3.org/TR/SVG11/shapes.html#PolygonElement The <polygon> element in SVG 1.1]

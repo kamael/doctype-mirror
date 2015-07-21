@@ -1,0 +1,31 @@
+#summary The frame border attribute specifies the visible border around the element.
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [FrameElement <frame> element] > *border attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `border` attribute on the following elements:
+
+  * [AppletElement <applet>]
+  * [FrameElement <frame>]
+  * [FramesetElement <frameset>]
+  * [IframeElement <iframe>]
+  * [ImgElement <img>]
+  * [ObjectElement <object>]
+  * [TableElement <table>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/frame-border-reflection-test.html frame.border reflects <frame border="7">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+

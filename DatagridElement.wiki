@@ -1,0 +1,25 @@
+#summary The datagrid element represents an interactive representation of tree, list, or tabular data.
+#labels about-html,is-html-element,from-whatwg
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *datagrid element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [DatagridDisabledAttribute disabled]
+  * [DatagridMultipleAttribute multiple]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/datagrid-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/datagrid-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#datagrid0 The datagrid element in HTML 5]
+

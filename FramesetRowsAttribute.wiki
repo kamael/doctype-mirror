@@ -1,0 +1,28 @@
+#summary The frameset rows attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [FramesetElement <frameset> element] > *rows attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `rows` attribute on the following elements:
+
+  * [FramesetElement <frameset>]
+  * [TextareaElement <textarea>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/frameset-rows-reflection-test.html frameset.rows reflects <frameset rows="7">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/present/frames.html#adef-rows-FRAMESET The rows attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534380.aspx The rows attribute on MSDN]
+

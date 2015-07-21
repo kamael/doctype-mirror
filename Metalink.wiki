@@ -1,0 +1,40 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+[http://www.metalinker.org Metalink] is a feature of download programs (browsers, FTP clients, P2P clients) that makes downloads more robust and error free.
+
+
+= Details =
+
+Metalinks are XML files that store information about downloads like mirrors, P2P info, checksums, and signatures.
+
+Mirrors are included so downloads can failover if servers go down.
+
+Checksums are used to verify downloads have been error free, or to correct errors.
+
+An example Metalink:
+{{{
+ <?xml version="1.0" encoding="UTF-8"?>
+ <metalink version="3.0" xmlns="http://www.metalinker.org">
+   <files>
+     <file name="example.ext">
+       <verification>
+         <hash type="md5">example-md5-hash</hash>
+         <hash type="sha1">example-sha1-hash</hash>
+         <signature type="pgp"/>
+       </verification>
+       <resources>
+         <url type="ftp" location="us" preference="90">ftp://ftp.example.com/example.ext</url>
+         <url type="ftp" location="uk" preference="90">ftp://ftp.example.net/example.ext</url>
+         <url type="http" location="us" preference="90">http://example.com/example.ext</url> 
+         <url type="http" location="de" preference="90">http://example.net/example.ext</url>
+         <url type="bittorrent" preference="100">http://example.org/example.ext.torrent</url>
+         <url type="rsync"/>
+         <url type="magnet"/>
+         <url type="ed2k"/>
+       </resources>
+     </file>
+   </files>
+ </metalink>
+}}}

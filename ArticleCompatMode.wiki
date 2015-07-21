@@ -1,0 +1,70 @@
+#summary HOWTO determine the document's compatibility mode
+#labels is-article,about-dom
+#sidebar TOCArticlesStyle
+
+All modern browsers render legacy pages differently, depending on the `DOCTYPE` and a number of other factors.  This is the so-called "quirks" mode vs. "standards" mode.  There is no standard that defines exactly what "quirks" quirks mode entails, but each browser documents its quirks separately.  Certain calculations work differently in quirks mode, so it's important to know what mode you're in before performing them.  This function will tell you that.
+
+== The code ==
+
+The code relies on functions explained elsewhere:
+
+  * [ArticleDomHelper Introducing DomHelper (goog.dom.DomHelper)]
+  * [ArticleCreateDom HOWTO quickly create DOM nodes (goog.dom.DomHelper.createDom)]
+
+{{{
+/**
+ * Returns the compatMode of the document
+ * @return {string} The result is either CSS1Compat or BackCompat.
+ */
+goog.dom.DomHelper.prototype.getCompatMode = function() {
+  if (this.document_.compatMode) {
+    return this.document_.compatMode;
+  }
+  if (goog.userAgent.WEBKIT) {
+    // Create a dummy div and set the width without a unit. This is invalid in
+    // CSS but quirks mode allows it.
+    var el = this.createDom('div',
+        {'style': 'position:absolute;width:0;height:0;width:1'});
+    var val = el.style.width == '1px' ? 'BackCompat' : 'CSS1Compat';
+    // There is no way to change the compatMode after it has been set so we
+    // set it here so that the next call is faster
+    return this.document_.compatMode = val;
+  }
+  return 'BackCompat';
+};
+}}}
+
+== The code walkthrough ==
+
+The whole point of this function is to be a quick, consistent wrapper around `document.compatMode`, including support for browsers that don't support that property.  Currently, that's just Safari; every other major browser supports `document.compatMode` directly.  So if we're in a supported browser, just return the original property without too much fuss.
+
+{{{
+goog.dom.DomHelper.prototype.getCompatMode = function() {
+  if (this.document_.compatMode) {
+    return this.document_.compatMode;
+  }
+}}}
+
+However, if we're in Safari or some other Webkit-based browser (like the mobile browser in Google Android), we need to fake it.  The easiest way to fake it is to create a dummy `<div>` with a 1-pixel width property.  But instead of specifying "width: 1px", we'll use a shortcut that only works in quirks mode: specify "width: 1" without any units.  Then we can check the actual `width` style property to see if this translated to "1px".  If so, we're in backwards compatibility mode; if not, we're in strict mode.
+
+{{{
+  if (goog.userAgent.WEBKIT) {
+    // Create a dummy div and set the width without a unit. This is invalid in
+    // CSS but quirks mode allows it.
+    var el = this.createDom('div',
+        {'style': 'position:absolute;width:0;height:0;width:1'});
+    var val = el.style.width == '1px' ? 'BackCompat' : 'CSS1Compat';
+    // There is no way to change the compatMode after it has been set so we
+    // set it here so that the next call is faster
+    return this.document_.compatMode = val;
+  }
+  return 'BackCompat';
+};
+}}}
+
+== Further reading ==
+
+  * [ArticleDomHelper Introducing DomHelper (goog.dom.DomHelper)]
+  * [ArticleCreateDom HOWTO quickly create DOM nodes (goog.dom.DomHelper.createDom)]
+
+

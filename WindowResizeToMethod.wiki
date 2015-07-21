@@ -1,0 +1,19 @@
+#summary The window.resizeTo method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-resizeTo-typeof-test.html typeOf(window.resizeTo) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.resizeTo The window.resizeTo method on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms536723.aspx The window.resizeTo method on MSDN]
+

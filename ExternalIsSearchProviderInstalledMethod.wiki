@@ -1,0 +1,18 @@
+#summary The external.IsSearchProviderInstalled method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/external/external-IsSearchProviderInstalled-typeof-test.html typeOf(external.IsSearchProviderInstalled) != 'undefined'] || N || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/aa342526.aspx The external.IsSearchProviderInstalled method on MSDN]
+

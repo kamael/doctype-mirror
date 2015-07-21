@@ -1,0 +1,18 @@
+#summary The onmouseenter event fires when you move the cursor into an element.
+#labels about-dom,is-dom-event,from-microsoft
+
+== Usage ==
+
+== Event targets ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms536945.aspx The onmouseenter event on MSDN]
+  * [http://www.quirksmode.org/js/events_compinfo.html The onmouseenter event on quirksmode.org]
+  * [http://www.quirksmode.org/js/events_mouse.html Mouse events on quirksmode.org]
+
+

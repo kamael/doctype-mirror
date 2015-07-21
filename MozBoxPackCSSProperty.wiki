@@ -1,0 +1,18 @@
+#summary The -moz-box-pack CSS property controls how the empty space within an element is collapsed.
+
+== Usage ==
+
+== Values ==
+
+  * `start`
+  * `center`
+  * `end`
+  * `justify`
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-box-pack The -moz-box-pack property on Mozilla Developer Center]
+
+

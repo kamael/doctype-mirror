@@ -1,0 +1,33 @@
+#summary If a background image has been specified, the background-position property specifies its initial position.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *background-position*
+
+== Usage ==
+
+== Values ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-position-10-pt--40-pt--equals-10-pt--40-pt--reflection-test.html style.backgroundPosition reflects <div style='background-position: 10% 40%'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-position-5px-10em-equals-5px-10em-reflection-test.html style.backgroundPosition reflects <div style='background-position: 5px 10em'>] || Y || Y || Y || N || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-position-bottom-equals-50-pt--bottom-reflection-test.html style.backgroundPosition reflects <div style='background-position: bottom'>] || N || N || N || N || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-position-bottom-right-equals-right-bottom-reflection-test.html style.backgroundPosition reflects <div style='background-position: bottom right'>] || Y || Y || Y || N || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-position-center-center-equals-center-center-reflection-test.html style.backgroundPosition reflects <div style='background-position: center center'>] || Y || Y || Y || N || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-position-center-equals-center-center-reflection-test.html style.backgroundPosition reflects <div style='background-position: center'>] || N || N || N || N || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-position-left-equals-left-center-reflection-test.html style.backgroundPosition reflects <div style='background-position: left'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-position-right-equals-right-center-reflection-test.html style.backgroundPosition reflects <div style='background-position: right'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-position-top-equals-50-pt--top-reflection-test.html style.backgroundPosition reflects <div style='background-position: top'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/background-position-top-left-equals-left-top-reflection-test.html style.backgroundPosition reflects <div style='background-position: top left'>] || Y || Y || Y || N || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/colors.html#propdef-background-position The background-position property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:background-position The background-position property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530718.aspx The background-position property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/colorbg/bgposit.htm The history of the background-position property on blooberry.com]
+  * [http://reference.sitepoint.com/css/background-position The background-position property on the SitePoint CSS Reference]
+

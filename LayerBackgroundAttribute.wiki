@@ -1,0 +1,27 @@
+#summary The layer background attribute
+#labels about-html,is-html-attribute
+
+== Usage ==
+
+Do not use [LayerElement <layer>].  The `<layer>` element was introduced in [BrowserNetscape4 Netscape 4] and has never been supported by any other browser.
+
+== Elements ==
+
+You can use the `background` attribute on the following elements:
+
+  * [BodyElement <body>]
+  * [IlayerElement <ilayer>]
+  * [LayerElement <layer>]
+  * [TableElement <table>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TrElement <tr>]
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+
+

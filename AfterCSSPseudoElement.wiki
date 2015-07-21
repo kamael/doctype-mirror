@@ -1,0 +1,15 @@
+#summary The ::after CSS pseudo-element creates a phantom element as the last child of the selected element.
+#labels about-css
+
+== Usage ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/selector.html#pseudo-elements Pseudo-elements in the CSS 2.1 specification]
+  * [http://www.w3.org/TR/css3-selectors/#pseudo-elements Pseudo-elements in the CSS 3 specification]
+  * [http://www.w3.org/TR/css3-selectors/#gen-content The ::after pseudo-element in the CSS 3 specification]
+  * [http://developer.mozilla.org/en/docs/CSS::after The ::after pseudo-element on Mozilla Developer Center]

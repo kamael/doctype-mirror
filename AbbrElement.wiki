@@ -1,0 +1,27 @@
+#summary The abbr element represents an abbreviation or acronym.
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *abbr element*
+
+== Usage ==
+
+The `title` attribute should be used to provide an expansion of the abbreviation. If present, the attribute must only contain an expansion of the abbreviation.
+
+Much virtual ink has been spilled debating the difference between acronyms (using the `<acronym>` element) and abbreviations (using the `<abbr>` element).  In theory, abbreviations are spelled out letter by letter (so "HTTP" is pronounced "H, T, T, P") while acronyms are pronounced as words (so "ASCII" is pronounced "as-kee").  In practice, neither authors nor user agents got the distinction right, and the `<acronym>` element was simply dropped in HTML 5.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/abbr-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/abbr-element-applies-style-test.html applies style] || Y || N || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-abbr The abbr element in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/text.html#h-9.2.1 The abbr element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535177.aspx The abbr element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/a/abbr.htm The history of the abbr element on blooberry.com]
+  * [http://reference.sitepoint.com/html/abbr The abbr element on The SitePoint HTML Reference]
+

@@ -1,0 +1,26 @@
+#summary The navigator.platform property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `navigator.platform` property returns a string.
+  * [BrowserFamilyFirefox Firefox] returns ...
+  * [BrowserFamilyMSIE Internet Explorer] returns Win32 (on 32 & 64 bit machines)
+  * [BrowserFamilySafari Safari] returns ...
+  * [BrowserFamilyOpera Opera] returns ...
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/navigator/navigator-platform-typeof-test.html typeOf(navigator.platform) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/navigator.platform The navigator.platform property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms534340.aspx The navigator.platform property on MSDN]

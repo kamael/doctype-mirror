@@ -1,0 +1,90 @@
+= COMO tratar con nodos DOM (goog.dom.NodeType, goog.dom.getNextElementNode, goog.dom.isNodeLike) =
+
+||[ArticleNodeEssentials English]||[JaArticleNodeEssentials 日本語]||[FrArticleNodeEssentials Français]||
+||[EsWelcome Inicio]||[EsArticlesDom Artículos DOM]||
+
+Este artículo introduce algunas constantes y funciones útiles para lidiar con nodos DOM.
+
+== El Código ==
+
+Enumeración para tipos de nodo DOM (para referencia)
+ * enum {Numero}
+
+{{{
+goog.dom.NodeType = {
+  ELEMENT: 1,
+  ATTRIBUTE: 2,
+  TEXT: 3,
+  CDATA_SECTION: 4,
+  ENTITY_REFERENCE: 5,
+  ENTITY: 6,
+  PROCESSING_INSTRUCTION: 7,
+  COMMENT: 8,
+  DOCUMENT: 9,
+  DOCUMENT_TYPE: 10,
+  DOCUMENT_FRAGMENT: 11,
+  NOTATION: 12
+};
+}}}
+
+
+Retorna el primer nodo hijo que esta dentro de un elemento.
+ * privado
+ * parámetro {Nodo} nodo El nodo para desde donde se obtiene el siguiente elemento.
+ * parámetro {Booleano} forward Hacia donde mirar, adelante o atrás
+ * retorna {Elemento}
+
+{{{
+goog.dom.getNextElementNode_ = function(nodo, forward) {
+  while (nodo && nodo.nodeType != goog.dom.NodeType.ELEMENT) {
+    nodo = forward ? node.nextSibling : node.previousSibling;
+  }
+  return nodo;
+};
+}}}
+
+
+Revisa si el objeto parece un nodo DOM
+ * parámetros {Object} objeto
+ * retorna {Boolean}
+
+
+{{{
+goog.dom.isNodeLike = function(obj) {
+  return goog.isObject(obj) && obj.nodeType > 0;
+};
+}}}
+
+== La ruta del Código ==
+
+Primero definimos una enumeración de los diferentes tipos de nodo, como son `ELEMENT` o `ATTRIBUTE`.  Estos no son aleatorios; estos valores están definidos en la especificación DOM y son retornados por propiedades como `node.nodeType`.
+
+{{{
+goog.dom.NodeType = {
+  ELEMENT: 1,
+  ATTRIBUTE: 2,
+  TEXT: 3,
+  CDATA_SECTION: 4,
+  ENTITY_REFERENCE: 5,
+  ENTITY: 6,
+  PROCESSING_INSTRUCTION: 7,
+  COMMENT: 8,
+  DOCUMENT: 9,
+  DOCUMENT_TYPE: 10,
+  DOCUMENT_FRAGMENT: 11,
+  NOTATION: 12
+};
+}}}
+
+Si necesitas hacer una revisión sanitaria para determinar que una variable es actualmente un nodo DOM, la función `goog.dom.isNodeLike` puede hacerlo:
+
+{{{
+goog.dom.isNodeLike = function(obj) {
+  return goog.isObject(obj) && obj.nodeType > 0;
+};
+}}}
+
+== Para leer más ==
+
+  * [http://www.w3.org/TR/REC-DOM-Level-1/level-one-core.html Especificación Nivel 1 DOM W3C]
+

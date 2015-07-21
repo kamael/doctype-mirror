@@ -1,0 +1,30 @@
+#summary The :first-child CSS pseudo-class matches any element that is the first child node of its parent.
+#labels about-css
+
+== Usage ==
+
+{{{
+<!-- HTML -->
+<div>
+    <p>This is the first child, and will have a green background</p>
+    <p>Not the first child</p>
+    <p>Not the first child</p>
+</div>
+
+/* CSS */
+p:first-child {
+    background: green;
+}
+}}}
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* || *Opera9.5* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/selector.html#pseudo-elements Pseudo-classes in the CSS 2.1 specification]
+  * [http://www.w3.org/TR/css3-selectors/#structural-pseudos The :first-child pseudo-class in the CSS 3 specification]
+  * [http://developer.mozilla.org/en/docs/CSS::first-child The :first-child pseudo-class on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530712.aspx The :first-child pseudo-class on MSDN]
+

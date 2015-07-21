@@ -1,0 +1,13 @@
+#summary The -moz-opacity CSS property specifies the translucency of an element.
+
+== Usage ==
+
+This is an obsolete Mozilla-specific synonym for [OpacityCSSProperty opacity], which is more widely supported.
+
+== Values ==
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [https://developer.mozilla.org/en/CSS/opacity The opacity property on Mozilla Developer Center]

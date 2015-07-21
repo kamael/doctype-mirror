@@ -1,0 +1,97 @@
+#summary What's the best approach to creating page-internal anchors to link to?
+
+= Introduction =
+
+The traditional HTML approach to creating an anchor that can be linked to is to use `<a name="foo">`.
+
+However, modern markup languages and browsers provide the ability to attach an `id` attribute to any element, and to link to an `id` using the standard anchor-linking syntax `<a href="#foo">`.
+
+Question: What's the best way to create an anchor for a heading within a page?
+
+= Options =
+
+== A.  Use the `id` attribute on the heading tag. ==
+
+Example:
+
+{{{
+<h2 id="foo">Section about foo</h2>
+}}}
+
+Advantages: Concise, elegant, supported in all modern browsers, supported in HTML5 and XHTML.
+
+Disadvantages: In very old browsers (NS4 and earlier), links to an `id` didn't work.  Some authoring tools may still not recognize an `id` attribute as an anchor.
+
+
+== B. Use `<a name>` inside the heading tag. ==
+
+Example:
+
+{{{
+<h2><a name="foo">Section about foo</a></h2>
+}}}
+
+Advantages: Supported in all browsers so far; uses a familiar syntax.
+
+Disadvantages: The `name` attribute isn't supported in HTML5, and is deprecated in XHTML 1. Colors the heading text like a link under some CSS circumstances.
+
+
+== C. Use an `<a>` tag with both the `name` and `id` attributes, wrapped around the heading text. ==
+
+Example:
+
+{{{
+<h2><a name="foo" id="foo">Section about foo</a></h2>
+}}}
+
+Advantages: Was recommended in XHTML spec for best browser compatibility.
+
+Disadvantages: XHTML spec was written in 2002, when there were still browsers in use that didn't support linking to `id`.  Also has same disadvantages as option B.
+
+
+== D.  Use an empty `<a name>` inside the heading tag. ==
+
+Example:
+
+{{{
+<h2><a name="foo"></a>Section about foo</h2>
+}}}
+
+Advantages: No CSS coloring issues.
+
+Disadvantages: The `name` attribute isn't supported in HTML5, and is deprecated in XHTML 1. 
+
+
+== E.  Use an empty `<a name>` tag before the heading tag. ==
+
+Example:
+
+{{{
+<a name="foo"></a>
+<h2>Section about foo</h2>
+}}}
+
+Advantages: No CSS coloring issues.
+
+Disadvantages: Structurally separates the anchor from the heading.  Some browsers may get confused about where to jump to when following a link to this.  Also, same disadvantages as option D.
+
+
+= Recommendation =
+
+Use the `id` attribute on the heading tag.
+
+The last browser that didn't support this approach was Netscape 4.
+
+
+= Further notes =
+
+Adobe Dreamweaver CS4 displays `<a>` tags in Design view as anchor icons; it doesn't show anchor icons for `id` attributes on other tags.  It may thus be more inconvenient in Dreamweaver to link to an `id` attribute than to link to an `<a>` tag. However, authoring convenience doesn't outweigh the other relevant factors.
+
+
+= Further reading =
+
+  * [http://dev.w3.org/html5/spec/Overview.html#the-id-attribute HTML5 spec discussion of id attribute].
+  * [http://www.w3.org/TR/xhtml1/#C_8 XHTML 1.0 spec discussion of name and id attributes]. Note that this was written in 2002; the discussion of older browsers is outdated now.
+  * [http://www.w3.org/TR/html4/struct/links.html#anchors-with-id Anchors with the id attribute], from the HTML 4.01 spec, written in 1999.
+  * [ANameAttribute The name attribute in Google Doctype]
+  * [IdAttribute The id attribute in Google Doctype]

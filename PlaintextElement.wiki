@@ -1,0 +1,27 @@
+#summary The plaintext element is an obsolete method of displaying pre-formatted text.
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *plaintext element*
+
+== Usage ==
+
+You should use the [PreElement pre] element instead of `plaintext`.
+
+== Attributes ==
+
+  * [PlaintextAlignAttribute align]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/plaintext-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/plaintext-element-applies-style-test.html applies style] || Y || Y || Y || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms535881.aspx The plaintext element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/p/plaintext.htm The history of the plaintext element on blooberry.com]
+

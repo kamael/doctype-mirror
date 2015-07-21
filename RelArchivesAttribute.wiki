@@ -1,0 +1,22 @@
+#summary The rel="archives" attribute indicates that the referenced document describes a collection of records, documents, or other materials of historical interest.
+#labels about-html,is-html-attribute,from-whatwg
+
+`rel="archives"` is one of several [LinkTypes link types] for describing relationships between documents.
+
+== Usage ==
+
+== Elements ==
+
+You can use the `rel="archives"` attribute on these elements:
+
+  * [LinkElement <link>]
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#archives The rel="archives" link type in HTML 5]
+
+

@@ -1,0 +1,109 @@
+#summary HOWTO find the nearest element to a node (goog.dom.getNextElementNode)
+#labels is-article,about-dom
+#sidebar TOCArticlesDom
+
+If you need to find the nearest element to a particular node (not just any node, but specifically the nearest _element_), the `goog.dom.getNextElementNode` can do that:
+
+== The code ==
+
+This code relies on functions explained elsewhere:
+
+  * [ArticleNodeEssentials goog.dom.NodeType]
+
+{{{
+/**
+ * Returns the first child node that is an element.
+ * @private
+ * @param {Node} node The node to get the next element from
+ * @param {Boolean} forward Whether to look forwards or backwards
+ * @return {Element}
+ */
+goog.dom.getNextElementNode_ = function(node, forward) {
+  while (node && node.nodeType != goog.dom.NodeType.ELEMENT) {
+    node = forward ? node.nextSibling : node.previousSibling;
+  }
+  return node;
+};
+
+
+/**
+ * Returns the first child node that is an element.
+ * @param {Node} node The node to get the first child element of
+ * @return {Element}
+ */
+goog.dom.getFirstElementChild = function(node) {
+  return goog.dom.getNextElementNode_(node.firstChild, true);
+};
+
+
+/**
+ * Returns the last child node that is an element.
+ * @param {Node} node The node to get the last child element of
+ * @return {Element}
+ */
+goog.dom.getLastElementChild = function(node) {
+  return goog.dom.getNextElementNode_(node.lastChild, false);
+};
+
+
+/**
+ * Returns the first next sibling that is an element.
+ * @param {Node} node The node to get the next sibling element of
+ * @return {Element}
+ */
+goog.dom.getNextElementSibling = function(node) {
+  return goog.dom.getNextElementNode_(node.nextSibling, true);
+};
+
+
+/**
+ * Returns the first previous sibling that is an element.
+ * @param {Node} node The node to get the previous sibling element of
+ * @return {Element}
+ */
+goog.dom.getPreviousElementSibling = function(node) {
+  return goog.dom.getNextElementNode_(node.previousSibling, false);
+};
+}}}
+
+== The code walkthrough ==
+
+Everything revolves around the `getNextElementNode_` method, which returns the nearest element to the given node.  (If the given node is already an element, it returns the given node.)  To call it, pass the starting node and a boolean parameter.  The boolean should be `true` to search forwards in the document, or `false` to search backwards.
+
+From this, we can make several convenience functions.  To find the first element child of a node, call it with `node.firstChild`:
+
+{{{
+goog.dom.getFirstElementChild = function(node) {
+  return goog.dom.getNextElementNode_(node.firstChild, true);
+};
+}}}
+
+Similarly, to find the last element child of a node, call it with `node.lastChild`:
+
+{{{
+goog.dom.getLastElementChild = function(node) {
+  return goog.dom.getNextElementNode_(node.lastChild, false);
+};
+}}}
+
+To find the next sibling element (i.e. the next element in the DOM tree that shares the same parent as the given node), call it with `node.nextSibling` and pass `true` to search forwards in the DOM tree:
+
+{{{
+goog.dom.getNextElementSibling = function(node) {
+  return goog.dom.getNextElementNode_(node.nextSibling, true);
+};
+}}}
+
+And finally, to find the previous subling element (i.e. the element just before the given node, but still sharing the same parent), call it with `node.previousSibling` and pass `false` to search backwards in the DOM tree:
+
+{{{
+goog.dom.getPreviousElementSibling = function(node) {
+  return goog.dom.getNextElementNode_(node.previousSibling, false);
+};
+}}}
+
+== Further reading ==
+
+  * [ArticleNodeEssentials goog.dom.NodeType]
+
+

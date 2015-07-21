@@ -1,0 +1,45 @@
+#summary mark element
+#labels about-html,is-html-element,from-whatwg
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *mark element*
+
+== Usage ==
+
+The mark element represents a run of text in one document marked or highlighted for reference purposes, due to its relevance in another context. When used in a quotation or other block of text referred to from the prose, it indicates a highlight that was not originally present but which has been added to bring the reader's attention to a part of the text that might not have been considered important by the original author when the block was originally written, but which is now under previously unexpected scrutiny. When used in the main prose of a document, it indicates a part of the document that has been highlighted due to its likely relevance to the user's current activity.
+
+This example shows how the mark example can be used to bring attention to a particular part of a quotation:
+
+{{{
+<p lang="en-US">Consider the following quote:</p>
+<blockquote lang="en-GB">
+ <p>Look around and you will find, no-one's really
+ <mark>colour</mark> blind.</p>
+</blockquote>
+<p lang="en-US">As we can tell from the <em>spelling</em> of the word,
+the person writing this quote is clearly not American.</p>
+}}}
+
+Another example of the mark element is highlighting parts of a document that are matching some search string. If someone looked at a document, and the server knew that the user was searching for the word "kitten", then the server might return the document with one paragraph modified as follows:
+
+{{{
+<p>I also have some <mark>kitten</mark>s who are visiting me
+these days. They're really cute. I think they like my garden! Maybe I
+should adopt a <mark>kitten</mark>.</p>
+}}}
+
+== Attributes ==
+
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/m-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/m-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-mark-element The mark element in HTML 5]
+

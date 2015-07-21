@@ -1,0 +1,75 @@
+#summary The colgroup align attribute specifies the horizontal alignment of the element within its bounding box.
+#labels about-html,about-tables,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [ColgroupElement <colgroup> element] > *align attribute*
+
+== Usage ==
+
+The `align` attribute is deprecated in favor of the [TextAlignCSSProperty text-align CSS property], but browsers still support it.
+
+== Values ==
+
+  * `left` (default)
+  * `center`
+  * `right`
+
+== Elements ==
+
+You can use the `align` attribute on the following elements:
+
+  * [AddressElement <address>]
+  * [AppletElement <applet>]
+  * [BlockquoteElement <blockquote>]
+  * [BodyElement <body>]
+  * [CaptionElement <caption>]
+  * [CenterElement <center>]
+  * [ColElement <col>]
+  * [ColgroupElement <colgroup>]
+  * [DdElement <dd>]
+  * [DirElement <dir>]
+  * [DivElement <div>]
+  * [DlElement <dl>]
+  * [DtElement <dt>]
+  * [EmbedElement <embed>]
+  * [FieldsetElement <fieldset>]
+  * [FormElement <form>]
+  * [HrElement <hr>]
+  * [IframeElement <iframe>]
+  * [ImgElement <img>]
+  * [InputElement <input>]
+  * [IsindexElement <isindex>]
+  * [LegendElement <legend>]
+  * [LiElement <li>]
+  * [ListingElement <listing>]
+  * [MenuElement <menu>]
+  * [ObjectElement <object>]
+  * [OlElement <ol>]
+  * [PElement <p>]
+  * [PlaintextElement <plaintext>]
+  * [SelectElement <select>]
+  * [SpacerElement <spacer>]
+  * [TableElement <table>]
+  * [TbodyElement <tbody>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TfootElement <tfoot>]
+  * [TheadElement <thead>]
+  * [TrElement <tr>]
+  * [UlElement <ul>]
+  * [XmpElement <xmp>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/colgroup-align-center-reflection-test.html colgroup.align reflects <colgroup align="center">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/colgroup-align-justify-reflection-test.html colgroup.align reflects <colgroup align="justify">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/colgroup-align-left-reflection-test.html colgroup.align reflects <colgroup align="left">] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/colgroup-align-right-reflection-test.html colgroup.align reflects <colgroup align="right">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/tables.html#adef-align-TD The align attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms533069.aspx The align attribute on MSDN]
+

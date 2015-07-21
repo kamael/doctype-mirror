@@ -1,0 +1,25 @@
+#summary El objeto location representa la URL actual.
+[LocationObject English]
+
+== Propiedades ==
+
+  * [EsLocationHashProperty hash]
+  * [EsLocationHostProperty host]
+  * [EsLocationHostnameProperty hostname]
+  * [EsLocationHrefProperty href]
+  * [EsLocationPathnameProperty pathname]
+  * [EsLocationPortProperty port]
+  * [EsLocationProtocolProperty protocol]
+  * [EsLocationSearchProperty search]
+
+== Métodos ==
+
+  * [EsLocationAssignMethod assign()]
+  * [EsLocationReloadMethod reload()]
+  * [EsLocationReplaceMethod replace()]
+  * [EsLocationToStringMethod toString()]
+
+== Para leer más ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.location El objeto location en el Centro de Desarrollo Mozilla] (Inglés)
+

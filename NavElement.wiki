@@ -1,0 +1,55 @@
+#summary nav element
+#labels about-html,is-html-element,from-whatwg
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *nav element*
+
+== Usage ==
+
+The `nav` element represents a section of a page that links to other pages or to parts within the page: a [SectionElement section] with navigation links. Not all groups of links on a page need to be in a nav element -- only sections that consist of primary navigation blocks are appropriate for the nav element. In particular, it is common for footers to have a list of links to various key parts of a site, but the [FooterElement footer element] is more appropriate in such cases.
+
+In the following example, the page has several places where links are present, but only one of those places is considered a navigation section.
+
+{{{
+<body>
+ <header>
+  <h1>Wake up sheeple!</h1>
+  <p><a href="news.html">News</a> -
+     <a href="blog.html">Blog</a> -
+     <a href="forums.html">Forums</a></p>
+ </header>
+ <nav>
+  <h1>Navigation</h1>
+  <ul>
+   <li><a href="articles.html">Index of all articles</a><li>
+   <li><a href="today.html">Things sheeple need to wake up for today</a><li>
+   <li><a href="successes.html">Sheeple we have managed to wake</a><li>
+  </ul>
+ </nav>
+ <article>
+  <p>...page content would be here...</p>
+ </article>
+ <footer>
+  <p>Copyright 2006 The Example Company</p>
+  <p><a href="about.html">About</a> -
+     <a href="policy.html">Privacy Policy</a> -
+     <a href="contact.html">Contact Us</a></p>
+ </footer>
+</body>
+}}}
+
+== Attributes ==
+
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/nav-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/nav-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#the-nav-element The nav element in HTML 5]
+

@@ -1,0 +1,44 @@
+#summary The area coords attribute specifies the position and shape of a link in a client-side image map.
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AreaElement <area> element] > *coords attribute*
+
+== Usage ==
+
+When used as part of a [MapElement client-side image map], the [AElement <a>] and [AreaElement <area>] elements can contain a [AreaShapeAttribute shape attribute] and a `coords` attribute to define a link as a region of the image map.
+
+{{{
+<map>
+<area href="/about" shape="circle" coords="10,10,5">About</area>
+</map>
+}}}
+
+== Values ==
+
+The value of the `coords` attribute depends on the value of the `shape` attribute.  
+
+|| `shape`   || `coords` || Notes ||
+|| `rect`    || left-x, top-y, right-x, bottom-y || ||
+|| `cicrcle` || center-x, centery, radius || Radius can be a percentage. ||
+|| `poly`    || x1, y1, x2, y2, ... || The first and last pairs should be identical. ||
+
+== Elements ==
+
+You can use the `coords` attribute on the following elements:
+
+  * [AElement <a>]
+  * [AreaElement <area>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/area-coords-reflection-test.html area.coords reflects <area coords="0,0,10,10">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#coords The coords attribute in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/objects.html#adef-coords The coords attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms533695.aspx The coords attribute on MSDN]
+

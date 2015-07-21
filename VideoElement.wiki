@@ -1,0 +1,32 @@
+#summary video element
+#labels about-html,is-html-element,from-whatwg
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *video element*
+
+== Usage ==
+
+A video element represents a video or movie.
+
+== Attributes ==
+
+  * [VideoSrcAttribute src]
+  * [VideoAutoplayAttribute autoplay]
+  * [VideoAutobufferAttribute autobuffer]
+  * [VideoControlsAttribute controls]
+  * [VideoLoopAttribute loop]
+  * [VideoWidthAttribute width]
+  * [VideoHeightAttribute height]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/video-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/video-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#video The video element in HTML 5]
+

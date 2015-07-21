@@ -1,0 +1,24 @@
+#summary The wbr element represents a place within a word where browsers are allowed to insert a line break.
+#labels about-html,is-html-element,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *wbr element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/wbr-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/wbr-element-applies-style-test.html applies style] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms535917.aspx The wbr element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/w/wbr.htm The history of the wbr element on blooberry.com]
+

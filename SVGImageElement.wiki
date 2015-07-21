@@ -1,0 +1,32 @@
+#summary The SVG <image> element represents a static rectangular image.
+
+You are here: [Welcome Home] > [SVGElements SVG Elements] > *image element*
+
+= Introduction =
+
+The image element is used to embed a static, rectangular image.  It can refer to a raster image (PNG or JPG) or SVG images.
+
+HTML has an [ImgElement <img> element] which serves a similar purpose.
+
+= Details =
+== Usage ==
+
+{{{
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" ...>
+  <image xlink:href="foo.png" x="100" y="50" width="300" height="200" />
+</svg>
+}}}
+
+== Attributes ==
+
+Common attributes:
+
+  * [http://www.w3.org/TR/SVG11/struct.html#ImageElementXAttribute x] - the x-coordinate of the left edge of the image
+  * [http://www.w3.org/TR/SVG11/struct.html#ImageElementYAttribute y] - the y-coordinate of the top edge of the image
+  * [http://www.w3.org/TR/SVG11/struct.html#ImageElementWidthAttribute width] - the width of the image
+  * [http://www.w3.org/TR/SVG11/struct.html#ImageElementHeightAttribute height] - the height of the image
+  * [http://www.w3.org/TR/SVG11/struct.html#ImageElementHrefAttribute xlink:href] - the source of the image (must point to a PNG, JPEG or SVG URI).  Note that this attribute is in the xlink namespace (http://www.w3.org/1999/xlink).  This means that the xlink namespace prefix must be declared in the document.  Typically this means including the xmlns:xlink attribute on the document's svg element as shown above.
+
+= Reference =
+
+  * [http://www.w3.org/TR/SVG11/struct.html#ImageElement The <img> element in SVG 1.1]

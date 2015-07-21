@@ -1,0 +1,57 @@
+#summary HOWTO get function arguments as an Array (goog.array.slice)
+#labels is-article,about-javascript
+#sidebar TOCArticlesTips
+
+In JavaScript, the special `arguments` variable holds the arguments passed to the current function.  Although this is conceptually an array of items, it is not actually a JavaScript `Array` type.  It can be useful to coerce it to an `Array` object so you can iterate through it without thinking about its special quirks.
+
+== The code ==
+
+{{{
+/**
+ * Returns a new array from a segment of an array. This is a generic version of
+ * Array slice. This means that it might work on other objects similar to
+ * arrays, such as the arguments object.
+ *
+ * @param {Array} arr The array from which to copy a segment.
+ * @param {number} start The index of the first element to copy.
+ * @param {number} opt_end The index after the last element to copy.
+ * @return {Array} A new array containing the specified segment of the original
+ *     array.
+ */
+goog.array.slice = function(arr, start, opt_end) {
+  // passing 1 arg to slice is not the same as passing 2 where the second is
+  // null or undefined (in that case the second argument is treated as 0).
+  // we could use slice on the arguments object and then use apply instead of
+  // testing the length
+  if (arguments.length <= 2) {
+    return Array.prototype.slice.call(arr, start);
+  } else {
+    return Array.prototype.slice.call(arr, start, opt_end);
+  }
+};
+}}}
+
+== The explanation ==
+
+The entire point of this function is to get function arguments as a JavaScript `Array`.  We take advantage of the fact that the methods of the `Array` prototype doesn't actually care whether their first argument is an `Array`; they will coerce the object for us and return a new `Array` with its items.
+
+After we know that, the only trick is to handle an optional argument in case we want to reuse this function to return only part of an array or array-like object.
+
+{{{
+goog.array.slice = function (arr, start, opt_end) {
+  if (arguments.length <= 2) {
+    return Array.prototype.slice.call(arr, start);
+  } else {
+    return Array.prototype.slice.call(arr, start, opt_end);
+  }
+}}}
+
+And here's how you would call it to convert `arguments` to an `Array`:
+
+{{{
+  var args = goog.array.slice(arguments, 0);
+}}}
+
+== Further reading ==
+
+

@@ -1,0 +1,32 @@
+欢迎来到由web开发者编写维护并面向web开发者的Google Doctype！
+
+== 今天你对哪部分感兴趣呢？ ==
+
+HOWTO专题
+
+  * [ZhArticlesXSS Web安全]
+  * [ZhArticlesDom DOM操作]
+  * [ZhArticlesStyle CSS and style]
+  * [ZhArticlesTips 小技巧]
+
+DOM文档对象模型相关
+
+  * [ZhDocumentObject document]
+  * [ZhWindowObject window]
+  * [ZhHistoryObject history]
+  * [ZhLocationObject location]
+  * [ZhNavigatorObject navigator]
+  * [ZhScreenObject screen]
+  * 其他
+
+通过CSS改变页面样式
+
+  * [ZhCSSProperties CSS属性]
+  * [ZhCSSPseudoClasses CSS伪类] 和 [ZhCSSPseudoElements 元素选择器]
+  * [ZhCSSAtRules @规则]
+  * [ZhCSSColors 颜色]
+  * 其他
+
+对[ZhHTMLElements HTML元素]还不太熟悉？可以看看从标签[ZhAElement <a>]到标签[ZhXmpElement <xmp>]的详细介绍！
+
+||[EsWelcome en Español]||||[JaWelcome 日本語]||||[FrWelcome Français]||||[ZhWelcome 中文]||

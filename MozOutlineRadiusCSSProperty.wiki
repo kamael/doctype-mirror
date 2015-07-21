@@ -1,0 +1,16 @@
+#summary The -moz-outline-radius CSS property sets the curvature of an element's outline.
+
+== Usage ==
+
+This is a Mozilla-specific synonym of [OutlineRadiusCSSProperty outline], which is more widely supported.
+
+== Values ==
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-outline-radius The -moz-outline-radius property on Mozilla Developer Center]
+
+
+

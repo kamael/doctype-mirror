@@ -1,0 +1,37 @@
+#summary The ilayer bgcolor attribute specifies the background color of the element.
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [IlayerElement <ilayer> element] > *bgcolor attribute*
+
+== Usage ==
+
+Do not use [ILayerElement <ilayer>].  The `ilayer` element was introduced in [BrowserNetscape4 Netscape 4] and has never been supported by any other browser.
+
+== Elements ==
+
+You can use the `bgcolor` attribute on the following elements:
+
+  * [BodyElement <body>]
+  * [ColElement <col>]
+  * [ColgroupElement <colgroup>]
+  * [IlayerElement <ilayer>]
+  * [LayerElement <layer>]
+  * [MarqueeElement <marquee>]
+  * [TableElement <table>]
+  * [TbodyElement <tbody>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TfootElement <tfoot>]
+  * [TheadElement <thead>]
+  * [TrElement <tr>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/ilayer-bgcolor-reflection-test.html ilayer.bgColor reflects <ilayer bgcolor="#ffffff">] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+

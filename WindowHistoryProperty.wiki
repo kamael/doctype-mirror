@@ -1,0 +1,21 @@
+#summary The window.history property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `window.history` property returns a [HistoryObject History object].
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-history-typeof-test.html typeOf(window.history) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.history The window.history property on Mozilla Developer Center]
+  * [http://msdn.microsoft.com/workshop/author/dhtml/reference/objects/obj_history.asp The window.history property on MSDN]
+

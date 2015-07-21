@@ -1,0 +1,20 @@
+#summary The navigator.userProfile property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `navigator.userProfile` property returns an [UserProfileObject UserProfile object].
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/navigator/navigator-userProfile-typeof-test.html typeOf(navigator.userProfile) != 'undefined'] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn.microsoft.com/workshop/author/dhtml/reference/objects/userprofile.asp The navigator.userProfile property on MSDN]
+

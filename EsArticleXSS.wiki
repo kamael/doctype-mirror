@@ -1,0 +1,45 @@
+#summary Aquello que siempre quisiste saber sobre ataques cross-site scripting (XSS).
+#sidebar EsTOCArticlesXSS
+= Aquello que siempre quisiste saber sobre ataques cross-site scripting (XSS) =
+||[ArticleXSS English]||[JaArticleXSS 日本語]||[FrArticleXSS Français]||
+||[EsWelcome Inicio]||||[EsArticlesXSS Seguridad Web]||
+
+Esta sección proporciona una discusión detallada de ataques cross-site scripting (XSS) en varios contextos a través de un documento HTML, cómo pueden ser explotados, y métodos genéricos para evitarlo.  Si no estás familiarizado con XSS, comienza con [EsArticleIntroductionToXSS Introducción a Vulnerabilidades Cross-Site Scripting].
+
+Estos artículos proporcionan ejemplos para cada una de las clases específicas de vulnerabilidades Cross-Site-Scripting. Los ejemplos son dados en la forma de fragmentos HTML con sustituciones de cadenas estilo Python incluidas, que fueron elegidas para dejar los ejemplos independientes de cualquier plantilla particular o infraestructura de                                               renderizado HTML.
+
+Por ejemplo, el fragmento HTML:
+
+{{{
+<title>Documento de Ejemplo: %(title)s</title>
+}}}
+
+Intenta ilustrar un trozo de plantilla que, si la variable `title` tiene un valor `Cross-Site Scripting`,resultaría en el siguiente HTML para ser emitido por el navegador:
+
+{{{
+<title>Example document: Cross-Site Scripting</title>
+}}}
+
+Los ejemplos en este documento están basados en JavaScript (ECMAScript). Por supuesto, ejemplos similares pueden ser construidos usando otros lenguajes de scripting soportados por el navegador de la víctima (como puede ser VBScript).
+
+Por cada clase de vulnerabilidad XSS (que se basa en el contexto a través de documentos HTML que fueron elegidos, como son un texto regular de cuerpo, un atributo href, etc.), nosotros proporcionamos:
+
+  * un ejemplo que muestra como la inyección puede ser explotada, por ejemplo cómo el atacante podría inyectar cadenas dentro del documento HTML, como ese script de su elección  se ejecutaría en el navegador del usuario
+  * lineamientos para evitar XSS en este contexto particular (como. "escapar caracteres such-and-such")
+  * una explicación de porque esos lineamientos son necesarios y como previenen XSS
+
+== Para leer más ==
+
+  * [EsArticleIntroductionToXSS Introducción a Vulnerabilidades Cross-Site Scripting.]
+  * [EsArticleCompartmentalizingApplications Compartimentar aplicaciones a través del mismo dominio]
+  * [EsArticleXSSInAttributes COMO filtrar entradas de usuario en atributos de etiquetas]
+  * [EsArticleXSSInBodyText COMO filtrar entradas de usuario en texto de cuerpo regular]
+  * [EsArticleXSSInEventHandlers COMO filtrar entradas de usuario en manejadores de evento JavaScript]
+  * [EsArticleXSSInHttpHeaders COMO filtrar entradas de usuario en cabeceras HTTP]
+  * [EsArticleXSSInJavaScript COMO filtrar entradas de usuario en contexto JavaScript]
+  * [EsArticleXSSInStyle COMO filtrar entradas de usuario en elementos de estilo y atributos]
+  * [EsArticleXSSInUrlAttributes COMO filtrar entradas de usuario en atributos de URL]
+  * [EsArticleScriptInclusion COMO protegerse contra ataques de divulgación de datos cross-domain]
+  * [EsArticleE4XSecurity COMO protegerse contra ataques de inyección E4X]
+  * [EsArticleUtf7 UTF-7: el caso del charset perdido]
+  * [EsArticleMalformedUtf8 UTF-8 malformado: quien dice "hello%EE" no puede ser peligroso]

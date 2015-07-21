@@ -1,0 +1,64 @@
+#summary HOWTO detect if an element is located within the visible viewport
+#labels is-article,about-dom
+#sidebar TOCArticlesStyle
+
+TODO intro
+
+== The code ==
+
+This code relies on functions explained elsewhere:
+
+  * [ArticleCoordinates HOWTO deal with page coordinates (goog.math.Coordinate)]
+  * [ArticleNodeEssentials HOWTO deal with nodes (goog.dom.NodeType)]
+  * [ArticleOwnerDocument HOWTO get the owner document of a node (goog.dom.getOwnerDocument)]
+  * [ArticleClientViewportElement HOWTO find the viewport element (goog.style.getClientViewportElement)]
+
+{{{
+/**
+ * Returns the position relative to the client viewport.
+ * @param {Element|Event} el Element or a mouse event object.
+ * @return {goog.math.Coordinate} The position.
+ */
+goog.style.getClientPosition = function(el) {
+  var pos = new goog.math.Coordinate;
+  if (el.nodeType == goog.dom.NodeType.ELEMENT) {
+    if (el.getBoundingClientRect) { // IE
+      var box = el.getBoundingClientRect();
+      pos.x = box.left;
+      pos.y = box.top;
+    } else {
+      var scrollCoord = goog.dom.getPageScroll(
+          goog.dom.getWindow(goog.dom.getOwnerDocument(el)));
+      var pageCoord = goog.style.getPageOffset(el);
+      pos.x = pageCoord.x - scrollCoord.x;
+      pos.y = pageCoord.y - scrollCoord.y;
+    }
+  } else {
+    pos.x = el.clientX;
+    pos.y = el.clientY;
+  }
+
+  return pos;
+};
+
+goog.style.isAboveTheFold = function(el) {
+  return goog.style.getClientPosition(element).y + element.offsetHeight <= 0;
+}
+}}}
+
+== The explanation ==
+
+To determine if an element is "above the fold" (i.e. visible in the current browser window), we need three pieces of information:
+
+  # The element's position on the page
+  # The height of the browser window
+  # How far down you've already scrolled (if at all)
+
+The `goog.style.getClientPosition` function handles the first 2...
+
+{{{
+
+}}}
+
+TODO
+

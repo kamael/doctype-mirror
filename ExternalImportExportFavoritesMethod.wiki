@@ -1,0 +1,18 @@
+#summary The external.ImportExportFavorites method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/external/external-ImportExportFavorites-typeof-test.html typeOf(external.ImportExportFavorites) != 'undefined'] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms536449.aspx The external.ImportExportFavorites method on MSDN]
+

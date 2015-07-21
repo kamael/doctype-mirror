@@ -1,0 +1,52 @@
+#summary aside element
+#labels about-html,is-html-element,from-whatwg
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *aside element*
+
+== Usage ==
+
+The aside element represents a section of a page that consists of content that is tangentially related to the content around the aside element, and which could be considered separate from that content. Such sections are often represented as sidebars in printed typography.
+
+The following example shows how an aside is used to mark up background material on Switzerland in a much longer news story on Europe.
+
+{{{
+<aside>
+ <h1>Switzerland</h1>
+ <p>Switzerland, a land-locked country in the middle of geographic
+ Europe, has not joined the geopolitical European Union, though it is
+ a signatory to a number of European treaties.</p>
+</aside>
+}}}
+
+The following example shows how an aside is used to mark up a pull quote in a longer article.
+
+{{{
+<p>He later joined a large company, continuing on the same work.
+<q>I love my job. People ask me what I do for fun when I'm not at
+work. But I'm paid to do my hobby, so I never know what to
+answer. Some people wonder what they would do if they didn't have to
+work... but I know what I would do, because I was unemployed for a
+year, and I filled that time doing exactly what I do
+now.</q></p>
+
+<aside>
+ <q> People ask me what I do for fun when I'm not at work. But I'm
+ paid to do my hobby, so I never know what to answer. </q>
+</aside>
+
+<p>Of course his work -- or should that be hobby? --
+isn't his only passion. He also enjoys other pleasures.</p>
+}}}
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/aside-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/aside-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#the-aside-element The aside element in HTML 5]
+

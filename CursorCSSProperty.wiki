@@ -1,0 +1,90 @@
+#summary The cursor property specifies the type of cursor to be displayed for the pointing device.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *cursor*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSURIType <uri>]
+  * `auto`
+  * `crosshair`
+  * `default`
+  * `pointer`
+  * `move`
+  * `e-resize`
+  * `ne-resize`
+  * `nw-resize`
+  * `n-resize`
+  * `se-resize`
+  * `sw-resize`
+  * `s-resize`
+  * `w-resize`
+  * `text`
+  * `wait`
+  * `help`
+  * `progress`
+  * `inherit`
+  * `all-scroll`
+  * `col-resize`
+  * `hand`
+  * `no-drop`
+  * `not-allowed`
+  * `row-resize`
+  * `vertical-text`
+  * `copy`
+  * `alias`
+  * `context-menu`
+  * `cell`
+  * `nesw-resize`
+  * `nwse-resize`
+  * `ns-resize`
+  * `ew-resize`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-alias-equals-alias-reflection-test.html style.cursor reflects <div style='cursor: alias'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-all-scroll-equals-all-scroll-reflection-test.html style.cursor reflects <div style='cursor: all-scroll'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-auto-equals-auto-reflection-test.html style.cursor reflects <div style='cursor: auto'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-cell-equals-cell-reflection-test.html style.cursor reflects <div style='cursor: cell'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-col-resize-equals-col-resize-reflection-test.html style.cursor reflects <div style='cursor: col-resize'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-context-menu-equals-context-menu-reflection-test.html style.cursor reflects <div style='cursor: context-menu'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-copy-equals-copy-reflection-test.html style.cursor reflects <div style='cursor: copy'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-crosshair-equals-crosshair-reflection-test.html style.cursor reflects <div style='cursor: crosshair'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-default-equals-default-reflection-test.html style.cursor reflects <div style='cursor: default'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-e-resize-equals-e-resize-reflection-test.html style.cursor reflects <div style='cursor: e-resize'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-ew-resize-equals-ew-resize-reflection-test.html style.cursor reflects <div style='cursor: ew-resize'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-hand-equals-hand-reflection-test.html style.cursor reflects <div style='cursor: hand'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-help-equals-help-reflection-test.html style.cursor reflects <div style='cursor: help'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-move-equals-move-reflection-test.html style.cursor reflects <div style='cursor: move'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-n-resize-equals-n-resize-reflection-test.html style.cursor reflects <div style='cursor: n-resize'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-ne-resize-equals-ne-resize-reflection-test.html style.cursor reflects <div style='cursor: ne-resize'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-nesw-resize-equals-nesw-resize-reflection-test.html style.cursor reflects <div style='cursor: nesw-resize'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-no-drop-equals-no-drop-reflection-test.html style.cursor reflects <div style='cursor: no-drop'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-not-allowed-equals-not-allowed-reflection-test.html style.cursor reflects <div style='cursor: not-allowed'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-ns-resize-equals-ns-resize-reflection-test.html style.cursor reflects <div style='cursor: ns-resize'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-nw-resize-equals-nw-resize-reflection-test.html style.cursor reflects <div style='cursor: nw-resize'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-nwse-resize-equals-nwse-resize-reflection-test.html style.cursor reflects <div style='cursor: nwse-resize'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-pointer-equals-pointer-reflection-test.html style.cursor reflects <div style='cursor: pointer'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-progress-equals-progress-reflection-test.html style.cursor reflects <div style='cursor: progress'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-row-resize-equals-row-resize-reflection-test.html style.cursor reflects <div style='cursor: row-resize'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-s-resize-equals-s-resize-reflection-test.html style.cursor reflects <div style='cursor: s-resize'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-se-resize-equals-se-resize-reflection-test.html style.cursor reflects <div style='cursor: se-resize'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-sw-resize-equals-sw-resize-reflection-test.html style.cursor reflects <div style='cursor: sw-resize'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-text-equals-text-reflection-test.html style.cursor reflects <div style='cursor: text'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-vertical-text-equals-vertical-text-reflection-test.html style.cursor reflects <div style='cursor: vertical-text'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-w-resize-equals-w-resize-reflection-test.html style.cursor reflects <div style='cursor: w-resize'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/cursor-wait-equals-wait-reflection-test.html style.cursor reflects <div style='cursor: wait'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/ui.html#propdef-cursor The cursor property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:cursor The cursor property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/aa358795.aspx The cursor property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/dynamic/cursor.htm The history of the cursor property on blooberry.com]
+  * [http://reference.sitepoint.com/css/cursor The cursor property on the SitePoint CSS Reference]
+

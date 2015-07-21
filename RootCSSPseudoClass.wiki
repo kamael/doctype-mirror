@@ -1,0 +1,13 @@
+#summary The :root CSS pseudo-class matches the root of a document.
+#labels about-css
+
+== Usage ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* || *Opera9.5* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/css3-selectors/#root-pseudo The :root pseudo-class in the CSS 3 specification]
+

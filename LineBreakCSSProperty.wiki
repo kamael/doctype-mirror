@@ -1,0 +1,26 @@
+#summary The line-break property sets the line-breaking rules for Japanese text.
+#labels about-css,is-css-property,from-microsoft
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *line-break*
+
+== Usage ==
+
+== Values ==
+
+  * `normal`
+  * `strict`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/line-break-bogus-equals-normal-reflection-test.html style.lineBreak reflects <div style='line-break: bogus'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/line-break-normal-equals-normal-reflection-test.html style.lineBreak reflects <div style='line-break: normal'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/line-break-strict-equals-strict-reflection-test.html style.lineBreak reflects <div style='line-break: strict'>] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms530782.aspx The line-break property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/intl/linebreak.htm The history of the line-break property on blooberry.com]
+

@@ -1,0 +1,45 @@
+#summary The outline-width property sets the width of the outline within a box.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *outline-width*
+
+== Usage ==
+
+== Values ==
+
+  * `<border-width>`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-0-equals-0pt-0pt-0pt-0pt-reflection-test.html style.outlineWidth reflects <div style='outline-width: 0'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1cm-equals-1cm-1cm-1cm-1cm-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1cm'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1cm-solid-equals-1cm-1cm-1cm-1cm-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1cm solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1em-equals-1em-1em-1em-1em-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1em'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1em-solid-equals-1em-1em-1em-1em-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1em solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1ex-equals-1ex-1ex-1ex-1ex-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1ex'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1ex-solid-equals-1ex-1ex-1ex-1ex-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1ex solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1in-equals-1in-1in-1in-1in-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1in'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1in-solid-equals-1in-1in-1in-1in-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1in solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1mm-equals-1mm-1mm-1mm-1mm-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1mm'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1mm-solid-equals-1mm-1mm-1mm-1mm-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1mm solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1pc-equals-1pc-1pc-1pc-1pc-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1pc'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1pc-solid-equals-1pc-1pc-1pc-1pc-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1pc solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1pt-equals-1pt-1pt-1pt-1pt-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1pt'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1pt-solid-equals-1pt-1pt-1pt-1pt-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1pt solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1px-equals-1px-1px-1px-1px-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1px'>] || Y || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-1px-solid-equals-1px-1px-1px-1px-reflection-test.html style.outlineWidth reflects <div style='outline-width: 1px solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-thick-equals-thick-reflection-test.html style.outlineWidth reflects <div style='outline-width: thick'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-thick-solid-equals-thick-thick-thick-thick-reflection-test.html style.outlineWidth reflects <div style='outline-width: thick solid'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-thin-equals-thin-reflection-test.html style.outlineWidth reflects <div style='outline-width: thin'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/outline-width-thin-solid-equals-thin-thin-thin-thin-reflection-test.html style.outlineWidth reflects <div style='outline-width: thin solid'>] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/ui.html#propdef-outline-width The outline-width property in CSS 2.1]
+  * [http://www.blooberry.com/indexdot/css/properties/outline/outwidth.htm The history of the outline-width property on blooberry.com]
+  * [http://reference.sitepoint.com/css/outline-width The outline-width property on the SitePoint CSS Reference]
+

@@ -1,0 +1,37 @@
+#labels about-dom,is-dom-event,from-microsoft
+== summary ==
+The onbeforeunload event fires before a document is unloaded (e.g. when you close a browser window or tab).
+
+== Usage ==
+
+== Event targets ==
+
+The `onbeforeunload` event fires on these objects:
+
+  * [BodyElement <body>]
+  * [FramesetElement <frameset>]
+  * [WindowObject window]
+
+== Issues ==
+
+In Internet Explorer, clicking on a link that has a javascript URL will trigger this event.
+
+{{{
+<script>
+window.onbeforeunload = function() {
+  alert('beforeunload');
+};
+</script>
+
+<a href="javascript:void 0">Click to trigger beforeunload event</a>
+}}}
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#events The onbeforeunload event in HTML 5]
+  * [http://msdn2.microsoft.com/en-us/library/ms536907.aspx The onbeforeunload event on MSDN]
+

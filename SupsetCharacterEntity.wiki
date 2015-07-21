@@ -1,0 +1,28 @@
+#summary &supset; character entity
+#labels about-html,from-w3c
+#sidebar TOCCharacterEntitiesS
+
+You are here: [Welcome Home] > [HtmlReference HTML Reference] > [CharacterEntities Character entities] > [CharacterEntitiesS S] > &supset;
+
+== Value ==
+
+There are 2 variations of this entity:
+
+  * `&Supset;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/22d1/index.htm U+022D1].
+  * `&supset;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/2283/index.htm U+02283].
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/supset-02283-entity-test.html &supset; character entity treated as U+02283] || Y || Y || Y || Y || Y || N || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/supset-capital-022d1-entity-test.html &Supset; character entity treated as U+022D1] || Y || Y || Y || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/named.html Named character references in HTML 5]
+  * [http://www.w3.org/TR/html4/sgml/entities.html Character entity references in HTML 4]
+  * [http://blooberry.com/indexdot/html/tagpages/text.htm Text in HTML (blooberry.com)]
+
+

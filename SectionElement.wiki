@@ -1,0 +1,71 @@
+#summary The section element represents a section of a document.
+#labels about-html,is-html-element,from-whatwg,about-html,is-html-element,from-xhtml
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *`<section>` element*
+
+== Usage ==
+
+First introduced in XHTML 2.0, the `section` element is inconsistently supported in major browsers.  In theory, it should be simple to use `<section>` instead of a generic block-level element like `<div class=section>`.  For example:
+
+{{{
+<section>
+<h1>Welcome to Initech</h1>
+<p>This is our <span>home page</span>.</p>
+</section>
+}}}
+
+And you would expect the DOM to look something like this (omitting text nodes for carriage returns):
+
+{{{
+section
+|
++--h1 (child of section)
+|  |
+|  +--text node "Welcome to Initech"
+|
++--p (child of section, sibling of h1)
+   |
+   +--text node "This is our "
+   |
+   +--span
+   |  |
+   |  +--text node "home page"
+   |
+   +--text node "."
+}}}
+
+Unfortunately, IE does not natively recognize the `section` element, so the elements that you would expect to be children of the `section` element are actually siblings, and the `section` element appears in the DOM as an empty node.
+
+{{{
+section (no children)
+h1 (sibling of section)
+|
++--text node "Welcome to Initech"
+p (sibling of h1)
+|
++--text node "This is our "
+|
++--span
+|  |
+|  +--text node "home page"
+|
++--text node "."
+}}}
+
+== Attributes ==
+
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/section-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/section-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/xhtml2/mod-structural.html#edef_structural_section The section element in XHTML 2.0]
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-section-element The section element in HTML 5]
+  * [http://blog.whatwg.org/the-road-to-html-5-episode-1-the-section-element The Road to HTML 5: the section element]

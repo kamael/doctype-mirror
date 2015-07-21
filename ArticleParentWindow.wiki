@@ -1,0 +1,44 @@
+#summary HOWTO find the parent window of a document (goog.dom.getWindow)
+#labels is-article,about-dom
+#sidebar TOCArticlesDom
+
+Sometimes when you have a reference to a document object you might need to get access to the window object that contains the document.
+
+== The code ==
+
+{{{
+/**
+ * Gets the window object associated with the given document.
+ *
+ * @param {Document} doc Document object to get window for.
+ * @return {Window}
+ */
+goog.dom.getWindow = function(doc) {
+  var doc = this.document_;
+  if (doc.parentWindow) {
+    return doc.parentWindow;
+  }
+
+  if (goog.userAgent.WEBKIT && !goog.userAgent.isVersion('500') &&
+      !goog.userAgent.MOBILE) {
+    // NOTE: document.defaultView is a valid object under Safari 2, but
+    // it's not a window object, it's an AbstractView object.  You can use it to
+    // get computed CSS style, but it doesn't have the full functionality of a
+    // DOM window.  So for Safari 2 we use the following hack:
+    var scriptElement = doc.createElement('script');
+    scriptElement.innerHTML = 'document.parentWindow=window';
+    var parentElement = doc.documentElement;
+    parentElement.appendChild(scriptElement);
+    parentElement.removeChild(scriptElement);
+    return doc.parentWindow;
+  }
+  return doc.defaultView;
+};
+}}}
+
+Internet Explorer introduced the `document.parentWindow` property.  DOM Level 2 Views added the `document.defaultView` property but the spec did not specify what object should implement this interface.  Mozilla decided to let the window object implement that interface but WebKit did initially not do that.  So in old versions of Safari there is no property to do this so we use a hack that involves inserting a temporary script element to execute code in the relevant document.  This injected code just adds the `parentWindow` field to the `document`.
+
+== Further reading ==
+
+  * DocumentParentWindowProperty
+  * DocumentDefaultViewProperty

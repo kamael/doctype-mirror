@@ -1,0 +1,32 @@
+#summary &atilde character entity
+#labels about-html,from-w3c
+#sidebar TOCCharacterEntitiesA
+
+You are here: [Welcome Home] > [HtmlReference HTML Reference] > [CharacterEntities Character entities] > [CharacterEntitiesA A] > &atilde
+
+== Value ==
+
+There are 4 variations of this entity:
+
+  * `&Atilde;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/00c3/index.htm U+000C3].
+  * `&Atilde` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/00c3/index.htm U+000C3].
+  * `&atilde;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/00e3/index.htm U+000E3].
+  * `&atilde` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/00e3/index.htm U+000E3].
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/atilde-000e3-entity-test.html &atilde; character entity treated as U+000E3] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/atilde-capital-000c3-entity-test.html &Atilde; character entity treated as U+000C3] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/atilde-capital-no-semicolon-000c3-entity-test.html &Atilde character entity treated as U+000C3] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/atilde-no-semicolon-000e3-entity-test.html &atilde character entity treated as U+000E3] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/named.html Named character references in HTML 5]
+  * [http://www.w3.org/TR/html4/sgml/entities.html Character entity references in HTML 4]
+  * [http://blooberry.com/indexdot/html/tagpages/text.htm Text in HTML (blooberry.com)]
+
+

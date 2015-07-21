@@ -1,0 +1,29 @@
+#summary The iframe frameborder attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [IframeElement <iframe> element] > *frameborder attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `frameborder` attribute on the following elements:
+
+  * [FrameElement <frame>]
+  * [FramesetElement <frameset>]
+  * [IframeElement <iframe>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/iframe-frameborder-reflection-test.html iframe.frameBorder reflects <iframe frameborder="42">] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/present/frames.html#adef-frameborder The frameborder attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms533770.aspx The frameborder attribute on MSDN]
+

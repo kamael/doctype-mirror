@@ -1,0 +1,31 @@
+#summary The border-top-color property sets the color of the top border.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *border-top-color*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSColorType <color>]
+  * `transparent`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-color--hs-808080-equals-rgb-lp-128-cm--128-cm--128-rp--reflection-test.html style.borderTopColor reflects <div style='border-top-color: #808080'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-color-black-equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.borderTopColor reflects <div style='border-top-color: black'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-color-rgb-lp-0-cm--0-cm--0-rp--equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.borderTopColor reflects <div style='border-top-color: rgb(0, 0, 0)'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-top-color-transparent-equals-transparent-reflection-test.html style.borderTopColor reflects <div style='border-top-color: transparent'>] || Y || Y || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/box.html#propdef-border-top-color The border-top-color property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:border-top-color The border-top-color on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530740.aspx The border-top-color property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/border/btcolor.htm The history of the border-top-color property on blooberry.com]
+  * [http://reference.sitepoint.com/css/border-top-color The border-top-color property on the SitePoint CSS Reference]
+

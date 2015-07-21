@@ -1,0 +1,74 @@
+#labels shadow,box
+= Introduction =
+A complete reference of Box-shadow
+
+[1] http://www.css3.info/preview/box-shadow/
+
+
+= Details =
+The box-shadow property allows designers to easily implement multiple drop shadows (outer or inner) on box elements, specifying values for color, size, blur and offset.
+
+= Examples =
+
+#example1 {
+-moz-box-shadow: 10px 10px 5px #888;
+-webkit-box-shadow: 10px 10px 5px #888;
+box-shadow: 10px 10px 5px #888;
+}
+
+The Syntax:
+box-shadow: none | <shadow> [ , <shadow> ]*
+
+<shadow> = inset? && [ <length>{2,4} && <color>? ]
+
+
+*Drop Shadow*
+Example A shows a shadow offset to the left and top by 5px:
+
+#Example_A {
+-moz-box-shadow: -5px -5px #888;
+-webkit-box-shadow: -5px -5px #888;
+box-shadow: -5px -5px #888;
+}
+Example B shows the same shadow with a blur distance of 5px:
+
+#Example_B {
+-moz-box-shadow: -5px -5px 5px #888;
+-webkit-box-shadow: -5px -5px 5px #888;
+box-shadow: -5px -5px 5px #888;
+}
+Example C shows the same shadow with a spread distance of 5px:
+
+#Example_C {
+-moz-box-shadow: -5px -5px 0 5px #888;
+-webkit-box-shadow: -5px -5px 0 5px#888;
+box-shadow: -5px -5px 0 5px #888;
+}
+Example D shows the same shadow with both a blur distance of 5px and a spread distance of 5px:
+
+#Example_D {
+-moz-box-shadow: -5px -5px 5px 5px #888;
+-webkit-box-shadow: -5px -5px 5px 5px#888;
+box-shadow: -5px -5px 5px 5px #888;
+}
+Example E shows a shadow with no offset and a blur distance of 5px:
+
+#Example_E {
+-moz-box-shadow: 0 0 5px #888;
+-webkit-box-shadow: 0 0 5px#888;
+box-shadow: 0 0 5px #888;
+}
+Example F shows a shadow with no offset and both a blur distance of 5px and a spread distance of 5px:
+
+#Example_F {
+-moz-box-shadow: 0 0 5px 5px #888;
+-webkit-box-shadow: 0 0 5px 5px#888;
+box-shadow: 0 0 5px 5px #888;
+}
+
+*multiple shadows*
+#Example_M {
+-moz-box-shadow: 0 0 10px 5px black, 40px -30px lime, 40px 30px 50px red, -40px 30px yellow, -40px -30px 50px blue;
+-webkit-box-shadow: 0 0 10px 5px black, 40px -30px lime, 40px 30px 50px red, -40px 30px yellow, -40px -30px 50px blue;
+box-shadow: 0 0 10px 5px black, 40px -30px lime, 40px 30px 50px red, -40px 30px yellow, -40px -30px 50px blue;
+}

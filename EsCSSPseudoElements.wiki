@@ -1,0 +1,9 @@
+#summary Los pseudo-elementos son selectores CSS que empatan elementos basados en información fuera de DOM.
+[CSSPseudoElements English]
+
+  * [EsAfterCSSPseudoElement :after]
+  * [EsBeforeCSSPseudoElement :before]
+  * [EsFirstLetterCSSPseudoElement :first-letter]
+  * [EsFirstLineCSSPseudoElement :first-line]
+  * [EsSelectionCSSPseudoElement :selection]
+

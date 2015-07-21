@@ -1,0 +1,46 @@
+#summary Flash URL parameter attacks
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+An attacker can actually perform XSS in almost all URL accepting functions using the [http://www.adobe.com/support/flash/action_scripts/actionscript_dictionary/actionscript_dictionary073.html asfunction protocol handler].  Like the `javascript` protocol handler implemented in all browsers, the asfunction protocol handler turns a URL into some that can execute arbitrary code.
+
+Again, consider userinput3 in [ArticleFlashSecurityGetURL the `VulnerableMovie` code].  If `userinput3` is specified, then `VulnerableMovie` calls `_root.loadMovie(_root.userinput3);`. `loadMovie()` accepts a URL. Thus, one could use the `userinput3` for XSS as so:
+
+{{{
+http://www.example.com/VulnerableMovie.swf?userinput3=asfunction%3AgetURL%2Cjavascript%3Aalert%281%29
+}}}
+
+This security issue is not purely limited to `loadMovie()`. All (well almost all) functions loading URLs are vulnerable to either `asfunction` based attacks including:
+
+  * `loadVariables()`
+  * `loadMovie()`
+  * `getURL()`
+  * `loadMovie()`
+  * `loadMovieNum()`
+  * `FScrollPane.loadScrollContent()`
+  * `LoadVars.load()`
+  * `LoadVars.send()`
+  * `LoadVars.sendAndLoad()`
+  * `MovieClip.getURL()`
+  * `MovieClip.loadMovie()`
+  * `NetConnection.connect()`
+  * `NetServices.createGatewayConnection()`
+  * `NetSteam.play()`
+  * `Sound.loadSound()`
+  * `XML.load()`
+  * `XML.send()`
+  * `XML.sendAndLoad()`
+
+Also be concerned about variables accepting URLs that is user definable, like:
+  * `TextFormat.url`
+
+== Solution ==
+
+To fix this, you need to ensure that all functions accepting URLs have URLs beginning with either `http:` or `https:`.  One can either hard code the protocol and domain in the code and require user input to be relative URLs, or check that the user input begins with either `http:` or `https:`.
+
+== Acknowledgements ==
+
+Most of this was discovered by Stefano Di Paola in May 2007.
+
+
+

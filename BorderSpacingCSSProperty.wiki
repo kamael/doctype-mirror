@@ -1,0 +1,26 @@
+#summary The border-spacing property specifies the distance that separates adjoining cell borders.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *border-spacing*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSLengthType <length>] [CSSLengthType <length>]?
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-spacing-1px-1px-equals-1px-1px-reflection-test.html style.borderSpacing reflects <div style='border-spacing: 1px 1px'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-spacing-1px-equals-1px-1px-reflection-test.html style.borderSpacing reflects <div style='border-spacing: 1px'>] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/tables.html#propdef-border-spacing The border-spacing property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:border-spacing The border-spacing property on Mozilla Developer Center]
+  * [http://reference.sitepoint.com/css/border-spacing The border-spacing property on the SitePoint CSS Reference]
+

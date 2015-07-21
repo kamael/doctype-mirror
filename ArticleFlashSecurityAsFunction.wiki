@@ -1,0 +1,29 @@
+#summary Flash asFunction XSS attacks
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+Following up on [ArticleFlashSecurityGetURL this VulnerableMovie.swf example], an attacker can inject HTML that will automatically execute JavaScript, rather than requiring a user to click on a link.  This is done buy using the `asfunction:` protocol handler.  `asfunction:` is a protocol handler specific to the Flash plug-in and is similar to the `javascript:` protocol handler.  `asfunction:` will cause Flash to execute an arbitrary ActionScript function:
+
+{{{
+asfunction:functionName, parameter
+}}}
+
+Loading `asfunction:getURL,javascript:alert(1)` will execute the ActionScript function `getURL()`, which requests the browser to load a URL.  The URL requested is `javascript:alert(1)`, which executes JavaScript in the domain hosting the SWF.  Thus, in [ArticleFlashSecurityGetURL the VulnerableMovie.swf example], setting `userinput2` to 
+
+{{{
+<img src="asfunction:getURL,javascript:alert(1)//.jpg">
+}}}
+
+will then attempt to load an image, but the image is actually an ActionScript function that eventually executes JavaScript in the browser.
+
+Note that Flash only allows developers to load JPEG, GIF, PNG, and SWF files.  This is checked by the file extension.  However, you should not rely on this to protect you, since an attacker could simply simulate a file extension with a "//.jpg" JavaScript comment (as above).
+
+To execute this JavaScript, a user just needs to be lured to:
+{{{
+http://www.example.com/VulnerableMovie.swf?userinput2=pwn3d%3Cimg+src%3D%22asfunction%3AgetURL%2Cjavascript%3Aalert%281%29//.jpg%22%3E
+}}}
+
+== Acknowledgements ==
+
+This attack was first noted in May 2007 by Stefano Di Paola.
+

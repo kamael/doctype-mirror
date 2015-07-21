@@ -1,0 +1,32 @@
+#summary video controls attribute
+#labels about-html,is-html-attribute,from-whatwg
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [VideoElement <video> element] > *controls attribute*
+
+== Usage ==
+
+The video controls attribute, if present, indicates that the author has not provided a scripted controller and would like the user agent to provide its own set of controls.
+
+== Values ==
+
+The video controls attribute is an [http://www.whatwg.org/specs/web-apps/current-work/multipage/infrastructure.html#boolean-attribute HTML boolean attribute]. The presence of a boolean attribute on an element represents the true value, and the absence of the attribute represents the false value.
+
+== Elements ==
+
+You can use the `controls` attribute on the following elements:
+
+  * [AudioElement <audio>]
+  * [VideoElement <video>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/video-controls-absent-reflection-test.html video.controls reflects <video>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/video-controls-reflection-test.html video.controls reflects <video controls>] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/video.html#attr-media-controls The video controls attribute in HTML 5]
+

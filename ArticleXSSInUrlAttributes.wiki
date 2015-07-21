@@ -1,0 +1,57 @@
+#summary HOWTO filter user input in URL attributes
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+||[EsArticleXSSInUrlAttributes Español]||[JaArticleXSSInUrlAttributes 日本語]||[FrArticleXSSInUrlAttributes Français]||
+||[Welcome Home]||[ArticlesXSS Web Security]||   
+
+Attributes such as `href` and `src` take URLs as arguments. Depending on the tag they're associated with, the URL may be dereferenced and loaded at the time the browser interprets the tag (e.g., `<img src=...>` tags), or only when the user performs an action (e.g. `<a href=...>` tags).
+
+If the value of the URL attribute is computed dynamically and may be influenced by a malicious attacker, they could make the URL refer to a resource that we didn't intend.  This could result in all kinds of problems (e.g., page spoofing etc), but may in particular result in injection of malicious script.
+
+=== Script and Style Sheet URLs ===
+
+The attacker can easily cause script to execute if they can manipulate the source of a `<script>` or `<style>` tag. (CSS stylesheets can execute script, see below.)  For example:
+
+{{{
+<script src="%(script_url)s">
+}}}
+
+If the attacker can make `script_url` point to `http://evil.org/evil.js`, their malicious script will execute in the context of the page containing this `script` tag.
+
+=== javascript: URLs ===
+
+Furthermore, most browsers interpret URLs with the `javascript:` scheme such that the remainder of the URL is evaluated as a !JavaScript expression.  For example:
+
+{{{
+<img src="%(img_url)s">
+}}}
+
+If the attacker can set `img_url` to `javascript:evil_script()`, the resulting HTML will be
+
+{{{
+<img src="javascript:evil_script()">
+}}}
+
+When the browser attempts to load the image, `evil_script()` will execute (and result in a broken image, but at this point it's too late).
+
+=== Other resource URLs ===
+
+Other resources can be very dangerous (e.g., codebases for activeX objects or applets) or at least highly annoying (e.g., background music) if their URLs can be influenced by an untrusted source.
+
+== How to Avoid ==
+
+  * Like any other attribute, HTML-escape the URL, and enclose it in double quotes.
+  * Ensure that the URL is an appropriate `http` or `https` URL.
+
+For script and style sheet URLs, you must enforce that the URL is served from a trusted domain.  You can either parse and check the entire URL against a whitelist of trusted sites (perhaps non-trivial, considering international domains), or you can check that the URL contains an absolute path, i.e. starts with a '/' character.  If such URLs are allowed to be absolute paths (without host part), then it is important that the attacker does not have control over the `BASE` element of the page.
+
+For URLs (e.g. image URLs) that may legitimately point to untrusted sites, you must verify that the URL is a relative or absolute HTTP URL (i.e, starts with a '/', or 'http://' or 'https://').
+
+Enclosing the URL in quotes (or disallowing whitespace) is necessary to prevent attribute injection attacks.
+
+To prevent javascript: injection attacks, you might be tempted to just disallow URLs that start with 'javascript:'. However, there are many rather obscure variations of this injection, and it is much safer to apply a positive filter ("whitelisting" vs. "blacklisting"). For example, IE will ignore a 0x08 ("\010" octal) character at the beginning of the string. Similarly, if the ':' character is HTML entity escaped (as in `javascript&#58;evil_script()`), both IE and Firefox will still execute the script. Then there's `vbscript:` (works in Internet Explorer). And `data:text/html,<script>alert('hi');</script>` (works in Firefox).  Long story short: you really want to use a whitelist, not a blacklist, of trusted URL schemes.
+
+== Further reading ==
+
+  * [ArticleXSS Everything you ever wanted to know about cross-site scripting (XSS) attacks]

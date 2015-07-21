@@ -1,0 +1,44 @@
+#summary Introduction to Scalable Vector Graphics
+
+= Introduction =
+
+Scalable Vector Graphics (SVG) is a markup for embedding [SVGElements graphical and textual elements] into web pages similar to how [HTMLElements HTML] is a markup for embedding text, images and audio/video into web pages.  SVG shapes can be filled and stroked with solid colors or gradients.
+
+SVG has its own [ArticlesDom DOM] and thus is scriptable with JavaScript just like HTML.  SVG is stylable with [CSSReference CSS] just like HTML.
+
+Advanced Features of SVG include declarative animation (SMIL), SVG fonts, and SVG filters (blur, lighting, displacement, etc).
+
+= Example =
+
+The following markup:
+
+{{{
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <a xlink:href="http://code.google.com/p/doctype/wiki/SVGCircleElement" xlink:title="circle">
+    <circle cx="70" cy="70" r="50" fill="blue" stroke-width="8" stroke="orange"/>
+  </a>
+  <rect x="100" y="20" width="90" height="90" fill="lime" fill-opacity="0.7"/>
+  <path fill="red" d="M60,150 L110,70 L160,150 Z"/>
+</svg>
+}}}
+
+results in the following image when viewed in a browser that supports SVG:
+
+[http://doctype.googlecode.com/svn/trunk/examples/svg-sample.svg http://doctype.googlecode.com/svn/trunk/examples/svg-sample.png]
+
+The above image is only a PNG representation of the SVG code.  If you have a browser that supports SVG, you can click the image to browse to the actual SVG file.  You can view the source of that image in your browser just like you can with HTML pages.
+
+Some important points to mention:
+
+  * a variety of primitive shapes are supported ([SVGCircleElement circles], [SVGRectElement rectangles]) as well as arbitrarily complex shapes ([SVGPathElement paths])
+  * shapes can be outlined and filled with solid or semi-transparent colors, linear or radial gradients
+  * shapes are "painted" in the order in which they are declared in the markup (thus the circle is on the bottom and the triangle path is on the top of the stack)
+  * you can put links around shapes using the [SVGAElement SVG <a> element] just like you can put links around text/images in HTML
+  * only the visible portions of the blue circle are clickable (link targets need not be rectangular)
+  * tooltips are achieved using the xlink:title attribute on [SVGAElement <a> elements]
+  * this simple example is only about 400 bytes (compared to the PNG which is 3138 bytes)
+
+= Reference =
+
+  * [SVGElements SVG Element Reference] on doctype
+  * [http://www.w3.org/Graphics/SVG/ W3C SVG Page] 

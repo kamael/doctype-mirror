@@ -1,0 +1,6 @@
+#labels about-html,is-tip
+
+Don't make the common mistake of using `target="_new"`.  This may appear to open a new page with the given link, but it is really following the `target="some-other-name"` rule.  That means that if the user clicks a second link with `target="_new"`, it will not open a third window; it will replace the second one.
+
+Back to [ATargetAttribute <a target>]
+

@@ -1,0 +1,28 @@
+#summary The widows property specifies the minimum number of lines of a paragraph that must be left at the bottom of a page.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *widows*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSIntegerType <integer>]
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/widows-0-equals-0-reflection-test.html style.widows reflects <div style='widows: 0'>] || N || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/widows-1-equals-1-reflection-test.html style.widows reflects <div style='widows: 1'>] || N || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/widows-2-equals-2-reflection-test.html style.widows reflects <div style='widows: 2'>] || N || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/widows-bogus-equals--reflection-test.html style.widows reflects <div style='widows: bogus'>] || N || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/page.html#propdef-widows The widows property in CSS 2.1]
+  * [http://www.blooberry.com/indexdot/css/properties/print/widows.htm The history of the widows property on blooberry.com]
+  * [http://reference.sitepoint.com/css/widows The widows property on the SitePoint CSS Reference]
+

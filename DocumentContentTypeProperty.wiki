@@ -1,0 +1,22 @@
+#summary The document.contentType property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `document.contentType` property returns a string.
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-contentType-typeof-test.html typeOf(document.contentType) != 'undefined'] || N || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:document.contentType The document.contentType property on Mozilla Developer Center]
+

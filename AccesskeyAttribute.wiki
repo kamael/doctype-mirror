@@ -1,0 +1,37 @@
+#summary The accesskey attribute lets you assign a keyboard shortcut to a hyperlink, form control, or other element.
+#labels about-html,about-accessibility,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AElement <a> element] > *accesskey attribute*
+
+== Usage ==
+
+The behavior of accesskeys differs widely between browsers.
+
+  * In [BrowserFamilyMSIE Internet Explorer], you press `ALT` + the accesskey to focus the element, then press `ENTER` to follow the hyperlink or activate the control.
+  * In [BrowserFirefox2 Firefox 2] and later, you press `ALT` + `Shift` + the accesskey.  If the accesskey is on a [AElement hyperlink], this will follow the link immediately.  If the accesskey is on a form control or other element, this will place focus on the element.
+  * In [BrowserFamilyOpera Opera], you press `Shift` + `Esc` to enter access key mode, then press the accesskey.  Like Firefox, Opera will follow hyperlinks immediately and focus all other elements.
+
+== Values ==
+
+Any single character typable with a keyboard.  Case-insensitive.  There is no way to specify function keys or other "virtual" keys like Escape or Backspace.  Since some browsers require the `Shift` key, you should not assign accesskeys that rely on typing shift (such as "!", which is `Shift`+"1" on many keyboards).
+
+== Elements ==
+
+The `accesskey` attribute was originally designed for [AElement hyperlinks] and form controls like [InputElement input] and [SelectElement select].  In modern browsers, it works on any element that defines a [TabindexAttribute tabindex] attribute.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/a-accesskey-reflection-test.html a.accessKey reflects <a accesskey="C">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/interact/forms.html#adef-accesskey The accesskey attribute in HTML 4]
+  * [http://www.whatwg.org/specs/web-forms/current-work/#accesskey Changes to the accesskey attribute in Web Forms 2.0]
+  * [http://msdn2.microsoft.com/en-us/library/ms533062.aspx The accesskey attribute on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/attributes/accessibility.htm The history of the accesskey attribute on blooberry.com]
+  * [http://kb.mozillazine.org/Accessibility_features_of_Firefox Accessibility features of Firefox]
+  * [http://www.opera.com/support/tutorials/nomouse/ Using Opera without a mouse]
+

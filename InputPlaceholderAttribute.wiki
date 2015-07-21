@@ -1,0 +1,42 @@
+#summary input placeholder attribute
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [InputElement <input> element] > *placeholder attribute*
+
+== Usage ==
+
+The input placeholder attribute represents a short hint (a word or short phrase) intended to aid the user with data entry. A hint could be a sample value or a brief description of the expected format.
+
+Here is an example of a mail configuration user interface that uses the placeholder attribute:
+
+{{{
+<fieldset>
+ <legend>Mail Account</legend>
+ <p><label>Name: <input type="text" name="fullname" placeholder="John Ratzenberger"></label></p>
+ <p><label>Address: <input type="email" name="address" placeholder="john@example.net"></label></p>
+ <p><label>Password: <input type="password" name="password"></label></p>
+ <p><label>Description: <input type="text" name="desc" placeholder="My Email Account"></label></p>
+</fieldset>
+}}}
+
+== Values ==
+
+The input placeholder attribute can be any string, but must not contain carriage returns or line breaks.
+
+== Elements ==
+
+The `placeholder` attribute can be used on the following elements:
+
+  * [InputElement input]
+  * [TextareaElement textarea]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/forms.html#the-placeholder-attribute The input placeholder attribute in HTML 5]
+

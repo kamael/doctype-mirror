@@ -1,0 +1,29 @@
+#summary The link charset attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [LinkElement <link> element] > *charset attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `charset` attribute on the following elements:
+
+  * [AElement <a>]
+  * [LinkElement <link>]
+  * [MetaElement <meta>]
+  * [ScriptElement <script>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/link-charset-reflection-test.html link.charset reflects <link charset="utf-8">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/links.html#adef-charset The charset attribute in HTML 4]
+

@@ -1,0 +1,31 @@
+#summary meter value attribute
+#labels about-html,is-html-attribute,from-whatwg
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [MeterElement <meter> element] > *value attribute*
+
+== Usage ==
+
+The meter value attribute specifies the value to have the gauge indicate as the "measured" value.
+
+== Values ==
+
+The meter value attribute must be a [http://www.whatwg.org/specs/web-apps/current-work/multipage/infrastructure.html#valid-floating-point-number valid floating point number].
+
+== Elements ==
+
+You can use the `value` attribute on the following elements:
+
+  * [MeterElement <meter>]
+  * [ProgressElement <progress>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/meter-value-reflection-test.html meter.value reflects <meter value="42">] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/text-level-semantics.html#the-meter-element The meter value attribute in HTML 5]
+

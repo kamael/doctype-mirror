@@ -1,0 +1,29 @@
+#summary The frame marginwidth attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [FrameElement <frame> element] > *marginwidth attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `marginwidth` attribute on the following elements:
+
+  * [BodyElement <body>]
+  * [FrameElement <frame>]
+  * [IframeElement <iframe>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/frame-marginwidth-reflection-test.html frame.marginWidth reflects <frame marginwidth="42">] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/present/frames.html#adef-marginwidth The marginwidth attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534153.aspx The marginwidth attribute on MSDN]
+

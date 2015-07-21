@@ -1,0 +1,30 @@
+#summary The legend element represents a caption for a group of form controls.
+#labels about-html,about-forms,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *legend element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [LegendAlignAttribute align]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/legend-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/legend-element-as-child-of-fieldset-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/legend-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/legend-element-as-child-of-fieldset-appears-in-dom-test.html appears in DOM as child of fieldset] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/legend-element-as-child-of-fieldset-applies-style-test.html applies style as child of fieldset] || Y || Y || Y || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-legend The legend element in HTML 5]
+  * [http://www.w3.org/TR/html401/interact/forms.html#edef-LEGEND The legend element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535846.aspx The legend element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/l/legend.htm The history of the legend element on blooberry.com]
+

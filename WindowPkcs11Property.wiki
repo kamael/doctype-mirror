@@ -1,0 +1,20 @@
+#summary The window.pkcs11 property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `window.pkcs11` property returns a pkcs11 object.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-pkcs11-typeof-test.html typeOf(window.pkcs11) != 'undefined'] || N || N || N || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.pkcs11 The window.pkcs11 property on Mozilla Developer Center]
+

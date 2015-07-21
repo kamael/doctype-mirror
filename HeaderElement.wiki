@@ -1,0 +1,70 @@
+#summary header element
+#labels about-html,is-html-element,from-whatwg
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *header element*
+
+== Usage ==
+
+The header element represents the header of a [SectionElement section]. The element is typically used to group a set of [H1H2H3H4H5H6Element h1–h6 elements] to mark up a page's [DocumentTitleProperty title] with its subtitle or tagline. However, [HeaderElement header elements] may contain more than just the section's headings and subheadings — for example it would be reasonable for the header to include version history information.
+
+Here are some examples of valid headers:
+
+{{{
+<header>
+ <h1>The reality dysfunction</h1>
+ <h2>Space is not the only void</h2>
+</header>
+}}}
+
+{{{
+<header>
+ <h1>Dr. Strangelove</h1>
+ <h2>Or: How I Learned to Stop Worrying and Love the Bomb</h2>
+</header>
+}}}
+
+{{{
+<header>
+ <p>Welcome to...</p>
+ <h1>Voidwars!</h1>
+</header>
+}}}
+
+{{{
+<header>
+ <h1>Scalable Vector Graphics (SVG) 1.2</h1>
+ <h2>W3C Working Draft 27 October 2004</h2>
+ <dl>
+  <dt>This version:</dt>
+  <dd><a href="http://www.w3.org/TR/2004/WD-SVG12-20041027/">http://www.w3.org/TR/2004/WD-SVG12-20041027/</a></dd>
+  <dt>Previous version:</dt>
+  <dd><a href="http://www.w3.org/TR/2004/WD-SVG12-20040510/">http://www.w3.org/TR/2004/WD-SVG12-20040510/</a></dd>
+  <dt>Latest version of SVG 1.2:</dt>
+  <dd><a href="http://www.w3.org/TR/SVG12/">http://www.w3.org/TR/SVG12/</a></dd>
+  <dt>Latest SVG Recommendation:</dt>
+  <dd><a href="http://www.w3.org/TR/SVG/">http://www.w3.org/TR/SVG/</a></dd>
+  <dt>Editor:</dt>
+  <dd>Dean Jackson, W3C, <a href="mailto:dean@w3.org">dean@w3.org</a></dd>
+  <dt>Authors:</dt>
+  <dd>See <a href="#authors">Author List</a></dd>
+ </dl>
+ <p class="copyright"><a href="http://www.w3.org/Consortium/Legal/ipr-notic ...
+</header>
+}}}
+
+== Attributes ==
+
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/header-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/header-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/semantics.html#the-header-element The header element in HTML 5]
+

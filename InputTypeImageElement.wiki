@@ -1,0 +1,48 @@
+#summary When an input element has type=image, it represents a clickable image control that submits a web form.
+#labels about-html,about-forms,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *input type=image element*
+
+== Usage ==
+
+{{{
+<input type="image" src="images/button.png" alt="search" value="search" />
+}}}
+
+== Attributes ==
+
+  * [InputAlignAttribute align]
+  * [InputAltAttribute alt]
+  * [InputBorderAttribute border]
+  * [InputDisabledAttribute disabled]
+  * [InputDynsrcAttribute dynsrc]
+  * [InputHeightAttribute height]
+  * [InputHspaceAttribute hspace]
+  * [InputIsmapAttribute ismap]
+  * [InputLoopAttribute loop]
+  * [InputLowsrcAttribute lowsrc]
+  * [InputNameAttribute name]
+  * [InputSizeAttribute size]
+  * [InputSrcAttribute src]
+  * [InputStartAttribute start]
+  * [InputUsemapAttribute usemap]
+  * [InputValueAttribute value]
+  * [InputVspaceAttribute vspace]
+  * [InputWidthAttribute width]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/input-type-image-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/input-type-image-element-applies-style-test.html applies style] || N || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-forms/current-work/ Web Forms 2.0]
+  * [http://www.w3.org/TR/html401/interact/forms.html#edef-INPUT The input element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535836.aspx The input type=image element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/i/inputimage.htm The history of the input type=image element on blooberry.com]
+

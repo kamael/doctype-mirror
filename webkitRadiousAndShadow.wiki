@@ -1,0 +1,44 @@
+#labels webkit,border,radious,corners,box,shadow,bottom,khtml,moz,top,round,roundtop
+# How to make buttons, forms, td, div, etc round.
+
+= Introduction =
+first
+css code to use it as a class on the elements
+form .redondo{
+-moz-border-radius: 10px;
+-webkit-border-radius: 10px;
+-moz-box-shadow: 0 1px 3px rgba(0,0,0,0.5);
+-webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.5);	
+}
+
+how to use
+on <td>
+<td class="redondo"> content</td>
+on <input>
+<input type="submit" class="redondo" value="Insert" />
+
+etc
+
+= Details =
+can change by
+round bottom
+    -moz-border-radius:10px 10px 0px 0px;
+    -webkit-border-bottom-right-radius: 10px;
+    -webkit-border-bottom-left-radius: 10px;
+    -khtml-border-bottom-right-radius: 10px;
+    -khtml-border-bottom-left-radius: 10px;
+
+round top
+    -moz-border-radius:0px 0px 10px 10px;
+    -webkit-border-top-right-radius: 10px;
+    -webkit-border-top-left-radius: 10px;
+    -khtml-border-top-right-radius: 10px;
+    -khtml-border-top-left-radius: 10px;
+
+this for rounded corners on top and bottom 
+
+
+regh 2011
+interpol.wond@gmail.com
+
+see this on edit form, is good that normal page

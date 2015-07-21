@@ -1,0 +1,35 @@
+#summary Flash clickTAG XSS attacks
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+The flaw mentioned in [ArticleFlashSecurityGetURL] may seem obvious, uncommon, and easily avoidable.  This is far from true.  Flash has a special variable called `clickTAG`.  It is designed for Flash based advertisements that help advertisers track where advertisements are displayed.  Most ad networks require advertisements to add the `clickTAG` URL parameter and execute `getURL(clickTAG)` in their advertisements!  A typical ad banner embed or object HTML tags may look like this:
+
+{{{
+<embed src="http://www.example.com/SomeAdBanner.swf?clickTAG=http://www.example.com/track?http://example.com">
+}}}
+
+or this:
+
+{{{
+<object type="application/x-shockwave-flash"
+  data=" http://www.example.com/SomeAdBanner.swf" width="640" height="480" >
+<param name="movie" value="http://www.example.com/SomeAdBanner.swf">
+<param name=”flashvars” value=” clickTAG=http://www.example.com/track?http://example.com”>
+</object>
+}}}
+
+If the `clickTAG` is not properly checked before executing `getURL(clickTAG)`, an attacker could perform an XSS attack on the domain hosting the SWF (in this example www.example.com) with the following URL:
+
+{{{
+http://www.example.com/SomeAdBanner.swf?clickTAG=javascript:alert(1) 
+}}}
+
+If you are developing Flash ads, Adobe recommends that you ensure `clickTAG` begins with http: before executing `getURL(clickTAG)` like so:
+
+{{{
+if (clickTAG.substr(0,5) == "http:") {
+  getURL(clickTAG);
+}
+}}}
+
+

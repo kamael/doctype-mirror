@@ -1,0 +1,59 @@
+#summary The ol height attribute is a deprecated method of specifying the height of the element's bounding box.
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [OlElement <ol> element] > *height attribute*
+
+== Usage ==
+
+See [AddressHeightAttribute <address height>] for usage information and examples.
+
+== Elements ==
+
+You can use the `height` attribute on the following elements:
+
+  * [AddressElement <address>]
+  * [AppletElement <applet>]
+  * [BlockquoteElement <blockquote>]
+  * [CaptionElement <caption>]
+  * [CanvasElement <canvas>]
+  * [CenterElement <center>]
+  * [DdElement <dd>]
+  * [DirElement <dir>]
+  * [DivElement <div>]
+  * [DlElement <dl>]
+  * [DtElement <dt>]
+  * [EmbedElement <embed>]
+  * [FieldsetElement <fieldset>]
+  * [FormElement <form>]
+  * [FrameElement <frame>]
+  * [IframeElement <iframe>]
+  * [IlayerElement <ilayer>]
+  * [ImgElement <img>]
+  * [InputElement <input>]
+  * [IsindexElement <isindex>]
+  * [LayerElement <layer>]
+  * [LiElement <li>]
+  * [ListingElement <listing>]
+  * [MarqueeElement <marquee>]
+  * [MenuElement <menu>]
+  * [ObjectElement <object>]
+  * [OlElement <ol>]
+  * [PElement <p>]
+  * [SpacerElement <spacer>]
+  * [TableElement <table>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TextareaElement <textarea>]
+  * [TrElement <tr>]
+  * [UlElement <ul>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/ol-height-reflection-test.html ol.height reflects <ol height="7">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+

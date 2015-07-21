@@ -1,0 +1,26 @@
+#summary The location.host property is the concatenation of the hostname and port properties.
+#labels about-dom,is-dom-property
+
+== Values ==
+
+`location.host` is hostname + port number, separated by a colon (i.e. `hostname:port`). When the port property is null, the host property is the same as the [LocationHostnameProperty hostname property].
+
+If the location comes from an frame, reading this variable may throw an exception if the domains are different.
+
+The `location.host` property returns a string.
+
+This property is read/write.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/location/location-host-typeof-test.html typeOf(location.host) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms533784.aspx The location.host property on MSDN]
+

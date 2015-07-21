@@ -1,0 +1,72 @@
+#summary Day 11: Skipping over navigation links
+#labels about-accessibility,is-article
+
+You are here: [Welcome Home] > [Articles Articles] > [ArticlesAccessibility Accessibility] > [ArticleAccessibility 30 days to a more accessible web site] > *Day 11: Skipping over navigation links*
+
+If you didn't manage to hack your templates to [ArticleAccessibility10 present your main content first], here's a compromise: provide an link to skip over your navigation links.  It's not a perfect solution (presenting your main content first is better), but it's an acceptable compromise that many sites use.
+
+This "skip link" is just a regular `<a>` tag, like any other link, but we'll use CSS to hide it from visual browsers like Internet Explorer and Netscape.  It won't affect your page layout at all; it will be completely invisible.
+
+=== Who benefits? ===
+
+  * [ArticleAccessibility05 Marcus] benefits.  When he visits your page, [http://www.fdisk.com/doslynx/lynxport.htm Lynx] will display the link and allow him to skip over your navigation bar and go straight to your main content.  See [ArticleAccessibility10 Day 10: Presenting your main content first] for an example of why this is so important.
+  * [ArticleAccessibility01 Jackie] benefits.  When she visits your page, [http://www.freedomscientific.com/fs_products/software_jaws.asp JAWS] will read the skip link and allow her to skip over your navigation bar and go straight to your main content.
+
+=== How to do it ===
+
+First, use [http://www.delorie.com/web/lynxview.html Lynx Viewer] on your own home page to determine whether your navigation bar is presented before your main content.  If your main content comes first, this tip does not apply to you.
+
+Insert the skip link at the top of your HTML page, immediately after the `<body>` tag.  It should point to the first piece of "real" content.  (This can be a container element such as a `<div>`.)
+
+{{{
+<body>
+<a class="skiplink" href="#content">Skip to main content</a>
+
+<!-- navigation links -->
+
+<div id="content">
+<h1>My Awesome Site</h1>
+<p>Blah blah blah
+}}}
+
+Now define a CSS rule for the skip link, to make them invisible to visual browsers.
+
+{{{
+.skiplink, .skiplink:hover, .skiplink:visited {
+  position: absolute;
+  left: 0;
+  top: -500px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.skiplink:active, .skiplink:focus {
+  position: static;
+  width: auto;
+  height: auto;
+}
+}}}
+
+By default, the link will be positioned off-screen (`top:-500px`) and will not affect affect your page layout or text flow (`position:absolute` and `overflow:hidden`).  However, it is still technically visible (as opposed to being set as `display:none`), so screen readers will read it as soon as the page loads.  (Some CSS-aware screen readers will not speak text that is set to `display:none`.)
+
+Here's the neat part: besides being a good solution for screen readers, this is also a good solution for mobility-impaired keyboard-only users.  Because the skip link is the first link on the page, pressing `Tab` after the page loads will set focus to the skip link.  And here the second set of CSS rules take effect -- using the little-used `:active` and `:focus` pseudo-classes, we change the position and dimensions of the skip link so that it becomes visible temporarily.  Pressing `Enter` will follow the skip link and move the focus to the main content.  But if the user actually wants to go to the navigation links, she can do so -- pressing `Tab` again will move off the skip link, which will magically disappear again and return the page layout to normal.
+
+Meanwhile, the vast majority of your (mouse-using) audience will never see the skip link, since it is positioned off-screen and is therefore unclickable.  So this is the best of all worlds:
+
+  * Screen reader users will hear the skip link as soon as the page loads, and jump directly to the main content
+  * Keyboard users can tab to the skip link in one keystroke, and jump directly to the main content
+  * Sighted users will never see the skip link
+
+You should include this kind of skip link on every page of your web site, so add it to all your templates.
+
+=== Further reading ===
+
+  * WebAIM: [http://www.webaim.org/techniques/skipnav/ "Skip Navigation" links]
+  * WebAIM: [http://www.webaim.org/techniques/css/invisiblecontent/ Invisible Content Just For Screen Reader Users]
+
+----
+
+Next: [ArticleAccessibility12 Day 12: Using color safely]
+Back: [ArticleAccessibility10 Day 10: Presenting your main content first]
+

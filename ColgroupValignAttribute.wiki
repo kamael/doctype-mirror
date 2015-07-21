@@ -1,0 +1,35 @@
+#summary The colgroup valign attribute specifies the vertical alignment of the element within its bounding box.
+#labels about-html,about-tables,is-html-attribute,from-microsoft
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [ColgroupElement <colgroup> element] > *valign attribute*
+
+== Usage ==
+
+== Elements ==
+
+You can use the `valign` attribute on the following elements:
+
+  * [CaptionElement <caption>]
+  * [ColElement <col>]
+  * [ColgroupElement <colgroup>]
+  * [TbodyElement <tbody>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TfootElement <tfoot>]
+  * [TheadElement <thead>]
+  * [TrElement <tr>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/colgroup-valign-baseline-reflection-test.html colgroup.vAlign reflects <colgroup valign="baseline">] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/colgroup-valign-bottom-reflection-test.html colgroup.vAlign reflects <colgroup valign="bottom">] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/colgroup-valign-middle-reflection-test.html colgroup.vAlign reflects <colgroup valign="middle">] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/colgroup-valign-top-reflection-test.html colgroup.vAlign reflects <colgroup valign="top">] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms535120.aspx The valign attribute on MSDN]
+

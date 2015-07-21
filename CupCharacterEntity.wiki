@@ -1,0 +1,28 @@
+#summary &cup; character entity
+#labels about-html,from-w3c
+#sidebar TOCCharacterEntitiesC
+
+You are here: [Welcome Home] > [HtmlReference HTML Reference] > [CharacterEntities Character entities] > [CharacterEntitiesC C] > &cup;
+
+== Value ==
+
+There are 2 variations of this entity:
+
+  * `&Cup;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/22d3/index.htm U+022D3].
+  * `&cup;` maps to the Unicode character [http://www.fileformat.info/info/unicode/char/222a/index.htm U+0222A].
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/cup-0222a-entity-test.html &cup; character entity treated as U+0222A] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/entities/cup-capital-022d3-entity-test.html &Cup; character entity treated as U+022D3] || Y || Y || Y || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/multipage/named.html Named character references in HTML 5]
+  * [http://www.w3.org/TR/html4/sgml/entities.html Character entity references in HTML 4]
+  * [http://blooberry.com/indexdot/html/tagpages/text.htm Text in HTML (blooberry.com)]
+
+

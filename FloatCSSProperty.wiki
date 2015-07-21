@@ -1,0 +1,32 @@
+#summary The float property specifies whether a box should float to the left, right, or not at all.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *float*
+
+== Usage ==
+
+== Values ==
+
+  * `left`
+  * `right`
+  * `none`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/float-bogus-equals-none-reflection-test.html style.cssFloat reflects <div style='float: bogus'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/float-left-equals-left-reflection-test.html style.cssFloat reflects <div style='float: left'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/float-none-equals-none-reflection-test.html style.cssFloat reflects <div style='float: none'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/float-right-equals-right-reflection-test.html style.cssFloat reflects <div style='float: right'>] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/visuren.html#propdef-float The float property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:float The float property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530755.aspx The float property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/classify/float.htm The history of the float property on blooberry.com]
+  * [http://reference.sitepoint.com/css/float The float property on the SitePoint CSS Reference]
+

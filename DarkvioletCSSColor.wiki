@@ -1,0 +1,23 @@
+#summary darkviolet is a color keyword defined in CSS and usable wherever a color value is required.
+#labels about-css
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSColors Colors] > *darkviolet*
+
+== Value ==
+
+The `darkviolet` color keyword is equivalent to `#9400d3`.
+
+[CSSColors List of CSS color constants]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/colors/darkviolet-9400d3-test.html darkviolet == #9400d3] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/css3-color/#svg-color Color keywords in CSS 3]
+
+

@@ -1,0 +1,69 @@
+#summary HOWTO find DOM nodes that match a filter (goog.dom.findNodes)
+#labels is-article,about-dom
+#sidebar TOCArticlesDom
+
+TODO intro
+
+== The code ==
+
+{{{
+/**
+ * Finds the first descendant node that matches the filter function. This does
+ * a depth first search.
+ * @param {Node} root The root of the tree to search
+ * @param {function(Node) : Boolean} p The filter function
+ * @return {Node|Undefined} The found node or undefined if none is found.
+ */
+goog.dom.findNode = function(root, p) {
+  var rv = [];
+  goog.dom.findNodes_(root, p, rv, true);
+  return rv.length ? rv[0] : undefined;
+};
+
+
+/**
+ * Finds all the descendant nodes that matches the filter function. This does a
+ * depth first search.
+ * @param {Node} root The root of the tree to search
+ * @param {function(Node) : Boolean} p The filter function
+ * @return {Array.<Node>} The found nodes or an empty array if none are found.
+ */
+goog.dom.findNodes = function(root, p) {
+  var rv = [];
+  goog.dom.findNodes_(root, p, rv, false);
+  return rv;
+};
+
+
+/**
+ * Finds the first or all the descendant nodes that matches the filter function.
+ * This does a depth first search.
+ * @param {Node} root The root of the tree to search
+ * @param {function(Node) : Boolean} p The filter function
+ * @param {Array.<Node>} rv The found nodes or added to this array.
+ * @param {Boolean} findOne If true we exit after the first found node.
+ */
+goog.dom.findNodes_ = function(root, p, rv, findOne) {
+  if (root != null) {
+    for (var i = 0, child; child = root.childNodes[i]; i++) {
+      if (p(child)) {
+        rv.push(child);
+        if (findOne) {
+          return;
+        }
+      }
+      goog.dom.findNodes_(child, p, rv, findOne);
+    }
+  }
+};
+}}}
+
+== The code walkthrough ==
+
+TODO walkthrough
+
+== Further reading ==
+
+TODO further reading
+
+

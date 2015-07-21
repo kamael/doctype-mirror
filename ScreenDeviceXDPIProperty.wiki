@@ -1,0 +1,24 @@
+#summary The screen.deviceXDPI property
+#labels about-dom,is-dom-property,from-microsoft
+
+== Values ==
+
+The `screen.deviceXDPI` property returns an integer.
+
+[BrowserFamilyMSIE Internet Explorer] returns ...
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/screen/screen-deviceXDPI-typeof-test.html typeOf(screen.deviceXDPI) != 'undefined'] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms533721.aspx The screen.deviceXDPI property on MSDN]
+

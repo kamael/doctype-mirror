@@ -1,0 +1,13 @@
+#summary The -moz-box-flex CSS property controls how an element grows within its containing element.
+
+== Usage ==
+
+== Values ==
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-box-flex The -moz-box-flex property on Mozilla Developer Center]
+
+

@@ -1,0 +1,22 @@
+#summary The document.location property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `document.location` property returns a [LocationObject Location object].
+
+This property is read/write.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-location-typeof-test.html typeOf(document.location) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [https://developer.mozilla.org/en/DOM/document.location The document.location property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms535866.aspx The document.location property on MSDN]

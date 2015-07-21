@@ -1,0 +1,28 @@
+#summary The SVG <circle> element represents a circle.
+You are here: [Welcome Home] > [SVGElements SVG Elements] > *circle element*
+
+= Introduction =
+
+The circle element is used to draw a circle.
+
+= Details =
+== Usage ==
+
+{{{
+<circle cx="100" cy="100" r="50" fill="green" />
+}}}
+
+== Attributes ==
+
+Common attributes:
+
+  * [http://www.w3.org/TR/SVG11/shapes.html#CircleElementCXAttribute cx] - the x-coordinate of the center of the circle
+  * [http://www.w3.org/TR/SVG11/shapes.html#CircleElementCYAttribute cy] - the y-coordinate of the center of the circle
+  * [http://www.w3.org/TR/SVG11/shapes.html#CircleElementRAttribute r] - the radius of the circle
+  * [http://www.w3.org/TR/SVG11/painting.html#FillProperty fill] - describes how the interior of the circle should be painted, see [SVGFillProperties].  The default value is "black".
+  * [http://www.w3.org/TR/SVG11/painting.html#StrokeProperty stroke] - describes how the outline of the circle should be painted, see [SVGStrokeProperties]. The default value is "none".
+
+
+= Reference =
+
+  * [http://www.w3.org/TR/SVG11/shapes.html#CircleElement The <circle> element in SVG 1.1]

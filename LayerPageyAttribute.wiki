@@ -1,0 +1,26 @@
+#summary The layer pagey attribute
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [LayerElement <layer> element] > *pagey attribute*
+
+== Usage ==
+
+Do not use [LayerElement <layer>].  The `<layer>` element was introduced in [BrowserNetscape4 Netscape 4] and has never been supported by any other browser.
+
+== Elements ==
+
+You can use the `pagey` attribute on the following elements:
+
+  * [IlayerElement <ilayer>]
+  * [LayerElement <layer>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/layer-pagey-reflection-test.html layer.pagey reflects <layer pagey="42">] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+

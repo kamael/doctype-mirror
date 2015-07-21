@@ -1,0 +1,28 @@
+#summary The meta content attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [MetaElement <meta> element] > *content attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `content` attribute on the following elements:
+
+  * [MetaElement <meta>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/meta-content-reflection-test.html meta.content reflects <meta content="foo">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#content0 The content attribute in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/global.html#adef-content The content attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms533689.aspx The content attribute on MSDN]
+

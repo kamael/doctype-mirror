@@ -1,0 +1,12 @@
+  * [CharacterEntities Other character entities]
+    * [KappaCharacterEntity &kappa;]
+    * [KappavCharacterEntity &kappav;]
+    * [KcedilCharacterEntity &kcedil;]
+    * [KcyCharacterEntity &kcy;]
+    * [KfrCharacterEntity &kfr;]
+    * [KgreenCharacterEntity &kgreen;]
+    * [KhcyCharacterEntity &khcy;]
+    * [KjcyCharacterEntity &kjcy;]
+    * [KopfCharacterEntity &kopf;]
+    * [KscrCharacterEntity &kscr;]
+

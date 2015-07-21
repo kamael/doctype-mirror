@@ -1,0 +1,25 @@
+#summary The z-index property specifies the stack level of the box.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *z-index*
+
+== Usage ==
+
+== Values ==
+
+  * `auto`
+  * [CSSIntegerType <integer>]
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/visuren.html#propdef-z-index The z-index property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:z-index The z-index property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms531188.aspx The z-index property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/position/zindex.htm The history of the z-index property on blooberry.com]
+  * [http://reference.sitepoint.com/css/z-index The z-index property on the SitePoint CSS Reference]
+

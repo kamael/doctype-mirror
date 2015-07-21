@@ -1,0 +1,32 @@
+= COMO protegerse contra imágenes maliciosas y otro contenido no-HTML =
+
+||[ArticleContentSniffing English]||[JaArticleContentSniffing 日本語]||[FrAArticleContentSniffing Français]||
+||[EsWelcome Inicio]||[EsArticlesXSS Seguridad Web]||  
+
+En un mundo ideal, los navegadores esperan al honor del tipo MIME del documento como se especificó en la cabecera HTTP `Content-Type`.  En particular, puedes esperar que un navegador decente renderice siempre un documento con `Content-Type: text/plain` como texto plano, sin interpretar las etiquetas del documento.
+
+Este no es un mundo ideal.
+
+[BrowserFamilyMSIE Internet Explorer] tiene la "habilidad" de predecir un Content-Type.  El navegador busca etiquetas HTML al principio de un documento, y si encuentra alguno que parezca HTML, Ignorará el content type del documento y renderizará como HTML.  Esto puede resultar en un dolor de cabeza considerable para aplicaciones que renderizan documentos no-HTML desde fuentes no confiables.
+
+Por ejemplo, GMail renderiza una fuente de correo como texto plano (especificando `Content-Type: text/plain`).  Un correo malicioso podría ser elaborado de manera tal que contenga etiquetas HTML en una cabecera de correo con suficiente antelación en el mensaje que IE re-interpreta el documento como text/html y ejecuta el script.
+
+Momento, aun hay más.  IE aplica sus algoritmos de descubrimiento de contenido para imágenes también.  Imagina una imagen que contenga etiquetas HTML al principio del archivo.  Podría tratarse de un archivo de imagen mal formado, o un archivo de imagen válida con etiquetas HTML en algún "image comment" invisible.  IE se dará cuenta de las etiquetas HTML, ignorará el content type especificado, re-interpretará el documento de imagen como HTML, y ejecutará cualquier script incorporado en el documento.  Nota que es solo si la imagen es accesada como un documento totalmente separado, no cuando la imagen es embebida en una etiqueta `<img>`.  Así mismo, cualquier usuario puede hacer click derecho sobre una imagen sobre cualquier imagen e intentar verla por separado. Haciendo entonces que se dispare la ejecución de scripts maliciosos embebidos en el archivo de imagen.
+
+_Cualquier aplicación que deje a los usuarios subir imágenes (o cualquier otro tipo de archivo) necesita estar preparada para esto.
+
+== Como Evitarlo ==
+
+Validar que cada una de las piezas de contenido generado por el usuario para ser mostrado es realmente un documento del tipo pretendido.  Esta estrategia debería ser la más apropiada para imágenes subidas por los usuarios.  Para estar más seguros, es mejor procesar la imagen usando una librería de manipulación de imágenes.  Lee el archivo de imagen, conviértelo a mapa de bits y entonces conviértelo de nuevo en el formato apropiado.  Entonces, el archivo que es mostrado a los usuarios es producido realmente por código bajo tu control, con ayudas para asegurarse de que el archivo de imagen está bien formado yno contiene ningún artífice que pueda inducir al navegador a malinterpretarlo como un content type distinto.
+
+Cuando sigas esta recomendación, ten en mente que tu aplicación parseará archivos de imagen desde sitios poco confiables. Los formatos de archivo de imagen son muy complejos, y no es poco común que las librerías de tratamiento de imágenes de terceros mismas contengan bugs que pudieran ser explotadas por un archivo maliciosamente deformado.  ¡En lugar de centrarse en el navegador del usuario final, un atacante podría fijarse en la librería de tratamiento de imágenes del servidor que estás usando para evitar ataques sobre el navegador de los usuarios!  No hay una solución general para este problema, más allá de mantener el código de tu servidor actualizado.
+
+Para documentos subidos además de las imágenes, debes asegurarte de que no contienen etiquetas HTML en los primeros 256 bytes del archivo.  Dependiendo del formato del archivo, Esto podría ser tan simple como precolocar 256 espacios en blanco.  (Este número ha sido [http://msdn.microsoft.com/workshop/networking/moniker/overview/appendix_a.asp confirmado por la documentación en línea de Microsoft].)  Sin embargo, nada garantiza que futuras versiones de IE no se comporten de manera distinta.
+
+Para documentos de texto plano, deberías también renderizar todo el documento como HTML (digamos en etiquetas `<pre>`) y escapar por HTML el documento entero.  Sin embargo, esto no siempre es apropiado, especialmente si el usuario espera tener la opción de salvar el documento como un archivo de texto plano. ¡Y [EsArticleUtf7 no olvides declarar tu codificación de caracteres]!
+
+== Para leer más ==
+
+  * [EsArticleXSS Todo lo que siempre quisiste saber sobre ataques cross-site scripting (XSS)]
+  * [http://msdn.microsoft.com/workshop/networking/moniker/overview/appendix_a.asp Detección de Tipos MIME en Internet Explorer]
+

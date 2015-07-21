@@ -1,0 +1,33 @@
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *page-break-after*
+
+== Usage ==
+
+== Values ==
+
+  * `auto`
+  * `always`
+  * `avoid`
+  * `left`
+  * `right`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/page-break-after-always-equals-always-reflection-test.html style.pageBreakAfter reflects <div style='page-break-after: always'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/page-break-after-auto-equals-auto-reflection-test.html style.pageBreakAfter reflects <div style='page-break-after: auto'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/page-break-after-avoid-equals-avoid-reflection-test.html style.pageBreakAfter reflects <div style='page-break-after: avoid'>] || Y || N || N || N || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/page-break-after-bogus-equals--reflection-test.html style.pageBreakAfter reflects <div style='page-break-after: bogus'>] || N || N || N || N || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/page-break-after-left-equals-left-reflection-test.html style.pageBreakAfter reflects <div style='page-break-after: left'>] || Y || Y || Y || N || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/page-break-after-right-equals-right-reflection-test.html style.pageBreakAfter reflects <div style='page-break-after: right'>] || Y || Y || Y || N || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/page.html#propdef-page-break-after The page-break-after property in CSS 2.1]
+  * [http://www.blooberry.com/indexdot/css/properties/print/pbafter.htm The history of the page-break-after property on blooberry.com]
+  * [http://reference.sitepoint.com/css/page-break-after The page-break-after property on the SitePoint CSS Reference]
+

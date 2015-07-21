@@ -1,0 +1,14 @@
+#summary The ::selection CSS pseudo-element matches text that has been highlighted (selected) by the user.
+#labels about-css
+
+== Usage ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/css3-selectors/#pseudo-elements Pseudo-elements in the CSS 3 specification]
+  * [http://www.w3.org/TR/css3-selectors/#UIfragments The ::selection pseudo element in the CSS 3 specification]
+

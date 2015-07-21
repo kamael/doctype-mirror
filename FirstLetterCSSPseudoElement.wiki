@@ -1,0 +1,14 @@
+#summary The ::first-letter CSS pseudo-element matches the first printed letter of an element.
+#labels about-css
+
+== Usage ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/selector.html#pseudo-elements Pseudo-elements in the CSS 2.1 specification]
+  * [http://www.w3.org/TR/css3-selectors/#pseudo-elements Pseudo-elements in the CSS 3 specification]
+  * [http://www.w3.org/TR/css3-selectors/#first-letter The ::first-letter pseudo element in the CSS 3 specification]

@@ -1,0 +1,26 @@
+#summary The window.screenTop property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `window.screenTop` property returns an integer.
+
+This property is read/write.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-screen-top-typeof-test.html typeOf(window.screen.top) != 'undefined'] || N || N || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-screentop-typeof-test.html typeOf(window.screenTop) != 'undefined'] || Y || Y || Y || N || N || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://msdn.microsoft.com/workshop/author/dhtml/reference/properties/screentop.asp The window.screenTop property on MSDN]
+  * [http://msdn2.microsoft.com/en-us/library/ms534390.aspx The window.screenTop property on MSDN]
+  * [http://www.quirksmode.org/viewport/compatibility.html The window.screenTop property on quirksmode.org]
+  * [http://www.quirksmode.org/viewport/experiments/self.html The window.screenTop property on quirksmode.org]
+

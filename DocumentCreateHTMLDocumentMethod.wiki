@@ -1,0 +1,15 @@
+#summary The document.createHTMLDocument method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+== Usage ==
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.quirksmode.org/dom/w3c_html.html The document.createHTMLDocument method on quirksmode.org]
+

@@ -1,0 +1,22 @@
+#summary The document.height property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `document.height` property returns an integer.
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-height-typeof-test.html typeOf(document.height) != 'undefined'] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:document.height The document.height property on Mozilla Developer Center]
+

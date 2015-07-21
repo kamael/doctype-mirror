@@ -1,0 +1,30 @@
+#summary Day 8: Constructing meaning page titles
+#labels about-accessibility,is-article
+
+You are here: [Welcome Home] > [Articles Articles] > [ArticlesAccessibility Accessibility] > [ArticleAccessibility 30 days to a more accessible web site] > *Day 8: Constructing meaning page titles*
+
+Every page of your web site should have a unique and meaningful page title.
+
+  * The home page title can simply be the name of your web site.
+  * Date-based archive pages should include the name of your web site, followed by the date (or date range) for the page.
+  * Category pages should include the name of your web site, followed by the name of the category.
+  * Individual articles or other pages should include the name of your web site, followed by the article title.
+
+Keep in mind these are only suggestions.  You can include the word "Archives" in the daily and monthly archive pages, or not.  The exact punctuation really doesn't matter, as long as it's not excessive.  (Depending on user settings, screen readers may read every punctuation character out loud, so don't go overboard.)  You can put the site name at the end rather than at the beginning.  It's a good idea to include your site name somewhere in your page titles, though; it's an important contextual clue, especially when people are switching between multiple open windows.
+
+=== Who benefits? ===
+
+  * [ArticleAccessibility01 Jackie] benefits.  [http://www.freedomscientific.com/fs_products/software_jaws.asp JAWS] has a special keyboard shortcut (INSERT + F10) which displays (and reads) a list of the currently open windows, by window title.  In the case of web pages, this would be your page title.  It also reads the window title while ALT-TABbing through open windows.  Other screen readers, like [http://www-3.ibm.com/able/hpr.html Home Page Reader], read the page title out load as soon as you visit the page.
+  * [ArticleAccessibility05 Marcus] benefits.  [http://www.fdisk.com/doslynx/lynxport.htm Lynx] displays the page title in the first line of output, so it's always the first thing that Marcus reads in Braille.
+  * [ArticleAccessibility03 Bill] benefits.  Because of his stroke, he sometimes gets confused and momentarily loses track of what he's reading.  The page title in the window titlebar acts as a visual anchor; it stays in the same place, even as he scrolls the page.  He can always glance back to it to jog his memory.
+  * Search engines benefit.  For example, Google displays the page title in its search results, and it ranks keywords higher when they appear in the page title.  This is a Good Thing for you, especially for those individual article pages.  (Choosing good article titles doesn't hurt either.)
+
+=== Further reading ===
+
+  * Google: [http://www.google.com/support/webmasters/bin/answer.py?hl=en&answer=70928 Make sure that your TITLE tags and ALT attributes are descriptive and accurate]
+
+----
+
+Next: [ArticleAccessibility09 Day 9: Providing additional navigation aids]
+Back: [ArticleAccessibility07 Day 7: Identifying your language]
+

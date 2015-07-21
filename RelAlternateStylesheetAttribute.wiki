@@ -1,0 +1,25 @@
+#summary The rel="alternate stylesheet" attribute indicates that the referenced document is an alternate stylesheet for the current document.
+#labels about-html,is-html-attribute,from-w3c
+
+`rel="alternate stylesheet"` is one of several [LinkTypes link types] for describing relationships between documents.
+
+== Usage ==
+
+== Elements ==
+
+You can use the `rel="alternate stylesheet"` attribute on these elements:
+
+  * [LinkElement <link>]
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#link-type The rel="alternate" link type in HTML 5]
+  * [http://www.whatwg.org/specs/web-apps/current-work/#stylesheet The rel="stylesheet" link type in HTML 5]
+  * [http://www.w3.org/TR/html401/types.html#type-links Link types in HTML 4]
+
+
+

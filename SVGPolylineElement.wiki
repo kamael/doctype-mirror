@@ -1,0 +1,26 @@
+#summary The SVG <polyline> element represents a connected series of line segments.
+You are here: [Welcome Home] > [SVGElements SVG Elements] > *polyline element*
+
+= Introduction =
+
+The polyline element is used to draw a series of connected line segments (usually open).  Also see the [SVGPolygonElement polygon] element.
+
+= Details =
+== Usage ==
+
+{{{
+<polyline stroke="blue" points="0,0 100,0 300,300 200,400"/>
+}}}
+
+== Attributes ==
+
+Common attributes:
+
+  * [http://www.w3.org/TR/SVG11/shapes.html#PolylineElementPointsAttribute points] - a comma- or space-separated list of x,y coordinates for each line segment.  This list must contain an even number of points.
+  * [http://www.w3.org/TR/SVG11/painting.html#StrokeProperty stroke] - describes how the outline of the polyline should be painted, see [SVGStrokeProperties]. The default value is "none".
+  * [http://www.w3.org/TR/SVG11/painting.html#FillProperty fill] - describes how the interior of the polyline should be painted, see [SVGFillProperties].  The default value is "black".  This attribute is not typically used with a polyline, since polylines are not closed.  See the [SVGPolygonElement polygon] element.
+
+
+= Reference =
+
+  * [http://www.w3.org/TR/SVG11/shapes.html#PolylineElement The <polyline> element in SVG 1.1]

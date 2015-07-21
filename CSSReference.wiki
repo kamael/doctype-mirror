@@ -1,0 +1,11 @@
+#labels about-css
+[EsCSSReference Español]
+
+The CSS reference is divided into five main sections:
+
+  * [CSSSyntax Syntax]
+  * [CSSProperties Properties]
+  * [CSSPseudoClasses Pseudo-classes] and [CSSPseudoElements pseudo-elements]
+  * [CSSAtRules At-rules]
+  * [CSSColors Colors]
+

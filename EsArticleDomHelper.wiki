@@ -1,0 +1,80 @@
+= Introduciendose a DOMHelper =
+
+||[ArticleDomHelper English]||[JaArticleDomHelper 日本語]||[FrArticleDomHelper Français]||
+||[EsWelcome Inicio]||[EsArticlesDom Artículos DOM]||
+
+DOMHelper es una clase en Javascript que contiene diversas funciones que nos ayudarán a manejar objetos DOM.
+
+== El Código ==
+
+Esto es usado cuando llamamos métodos que dependen de una instancia document_ 
+ * privado
+ * retorna {goog.dom.DomHelper}
+
+{{{
+goog.dom.getDefaultDomHelper_ = function() {
+  if (!goog.dom.defaultDomHelper_) {
+    goog.dom.defaultDomHelper_ = new goog.dom.DomHelper;
+  }
+  return goog.dom.defaultDomHelper_;
+};
+}}}
+
+Obtiene el objeto domhelper para el documento en donde el elemento reside.
+ * parámetro {Elemento} opt_element Si esta presente, obtiene el DomHelper para este elemento.
+ * retorna el DOMHelper {goog.dom.DomHelper}.
+
+
+{{{
+goog.dom.getDomHelper = function(opt_element) {
+  return opt_element ?
+      new goog.dom.DomHelper(goog.dom.getOwnerDocument(opt_element)) :
+      goog.dom.getDefaultDomHelper_();
+};
+
+}}}
+
+Crea una instancia de un DOM helper con un nuevo objeto de documento
+ * Parámetros {Document} opt_document Objeto de documento para asociar con este DOM helper
+ * Constructor
+
+{{{
+goog.dom.DomHelper = function(opt_document) {
+
+}}}
+Referencia al objeto de documento a usar
+   * Tipo de Documento
+
+{{{
+  this.document_ = opt_document || window.document || document;
+};
+}}}
+
+Establece el objeto de documento
+ * parámetro {Document} objeto Document de documento
+
+{{{
+goog.dom.DomHelper.prototype.setDocument = function(document) {
+  this.document_ = document;
+};
+}}}
+
+Obtiene el objeto de documentp que comienza a ser usado por la librería dom
+ * retorna {Document} objeto de documento
+
+{{{
+goog.dom.DomHelper.prototype.getDocument = function() {
+  return this.document_;
+};
+}}}
+
+== Guía del Código ==
+
+{{{
+Recordatorio: Escribir una guía
+}}}
+
+== Para leer más ==
+
+Recordatorio: Poner más vínculos
+

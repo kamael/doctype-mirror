@@ -1,0 +1,235 @@
+#summary HOWTO deal with page coordinates (goog.math.Coordinates)
+
+||[ArticleCoordinates English]||[JaArticleCoordinates 日本語]||[FrArticleCoordinates Français]||
+||[EsWelcome Inicio]||[EsArticlesDom Artículos DOM]||
+
+Depending on the type of web application you are creating, you may need to deal with on-screen coordinates.  There is a small amount of math involved, but it's nothing that JavaScript can't handle.
+
+== The code ==
+
+{{{
+/**
+ * Class for representing coordinates and positions.
+ * @param {Number} opt_x Left
+ * @param {Number} opt_y Top
+ * @constructor
+ */
+goog.math.Coordinate = function(opt_x, opt_y) {
+  /**
+   * X-value
+   * @type Number
+   */
+  this.x = goog.isDef(opt_x) ? Number(opt_x) : undefined;
+
+  /**
+   * Y-value
+   * @type Number
+   */
+  this.y = goog.isDef(opt_y) ? Number(opt_y) : undefined;
+
+};
+
+
+/**
+ * Returns a new copy of the coordinate.
+ * @return {goog.math.Coordinate}
+ */
+goog.math.Coordinate.prototype.clone = function() {
+  return new goog.math.Coordinate(this.x, this.y);
+};
+
+
+/**
+ * Returns a nice string representing dimensions.
+ * @return {String} In the form (50, 73).
+ */
+goog.math.Coordinate.prototype.toString = function() {
+  return '(' + this.x + ', ' + this.y + ')';
+};
+
+
+/**
+ * Compares coordinates for equality.
+ * @param {goog.math.Coordinate} a
+ * @param {goog.math.Coordinate} b
+ * @return {Boolean} True iff the coordinates are equal, or if both are null.
+ */
+goog.math.Coordinate.equals = function(a, b) {
+  if (a == b) {
+    return true;
+  }
+  if (!a || !b) {
+    return false;
+  }
+  return a.x == b.x && a.y == b.y;
+};
+
+
+/**
+ * Returns the distance between two coordinates.
+ * @param {goog.math.Coordinate} a
+ * @param {goog.math.Coordinate} b
+ * @return {Number}
+ */
+goog.math.Coordinate.distance = function(a, b) {
+  var dx = a.x - b.x;
+  var dy = a.y - b.y;
+  return Math.sqrt(dx * dx + dy * dy);
+};
+
+
+/**
+ * Returns the squared distance between two coordinates. Squared distances can
+ * be used for comparisons when the actual value is not required.
+ *
+ * Performance note: eliminating the square root is an optimization often used
+ * in lower-level languages, but the speed difference is not nearly as
+ * pronounced in JavaScript (only a few percent.)
+ * @param {goog.math.Coordinate} a
+ * @param {goog.math.Coordinate} b
+ * @return {Number}
+ */
+goog.math.Coordinate.squaredDistance = function(a, b) {
+  var dx = a.x - b.x;
+  var dy = a.y - b.y;
+  return dx * dx + dy * dy;
+};
+
+
+/**
+ * Returns the difference between two coordinates as a new
+ * goog.math.Coordinate.
+ * @param {goog.math.Coordinate} a
+ * @param {goog.math.Coordinate} b
+ * @return {goog.math.Coordinate}
+ */
+goog.math.Coordinate.difference = function(a, b) {
+  return new goog.math.Coordinate(a.x - b.x, a.y - b.y);
+};
+}}}
+
+== The code walkthrough ==
+
+First we need a class to represent a coordinate, which is just a pair of numbers, `x` and `y`.
+
+{{{
+/**
+ * Class for representing coordinates and positions.
+ * @param {Number} opt_x Left
+ * @param {Number} opt_y Top
+ * @constructor
+ */
+goog.math.Coordinate = function(opt_x, opt_y) {
+  /**
+   * X-value
+   * @type Number
+   */
+  this.x = goog.isDef(opt_x) ? Number(opt_x) : undefined;
+
+  /**
+   * Y-value
+   * @type Number
+   */
+  this.y = goog.isDef(opt_y) ? Number(opt_y) : undefined;
+
+};
+}}}
+
+Now we can start defining useful helper functions on coordinates.  For example, to "clone" a pair of coordinates (such that changes to the clone will not affect the original), we can simply create a new `Coordinate` class with the existing `x` and `y` values:
+
+{{{
+/**
+ * Returns a new copy of the coordinate.
+ * @return {goog.math.Coordinate}
+ */
+goog.math.Coordinate.prototype.clone = function() {
+  return new goog.math.Coordinate(this.x, this.y);
+};
+}}}
+
+If we need to print the coordinates or include them in some template as a string, we can define a `toString` method:
+
+{{{
+/**
+ * Returns a nice string representing dimensions.
+ * @return {String} In the form (50, 73).
+ */
+goog.math.Coordinate.prototype.toString = function() {
+  return '(' + this.x + ', ' + this.y + ')';
+};
+}}}
+
+And of course we'll need an equality test that tests both the `x` and `y` values of two `Coordinate` instances:
+
+{{{
+/**
+ * Compares coordinates for equality.
+ * @param {goog.math.Coordinate} a
+ * @param {goog.math.Coordinate} b
+ * @return {Boolean} True iff the coordinates are equal, or if both are null.
+ */
+goog.math.Coordinate.equals = function(a, b) {
+  if (a == b) {
+    return true;
+  }
+  if (!a || !b) {
+    return false;
+  }
+  return a.x == b.x && a.y == b.y;
+};
+}}}
+
+What else can you do with coordinates?  How about compute the distance between them?
+
+{{{
+/**
+ * Returns the distance between two coordinates.
+ * @param {goog.math.Coordinate} a
+ * @param {goog.math.Coordinate} b
+ * @return {Number}
+ */
+goog.math.Coordinate.distance = function(a, b) {
+  var dx = a.x - b.x;
+  var dy = a.y - b.y;
+  return Math.sqrt(dx * dx + dy * dy);
+};
+}}}
+
+Hmm.  `Math.sqrt` is a somewhat expensive operation.  What if we don't need an exact value?  Say we have four points, A, B, C, and D, and we want to know which pair of coordinates is closer to each other: A and B, or C and D.  For this we can eliminate the call to `Math.sqrt` and just compute the square of the distances, then compare those.
+
+{{{
+/**
+ * Returns the squared distance between two coordinates. Squared distances can
+ * be used for comparisons when the actual value is not required.
+ *
+ * Performance note: eliminating the square root is an optimization often used
+ * in lower-level languages, but the speed difference is not nearly as
+ * pronounced in JavaScript (only a few percent.)
+ * @param {goog.math.Coordinate} a
+ * @param {goog.math.Coordinate} b
+ * @return {Number}
+ */
+goog.math.Coordinate.squaredDistance = function(a, b) {
+  var dx = a.x - b.x;
+  var dy = a.y - b.y;
+  return dx * dx + dy * dy;
+};
+}}}
+
+Finally, it can be useful to find the difference between two coordinates, which is just (x1 - x2, y1 - y2).
+
+{{{
+/**
+ * Returns the difference between two coordinates as a new
+ * goog.math.Coordinate.
+ * @param {goog.math.Coordinate} a
+ * @param {goog.math.Coordinate} b
+ * @return {goog.math.Coordinate}
+ */
+goog.math.Coordinate.difference = function(a, b) {
+  return new goog.math.Coordinate(a.x - b.x, a.y - b.y);
+};
+}}}
+
+== Further reading ==
+

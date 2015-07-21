@@ -1,0 +1,23 @@
+#summary The document.getElementsByTagName method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+_string_ - the name of the tag to match on
+
+== Usage ==
+{{{
+var elements = document.getElementsByTagName(name);
+}}}
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-getElementsByTagName-typeof-test.html typeOf(document.getElementsByTagName) != 'undefined'] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:document.getElementsByTagName The document.getElementsByTagName method on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms536439.aspx The document.getElementsByTagName method on MSDN]
+  * [http://www.w3.org/TR/DOM-Level-2-Core/core.html#ID-A6C9094 DOM Level 2 Core specification]

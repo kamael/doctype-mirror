@@ -1,0 +1,25 @@
+#summary The unicode-bidi property controls the behavior of of embeddings and overrides in the Unicode bidirectional algorithm.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *unicode-bidi*
+
+== Usage ==
+
+== Values ==
+
+  * `normal`
+  * `embed`
+  * `bidi-override`
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/visuren.html#propdef-unicode-bidi The unicode-bidi property in CSS 2.1]
+  * [http://msdn2.microsoft.com/en-us/library/ms531178.aspx The unicode-bidi property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/intl/unibidi.htm The history of the unicode-bidi property on blooberry.com]
+  * [http://reference.sitepoint.com/css/unicode-bidi The unicode-bidi property on the SitePoint CSS Reference]
+

@@ -1,0 +1,80 @@
+#summary HOWTO set an element to preformatted text wrap (goog.style.setPreWrap)
+#labels is-article,about-dom,about-css
+#sidebar TOCArticlesStyle
+
+Everybody knows use can use the [PreElement pre element] to get preformatted text -- monospaced, hard line breaks, the works.  What you may not know is that you can get preformatted text that wraps at the width of the bounding element.  That's right -- no more long lines causing horizontal scroll bars and overlapping columns!  Get all the goodness of preformatted text with automatic word wrap.
+
+== The code ==
+
+This function relies on code explained elsewhere:
+
+  * [ArticleUserAgent HOWTO determine the browser name and version number]
+
+{{{
+/**
+ * Sets 'white-space: pre-wrap' for a node (x-browser).
+ *
+ * There are as many ways of specifying pre-wrap as there are browsers.
+ *
+ * CSS3:    white-space: pre-wrap;
+ * Mozilla: white-space: -moz-pre-wrap;
+ * Opera:   white-space: -o-pre-wrap;
+ * IE6/7:   white-space: pre; word-wrap: break-word;
+ *
+ * @param {Element} el Element to enable pre-wrap for.
+ */
+goog.style.setPreWrap = function(el) {
+  if (goog.userAgent.IE) {
+    el.style.whiteSpace = 'pre';
+    el.style.wordWrap = 'break-word';
+  } else if (goog.userAgent.GECKO) {
+    el.style.whiteSpace = '-moz-pre-wrap';
+  } else if (goog.userAgent.OPERA) {
+    el.style.whiteSpace = '-o-pre-wrap';
+  } else  {
+    el.style.whiteSpace = 'pre-wrap';
+  }
+};
+}}}
+
+== The code walkthrough ==
+
+Unfortunately, this requires a user-agent test, because there is no efficient way to determine CSS capabilities in script.  The first test is for [BrowserFamilyMSIE IE], which supports the [http://www.w3.org/TR/CSS21/text.html#white-space-prop white-space] and [http://www.w3.org/TR/css3-text/#word-wrap word-wrap] CSS properties (accessed in JavaScript through `node.style.whiteSpace` and `node.style.WordWrap`):
+
+{{{
+  if (goog.userAgent.IE) {
+    el.style.whiteSpace = 'pre';
+    el.style.wordWrap = 'break-word';
+}}}
+
+Next comes [BrowserFamilyFirefox Firefox], which supports the proprietary `-moz-pre-wrap` value instead:
+
+{{{
+  } else if (goog.userAgent.GECKO) {
+    el.style.whiteSpace = '-moz-pre-wrap';
+}}}
+
+Next comes [BrowserFamilyOpera Opera], which supports the equally proprietary `-o-pre-wrap` value:
+
+{{{
+  } else if (goog.userAgent.OPERA) {
+    el.style.whiteSpace = '-o-pre-wrap';
+}}}
+
+Finally, for all other browsers (including [BrowserFamilySafari Safari]), we set the "proper" value `white-space: pre-wrap`:
+
+{{{
+  } else  {
+    el.style.whiteSpace = 'pre-wrap';
+  }
+};
+}}}
+
+== Further reading ==
+
+  * [ArticleUserAgent HOWTO determine the browser name and version number]
+  * [http://www.w3.org/TR/CSS21/text.html#white-space-prop white-space property in CSS 2]
+  * [http://www.w3.org/TR/css3-text/#word-wrap word-wrap property in CSS 3]
+
+
+

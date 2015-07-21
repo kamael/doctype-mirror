@@ -1,0 +1,28 @@
+#summary The form action attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [FormElement <form> element] > *action attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `action` attribute on the following elements:
+
+  * [FormElement <form>]
+  * [IsindexElement <isindex>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/form-action-reflection-test.html form.action reflects <form action="http://www.example.com/">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/interact/forms.html#adef-action The action attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms533063.aspx The action attribute on MSDN]
+

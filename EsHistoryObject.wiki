@@ -1,0 +1,15 @@
+#summary El objeto history representa el historial del navegador.
+[HistoryObject English]
+
+== Propiedades ==
+
+  * [EsHistoryLengthProperty length]
+
+== Métodos ==
+
+  * [EsHistoryBackMethod back()]
+  * [EsHistoryForwardMethod forward()]
+  * [EsHistoryGoMethod go()]
+
+== Para leer más ==
+

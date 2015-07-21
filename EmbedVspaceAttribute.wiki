@@ -1,0 +1,31 @@
+#summary The embed vspace attribute
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [EmbedElement <embed> element] > *vspace attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `vspace` attribute on the following elements:
+
+  * [AppletElement <applet>]
+  * [EmbedElement <embed>]
+  * [IframeElement <iframe>]
+  * [ImgElement <img>]
+  * [MarqueeElement <marquee>]
+  * [ObjectElement <object>]
+  * [TableElement <table>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/embed-vspace-reflection-test.html embed.vspace reflects <embed vspace="7">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+

@@ -1,0 +1,18 @@
+#summary These attributes are shared by virtually all HTML elements.
+#labels about-html
+
+  * [AccesskeyAttribute accesskey]
+  * [ContenteditableAttribute contenteditable]
+  * [ContextmenuAttribute contextmenu]
+  * [DirAttribute dir]
+  * [DraggableAttribute draggable]
+  * [HidefocusAttribute hidefocus]
+  * [IdAttribute id]
+  * [IrrelevantAttribute irrelevant]
+  * [ClassAttribute class]
+  * [LangAttribute lang]
+  * [StyleAttribute style]
+  * [TabindexAttribute tabindex]
+  * [TitleAttribute title]
+  * [UnselectableAttribute unselectable]
+

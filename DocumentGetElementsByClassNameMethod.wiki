@@ -1,0 +1,44 @@
+#summary The document.getElementsByClassName method
+#labels about-dom,is-dom-method
+
+The `getElementsByClassName` method returns a list of elements in the DOM that define one or more classnames in the `class` attribute.  `getElementsByClassName()` exists as a method of the `document` object (for searching the entire DOM), as well as on each `HTMLElement` object (for searching the children of an element).
+
+== Arguments ==
+
+The `getElementsByClassName` method takes a single argument, a string, which is the classname you wish to match; it returns a `NodeList`, i.e. an array of elements that define the given classname.  If the argument contains spaces, it is treated as a space-delimited array of classnames (thus matching the syntax of the [ClassAttribute `class` attribute] itself), and it returns an array of elements that define *all* of the given classnames.
+
+== Usage ==
+
+Given the following HTML fragment:
+
+{{{
+<section>
+ <p id="p1" class="aaa bbb"></p>
+ <div id="p2" class="aaa"></div>
+ <p id="p3" class="bbb ccc"></p>
+</section>
+}}}
+
+A call to `document.getElementsByClassName("aaa")` would return a `NodeList` with the two elements -- the paragraph `p1` and the div `p2` -- because both of these elements contain the "aaa" classname in their `class` attribute.  (Remember, the [ClassAttribute `class` attribute] is a space-separated list of classnames.)
+
+A call to `document.getElementsByClassName("ccc bbb")` would return a `NodeList` with only one element: `p3`, because this is the only element that defines *both* the "ccc" and "bbb" classnames.
+
+A call to `document.getElementsByClassName("bbb ccc")` would also return a `NodeList` with only `p3`, because the order of classnames is not significant.
+
+A call to `document.getElementsByClassName(" bbb  ccc ")` would also return a `NodeList` with only `p3`, because leading and trailing spaces are not significant, and multiple spaces are collapsed and treated as a single delimiter.
+
+A call to `document.getElementsByClassName("aaa,bbb")` would return no nodes, because none of the elements in this example define the "aaa,bbb" class.  The comma is not a delimiter; the only valid delimiter is a space.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-getElementsByClassName-typeof-test.html typeOf(document.getElementsByClassName) != 'undefined'] || N || N || N || Y || N || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#dom-document-getelementsbyclassname getElementsByClassName in HTML 5]
+  * [http://ejohn.org/blog/getelementsbyclassname-speed-comparison/ getElementsByClassName speed comparison]
+  * [http://webkit.org/blog/153/webkit-gets-native-getelementsbyclassname/ WebKit gets Native getElementsByClassName]
+  * [http://blog.whatwg.org/the-road-to-html-5-getelementsbyclassname The Road to HTML 5: getElementsByClassName]

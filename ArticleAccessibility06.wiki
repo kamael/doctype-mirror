@@ -1,0 +1,43 @@
+#summary Day 6: Choosing a DOCTYPE
+#labels about-accessibility,is-article
+
+You are here: [Welcome Home] > [Articles Articles] > [ArticlesAccessibility Accessibility] > [ArticleAccessibility 30 days to a more accessible web site] > *Day 6: Choosing a DOCTYPE*
+
+You start your sentences with a capital letter; start your HTML with a `DOCTYPE`.  It's just basic grammar.
+
+=== Who benefits? ===
+
+You benefit.  Many of the tips in the rest of this series will require you to know what version of HTML you're using, because the instructions will be slightly different.  So figure it out now, or add one if you don't have one.
+
+=== How to do it ===
+
+You may already have a `DOCTYPE`.  View source on your home page; your `DOCTYPE` (if you have one) will be at the very top, even before the `<html>` tag.  Your `DOCTYPE` may include phrases like "`HTML 4.01 Strict`", "`XHTML 1.0 Strict`", "`XHTML 1.1`", and a few others.  These are all fine.
+
+If you have a `DOCTYPE`, don't change it.  However, if your source shows no `DOCTYPE` before your `<html>` tag, add this one:
+
+{{{
+<!DOCTYPE html>
+}}}
+
+For technical reasons that I would rather not go into at the moment (see the "Further Reading" section below if you're interested), it is possible that you will see slight changes in your page layout after adding this `DOCTYPE`.  If (and only if) this happens to you, you can compromise and use an older `DOCTYPE` instead, like this:
+
+{{{
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+}}}
+
+Note that _every_ page of your web site should include a `DOCTYPE`, so check all your templates.
+
+The important thing to know for the rest of this series is whether you're using HTML (any variant), XHTML 1.0 (any variant), or XHTML 1.1.  You'll see why in the next section.
+
+=== Further reading ===
+
+  * A List Apart: [http://www.alistapart.com/stories/doctype/ Fixing Your Site With The Right DOCTYPE]
+  * [http://www.mozilla.org/docs/web-developer/quirks/ Quirks mode in Mozilla]
+  * MSDN: [http://msdn.microsoft.com/en-us/library/cc288325(VS.85).aspx Defining Document Compatibility in IE 8]
+  * MSDN: [http://msdn.microsoft.com/en-us/library/bb250395(VS.85).aspx CSS Enhancements in IE 6]
+
+----
+
+Next: [ArticleAccessibility07 Day 7: Identifying your language]
+Back: [ArticleAccessibility05 Day 5: Marcus]
+

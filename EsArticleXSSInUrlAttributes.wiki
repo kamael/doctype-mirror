@@ -1,0 +1,56 @@
+= COMO filtrar entradas de usuario en atributos de URL =
+
+||[ArticleXSSInUrlAttributes English]||[JaArticleXSSInUrlAttributes 日本語]||[FrArticleXSSInUrlAttributes Français]||
+||[EsWelcome Inicio]||[EsArticlesXSS Seguridad Web]||   
+
+Atributos como `href` y `src` toman URLs como argumentos. Dependiendo de la etiqueta a la que están asociados, la URL puede ser desreferenciada y cargada al instante en que el navegador interpreta la etiqueta (p.e. etiquetas `<img src=...>`), ó solo cuando el usuario realiza una acción (como las etiquetas `<a href=...>`).
+
+Si el valor del atributo URL es calculado dinámicamente puede ser influenciado por un atacante malicioso, este podría hacer que la URL se refiera a un recurso que nosotros no deseamos. Esto pudiera resultar en una serie de problemas (como spoofing sobre la página), pero de manera muy particular en inyección de código malicioso.
+
+=== URLs de Script y Plantillas de Estilo ===
+
+El atacante puede fácilmente causar la ejecución de código si es capaz de manipular el origen de una etiqueta `<script>` o `<style>`. (Hojas de estilo pueden ejecutar código, ver más adelante)  por ejemplo:
+
+{{{
+<script src="%(script_url)s">
+}}}
+
+Si el atacante puede hacer que `script_url` apunte a `http://evil.org/evil.js`, su código malicioso se ejecutará en el contexto de la página que contiene esa etiqueta `script`.
+
+=== URLs javascript: ===
+
+Peor aun, muchos navegadores interpretan URLs con el esquema `javascript:` como si el valor resultante de la URL tuviera que ser evaluado como una expresión JavaSrip.  Por ejemplo:
+
+{{{
+<img src="%(img_url)s">
+}}}
+
+Si el atacante puede cambiar `img_url` a `javascript:evil_script()`, el HTML resultante sería:
+
+{{{
+<img src="javascript:evil_script()">
+}}}
+
+Entonces el navegador, intentando cargar la imagen `evil_script()`, ejecutará el código (y resultara en una imagen rota (pero para entonces ya es demasiado tarde).
+
+=== Otros orígenes de URL ===
+
+Otros orígenes pueden ser  muy peligrosos (Por ejemplo códigos base para objetos activex o applets) o al menos altamente vulnerables (como la musica de fondo) si sus URLs pudieran ser influenciadas por un origen intrusivos.
+
+== Como evitarlo ==
+
+  * Como cualquier otro atributo, haz un escape HTML de la URL, y encierrala en comillas dobles.
+  * asegúrate que la URL es una URL `http` ó `https` válida.
+
+Para URLs y hojas de estilo, debes esforzarte porque la URL sea servida desde un dominio probado.  Puedes también parsear y checar la URL entera con una lista de sitios permitidos (probablemente no trivial, considerando dominios internacionales), o puedes revisar que la URL contenga una ruta absoluta, por ejemplo que empiece con un caracter '/'. Si cada URL esta permitida para ser una ruta absoluta (sin la parte del host), entonces es importante que el atacante no tenga control sobre el elemento base de la página.
+
+Para URLs que pueden apuntar de manera legítima a sitios no comprobados (por ejemplo URLs de imágenes) que pueden ser legítimamente puntos para sitios no comprobados, debes verificar que la URL es relativa o absoluta (p.e, que comience con una '/', o 'http://' o 'https://').
+
+Encerrar la URL en comillas (o no permitir espacios en blanco) es necesario para prevenir ataques de inyección de atributos.
+
+Para prevenir ataques de inyección javascript:, deberías caer en la tentación de simplemente deshabitar URLs que comiencen con 'javascript:'. Sin embargo, existen muchas técnicas oscuras de esta inyección, y es mucho más seguro aplicar un filtro positivo ("lista blanca" vs. "lista negra"). Por ejemplo, IE ignorará un caracter 0x08 ("\010" octal) al principio de la cadena. Igualmente si el caracter ':' es escapado como entidad HTML (como en `javascript&#58;evil_script()`), ambos, IE y Firefox ejecutarán el script. Además existe `vbscript:` (trabaja en Internet Explorer). Y `data:text/html,<script>alert('hola');</script>` (trabaja en Firefox).  Y una larga lista. Realmente querrás usar una lista blanca, no una negra, de esquemas de URL permitidas.
+
+== Para leer más ==
+
+  * [EsArticleXSS Todo lo que siempre quiciste saber sobre ataques cross-site scripting (XSS)]
+

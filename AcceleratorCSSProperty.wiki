@@ -1,0 +1,27 @@
+#summary The accelerator property indicates whether an element contains an accelerator key.
+#labels about-css,is-css-property,from-microsoft
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *accelerator*
+
+== Usage ==
+
+See [http://msdn2.microsoft.com/en-us/library/ms530713.aspx MSDN] for an example.
+
+== Values ==
+
+`true` or `false`.  No default value.
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/accelerator-bogus-equals-false-reflection-test.html style.accelerator reflects <div style='accelerator: bogus'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/accelerator-false-equals-false-reflection-test.html style.accelerator reflects <div style='accelerator: false'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/accelerator-true-equals-true-reflection-test.html style.accelerator reflects <div style='accelerator: true'>] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms530713.aspx The accelerator property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/dynamic/accelerator.htm The history of the accelerator property on blooberry.com]
+

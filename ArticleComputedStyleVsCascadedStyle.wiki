@@ -1,0 +1,53 @@
+#summary Computed style vs. cascaded style
+#labels is-article,about-dom,about-css
+#sidebar TOCArticlesStyle
+
+There has been quite a lot of confusion about computed style vs. cascaded style.  The [http://www.w3.org/TR/DOM-Level-2-Style/ W3C DOM Level 2 Style specification] defines a `window.getComputedStyle` method, which calculates a single style property after all CSS stylesheets, inline styles, and user-defined CSS overrides have been taken into account.  This is called the "computed style."  The computed value is what the browser actually renders in a fixed units like `42px`, `rgb(255, 255, 255)` or `rgba(255, 255, 255, 0.5)`, `block`, and so forth.
+
+[BrowserFamilyMSIE Microsoft Internet Explorer] does not support the `window.getComputedStyle` method, but it supports a `node.currentStyle` property.  The `node.currentStyle` property resolves all the `inherit` values until it finds an value, but it does not "compute" the actual value in pixels (or color, or whatever fixed units are appropriate).  This is called the "cascaded style."
+
+To explain the difference, consider the following CSS and HTML:
+
+{{{
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css">
+#a {
+  width: 200px;
+  background: red;
+}
+
+#b {
+  width: 50%;
+  background: yellow;
+}
+
+#c {
+  width: inherit;
+  background: green;
+}
+</style>
+</head>
+<body>
+<div id="a">a
+  <div id="b">b
+    <div id="c">c</div>
+  </div>
+</div>
+</body>
+</html>
+}}}
+
+Here are the values for the cascaded and computed values for a, b and c:
+
+||                || a       || b       || c      ||
+|| Computed style || "200px" || "100px" || "50px" ||
+|| Cascaded style || "200px" || "50%"   || "50%"  ||
+
+
+== Further reading ==
+
+  * [WindowGetComputedStyleMethod window.getComputedStyle method]
+  * [NodeCurrentStyleProperty node.currentStyle property]
+

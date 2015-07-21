@@ -1,0 +1,63 @@
+#summary The border-bottom property sets the width, style, and color of the bottom border of a box.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *border-bottom*
+
+== Usage ==
+
+== Values ==
+
+  * `[ <border-width> || <border-style> || 'border-bottom-color' ]`
+  * `inherit`
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom--hs-808080-equals-rgb-lp-128-cm--128-cm--128-rp--reflection-test.html style.borderBottomColor reflects <div style='border-bottom: #808080'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-0-equals-0pt-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 0'>] || N || N || N || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1cm-equals-1cm-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1cm'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1cm-sc--border-style-cl--solid-equals-1cm-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1cm; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1em-equals-1em-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1em'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1em-sc--border-style-cl--solid-equals-1em-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1em; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1ex-equals-1ex-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1ex'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1ex-sc--border-style-cl--solid-equals-1ex-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1ex; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1in-equals-1in-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1in'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1in-sc--border-style-cl--solid-equals-1in-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1in; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1mm-equals-1mm-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1mm'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1mm-sc--border-style-cl--solid-equals-1mm-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1mm; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1pc-equals-1pc-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1pc'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1pc-sc--border-style-cl--solid-equals-1pc-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1pc; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1pt-equals-1pt-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1pt'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1pt-sc--border-style-cl--solid-equals-1pt-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1pt; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1px-equals-1px-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1px'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-1px-sc--border-style-cl--solid-equals-1px-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: 1px; border-style: solid'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-black-equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.borderBottomColor reflects <div style='border-bottom: black'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-bogus-equals-none-reflection-test.html style.borderBottomStyle reflects <div style='border-bottom: bogus'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-dashed-equals-dashed-reflection-test.html style.borderBottomStyle reflects <div style='border-bottom: dashed'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-dotted-equals-dotted-reflection-test.html style.borderBottomStyle reflects <div style='border-bottom: dotted'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-double-equals-double-reflection-test.html style.borderBottomStyle reflects <div style='border-bottom: double'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-groove-equals-groove-reflection-test.html style.borderBottomStyle reflects <div style='border-bottom: groove'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-hidden-equals-hidden-reflection-test.html style.borderBottomStyle reflects <div style='border-bottom: hidden'>] || Y || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-inset-equals-inset-reflection-test.html style.borderBottomStyle reflects <div style='border-bottom: inset'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-none-equals-none-reflection-test.html style.borderBottomStyle reflects <div style='border-bottom: none'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-outset-equals-outset-reflection-test.html style.borderBottomStyle reflects <div style='border-bottom: outset'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-rgb-lp-0-cm--0-cm--0-rp--equals-rgb-lp-0-cm--0-cm--0-rp--reflection-test.html style.borderBottomColor reflects <div style='border-bottom: rgb(0, 0, 0)'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-ridge-equals-ridge-reflection-test.html style.borderBottomStyle reflects <div style='border-bottom: ridge'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-solid-equals-solid-reflection-test.html style.borderBottomStyle reflects <div style='border-bottom: solid'>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-thick-equals-5px-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: thick'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-thick-sc--border-style-cl--solid-equals-5px-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: thick; border-style: solid'>] || N || N || N || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-thin-equals-thin-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: thin'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-thin-sc--border-style-cl--solid-equals-thin-reflection-test.html style.borderBottomWidth reflects <div style='border-bottom: thin; border-style: solid'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-transparent-equals-transparent-reflection-test.html style.borderBottomColor reflects <div style='border-bottom: transparent'>] || Y || Y || N || Y || Y || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/border-bottom-window-inset-equals-window-inset-reflection-test.html style.borderBottomStyle reflects <div style='border-bottom: window-inset'>] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/box.html#propdef-border-bottom The border-bottom property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:border-bottom The border-bottom property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms530724.aspx The border-bottom property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/border/bbottom.htm The history of the border-bottom property on blooberry.com]
+  * [http://reference.sitepoint.com/css/border-bottom The border-bottom property on the SitePoint CSS Reference]
+

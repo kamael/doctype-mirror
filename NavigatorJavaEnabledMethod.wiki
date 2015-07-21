@@ -1,0 +1,19 @@
+#summary The navigator.javaEnabled method
+#labels about-dom,is-dom-method
+
+== Arguments ==
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/navigator/navigator-javaEnabled-typeof-test.html typeOf(navigator.javaEnabled) != 'undefined'] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/navigator.javaEnabled The navigator.javaEnabled method on Mozilla Developer Center]
+  * [http://msdn.microsoft.com/workshop/author/dhtml/reference/methods/javaenabled.asp The navigator.javaEnabled method on MSDN]
+

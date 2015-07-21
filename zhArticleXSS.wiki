@@ -1,0 +1,45 @@
+||[EsArticleXSS Español]||[JaArticleXSS 日本語]||[FrArticleXSS Français]||
+||[Welcome Home]||||[ArticlesXSS Web Security]||
+
+
+这个章节提供了一个详细的讨论关于在一个HTML文件中的文本如何被利用，以及如何去避免它。如果你对XSS还不了解，从[zhArticleIntroductionToXSS 介绍跨站脚本漏洞]章节开始。
+
+这些文章提供了每种类型的跨站脚本漏洞的例子。这些例子包括包括了python风格的替换的HTML摘录，为的是从模板和HTML中保持独立。
+
+例如，HTML摘录：
+
+{{{
+<title>示例文档： %(title)</title>
+}}}
+
+为的是说明一个带变量的标题，如果`title`的值为`Cross-Site Scripting`，浏览器中的HTML结果将是：
+
+{{{
+<title>示例文档： Cross-Site Scripting</title>
+}}}
+
+此文档中的例子基于JavaScript (ECMAScript)。当然，类似的例子也可由浏览器支持的其他语言构成（如VBScript）。
+
+每种类型的XSS弱点（基于在HTML文档中的注入发生，如常规的文本，在href中的值等等），我们提供：
+
+
+
+  * an example that shows how the injection can be exploited, i.e. how the attacker could inject strings into the HTML document such that script of their choosing would execute in the user's browser
+  * guidelines for avoiding XSS in this particular context (e.g. "escape such-and-such characters")
+  * an explanation of why these guidelines are necessary and how they prevent XSS
+
+== 延伸阅读 ==
+
+  * [ArticleIntroductionToXSS Introduction to Cross-Site Scripting Vulnerabilities]
+  * [ArticleCompartmentalizingApplications Compartmentalizing applications within the same domain]
+  * [ArticleXSSInBodyText HOWTO filter user input in regular body text]
+  * [ArticleXSSInAttributes HOWTO filter user input in tag attributes]
+  * [ArticleXSSInUrlAttributes HOWTO filter user input in URL attributes]
+  * [ArticleXSSInStyle HOWTO filter user input in style elements and attributes]
+  * [ArticleXSSInJavaScript HOWTO filter user input in JavaScript context]
+  * [ArticleXSSInEventHandlers HOWTO filter user input in JavaScript event handlers]
+  * [ArticleXSSInHttpHeaders HOWTO filter user input in HTTP headers]
+  * [ArticleContentSniffing HOWTO protect against malicious images and other non-HTML content]
+  * [ArticleUntrustedDownloads HOWTO serve untrusted files as downloads]
+  * [ArticleUtf7 UTF-7: the case of the missing charset]
+  * [ArticleMalformedUtf8 Malformed UTF-8: who said "hello%EE" can't be dangerous]

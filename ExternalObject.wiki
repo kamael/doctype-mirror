@@ -1,0 +1,36 @@
+#summary The external object provides access to a variety of client-side APIs.
+#labels about-dom,is-dom-object
+
+== Properties ==
+
+    * [ExternalFrozenProperty frozen]
+    * [ExternalMenuArgumentsProperty menuArguments]
+    * [ExternalOnvisibilitychangeProperty onvisibilitychange]
+    * [ExternalScrollbarProperty scrollbar]
+    * [ExternalSelectableContentProperty selectableContent]
+    * [ExternalVersionProperty version]
+    * [ExternalVisibilityProperty visibility]
+
+== Methods ==
+
+    * [ExternalAddChannelMethod AddChannel()]
+    * [ExternalAddDesktopComponentMethod AddDesktopComponent()]
+    * [ExternalAddFavoriteMethod AddFavorite()]
+    * [ExternalAddSearchProviderMethod AddSearchProvider()]
+    * [ExternalAutoCompleteSaveFormMethod AutoCompleteSaveForm()]
+    * [ExternalAutoScanMethod AutoScan()]
+    * [ExternalBubbleEventMethod bubbleEvent()]
+    * [ExternalImportExportFavoritesMethod ImportExportFavorites()]
+    * [ExternalIsSearchProviderInstalledMethod IsSearchProviderInstalled()]
+    * [ExternalIsSubscribedMethod IsSubscribed()]
+    * [ExternalNavigateAndFindMethod NavigateAndFind()]
+    * [ExternalRaiseEventMethod raiseEvent()]
+    * [ExternalSetContextMenuMethod setContextMenu()]
+    * [ExternalShowBrowserUIMethod ShowBrowserUI()]
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms535246.aspx The external object on MSDN]
+  * [http://developer.mozilla.org/en/docs/Adding_search_engines_from_web_pages Adding search engines from web pages on Mozilla Developer Center]
+
+

@@ -1,0 +1,19 @@
+#summary The -moz-user-input CSS property determines whether an element will accept keystrokes.
+
+== Usage ==
+
+== Values ==
+
+  * `none`
+  * `enabled`
+  * `disabled`
+  * `inherit`
+
+== Browser compatibility ==
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/CSS:-moz-user-input The -moz-user-input property on Mozilla Developer Center]
+
+
+

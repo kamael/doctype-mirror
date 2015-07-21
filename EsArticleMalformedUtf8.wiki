@@ -1,0 +1,48 @@
+= UTF-8 mal formado: Quien dice "hola%EE" no puede ser peligroso =
+
+||[ArticleMalformedUtf8 English]||[JaArticleMalformedUtf8 日本語]||[FrArticleMalformedUtf8 Français]||
+||[EsWelcome Inicio]||[EsArticlesXSS SeguridadWeb]||  
+
+Las aplicaciones web frecuentemente necesitan mostrar datos derivados de una entrada de usuario, posiblemente encerradas entre comillas dobles (digamos dentro deun atributo HTML). Si este dato es escapado en HTML apropiadamente -- como escapar comillas dobles en {{{&quot;}}} -- este dato podría quedar confinado entre las comillas dobles.
+
+Sin embargo, consideremos algunas entradas de usuario maliciosas con finales conteniendo un byte UTF-8 inválido, como un {{{0xDE}}}.  En UTF-8, el byte {{{0xDE}}} debiera ser seguido por bytes validos adicionales para formar un caracter multi-byte.  Si esta cadena UTF-8 inválida es emergida dentro de una plantilla HTML, el byte {{{0xDE}}} podría terminar "comiéndose" al siguiente caracter.  Si el siguiente caracter es una comilla doble que significa el final de un valor de atributo HTML, entonces la entrada de usuario ha "brincado" satisfactoriamente del valor del atributo encomillado, y una entrada posterior del usuario podría potencialmente ejecutarse como una marca y/o un script.
+
+== Solución ==
+
+Como siempre, la validación de entradas paranoica es el mayor deferente para cada vulnerabilidad. En este caso, deberías revisar que cada pieza de la entrada de usuario es válida en UTF-8.  Si hay bytes inválidos, remuevelos o reemplázalos con caracteres seguros, entonces reinicia tu validación de rutina en toda la cadena.  Este es un punto muy importante; necesitaras asegurarte que el caracter seguro que estás proporcionando como reemplazo al byte UTF-8 malo formado original no lleva a vulnerabilidades más graves. En particular, si reemplazas caracteres invalidos con espacios en blanco, podrías tener problemas de seguridad adicionales.
+
+Este es un ejemplo de lo que podría pasar.  Asumiendo una URL como esta:
+{{{
+http://www.ejemplo.com/search?xss%dfonmouseover=alert%28String.fromCharCode%2888,83,83%29%29%ee&oe=shift-jis&q=a
+}}}
+
+En la marka HTML de esta página, tu aplicación web toma esta entrada de URL y construye una URL de salida añadiendo {{{start=10}}} a esta, como sigue:
+{{{
+<a href=INPUTURL&start=10>
+}}}
+
+Nota tres cosas aquí:
+
+  # El {{{%df}}} después de {{{xss}}} en la URL de entrada, que sería codificada en el byte UTF-8 inválido {{{0xDF}}}
+  # El {{{%ee}}} despues de {{{%29%29}}} que será decodificado por URL en el byte inválido UTF-8 {{{0xEE}}}
+  # El carecer de comillas alrededor de la plantilla HTML
+
+Sin ninguna validación UTF-8, la salida se vería como esta:
+{{{
+<a href=http://www.ejemplo.com/search?xssnmouseover=alert(String.fromCharCode(88,83,83))oe=shift-jis&q=a&start=10>
+}}}
+
+La {{{o}}} después de {{{0xDF}}} y la {{{&}}} despues de {{{0xEE}}} ambos serán desechados, dejando una URL no funcional, pero no un hueco de seguridad.  Pero suponiendo que tu entrada de validación note los carácteres inválidos en la entrada URÑ y los reemplace con espacion en blanco, ahora la URL de salida se vería como esta:
+
+{{{
+<a href=http://www.ejemplo.com/blogsearch?xss onmouseover=alert(String.fromCharCode(88,83,83)) &oe=shift-jis&q=a&start=10>
+}}}
+
+¡Oops!  Tu rutina de validación de entrada ha creado la oportunidad XSS al partir la URL y devolviendo la cadena {{{onmouseover}}} como un atributo por separado.  Cuando el usuario mueve su cursor sobre ese link, el script proveido por el usuario se activa.
+
+== Para Leer Más ==
+
+  * [EsArticleXSS Todo lo que siempre quisiste saber sobre ataques cross-site scripting (XSS)]
+  * [http://applesoup.googlepages.com/bypass_filter.txt Traspasando filtros de script con codificaciones de tamaño variable]
+  * [http://en.wikipedia.org/wiki/Variable-width_encoding Codificacion de tamaño variable en Wikipedia]
+

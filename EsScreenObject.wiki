@@ -1,0 +1,29 @@
+#summary El objeto screen representa la pantalla actual del cliente, como puede ser un monitor de computadora.
+[ScreenObject English]
+
+== Propiedades ==
+
+  * [EsScreenAvailHeightProperty availHeight]
+  * [EsScreenAvailLeftProperty availLeft]
+  * [EsScreenAvailTopProperty availTop]
+  * [EsScreenAvailWidthProperty availWidth]
+  * [EsScreenBufferDepthProperty bufferDepth]
+  * [EsScreenColorDepthProperty colorDepth]
+  * [EsScreenDeviceXDPIProperty deviceXDPI]
+  * [EsScreenDeviceYDPIProperty deviceYDPI]
+  * [EsScreenFontSmoothingEnabledProperty fontSmoothingEnabled]
+  * [EsScreenHeightProperty height]
+  * [EsScreenLeftProperty left]
+  * [EsScreenLogicalXDPIProperty logicalXDPI]
+  * [EsScreenLogicalYDPIProperty logicalYDPI]
+  * [EsScreenPixelDepthProperty pixelDepth]
+  * [EsScreenTopProperty top]
+  * [EsScreenUpdateIntervalProperty updateInterval]
+  * [EsScreenWidthProperty width]
+
+== Para leer más ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.screen El objeto screen en el Centro de Desarrollo Mozilla] (Inglés)
+  * [http://msdn2.microsoft.com/en-us/library/ms535868.aspx El objeto screen en MSDN] (Inglés)
+  * [http://www.quirksmode.org/viewport/compatibility.html Propiedades del punto de vista en quirksmode.org] (Inglés)
+

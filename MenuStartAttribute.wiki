@@ -1,0 +1,31 @@
+#summary The menu start attribute
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [MenuElement <menu> element] > *start attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `start` attribute on the following elements:
+
+  * [AudioElement <audio>]
+  * [DirElement <dir>]
+  * [ImgElement <img>]
+  * [MenuElement <menu>]
+  * [OlElement <ol>]
+  * [UlElement <ul>]
+  * [VideoElement <video>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/menu-start-reflection-test.html menu.start reflects <menu start="42">] || N || N || N || N || N || N || Y || N ||
+
+== Further reading ==
+
+

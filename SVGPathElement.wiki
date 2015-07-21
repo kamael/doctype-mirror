@@ -1,0 +1,43 @@
+#summary The SVG <path> element represents a general shape consisting of a series of line segments and curves.
+
+You are here: [Welcome Home] > [SVGElements SVG Elements] > *path element*
+
+= Introduction =
+
+The path element is used to draw any general geometric shape.  The border (stroke) of the shape consists of a series of connected line segments or curve segments.  Also see the [SVGPolylineElement polyline] and [SVGPolygonElement polygon] elements. 
+
+= Details =
+== Usage ==
+
+{{{
+<path stroke="blue" stroke-width="5" fill="yellow" d="M100,100 L200,200 C300,300 300,100 100,100 Z"/>
+}}}
+
+[http://doctype.googlecode.com/svn/trunk/examples/svg-path.svg http://doctype.googlecode.com/svn/trunk/examples/svg-path.png]
+
+The above image is only a PNG representation of the SVG code.  If you have a browser that supports SVG, you can click the image to browse to the actual SVG file.  You can view the source of that image in your browser just like you can with HTML pages.
+
+
+== Attributes ==
+
+Common attributes:
+
+  * [http://www.w3.org/TR/SVG11/paths.html#DAttribute d] - a comma- or whitespace-separated list of segment commands.  See below for a description of path commands.
+  * [http://www.w3.org/TR/SVG11/painting.html#FillProperty fill] - describes how the interior of the path should be painted, see [SVGFillProperties].  The default value is "black".
+  * [http://www.w3.org/TR/SVG11/painting.html#StrokeProperty stroke] - describes how the outline of the path should be painted, see [SVGStrokeProperties]. The default value is "none".
+
+== Path Commands ==
+
+The path element uses a series of encoded path commands to represent moves, lines and curves in the [http://www.w3.org/TR/SVG11/paths.html#DAttribute d attribute].
+
+|| Command || Absolute Form || Description ||
+|| [http://www.w3.org/TR/SVG11/paths.html#PathDataMovetoCommands Move] || M x,y || Lift the pen and move the current point to (x,y) ||
+|| [http://www.w3.org/TR/SVG11/paths.html#PathDataLinetoCommands Line] || L x,y || Draw a straight line from the current point to the new point (x,y) ||
+|| [http://www.w3.org/TR/SVG11/paths.html#PathDataCubicBezierCommands Cubic Bézier Curve] || C x1,y1 x2,y2 x,y || Draw a cubic Bézier curve from the current point to (x,y) using (x1,y1) and (x2,y2) as control points ||
+|| [http://www.w3.org/TR/SVG11/paths.html#PathDataClosePathCommand Close] || Z || Close the current subpath ||
+
+* TODO: add remaining command types (quadratic bezier, elliptical arc and shorthand forms) *
+
+= Reference =
+
+  * [http://www.w3.org/TR/SVG11/paths.html#PathElement The <path> element in SVG 1.1]

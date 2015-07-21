@@ -1,0 +1,28 @@
+#summary The applet codebase attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AppletElement <applet> element] > *codebase attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `codebase` attribute on the following elements:
+
+  * [AppletElement <applet>]
+  * [ObjectElement <object>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/applet-codebase-reflection-test.html applet.codeBase reflects <applet codebase="foo">] || N || Y || Y || N || N || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/objects.html#adef-codebase-APPLET The codebase attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms533576.aspx The codebase attribute on MSDN]
+

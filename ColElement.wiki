@@ -1,0 +1,36 @@
+#summary The col element represents a column in a table.
+#labels about-html,about-tables,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *col element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [ColAlignAttribute align]
+  * [ColBgcolorAttribute bgcolor]
+  * [ColChAttribute ch]
+  * [ColCharAttribute char]
+  * [ColCharoffAttribute charoff]
+  * [ColChoffAttribute choff]
+  * [ColSpanAttribute span]
+  * [ColValignAttribute valign]
+  * [ColWidthAttribute width]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/col-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/col-element-applies-style-test.html applies style] || N || Y || Y || N || N || Y || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/col-element-as-child-of-table-appears-in-dom-test.html appears in DOM as child of table] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/col-element-as-child-of-table-applies-style-test.html applies style as child of table] || Y || Y || Y || Y || Y || N || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#the-col The col element in HTML 5]
+  * [http://www.w3.org/TR/html401/struct/tables.html#h-11.2.4 The col element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms533069.aspx The col element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/c/col.htm The history of the col element on blooberry.com]

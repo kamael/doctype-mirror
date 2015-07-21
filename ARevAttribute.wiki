@@ -1,0 +1,33 @@
+#summary The a rev attribute represents the relation of this document to the target resource of the hyperlink.
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AElement <a> element] > *rev attribute*
+
+== Usage ==
+
+<a rev="made" href="author.html">Author information</a>
+
+== Values ==
+
+See [LinkTypes link types] for the possible values of this attribute.
+
+== Elements ==
+
+You can use the `rev` attribute on the following elements:
+
+  * [AElement <a>]
+  * [LinkElement <link>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/a-rev-reflection-test.html a.rev reflects <a rev="foo">] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/links.html#adef-rev The rev attribute in HTML 4]
+  * [http://www.w3.org/TR/html401/types.html#type-links The rev attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534373.aspx The rev attribute on MSDN]
+

@@ -1,0 +1,86 @@
+#summary COMO filtrar entradas de usuario en atributos de etiqueta
+#sidebar EsTOCArticlesXSS
+||[ArticleXSSInAttributes English]||[JaArticleXSSInAttributes 日本語]||[FrArticleXSSInAttributes Français]||
+||[EsWelcome Inicio]||||[EsArticlesXSS Seguridad Web]||
+
+
+= COMO filtrar entradas de usuario en atributos de etiqueta =
+
+En este artículo, discutimos lo concerniente que aplica a todos los atributos. Los ejemplos consideran un campo de formulario que fue rellenado con datos. Sin embargo, las consideraciones en este artículo se pueden aplicar a otros atributos también (como son style, color, href, etc).
+
+== Ejemplo ==
+
+Supongamos que tienes una plantilla o fragmento HTML de la manera:
+
+{{{
+<form ...
+  <input name=q value="%(query)s">
+</form>
+}}}
+
+Si alguien es capaz de manipular la petición de la variable a algo como:
+
+{{{
+blah"><script>evil_script()</script>
+}}}
+
+entonces, después de la sustitución esto resultaría en el HTML:
+
+{{{
+<form ...
+  <input name=q value="blah"><script>evil_script()</script>">
+</form>
+}}}
+
+Esta echo, el atacante es capaz de "cerrar las comillas" e insertar una etiqueta script que será ejecutada por el navegador.
+
+== Solución ==
+
+Cualquier cadena que es insertada dentro de una página debe pasar por el siguiente reemplazo de caracteres con las entidades HTML/SGML correspondientes:
+
+  * Convertir de `<` a `&lt;`
+  * Convertir de `>` a `&gt;`
+  * Convertir de `&` a `&amp;`
+  * Convertir de `"` a `&quot;`
+  * Convertir de `'` a `&#39;`
+
+Además, asegurarse que el atributo del valor es rodeado por comillas dobles.
+
+== Racionales ==
+
+En este contexto, es necesario escapar el caracter comillas que es usado para delimitar el valor del atributo para prevenir el ataque "closing the quote" ("cerrando las comillas"). La "otrar" comilla debería ser escapada también, sólo en caso de que alguien cambie el tipo de comillas en la plantilla y olvide cambiar el escape. Sin embargo, deberíamos usar siempre las comillas dobles pues muchas de las funciones estándard de escape en HTML (como sgi.escape de Python) no escapan comillas simples.
+
+En segundo lugar, es necesario escapar el caracter ampersand: viejos navegadores Netscape soportan lo que se llamaba [http://devedge-temp.mozilla.org/library/manuals/2000/javascript/1.3/guide/embed.html#1013293 Entidades JavaScript]. Esto permite a a una cadena de la vorma `&{javascript_expresión};` ser usada en lugar de atributos. La expresión es evaluada y la entidad completa es reemplazada con el resultado de esta evaluación. Un atacante que sea capaz de inyectar y enroscar caracteres dentro de un atributo podría fácilmente se capaz de ejecutar un script malicioso.
+
+Los puristas lo dejaran fuera, correcto, ¿qué ángulo entre paréntesis no necesita ser escapado en este contexto?. Además, escaparlo no nos introducirá a algunas otras vulnerabilidades, y esto te permitirá reusar la misma función de escape básica.
+
+== Y algo más: Ataques de Inyección de Atributos ==
+
+Los valores de atributos deben ser encomillados, porque de lo contrario  un ataque de inserción de atributos puede ser posible. Supongamos que tienes una plantilla ó fragmento HTML de la forma:
+
+{{{
+<form ...
+  <input name=q value=%(query)s>
+</form>
+}}}
+
+Si alguien es capaz de causar que la variable contenga por ejemplo:
+
+{{{
+blah onmouseover=evil_script()
+}}}
+
+después de la sustitución este sería el resultado en el HTML:
+
+{{{
+<form ...
+  <input name=q value=blah onmouseover=evil_script()>
+</form>
+}}}
+
+Si la víctima mueve su cursor sobre el área de este campo, el script sería ejecutado (debido al atributo `onmouseover`).  Otros manejadores como son `onerror` y `onload` permiten la ejecución del código malicioso sin ninguna interacción del usuario, dependiendo del contexto.  Toma en cuenta que el escape HTML por sí mismo no previene este ataque ya que se basa solo en la inyección de caracteres que no son escapados por la mayoría de las funciones de escape HTML.
+
+== Para leer más ==
+
+  * [EsArticleXSS Todo lo que siempre quisiste saber sobre ataques cross-site scripting (XSS)]
+  * [http://devedge-temp.mozilla.org/library/manuals/2000/javascript/1.3/guide/embed.html#1013293 Usando expresiones JavaScript Expressions como valores de atributos HTML] (Inglés)

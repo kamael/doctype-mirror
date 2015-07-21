@@ -1,0 +1,41 @@
+#summary The ilayer element represents an inline transparent or opaque layer.
+#labels about-html,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *ilayer element*
+
+== Usage ==
+
+Do not use `<ilayer>`.  It was introduced in [BrowserNetscape4 Netscape 4] and has never been supported by any other browser.
+
+== Attributes ==
+
+  * [IlayerAboveAttribute above]
+  * [IlayerBackgroundAttribute background]
+  * [IlayerBelowAttribute below]
+  * [IlayerBgcolorAttribute bgcolor]
+  * [IlayerClipAttribute clip]
+  * [IlayerHeightAttribute height]
+  * [IlayerLeftAttribute left]
+  * [IlayerNameAttribute name]
+  * [IlayerOverflowAttribute overflow]
+  * [IlayerPagexAttribute pagex]
+  * [IlayerPageyAttribute pagey]
+  * [IlayerSrcAttribute src]
+  * [IlayerTopAttribute top]
+  * [IlayerVisibilityAttribute visibility]
+  * [IlayerWidthAttribute width]
+  * [IlayerZIndexAttribute z-index]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/ilayer-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/ilayer-element-applies-style-test.html applies style] || N || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.blooberry.com/indexdot/html/tagpages/i/ilayer.htm The history of the ignoble ilayer element on blooberry.com]
+

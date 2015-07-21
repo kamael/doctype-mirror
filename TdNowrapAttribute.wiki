@@ -1,0 +1,34 @@
+#summary The td nowrap attribute
+#labels about-html,about-tables,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [TdElement <td> element] > *nowrap attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `nowrap` attribute on the following elements:
+
+  * [BodyElement <body>]
+  * [DdElement <dd>]
+  * [DivElement <div>]
+  * [DtElement <dt>]
+  * [TdElement <td>]
+  * [ThElement <th>]
+  * [TrElement <tr>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/td-nowrap-absent-reflection-test.html td.noWrap reflects <td>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/td-nowrap-reflection-test.html td.noWrap reflects <td nowrap>] || Y || Y || Y || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/tables.html#edef-TD The nowrap attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms534196.aspx The nowrap attribute on MSDN]
+

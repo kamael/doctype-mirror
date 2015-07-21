@@ -1,0 +1,43 @@
+#summary Day 13: Using real links
+#labels about-accessibility,is-article
+
+You are here: [Welcome Home] > [Articles Articles] > [ArticlesAccessibility Accessibility] > [ArticleAccessibility 30 days to a more accessible web site] > *Day 13: Using real links*
+
+The scourge of web design is the "`javascript:`" link, a pseudo-link that executes a piece of Javascript code when you click on it.  The most common place this problem occurs in weblogs is in the link to display comments in a separate window.  Why is it a problem?  [http://www.w3schools.com/browsers/browsers_stats.asp Many people don't have scripting enabled] for one reason or another, including many disabled users whose browsers simply don't support it.  In addition, there are a rising number of people who install browser extensions like [http://noscript.net/ NoScript], which only enables scripting on sites they trust.  These pseudo-links won't work for these users when they first visit your site -- certainly not the first impression you were hoping for.  Some advanced web applications may require scripting, but even in those script-heavy applications, you should use real links for things you want search engines to be able to follow, for links to external sites that users may wish to open in a new window or tab, or any site navigation that a keyboard-only user may tab through.
+
+Although it's easy to describe and simple to fix, I can't stress enough how important this tip is.  Some problems, like [ArticleAccessibility11 not having a "skip link" past your navigation bar], reduce usability to varying degrees, but at least your page can be read eventually.  On the other hand, this problem actually makes entire chunks of important content completely inaccessible.  If your comments are hidden behind a "`javascript:`" link, _they may as well not exist_.
+
+=== Who benefits? ===
+
+  * [ArticleAccessibility05 Marcus] benefits.  [http://www.fdisk.com/doslynx/lynxport.htm Lynx] does not support Javascript.
+  * [ArticleAccessibility02 Michael] benefits.  [http://links.sourceforge.net/ Links] does not support Javascript.
+  * [ArticleAccessibility04 Lillian] benefits.  Although she uses Internet Explorer, her IT department has implemented a corporate-wide policy to disable Javascript on all but a small list of approved sites.  Your web site is not on the list.
+  * [http://www.google.com/ Google] benefits.  Google wants to follow links to find and index more content, but it can't follow "`javascript:`" links, because it doesn't execute Javascript code as it indexes the web.
+
+=== How to do it ===
+
+Let's say your site contains a link like this, which is meant to display comments on article 194:
+
+{{{
+<a href="javascript:OpenComments(194)">Show comments</a>
+}}}
+
+You need to construct a URL that displays those comments, and put it in the `href` attribute.  Move the script to the `onclick` attribute.
+
+{{{
+<a href="/showcomments?articleId=194" onclick="OpenComments(194); return false">Show comments</a>
+}}}
+
+In Javascript-enabled browsers, it will still work the same way, because the `onclick` attribute takes precedence over the `href` attribute.  So the new version still calls the `OpenComments` function.  However, non-Javascript-enabled browsers (and search engines) will ignore the `onclick` attribute entirely and follow the link specified in the `href`, which will display the comments in their own page.
+
+If you're using `javascript:` pseudo-links for any other reason, stop.  Just stop.  Do not pass go, do not collect $200, etc.  Apply the above technique to your own code so that non-Javascript-enabled browsers always have a chance to follow a real link.
+
+=== Further reading ===
+
+  * Jeff Howden: [http://www.evolt.org/article/Links_and_JavaScript_Living_Together_in_Harmony/17/20938/ Links & JavaScript Living Together in Harmony].
+
+----
+
+Next: [ArticleAccessibility14 Day 14: Adding titles to links]
+Back: [ArticleAccessibility12 Day 12: Using color safely]
+

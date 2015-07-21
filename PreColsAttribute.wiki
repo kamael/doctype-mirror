@@ -1,0 +1,30 @@
+#summary The pre cols attribute
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [PreElement <pre> element] > *cols attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `cols` attribute on the following elements:
+
+  * [DivElement <div>]
+  * [FramesetElement <frameset>]
+  * [MulticolElement <multicol>]
+  * [PreElement <pre>]
+  * [TableElement <table>]
+  * [TextareaElement <textarea>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/pre-cols-reflection-test.html pre.cols reflects <pre cols="foo">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+

@@ -1,0 +1,35 @@
+#summary The textarea element represents a multi-line text input field in a web form.
+#labels about-html,about-forms,is-html-element,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > *textarea element*
+
+== Usage ==
+
+== Attributes ==
+
+  * [TextareaColsAttribute cols]
+  * [TextareaDisabledAttribute disabled]
+  * [TextareaHeightAttribute height]
+  * [TextareaNameAttribute name]
+  * [TextareaPlaceholderAttribute placeholder]
+  * [TextareaReadonlyAttribute readonly]
+  * [TextareaRowsAttribute rows]
+  * [TextareaWidthAttribute width]
+  * [TextareaWrapAttribute wrap]
+  * [CommonAttributes common attributes]
+
+== Browser compatibility ==
+
+  * In some instances, Internet Explorer and Opera may truncate the contents of a [TextareaElement <textarea>] element when submitted. Using the wrap="virtual" attribute will resolve these issues.
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/textarea-element-appears-in-dom-test.html appears in DOM] || Y || Y || Y || Y || Y || Y || Y || Y ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/elements/textarea-element-applies-style-test.html applies style] || Y || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/interact/forms.html#edef-TEXTAREA The textarea element in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms535904.aspx The textarea element on MSDN]
+  * [http://www.blooberry.com/indexdot/html/tagpages/t/textarea.htm The history of the textarea element on blooberry.com]

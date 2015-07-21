@@ -1,0 +1,33 @@
+#summary The applet hspace attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AppletElement <applet> element] > *hspace attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `hspace` attribute on the following elements:
+
+  * [AppletElement <applet>]
+  * [EmbedElement <embed>]
+  * [IframeElement <iframe>]
+  * [ImgElement <img>]
+  * [MarqueeElement <marquee>]
+  * [ObjectElement <object>]
+  * [TableElement <table>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/applet-hspace-reflection-test.html applet.hspace reflects <applet hspace="42">] || Y || Y || Y || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/struct/objects.html#adef-hspace The hspace attribute in HTML 4]
+  * [http://msdn2.microsoft.com/en-us/library/ms533868.aspx The hspace attribute on MSDN]
+

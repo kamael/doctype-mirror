@@ -1,0 +1,47 @@
+#summary Everything you ever wanted to know about cross-site scripting (XSS) attacks
+#labels is-article,about-security
+#sidebar TOCArticlesXSS
+
+||[EsArticleXSS Español]||[JaArticleXSS 日本語]||[FrArticleXSS Français]||
+||[Welcome Home]||||[ArticlesXSS Web Security]||
+
+This section provides a detailed discussion of cross-site scripting (XSS) attacks in various contexts within a HTML document, how they can be exploited, and generic methods for avoiding them.  If you are unfamiliar with XSS, start with [ArticleIntroductionToXSS Introduction to Cross-Site Scripting Vulnerabilities].
+
+These articles provide examples for each of the specific classes of Cross-Site-Scripting vulnerabilities. The examples are given in the form of HTML snippets which include Python-style string substitutions, which were chosen to keep the examples independent from any particular templating or HTML rendering infrastructure.
+
+For example, the HTML snippet
+
+{{{
+<title>Example document: %(title)</title>
+}}}
+
+is intended to illustrate a template snippet that, if the variable `title` has value `Cross-Site Scripting`, results in the following HTML to be emitted to the browser:
+
+{{{
+<title>Example document: Cross-Site Scripting</title>
+}}}
+
+The examples in this document are based on JavaScript (ECMAScript). Of course, similar examples could be constructed using other scripting languages supported by the victim's browser (such as VBScript).
+
+For each class of XSS vulnerability (which are based on the context within a HTML document where the injection occurs, such as regular body text, within an href attribute, etc), we provide
+
+  * an example that shows how the injection can be exploited, i.e. how the attacker could inject strings into the HTML document such that script of their choosing would execute in the user's browser
+  * guidelines for avoiding XSS in this particular context (e.g. "escape such-and-such characters")
+  * an explanation of why these guidelines are necessary and how they prevent XSS
+
+== Further reading ==
+
+  * [ArticleIntroductionToXSS Introduction to Cross-Site Scripting Vulnerabilities]
+  * [ArticleCompartmentalizingApplications Compartmentalizing applications within the same domain]
+  * [ArticleXSSInBodyText HOWTO filter user input in regular body text]
+  * [ArticleXSSInAttributes HOWTO filter user input in tag attributes]
+  * [ArticleXSSInUrlAttributes HOWTO filter user input in URL attributes]
+  * [ArticleXSSInStyle HOWTO filter user input in style elements and attributes]
+  * [ArticleXSSInJavaScript HOWTO filter user input in JavaScript context]
+  * [ArticleXSSInEventHandlers HOWTO filter user input in JavaScript event handlers]
+  * [ArticleXSSInHttpHeaders HOWTO filter user input in HTTP headers]
+  * [ArticleContentSniffing HOWTO protect against malicious images and other non-HTML content]
+  * [ArticleUntrustedDownloads HOWTO serve untrusted files as downloads]
+  * [ArticleUtf7 UTF-7: the case of the missing charset]
+  * [ArticleMalformedUtf8 Malformed UTF-8: who said "hello%EE" can't be dangerous]
+

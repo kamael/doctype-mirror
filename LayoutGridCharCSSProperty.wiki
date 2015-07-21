@@ -1,0 +1,37 @@
+#summary The layout-grid-char property sets the size of the character grid used for rendering text.
+#labels about-css,is-css-property,from-microsoft
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *layout-grid-char*
+
+== Usage ==
+
+== Values ==
+
+  * `none`
+  * `auto`
+  * [CSSLengthType <length>]
+  * [CSSPercentageType <percentage>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-char-0-equals-0pt-reflection-test.html style.layoutGridChar reflects <div style='layout-grid-char: 0'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-char-1cm-equals-1cm-reflection-test.html style.layoutGridChar reflects <div style='layout-grid-char: 1cm'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-char-1em-equals-1em-reflection-test.html style.layoutGridChar reflects <div style='layout-grid-char: 1em'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-char-1ex-equals-1ex-reflection-test.html style.layoutGridChar reflects <div style='layout-grid-char: 1ex'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-char-1in-equals-1in-reflection-test.html style.layoutGridChar reflects <div style='layout-grid-char: 1in'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-char-1mm-equals-1mm-reflection-test.html style.layoutGridChar reflects <div style='layout-grid-char: 1mm'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-char-1pc-equals-1pc-reflection-test.html style.layoutGridChar reflects <div style='layout-grid-char: 1pc'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-char-1pt-equals-1pt-reflection-test.html style.layoutGridChar reflects <div style='layout-grid-char: 1pt'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-char-1px-equals-1px-reflection-test.html style.layoutGridChar reflects <div style='layout-grid-char: 1px'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-char-42-pt--equals-42-pt--reflection-test.html style.layoutGridChar reflects <div style='layout-grid-char: 42%'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-char-auto-equals-auto-reflection-test.html style.layoutGridChar reflects <div style='layout-grid-char: auto'>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/css/properties/layout-grid-char-none-equals-none-reflection-test.html style.layoutGridChar reflects <div style='layout-grid-char: none'>] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms530772.aspx The layout-grid-char property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/intl/lgchar.htm The history of the layout-grid-char property on blooberry.com]
+

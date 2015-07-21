@@ -1,0 +1,28 @@
+#summary The navigator.onLine property specifies whether the browser is working in online or offline mode.
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `navigator.onLine` property returns a boolean.
+
+  * `true` means the browser is working in online mode and will try to retrieve remote resources.
+  * `false` means the browser is working in offline mode and will not try to retrieve remote resources.
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/navigator/navigator-onLine-typeof-test.html typeOf(navigator.onLine) != 'undefined'] || Y || Y || Y || Y || Y || N || Y || N ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.navigator.onLine The navigator.onLine property on Mozilla Developer Center]
+  * [http://developer.mozilla.org/en/docs/Online/Offline_Events Offline events on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms534307.aspx The navigator.onLine property on MSDN]
+  * [http://ejohn.org/blog/offline-events/ Offline events tutorial at ejohn.org]
+

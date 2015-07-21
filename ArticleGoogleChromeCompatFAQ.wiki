@@ -1,0 +1,2 @@
+#labels about-best-practices,is-tip
+This document has moved to http://sites.google.com/a/chromium.org/dev/Home/chromecompatfaq .

@@ -1,0 +1,29 @@
+#summary The rel="search" attribute indicates that the referenced document can be used to search the current document and its document collection.
+#labels about-html,is-html-attribute,from-whatwg
+
+`rel="search"` is one of several [LinkTypes link types] for describing relationships between documents.
+
+== Usage ==
+
+A `rel="search"` link should point to an OpenSearch description document.
+
+== Elements ==
+
+You can use the `rel="search"` attribute on these elements:
+
+  * [AElement <a>]
+  * [AreaElement <area>]
+  * [LinkElement <link>]
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.whatwg.org/specs/web-apps/current-work/#search The rel="search" link type in HTML 5]
+  * [http://msdn2.microsoft.com/en-us/library/ms534366.aspx The rel="search" link type on MSDN]
+  * [http://msdn2.microsoft.com/en-us/library/ms532996.aspx Search provider extensibility in Internet Explorer 7]
+  * [http://www.opensearch.org/ OpenSearch specification]
+
+

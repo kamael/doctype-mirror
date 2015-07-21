@@ -1,0 +1,22 @@
+#summary The document.fileSize property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `document.fileSize` property returns a string.
+
+This property is read-only.
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/document/document-fileSize-typeof-test.html typeOf(document.fileSize) != 'undefined'] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://msdn2.microsoft.com/en-us/library/ms533752.aspx The document.fileSize property on MSDN]
+

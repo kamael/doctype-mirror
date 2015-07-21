@@ -1,0 +1,31 @@
+#summary The dir start attribute
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [DirElement <dir> element] > *start attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `start` attribute on the following elements:
+
+  * [AudioElement <audio>]
+  * [DirElement <dir>]
+  * [ImgElement <img>]
+  * [MenuElement <menu>]
+  * [OlElement <ol>]
+  * [UlElement <ul>]
+  * [VideoElement <video>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/dir-start-reflection-test.html dir.start reflects <dir start="7">] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+

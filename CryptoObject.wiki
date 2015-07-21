@@ -1,0 +1,24 @@
+#summary The crypto object is an API for dealing with smartcards and client-side encryption.
+#labels about-dom,is-dom-object
+
+== Properties ==
+
+    * [CryptoEnableSmartCardEventsProperty enableSmartCardEvents]
+
+== Methods ==
+
+    * [CryptoAlertMethod alert()]
+    * [CryptoDisableRightClickMethod disableRightClick()]
+    * [CryptoGenerateCRMFRequestMethod generateCRMFRequest()]
+    * [CryptoImportUserCertficatesMethod importUserCertificates()]
+    * [CryptoLogoutMethod logout()]
+    * [CryptoPopChallengeResponseMethod popChallengeResponse()]
+    * [CryptoRandomMethod random()]
+    * [CryptoSignTextMethod signText()]
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.crypto The window.crypto object on Mozilla Developer Center]
+  * [http://developer.mozilla.org/en/docs/JavaScript_crypto Using the Mozilla crypto object from JavaScript]
+
+

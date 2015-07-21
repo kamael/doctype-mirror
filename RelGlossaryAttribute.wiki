@@ -1,0 +1,24 @@
+#summary The rel="glossary" attribute indicates that the referenced document is a glossary in a document collection.
+#labels about-html,is-html-attribute,from-w3c
+
+`rel="glossary"` is one of several [LinkTypes link types] for describing relationships between documents.
+
+== Usage ==
+
+== Elements ==
+
+You can use the `rel="glossary"` attribute on these elements:
+
+  * [AElement <a>]
+  * [LinkElement <area>]
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/types.html#type-links Link types in HTML 4]
+  * [http://www.blooberry.com/indexdot/html/tagpages/l/link.htm Link types on blooberry.com]
+
+

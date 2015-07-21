@@ -1,0 +1,6 @@
+#summary HOWTO splice an array that's not really an Array (goog.array.splice)
+#labels is-article,about-javascript
+#sidebar TOCArticlesTips
+
+Array.prototype.splice.call(obj, ....)
+

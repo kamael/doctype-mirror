@@ -1,0 +1,36 @@
+#summary The position property specifies how a box is positioned in the viewport.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *position*
+
+== Usage ==
+
+{{{
+#some-id{
+     position: relative;
+     top: 10px;
+     left: 10px;
+}
+
+}}}
+
+== Values ==
+
+  * `static` - the default value, element will ignore any position property ( `top`, `left`, `bottom`, `right`, and `z-index`) declarations
+  * `relative` - element will be positioned relative to where it would have normally been in the document flow. (e.g. `left: 10px;` will position it 10 pixels to the left of where it would have been)
+  * `absolute` - element will be positioned relative to its containing block element (e.g. `left: 10px;` will position it 10 pixels to the left of its containing element's left border)
+  * `fixed` - element will be positioned relative to the browser canvas (e.g. `left: 10px;` will position it 10 pixels to the left of the left browser window border)
+  * `inherit` - position is not inherited by default, this will force inheritance.
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/visuren.html#propdef-position The position property in CSS 2.1]
+  * [http://developer.mozilla.org/en/docs/CSS:position The position property on Mozilla Developer Center]
+  * [http://msdn2.microsoft.com/en-us/library/ms531140.aspx The position property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/classify/position.htm The history of the position property on blooberry.com]
+  * [http://reference.sitepoint.com/css/position The position property on the SitePoint CSS Reference]
+

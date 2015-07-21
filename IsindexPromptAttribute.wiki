@@ -1,0 +1,26 @@
+#summary The isindex prompt attribute
+#labels about-html,is-html-attribute,from-w3c
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [IsindexElement <isindex> element] > *prompt attribute*
+
+== Usage ==
+
+== Values ==
+
+== Elements ==
+
+You can use the `prompt` attribute on the following elements:
+
+  * [IsindexElement <isindex>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/isindex-prompt-reflection-test.html isindex.prompt reflects <isindex prompt="foo">] || N || N || N || Y || Y || Y || Y || Y ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/html401/interact/forms.html#adef-prompt The prompt attribute in HTML 4]
+

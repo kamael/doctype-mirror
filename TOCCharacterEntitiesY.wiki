@@ -1,0 +1,13 @@
+  * [CharacterEntities Other character entities]
+    * [YacuteCharacterEntity &yacute;]
+    * [YacyCharacterEntity &yacy;]
+    * [YcircCharacterEntity &ycirc;]
+    * [YcyCharacterEntity &ycy;]
+    * [YenCharacterEntity &yen;]
+    * [YfrCharacterEntity &yfr;]
+    * [YicyCharacterEntity &yicy;]
+    * [YopfCharacterEntity &yopf;]
+    * [YscrCharacterEntity &yscr;]
+    * [YucyCharacterEntity &yucy;]
+    * [YumlCharacterEntity &yuml;]
+

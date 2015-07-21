@@ -1,0 +1,96 @@
+﻿#labels security
+#sidebar TOCArticles
+
+||[EsArticles Español]||[JaArticles 日本語]||[FrArticles Français]||[ZhArticles æ±è¯­]||
+||[Welcome Home]||
+
+== Web security  ==
+
+  * [ArticleIntroductionToXSS Introduction to Cross-Site Scripting Vulnerabilities.]
+  * [ArticleXSS Everything you ever wanted to know about cross-site scripting (XSS) attacks]
+  * [ArticleXSSInAttributes HOWTO filter user input in tag attributes]
+  * [ArticleXSSInBodyText HOWTO filter user input in regular body text]
+  * [ArticleXSSInEventHandlers HOWTO filter user input in JavaScript event handlers]
+  * [ArticleXSSInHttpHeaders HOWTO filter user input in HTTP headers]
+  * [ArticleXSSInJavaScript HOWTO filter user input in JavaScript context]
+  * [ArticleXSSInStyle HOWTO filter user input in style elements and attributes]
+  * [ArticleXSSInUrlAttributes HOWTO filter user input in URL attributes]
+  * [ArticleScriptInclusion HOWTO protect against cross-domain data disclosure attacks]
+  * [ArticleE4XSecurity HOWTO protect against E4X injection attacks]
+  * [ArticleCompartmentalizingApplications Compartmentalizing applications within the same domain]
+  * [ArticleUtf7 UTF-7: the case of the missing charset]
+  * [ArticleMalformedUtf8 Malformed UTF-8: Who said "hello%EE" can't be dangerous]
+  * [ArticleContentSniffing HOWTO protect against malicious images and other non-HTML content]
+  * [ArticleUntrustedDownloads HOWTO serve untrusted files as downloads]
+
+=== Flash specific Security ===
+
+  * [ArticleFlashSecurity Introduction to Flash security]
+  * [ArticleFlashSecurityCrossDomain Flash cross-domain policy files]
+  * [ArticleFlashSecurityPolicyAttack Flash cross-domain policy attacks]
+  * [ArticleFlashSecurityGetURL Flash getURL XSS attacks]
+  * [ArticleFlashSecurityClickTAG Flash clickTAG XSS attacks]
+  * [ArticleFlashSecurityTextField Flash TextField XSS attacks]
+  * [ArticleFlashSecurityLoadMovie Flash loadMovie XSS attacks]
+  * [ArticleFlashSecurityAsFunction Flash asFunction XSS attacks]
+  * [ArticleFlashSecurityURL Flash URL parameter attacks]
+  * [ArticleFlashSecuritySolutions HOWTO secure your Flash applications]
+
+== Cross-browser Compatibility ==
+  * [ArticleGoogleChromeCompatFAQ Google Chrome Website Compatibility FAQ]
+
+== DOM manipulation ==
+
+  * [ArticleDomHelper Introducing DOMHelper]
+  * [ArticleNodeEssentials HOWTO deal with DOM nodes (goog.dom.NodeType, goog.dom.getNextElementNode, goog.dom.isNodeLike)]
+  * [ArticleCoordinates HOWTO deal with page coordinates (goog.math.Coordinates)]
+  * [ArticleClassnames HOWTO add, edit, remove, and toggle class names (goog.dom.classes)]
+  * [ArticleCreateDom HOWTO quickly create multiple DOM nodes (goog.dom.createDom)]
+  * [ArticleFindNodes HOWTO find DOM nodes that match a filter (goog.dom.findNodes)]
+  * [ArticleFontSizeMonitor HOWTO detect when the user changes the text size (goog.dom.FontSizeMonitor)]
+  * [ArticleFrameContentDocument HOWTO get the document element of a frame or iframe (goog.dom.getFrameContentDocument)]
+  * [ArticleNearestElement HOWTO find the nearest element to a node (goog.dom.getNextElementNode)]
+  * [ArticleNodeCompareDocumentOrder HOWTO determine if one node is before or after another node]
+  * [ArticleNodeContains HOWTO determine if one node contains another (goog.dom.contains)]
+  * [ArticleOwnerDocument HOWTO find the owner document of a DOM node (goog.dom.getOwnerDocument)]
+  * [ArticlePageScroll HOWTO calculate how far the page has scrolled (goog.dom.getPageScroll)]
+  * [ArticleParentWindow HOWTO find the parent window of a document (goog.dom.getWindow)]
+  * [ArticleSetProperties HOWTO set multiple properties on an element (goog.dom.setProperties)]
+  * [ArticleSetTextContent HOWTO set the text content of an element (goog.dom.setTextContent)]
+  * [ArticleViewportSize HOWTO find the size of the viewport (goog.dom.getViewportSize)]
+  * [ArticleViewportSizeMonitor HOWTO detect when the user resizes the browser window (goog.dom.ViewportSizeMonitor)]
+
+== CSS and style ==
+
+  * [ArticleCompatMode HOWTO determine the document's compatibility mode]
+  * [ArticleAboveTheFold HOWTO detect if an element is located within the visible viewport]
+  * [ArticleClientViewportElement HOWTO find the viewport (goog.style.getClientViewportElement)]
+  * [ArticleComputedStyle HOWTO calculate the current style of an element (goog.style.getStyle_)]
+  * [ArticleComputedStyleVsCascadedStyle Computed style vs. cascaded style]
+  * [ArticleElementBounds HOWTO calculate the bounding rectangle of an element (goog.style.getBounds)]
+  * [ArticleElementSize HOWTO calculate the size of an element (goog.style.getSize)]
+  * [ArticleInlineBlock HOWTO dynamically set 'display: inline-block' for an element (goog.style.setInlineBlock)]
+  * [ArticleInstallStyles HOWTO dynamically add CSS styles to a page (goog.style.installStyles)]
+  * [ArticleOpacity HOWTO set an element's opacity (goog.style.setOpacity)]
+  * [ArticlePageOffset HOWTO calculate the position of an element on the page (goog.style.getPageOffset)]
+  * [ArticlePreWrap HOWTO set an element to preformatted text wrap (goog.style.setPreWrap)]
+  * [ArticleRelativePosition HOWTO calculate the distance between two elements (goog.style.getRelativePosition)]
+  * [ArticleTransparentBackgroundImage HOWTO set the background of an element to a transparent image (goog.style.setTransparentBackgroundImage)]
+
+== Miscellaneous tips and tricks ==
+
+  * [ArticleUserAgent HOWTO determine the browser name and version number]
+  * [ArticleDetectFlash HOWTO detect whether the user has Flash installed (goog.userAgent.flash)]
+  * [ArticleGetElementsByTagNameAndClass HOWTO filter elements by both tag and class name]
+  * [ArticleUndefined HOWTO determine if a JavaScript variable is undefined]
+  * [ArticleArraySlice HOWTO slice an array that's not really an Array (goog.array.slice)]
+  * [ArticleArraySplice HOWTO splice an array that's not really an Array (goog.array.splice)]
+
+== Search friendly development and SEO ==
+
+  * [ArticleSEOHtmlTags HOWTO use the right metatags for search engines]
+  * [ArticleSEOPreventCrawl HOWTO prevent your content from being crawled or appearing in search results]
+
+== Performance ==
+
+  * [ArticlesHereComesTheSun Magic properties make Firefox synchronously load the Java plugin]

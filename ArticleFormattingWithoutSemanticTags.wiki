@@ -1,0 +1,61 @@
+#summary How to format text when there's no appropriate semantic tag.
+#labels about-html,is-article
+
+= Introduction =
+
+HTML provides some semantic tags, such as `<em>`, `<strong>`, and `<cite>`, that describe the tagged text while leaving it up to the user agent to decide how to format that text.
+
+HTML also provides some other options for semantic markup, such as [http://www.w3.org/International/questions/qa-css-lang using the `lang` attribute] to indicate that text is in a particular language.  (Which the web designer can style as italic using CSS if desired.)
+
+However, there are semantics that are traditionally formatted in certain ways in typeset documents, but that HTML has no semantic tags for.  For example, it's traditional in English to italicize the names of ships, but HTML doesn't provide a `<shipname>` tag. It's similarly traditional to italicize genus and species names, references to a word as a word, and various other categories of words.
+
+What's the best approach to formatting text if you want it to have a particular style or look and there are no relevant semantics built into HTML?
+
+
+= Options =
+
+== A.  Use the `<i>` tag ==
+
+Example: `<i>Enterprise</i>`
+
+Advantages: Gives the desired formatting in most visual formats; may give a useful hint to screen readers.
+
+Disadvantages: Doesn't give any clue about semantics; that is, doesn't indicate _why_ the text is italicized.
+
+== B.  Use a semantic class name ==
+
+Example: `<span class="shipname">Enterprise</span>`
+
+(And use CSS to display `span.shipname` as italic.)
+
+Advantages: It's easier to change the visual presentation of all items of the same class simultaneously.
+
+Disadvantages: The semantics of this are opaque to computers, especially screen readers and other accessibility systems.
+
+
+= Recommendation =
+
+Use the `<i>` tag with the semantic class name...
+
+Example: `<i class="shipname">Enterprise</i>`
+
+No need to set-up a CSS rule for the class `shipname` (as `<i>` is already italic), but it will be then easy to introduce a special formatting for all ship names.
+
+== Forward.... ==
+To increase semantic, you can even define more than one class per tag !
+
+Example: `<i class="space ship name">Enterprise</i>`
+
+You can then apply specific CSS rules per object, object type!
+{{{
+.space { background-image: url(moon.png); }
+.ship { text-decoration: none; border-bottom: 2px blue solid; }
+.name { font-style: italic }
+}}}
+
+More generally, we recommend the following hierarchy of tag choice for inline text formatting:
+
+ # Use a specific semantic HTML tag if available.
+ # If there's no appropriate specific tag, use a general HTML formatting tag.
+ # If there's no appropriate semantic or formatting tag, use a `<span>` tag with CSS.
+

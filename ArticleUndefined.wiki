@@ -1,0 +1,47 @@
+#summary HOWTO determine if a JavaScript variable is undefined
+#labels is-article,about-javascript
+#sidebar TOCArticlesTips
+
+JavaScript has a built-in operator called `typeof` that you can use to determine whether a variable has a value or is "undefined."
+
+== The code ==
+
+{{{
+/**
+ * Enum of types compatible with typeof.
+ * @enum {String}
+ * @private
+ */
+goog.JsType_ = {
+  UNDEFINED: 'undefined',
+  NUMBER: 'number',
+  STRING: 'string',
+  BOOLEAN: 'boolean',
+  FUNCTION: 'function',
+  OBJECT: 'object'
+};
+
+
+/**
+ * Returns true if the specified value is not |undefined|.
+ * WARNING: Do not use this to test if an object has a property. Use the in
+ * operator instead.
+ * @param {Object} val Variable to test
+ * @return {Boolean} Whether variable is defined
+ */
+goog.isDef = function(val) {
+  return typeof val != goog.JsType_.UNDEFINED;
+};
+}}}
+
+== Example ==
+
+{{{
+TODO
+}}}
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/Core_JavaScript_1.5_Reference:Operators:Special_Operators:typeof_Operator typeof operator on Mozilla Developer Center]
+  * [http://javascript.crockford.com/remedial.html Remedial JavaScript on crockford.com]
+

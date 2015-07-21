@@ -1,0 +1,56 @@
+#summary HOWTO get all children of a given element regardless of browser compatibility
+#labels is-article,about-dom
+
+Not generally something that needs to be worried about, seeing as `document.getElementsByTagName` has been around since like IE5, but sometimes its nice to be sure... just in case anyone cares...
+
+== The Code ==
+
+{{{
+/**
+ * A function guaranteed to get all children of a given element
+ * regardless of browser support for native `getElement` functions
+ *
+ * @param   Element  the element to search in
+ * @return  array
+ */
+if (typeof document.getElementsByTagName === 'function'
+&& document.getElementsByTagName('*').length > 0) {
+	function getChildren(element) {
+		// make sure we have a valid element
+		var element = element || false;
+		if (! element) element = document;
+		
+		// fetch the elements
+		return element.getElementsByTagName('*');
+	}
+} else {
+	function getChildren(element) {
+		// make sure we have a valid element
+		var element = element || false;
+		if (! element) element = document;
+		
+		// fetch the elements
+		var elems = [ ],
+		children = e.childNodes;
+		
+		// for all children...
+		for (var i = 0; i < children.length; i++) {
+			var ch = children[i];
+			
+			// if the child node is an element
+			if (typeof ch.nodeType == 'number' && ch.nodeType == 1) {
+				// add it to the list
+				elems[elems.length] = ch;
+				
+				// recurse
+				var subs = getChildren(ch);
+				for (var n = 0; n < subs.length; n++) {
+					elems[elems.length] = subs[n];
+				}
+			}
+		}
+		return elems;
+	}
+}
+
+}}}

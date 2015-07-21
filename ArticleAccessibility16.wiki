@@ -1,0 +1,36 @@
+#summary Day 16: Not opening new windows
+#labels about-accessibility,is-article
+
+You are here: [Welcome Home] > [Articles Articles] > [ArticlesAccessibility Accessibility] > [ArticleAccessibility 30 days to a more accessible web site] > *Day 16: Not opening new windows*
+
+The one thing every web user understands is the "Back" button.  It's an integral part of browsing the web.  Follow a link, go back.  Explore a search engine result, go back.  Even my father can do this, and he's still excited when he can double-click the "Internet" icon successfully on the first try.
+
+In all dominant browsers, using the `<a target="_blank">` tag to force a link to open in a new window _breaks the Back button_.  The new window does not retain the browser history of the previous window, so the "Back" button is disabled.  This is incredibly confusing, even for me, and I've been using the web for 15 years.  In 2008, it's amazing that people still do this.  Don't do this.  Don't force links to open in new windows.
+
+Please note that this tip is about you as a web designer, not you as a web user.  If _you_ want to open new windows while _you_ browse, go right ahead.  In Internet Explorer for Windows, hold down the `Shift` key while you click a link to open the link in a new window.  In Firefox, hold down `Control`.  In Safari, hold down `Command`.  (Some browsers such as Opera support advanced combinations like `Control` + `Shift` + click to open a link in a new window in the background.)  The point is that the choice of whether a link will open in a new window should be the end user's choice, not the web designer's choice.
+
+=== Who benefits? ===
+
+  * [ArticleAccessibility01 Jackie] benefits.  Although [http://www.freedomscientific.com/fs_products/software_jaws.asp JAWS] does announce "New browser window" when a link opens a new window, this is easy to miss, as it is spoken wedged between the reading of the link text and reading of the new page.  [http://www-3.ibm.com/able/hpr.html Home Page Reader] has a better solution; it plays a distinctive sound every time a new window opens.  And [http://www.gwmicro.com/windoweyes/windoweyes.htm Window Eyes], another popular screen reader, gives no indication of new windows at all.
+And regardless, the "Back" button is still broken.  If Jackie misses the "new browser window" announcement, she can not simply glance at her taskbar and see that two browser windows are open.  She will need to read through her entire list of open windows, either using the JAWS-specific shortcut `INSERT+F10` to get a window list, or the standard `ALT+TAB`.
+  * [ArticleAccessibility04 Lillian] benefits.  Her Internet Explorer window is always maximized (so she can see it), and new windows also open maximized by default.  Furthermore, Windows XP groups multiple windows of the same application in the taskbar, so there is virtually no visible indication that a new window has even been opened.  Suddenly, the "Back" button is disabled for no apparent reason, and Lillian has no idea why.  If you were expecting her to read the rest of your web site after following that link, you can forget it.
+  * [ArticleAccessibility03 Bill] benefits.  His sister has set Firefox to use tabbed browsing, so that Bill can look at the tabs and quickly remind himself which windows he has open, and also so he can quickly switch between them (using `CTRL+PAGEUP` and `CTRL+PAGEDOWN` on his keyboard extension).  Links that are forced to open in a new window will open an entirely new Firefox window.  Not only will this bypass his tabbed browsing preferences, but it will make it appear that all his open windows have disappeared, since the new browser window will not show the tabs that were open in the previous window.
+
+=== How to do it ===
+
+  * Don't use `<a target="_blank">` to force links to open in a new window.
+  * If you absolutely must open a link in a new window, explicitly warn the reader.  This is a non-optimal, compromise solution, usually brought about by business requirements of "not being associated" with external content.
+  * If you have a "Links open new windows" checkbox, make sure it is _off_ by default.
+
+=== Further reading ===
+
+  * Jakob Nielsen: [http://www.useit.com/alertbox/990530.html The Top Ten _New_ Mistakes of Web Design].  "#1: Breaking or Slowing Down the Back Button.  #2: Opening New Browser Windows."
+  * W3C Web Accessibility Initiative: [http://www.w3.org/WAI/wcag-curric/sam77-0.htm Example for Checkpoint 10.1] gives an example of how to warn users if you have a single link that you absolutely must open in a new window.
+  * W3C Validator mailing list: [http://lists.w3.org/Archives/Public/www-validator/2002Apr/0100.html Re: opening a link in a new window].  For those who care about this sort of thing, you should know that the `target` attribute of the `<a>` tag is deprecated, and will prevent your pages from validating in HTML 4.01 Strict.
+  * WebAIM mailing list: [http://www.webaim.org/discussion/mail_thread.php?thread=432 `mailto:` links open new windows].  The consensus is that `mailto:` links are not an accessibility problem, even though they generally open your email client in a new window, because this behavior is completed determined on the client side.  A web-based mail form might be a better overall solution, provided the form itself is accessible.  A web-based form will work for visitors without integrated email clients (by misconfiguration or by circumstance, such as being in a public lab), and it protects your email address from spam harvesters without resorting to inaccessible Javascript tricks.  On the other hand, some people _really like_ their email clients due to familiarity, functionality, and the ability to archive outgoing messages.  I am not recommending one method over another.
+
+----
+
+Next: [ArticleAccessibility17 Day 17: Defining acronyms and abbreviations]
+Back: [ArticleAccessibility15 Day 15: Defining keyboard shortcuts]
+

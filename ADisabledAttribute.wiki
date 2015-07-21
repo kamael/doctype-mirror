@@ -1,0 +1,46 @@
+#summary The a disabled attribute is an obsolete method of declaring that a hyperlink is disabled.
+#labels about-html,is-html-attribute
+
+You are here: [Welcome Home] > [HTMLReference HTML Reference] > [HTMLElements Elements] > [AElement <a> element] > *disabled attribute*
+
+== Usage ==
+
+{{{
+<a disabled>
+<a disabled=disabled>
+}}}
+
+== Values ==
+
+This attribute is stand-alone; it can be present with no value, or it can have its own name as its value.
+
+== Elements ==
+
+You can use the `disabled` attribute on the following elements:
+
+  * [AElement <a>]
+  * [AreaElement <area>]
+  * [ButtonElement <button>]
+  * [CommandElement <command>]
+  * [DatagridElement <datagrid>]
+  * [EmbedElement <embed>]
+  * [InputElement <input>]
+  * [LinkElement <link>]
+  * [OptgroupElement <optgroup>]
+  * [OptionElement <option>]
+  * [SelectElement <select>]
+  * [StyleElement <style>]
+  * [TextareaElement <textarea>]
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op9* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/a-disabled-absent-reflection-test.html a.disabled reflects <a>] || Y || Y || Y || N || N || N || Y || N ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/html/attributes/a-disabled-reflection-test.html a.disabled reflects <a disabled>] || Y || Y || Y || N || N || N || Y || N ||
+
+== Further reading ==
+
+  * [http://www.blooberry.com/indexdot/html/tagpages/a/a-hyperlink.htm The history of the disabled attribute on blooberry.com]
+

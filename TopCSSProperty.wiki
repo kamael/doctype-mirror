@@ -1,0 +1,25 @@
+#summary The top property specifies how far an absolutely positioned box's top margin edge is offset below the top edge of the box's containing block.
+#labels about-css,is-css-property,from-w3c
+
+You are here: [Welcome Home] > [CSSReference CSS Reference] > [CSSProperties Properties] > *top*
+
+== Usage ==
+
+== Values ==
+
+  * [CSSLengthType <length>]
+  * [CSSPercentageType <percentage>]
+  * `auto`
+  * `inherit`
+
+== Browser compatibility ==
+
+|| *Test* || *IE8* || *IE7* || *FF3* || *FF2* || *Saf3* ||
+
+== Further reading ==
+
+  * [http://www.w3.org/TR/CSS21/visuren.html#propdef-top The top property in CSS 2.1]
+  * [http://msdn2.microsoft.com/en-us/library/ms531177.aspx The top property on MSDN]
+  * [http://www.blooberry.com/indexdot/css/properties/position/top.htm The history of the top property on blooberry.com]
+  * [http://reference.sitepoint.com/css/top The top property on the SitePoint CSS Reference]
+

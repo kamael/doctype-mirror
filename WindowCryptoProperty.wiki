@@ -1,0 +1,20 @@
+#summary The window.crypto property
+#labels about-dom,is-dom-property
+
+== Values ==
+
+The `window.crypto` property returns a [CryptoObject Crypto object].
+
+== Usage ==
+
+== Browser compatibility ==
+
+[ArticleBrowserCompatibilityLegend Compatibility table legend]
+
+|| *Test* || *IE8* || *IE7* || *IE6* || *FF3* || *FF2* || *Saf3* || *Op10.52* || *Chrome* ||
+|| [http://doctype.googlecode.com/svn/trunk/tests/js/window/window-crypto-typeof-test.html typeOf(window.crypto) != 'undefined'] || N || N || N || Y || Y || N || N || N ||
+
+== Further reading ==
+
+  * [http://developer.mozilla.org/en/docs/DOM:window.crypto The window.crypto property on Mozilla Developer Center]
+  * [http://developer.mozilla.org/en/docs/JavaScript_crypto The window.crypto property on Mozilla Developer Center]
